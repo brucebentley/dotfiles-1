@@ -473,9 +473,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 # Uncomment this to get syntax highlighting:
 source /home/emanon/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Skim
-source /home/emanon/.zsh/vendor/skim/bin
-
 # Silver Searcher
 source /home/emanon/.zsh/vendor/the_silver_searcher/
 
