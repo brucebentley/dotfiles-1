@@ -1,0 +1,836 @@
+clipper: 2019/09/30 18:24:16 Starting TCP server on loopback interface
+clipper: 2019/09/30 18:24:16 listen tcp6 [::1]:8377: socket: address family not supported by protocol
+clipper: 2019/09/30 18:25:24 Starting TCP server on loopback interface
+clipper: 2019/09/30 18:25:24 listen tcp4 127.0.0.1:8377: bind: address already in use
+clipper: 2019/09/30 18:25:24 listen tcp6 [::1]:8377: socket: address family not supported by protocol
+clipper: 2019/09/30 18:25:24 Failed to establish a listener
+clipper: 2019/09/30 18:25:54 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/09/30 18:25:54 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/09/30 18:26:12 Got signal interrupt
+clipper: 2019/09/30 18:26:12 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/09/30 18:26:44 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/09/30 18:26:47 Got signal interrupt
+clipper: 2019/09/30 18:26:47 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/09/30 18:32:34 Got signal terminated
+clipper: 2019/09/30 18:32:34 accept tcp4 127.0.0.1:8377: use of closed network connection
+clipper: 2019/10/01 11:38:42 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/01 11:38:42 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/01 12:03:22 Got signal terminated
+clipper: 2019/10/01 13:02:04 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/01 13:27:54 Got signal terminated
+clipper: 2019/10/01 14:29:47 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/01 16:09:17 Echoed 34 bytes
+clipper: 2019/10/01 16:09:17 Connection closed
+clipper: 2019/10/01 16:09:37 Echoed 1 bytes
+clipper: 2019/10/01 16:09:37 Connection closed
+clipper: 2019/10/01 16:09:47 Echoed 34 bytes
+clipper: 2019/10/01 16:09:47 Connection closed
+clipper: 2019/10/01 16:10:19 Echoed 34 bytes
+clipper: 2019/10/01 16:10:19 Connection closed
+clipper: 2019/10/01 16:11:19 Echoed 35 bytes
+clipper: 2019/10/01 16:11:19 Connection closed
+clipper: 2019/10/01 16:15:55 Got signal terminated
+clipper: 2019/10/01 16:15:55 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/01 17:08:50 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/01 17:13:26 Echoed 34 bytes
+clipper: 2019/10/01 17:13:26 Connection closed
+clipper: 2019/10/01 17:14:38 Echoed 19 bytes
+clipper: 2019/10/01 17:14:38 Connection closed
+clipper: 2019/10/01 17:17:23 Echoed 37 bytes
+clipper: 2019/10/01 17:17:23 Connection closed
+clipper: 2019/10/01 17:24:25 Echoed 0 bytes
+clipper: 2019/10/01 17:24:25 Connection closed
+clipper: 2019/10/01 17:24:32 Live socket already exists at: /home/emanon/.clipper.sock
+clipper: 2019/10/01 17:24:32 Echoed 0 bytes
+clipper: 2019/10/01 17:24:32 Connection closed
+clipper: 2019/10/01 17:25:59 Live socket already exists at: /home/emanon/.clipper.sock
+clipper: 2019/10/01 17:25:59 Echoed 0 bytes
+clipper: 2019/10/01 17:25:59 Connection closed
+clipper: 2019/10/01 17:26:35 Live socket already exists at: /home/emanon/.clipper.sock
+clipper: 2019/10/01 17:26:35 Echoed 0 bytes
+clipper: 2019/10/01 17:26:35 Connection closed
+clipper: 2019/10/01 17:58:11 Echoed 12 bytes
+clipper: 2019/10/01 17:58:11 Connection closed
+clipper: 2019/10/01 18:06:08 Got signal terminated
+clipper: 2019/10/01 18:06:08 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/01 18:52:09 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/01 20:23:51 Echoed 1 bytes
+clipper: 2019/10/01 20:23:51 Connection closed
+clipper: 2019/10/01 20:23:52 Echoed 1 bytes
+clipper: 2019/10/01 20:23:52 Connection closed
+clipper: 2019/10/01 20:23:55 Echoed 44 bytes
+clipper: 2019/10/01 20:23:55 Connection closed
+clipper: 2019/10/01 20:42:57 Echoed 37 bytes
+clipper: 2019/10/01 20:42:57 Connection closed
+clipper: 2019/10/01 20:53:18 Got signal terminated
+clipper: 2019/10/01 20:53:18 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/01 21:43:12 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/01 22:29:49 Echoed 335 bytes
+clipper: 2019/10/01 22:29:49 Connection closed
+clipper: 2019/10/01 22:30:28 Echoed 336 bytes
+clipper: 2019/10/01 22:30:28 Connection closed
+clipper: 2019/10/01 22:31:37 Echoed 185 bytes
+clipper: 2019/10/01 22:31:37 Connection closed
+clipper: 2019/10/01 22:32:51 Echoed 181 bytes
+clipper: 2019/10/01 22:32:51 Connection closed
+clipper: 2019/10/01 22:37:11 Echoed 48 bytes
+clipper: 2019/10/01 22:37:11 Connection closed
+clipper: 2019/10/01 22:37:26 Echoed 48 bytes
+clipper: 2019/10/01 22:37:26 Connection closed
+clipper: 2019/10/01 22:53:23 Echoed 66 bytes
+clipper: 2019/10/01 22:53:23 Connection closed
+clipper: 2019/10/01 22:54:50 Echoed 45 bytes
+clipper: 2019/10/01 22:54:50 Connection closed
+clipper: 2019/10/01 23:03:02 Echoed 37 bytes
+clipper: 2019/10/01 23:03:02 Connection closed
+clipper: 2019/10/01 23:23:38 Got signal terminated
+clipper: 2019/10/02 00:19:52 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/02 00:23:41 Echoed 48 bytes
+clipper: 2019/10/02 00:23:41 Connection closed
+clipper: 2019/10/02 00:29:14 Echoed 20 bytes
+clipper: 2019/10/02 00:29:14 Connection closed
+clipper: 2019/10/02 00:36:41 Echoed 331 bytes
+clipper: 2019/10/02 00:36:41 Connection closed
+clipper: 2019/10/02 00:43:06 Echoed 61 bytes
+clipper: 2019/10/02 00:43:06 Connection closed
+clipper: 2019/10/02 00:43:12 Echoed 62 bytes
+clipper: 2019/10/02 00:43:12 Connection closed
+clipper: 2019/10/02 00:43:16 Echoed 61 bytes
+clipper: 2019/10/02 00:43:16 Connection closed
+clipper: 2019/10/02 00:43:41 Echoed 63 bytes
+clipper: 2019/10/02 00:43:41 Connection closed
+clipper: 2019/10/02 00:47:08 Echoed 26 bytes
+clipper: 2019/10/02 00:47:08 Connection closed
+clipper: 2019/10/02 00:47:46 Echoed 26 bytes
+clipper: 2019/10/02 00:47:46 Connection closed
+clipper: 2019/10/02 00:49:41 Echoed 25 bytes
+clipper: 2019/10/02 00:49:42 Connection closed
+clipper: 2019/10/02 01:03:14 Echoed 189 bytes
+clipper: 2019/10/02 01:03:14 Connection closed
+clipper: 2019/10/02 01:03:22 Echoed 170 bytes
+clipper: 2019/10/02 01:03:22 Connection closed
+clipper: 2019/10/02 01:14:41 Echoed 66 bytes
+clipper: 2019/10/02 01:14:41 Connection closed
+clipper: 2019/10/02 01:15:43 Echoed 44 bytes
+clipper: 2019/10/02 01:15:43 Connection closed
+clipper: 2019/10/02 01:19:02 Echoed 218 bytes
+clipper: 2019/10/02 01:19:02 Connection closed
+clipper: 2019/10/02 01:20:40 Echoed 218 bytes
+clipper: 2019/10/02 01:20:40 Connection closed
+clipper: 2019/10/02 02:24:52 Got signal terminated
+clipper: 2019/10/02 02:24:52 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/02 14:57:01 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/02 15:57:10 Echoed 44 bytes
+clipper: 2019/10/02 15:57:10 Connection closed
+clipper: 2019/10/02 15:57:57 Echoed 44 bytes
+clipper: 2019/10/02 15:57:57 Connection closed
+clipper: 2019/10/02 16:07:23 Echoed 203 bytes
+clipper: 2019/10/02 16:07:23 Connection closed
+clipper: 2019/10/02 16:16:19 Echoed 159 bytes
+clipper: 2019/10/02 16:16:19 Connection closed
+clipper: 2019/10/02 16:19:26 Echoed 19 bytes
+clipper: 2019/10/02 16:19:26 Connection closed
+clipper: 2019/10/02 16:19:44 Echoed 20 bytes
+clipper: 2019/10/02 16:19:44 Connection closed
+clipper: 2019/10/02 16:25:46 Echoed 16 bytes
+clipper: 2019/10/02 16:25:46 Connection closed
+clipper: 2019/10/02 16:51:55 Echoed 89 bytes
+clipper: 2019/10/02 16:51:55 Connection closed
+clipper: 2019/10/02 16:56:52 Echoed 9 bytes
+clipper: 2019/10/02 16:56:52 Connection closed
+clipper: 2019/10/02 17:00:35 Echoed 140 bytes
+clipper: 2019/10/02 17:00:35 Connection closed
+clipper: 2019/10/02 17:29:24 Got signal terminated
+clipper: 2019/10/02 17:29:24 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/03 03:29:55 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/03 03:35:02 Echoed 1152 bytes
+clipper: 2019/10/03 03:35:02 Connection closed
+clipper: 2019/10/03 03:36:06 Echoed 215 bytes
+clipper: 2019/10/03 03:36:06 Connection closed
+clipper: 2019/10/03 03:48:22 Echoed 92 bytes
+clipper: 2019/10/03 03:48:22 Connection closed
+clipper: 2019/10/03 04:02:23 Echoed 21 bytes
+clipper: 2019/10/03 04:02:23 Connection closed
+clipper: 2019/10/03 04:02:45 Echoed 21 bytes
+clipper: 2019/10/03 04:02:45 Connection closed
+clipper: 2019/10/03 04:02:46 Echoed 21 bytes
+clipper: 2019/10/03 04:02:46 Connection closed
+clipper: 2019/10/03 04:03:20 Echoed 47 bytes
+clipper: 2019/10/03 04:03:20 Connection closed
+clipper: 2019/10/03 04:03:29 Echoed 47 bytes
+clipper: 2019/10/03 04:03:29 Connection closed
+clipper: 2019/10/03 04:04:08 Echoed 43 bytes
+clipper: 2019/10/03 04:04:08 Connection closed
+clipper: 2019/10/03 04:04:15 Echoed 43 bytes
+clipper: 2019/10/03 04:04:15 Connection closed
+clipper: 2019/10/03 04:06:40 Got signal terminated
+clipper: 2019/10/03 04:06:40 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/03 12:50:29 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/03 13:17:47 Echoed 103 bytes
+clipper: 2019/10/03 13:17:47 Connection closed
+clipper: 2019/10/03 13:17:47 Echoed 103 bytes
+clipper: 2019/10/03 13:17:47 Connection closed
+clipper: 2019/10/03 13:18:04 Echoed 95 bytes
+clipper: 2019/10/03 13:18:04 Connection closed
+clipper: 2019/10/03 13:18:05 Echoed 95 bytes
+clipper: 2019/10/03 13:18:05 Connection closed
+clipper: 2019/10/03 13:18:13 Echoed 96 bytes
+clipper: 2019/10/03 13:18:13 Connection closed
+clipper: 2019/10/03 13:18:17 Echoed 96 bytes
+clipper: 2019/10/03 13:18:17 Connection closed
+clipper: 2019/10/03 13:18:30 Echoed 94 bytes
+clipper: 2019/10/03 13:18:30 Connection closed
+clipper: 2019/10/03 13:18:46 Echoed 96 bytes
+clipper: 2019/10/03 13:18:46 Connection closed
+clipper: 2019/10/03 13:43:53 Echoed 23 bytes
+clipper: 2019/10/03 13:43:53 Connection closed
+clipper: 2019/10/03 13:43:55 Echoed 32 bytes
+clipper: 2019/10/03 13:43:55 Connection closed
+clipper: 2019/10/03 13:44:08 Echoed 21 bytes
+clipper: 2019/10/03 13:44:08 Connection closed
+clipper: 2019/10/03 13:44:11 Echoed 21 bytes
+clipper: 2019/10/03 13:44:11 Connection closed
+clipper: 2019/10/03 13:44:40 Echoed 74 bytes
+clipper: 2019/10/03 13:44:40 Connection closed
+clipper: 2019/10/03 13:45:24 Echoed 24 bytes
+clipper: 2019/10/03 13:45:24 Connection closed
+clipper: 2019/10/03 13:45:26 Echoed 20 bytes
+clipper: 2019/10/03 13:45:26 Connection closed
+clipper: 2019/10/03 13:45:28 Echoed 20 bytes
+clipper: 2019/10/03 13:45:28 Connection closed
+clipper: 2019/10/03 13:45:32 Echoed 10 bytes
+clipper: 2019/10/03 13:45:32 Connection closed
+clipper: 2019/10/03 13:46:19 Echoed 5 bytes
+clipper: 2019/10/03 13:46:19 Connection closed
+clipper: 2019/10/03 13:55:38 Echoed 149 bytes
+clipper: 2019/10/03 13:55:38 Connection closed
+clipper: 2019/10/03 13:55:53 Echoed 233 bytes
+clipper: 2019/10/03 13:55:53 Connection closed
+clipper: 2019/10/03 13:56:12 Echoed 132 bytes
+clipper: 2019/10/03 13:56:12 Connection closed
+clipper: 2019/10/03 14:12:04 Got signal terminated
+clipper: 2019/10/03 14:12:04 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/03 16:52:14 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/03 16:53:25 Echoed 26 bytes
+clipper: 2019/10/03 16:53:25 Connection closed
+clipper: 2019/10/03 16:53:57 Echoed 12 bytes
+clipper: 2019/10/03 16:53:57 Connection closed
+clipper: 2019/10/03 16:55:52 Echoed 16 bytes
+clipper: 2019/10/03 16:55:52 Connection closed
+clipper: 2019/10/03 16:56:10 Echoed 11 bytes
+clipper: 2019/10/03 16:56:10 Connection closed
+clipper: 2019/10/03 16:58:15 Echoed 11 bytes
+clipper: 2019/10/03 16:58:15 Connection closed
+clipper: 2019/10/03 16:58:16 Echoed 11 bytes
+clipper: 2019/10/03 16:58:16 Connection closed
+clipper: 2019/10/03 16:59:21 Echoed 10 bytes
+clipper: 2019/10/03 16:59:21 Connection closed
+clipper: 2019/10/03 16:59:51 Echoed 10 bytes
+clipper: 2019/10/03 16:59:51 Connection closed
+clipper: 2019/10/03 16:59:58 Echoed 1 bytes
+clipper: 2019/10/03 16:59:58 Connection closed
+clipper: 2019/10/03 17:00:14 Echoed 14 bytes
+clipper: 2019/10/03 17:00:14 Connection closed
+clipper: 2019/10/03 17:00:24 Echoed 14 bytes
+clipper: 2019/10/03 17:00:24 Connection closed
+clipper: 2019/10/03 17:00:28 Echoed 14 bytes
+clipper: 2019/10/03 17:00:28 Connection closed
+clipper: 2019/10/03 17:51:52 Echoed 50 bytes
+clipper: 2019/10/03 17:51:52 Connection closed
+clipper: 2019/10/03 17:52:33 Echoed 51 bytes
+clipper: 2019/10/03 17:52:33 Connection closed
+clipper: 2019/10/03 17:52:55 Echoed 52 bytes
+clipper: 2019/10/03 17:52:55 Connection closed
+clipper: 2019/10/03 17:53:27 Echoed 51 bytes
+clipper: 2019/10/03 17:53:27 Connection closed
+clipper: 2019/10/03 17:53:48 Echoed 51 bytes
+clipper: 2019/10/03 17:53:48 Connection closed
+clipper: 2019/10/03 17:59:59 Echoed 0 bytes
+clipper: 2019/10/03 17:59:59 Connection closed
+clipper: 2019/10/03 18:00:11 Echoed 86 bytes
+clipper: 2019/10/03 18:00:11 Connection closed
+clipper: 2019/10/03 18:00:24 Echoed 85 bytes
+clipper: 2019/10/03 18:00:24 Connection closed
+clipper: 2019/10/03 18:01:01 Echoed 93 bytes
+clipper: 2019/10/03 18:01:01 Connection closed
+clipper: 2019/10/03 18:01:38 Echoed 90 bytes
+clipper: 2019/10/03 18:01:38 Connection closed
+clipper: 2019/10/03 18:01:55 Echoed 93 bytes
+clipper: 2019/10/03 18:01:55 Connection closed
+clipper: 2019/10/03 18:02:04 Echoed 93 bytes
+clipper: 2019/10/03 18:02:04 Connection closed
+clipper: 2019/10/03 18:02:38 Echoed 93 bytes
+clipper: 2019/10/03 18:02:38 Connection closed
+clipper: 2019/10/03 18:37:08 Echoed 90 bytes
+clipper: 2019/10/03 18:37:08 Connection closed
+clipper: 2019/10/03 18:37:12 Echoed 24 bytes
+clipper: 2019/10/03 18:37:12 Connection closed
+clipper: 2019/10/03 18:37:23 Echoed 102 bytes
+clipper: 2019/10/03 18:37:23 Connection closed
+clipper: 2019/10/03 18:58:08 Got signal terminated
+clipper: 2019/10/03 18:58:08 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/03 20:12:48 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/03 20:21:49 Got signal terminated
+clipper: 2019/10/03 20:23:17 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/03 21:36:02 Got signal terminated
+clipper: 2019/10/04 07:38:54 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/04 08:09:09 Got signal terminated
+clipper: 2019/10/04 09:32:08 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/04 09:40:09 Got signal terminated
+clipper: 2019/10/04 11:08:44 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/04 11:41:10 Got signal terminated
+clipper: 2019/10/04 12:31:17 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/04 12:45:19 Got signal terminated
+clipper: 2019/10/04 14:59:38 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/04 15:34:54 Echoed 73 bytes
+clipper: 2019/10/04 15:34:54 Connection closed
+clipper: 2019/10/04 15:39:17 Got signal terminated
+clipper: 2019/10/04 15:39:17 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/04 19:55:19 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/04 20:12:49 Echoed 47 bytes
+clipper: 2019/10/04 20:12:49 Connection closed
+clipper: 2019/10/04 21:27:52 Echoed 97 bytes
+clipper: 2019/10/04 21:27:52 Connection closed
+clipper: 2019/10/04 22:58:17 Echoed 1050 bytes
+clipper: 2019/10/04 22:58:17 Connection closed
+clipper: 2019/10/04 23:10:17 Echoed 13 bytes
+clipper: 2019/10/04 23:10:17 Connection closed
+clipper: 2019/10/04 23:32:10 Got signal terminated
+clipper: 2019/10/04 23:32:10 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/05 00:19:29 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 00:53:07 Got signal terminated
+clipper: 2019/10/05 01:05:28 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 01:18:32 Got signal terminated
+clipper: 2019/10/05 08:59:49 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 09:04:48 Got signal terminated
+clipper: 2019/10/05 09:06:02 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 13:17:05 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 13:17:06 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 13:29:58 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 13:29:58 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 13:37:23 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 13:37:24 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 13:40:01 Got signal terminated
+clipper: 2019/10/05 13:51:08 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 13:55:52 Got signal terminated
+clipper: 2019/10/05 13:57:46 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:00:31 Got signal terminated
+clipper: 2019/10/05 14:01:53 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:25:41 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 14:25:42 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:26:55 Got signal terminated
+clipper: 2019/10/05 14:28:47 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:34:31 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 14:34:31 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:36:16 Got signal terminated
+clipper: 2019/10/05 14:37:38 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:40:39 Got signal terminated
+clipper: 2019/10/05 14:42:12 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 14:46:55 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 14:46:55 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 18:15:52 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 18:15:52 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 18:20:01 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 18:20:01 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 18:26:23 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 18:26:23 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 18:38:40 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 18:38:40 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 18:49:38 Got signal terminated
+clipper: 2019/10/05 18:57:13 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 18:58:30 Got signal terminated
+clipper: 2019/10/05 18:59:59 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:11:10 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 19:11:11 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:13:35 Got signal terminated
+clipper: 2019/10/05 19:16:09 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:20:35 Got signal terminated
+clipper: 2019/10/05 19:22:12 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:38:49 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 19:38:49 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:43:57 Got signal terminated
+clipper: 2019/10/05 19:45:19 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:46:36 Got signal terminated
+clipper: 2019/10/05 19:53:56 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 19:56:29 Got signal terminated
+clipper: 2019/10/05 19:57:59 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 20:07:17 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 20:07:18 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:11:30 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 21:11:31 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:13:25 Got signal terminated
+clipper: 2019/10/05 21:14:52 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:16:32 Got signal terminated
+clipper: 2019/10/05 21:18:00 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:21:59 Got signal terminated
+clipper: 2019/10/05 21:22:09 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:23:59 Got signal terminated
+clipper: 2019/10/05 21:25:16 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:35:14 Got signal terminated
+clipper: 2019/10/05 21:36:39 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:39:39 Got signal terminated
+clipper: 2019/10/05 21:41:10 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:43:28 Got signal terminated
+clipper: 2019/10/05 21:44:56 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:48:13 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 21:48:14 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 21:59:35 Got signal terminated
+clipper: 2019/10/05 22:01:04 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 22:05:27 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 22:05:27 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 22:12:50 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 22:12:50 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 22:16:17 Got signal terminated
+clipper: 2019/10/05 22:18:22 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 22:19:26 Got signal terminated
+clipper: 2019/10/05 22:37:17 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 22:47:59 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/05 22:47:59 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 22:51:47 Got signal terminated
+clipper: 2019/10/05 22:55:31 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 23:04:01 Got signal terminated
+clipper: 2019/10/05 23:05:24 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 23:13:23 Got signal terminated
+clipper: 2019/10/05 23:15:22 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/05 23:17:40 Echoed 48 bytes
+clipper: 2019/10/05 23:19:51 [ERROR] wait: exit status 1
+clipper: 2019/10/05 23:19:51 Connection closed
+clipper: 2019/10/06 00:04:13 Echoed 32 bytes
+clipper: 2019/10/06 00:04:13 Connection closed
+clipper: 2019/10/06 00:07:03 Echoed 33 bytes
+clipper: 2019/10/06 00:07:03 Connection closed
+clipper: 2019/10/06 00:51:14 Echoed 32 bytes
+clipper: 2019/10/06 00:51:14 Connection closed
+clipper: 2019/10/06 01:22:05 Echoed 92 bytes
+clipper: 2019/10/06 01:22:05 Connection closed
+clipper: 2019/10/06 03:29:40 Got signal terminated
+clipper: 2019/10/06 03:29:40 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/06 09:08:16 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 09:33:00 Echoed 61 bytes
+clipper: 2019/10/06 09:33:00 Connection closed
+clipper: 2019/10/06 09:33:09 Echoed 61 bytes
+clipper: 2019/10/06 09:33:09 Connection closed
+clipper: 2019/10/06 09:33:58 Got signal terminated
+clipper: 2019/10/06 09:33:58 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/06 09:35:16 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 09:37:19 Echoed 22 bytes
+clipper: 2019/10/06 09:37:19 Connection closed
+clipper: 2019/10/06 09:41:10 Got signal terminated
+clipper: 2019/10/06 09:41:10 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/06 09:42:34 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 09:43:02 Got signal terminated
+clipper: 2019/10/06 09:44:19 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 11:07:05 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/06 11:07:05 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 11:53:49 Got signal terminated
+clipper: 2019/10/06 13:23:14 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 13:28:09 Echoed 33 bytes
+clipper: 2019/10/06 13:28:09 Connection closed
+clipper: 2019/10/06 13:28:12 Echoed 59 bytes
+clipper: 2019/10/06 13:28:12 Connection closed
+clipper: 2019/10/06 14:00:52 Echoed 51 bytes
+clipper: 2019/10/06 14:00:52 Connection closed
+clipper: 2019/10/06 14:18:12 Got signal terminated
+clipper: 2019/10/06 14:18:12 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/06 14:19:35 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 14:25:01 Got signal terminated
+clipper: 2019/10/06 14:26:41 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 14:33:54 Got signal terminated
+clipper: 2019/10/06 14:35:23 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 14:53:56 Got signal terminated
+clipper: 2019/10/06 14:55:13 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/06 14:56:17 Echoed 68 bytes
+clipper: 2019/10/06 14:56:17 Connection closed
+clipper: 2019/10/06 15:00:06 Echoed 68 bytes
+clipper: 2019/10/06 15:00:06 Connection closed
+clipper: 2019/10/06 16:20:23 Got signal terminated
+clipper: 2019/10/06 16:20:23 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/06 19:27:16 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 04:36:09 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/07 04:36:09 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 05:24:00 Got signal terminated
+clipper: 2019/10/07 09:24:39 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 09:28:07 Got signal terminated
+clipper: 2019/10/07 09:47:32 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 10:11:16 Got signal terminated
+clipper: 2019/10/07 12:44:59 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 13:04:08 Echoed 67 bytes
+clipper: 2019/10/07 13:04:08 Connection closed
+clipper: 2019/10/07 13:04:31 Echoed 73 bytes
+clipper: 2019/10/07 13:04:31 Connection closed
+clipper: 2019/10/07 13:13:30 Echoed 107 bytes
+clipper: 2019/10/07 13:13:30 Connection closed
+clipper: 2019/10/07 13:16:17 Echoed 48 bytes
+clipper: 2019/10/07 13:16:17 Connection closed
+clipper: 2019/10/07 13:28:20 Echoed 64 bytes
+clipper: 2019/10/07 13:28:20 Connection closed
+clipper: 2019/10/07 13:29:21 Echoed 72 bytes
+clipper: 2019/10/07 13:29:21 Connection closed
+clipper: 2019/10/07 13:47:08 Got signal terminated
+clipper: 2019/10/07 13:47:08 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/07 14:26:10 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 14:27:04 Got signal terminated
+clipper: 2019/10/07 15:22:59 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 17:22:49 Got signal terminated
+clipper: 2019/10/07 18:04:58 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/07 19:40:04 Got signal terminated
+clipper: 2019/10/07 20:12:28 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/08 03:42:39 Echoed 58 bytes
+clipper: 2019/10/08 03:42:39 Connection closed
+clipper: 2019/10/08 05:15:59 Echoed 130 bytes
+clipper: 2019/10/08 05:15:59 Connection closed
+clipper: 2019/10/08 05:16:03 Echoed 28 bytes
+clipper: 2019/10/08 05:16:03 Connection closed
+clipper: 2019/10/08 05:28:21 Got signal terminated
+clipper: 2019/10/08 05:28:21 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/08 09:55:22 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/08 10:20:17 Got signal terminated
+clipper: 2019/10/08 12:50:37 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/08 15:05:57 Echoed 26 bytes
+clipper: 2019/10/08 15:05:57 Connection closed
+clipper: 2019/10/08 15:08:52 Echoed 21 bytes
+clipper: 2019/10/08 15:08:52 Connection closed
+clipper: 2019/10/08 15:09:22 Echoed 36 bytes
+clipper: 2019/10/08 15:09:22 Connection closed
+clipper: 2019/10/08 15:23:12 Echoed 55 bytes
+clipper: 2019/10/08 15:23:12 Connection closed
+clipper: 2019/10/08 16:09:59 Echoed 110 bytes
+clipper: 2019/10/08 16:09:59 Connection closed
+clipper: 2019/10/08 16:10:30 Echoed 111 bytes
+clipper: 2019/10/08 16:10:30 Connection closed
+clipper: 2019/10/08 16:37:23 Got signal terminated
+clipper: 2019/10/08 16:37:23 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/08 17:01:30 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/08 17:06:21 Echoed 290 bytes
+clipper: 2019/10/08 17:06:21 Connection closed
+clipper: 2019/10/08 17:08:58 Echoed 231 bytes
+clipper: 2019/10/08 17:08:58 Connection closed
+clipper: 2019/10/08 17:51:53 Got signal terminated
+clipper: 2019/10/08 17:51:53 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/09 19:19:42 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/09 20:20:43 Echoed 21 bytes
+clipper: 2019/10/09 20:20:43 Connection closed
+clipper: 2019/10/09 20:21:03 Echoed 21 bytes
+clipper: 2019/10/09 20:21:03 Connection closed
+clipper: 2019/10/09 20:21:26 Echoed 21 bytes
+clipper: 2019/10/09 20:21:26 Connection closed
+clipper: 2019/10/09 20:21:26 Echoed 45 bytes
+clipper: 2019/10/09 20:21:26 Connection closed
+clipper: 2019/10/09 20:49:47 Got signal terminated
+clipper: 2019/10/09 20:49:47 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/09 20:49:55 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/09 20:50:39 Got signal terminated
+clipper: 2019/10/09 20:50:39 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/09 20:50:46 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/09 20:51:06 Got signal terminated
+clipper: 2019/10/09 20:51:06 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/09 21:08:06 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/09 21:09:05 Echoed 138 bytes
+clipper: 2019/10/09 21:09:05 Connection closed
+clipper: 2019/10/09 21:09:50 Echoed 138 bytes
+clipper: 2019/10/09 21:09:50 Connection closed
+clipper: 2019/10/10 00:46:17 Echoed 137 bytes
+clipper: 2019/10/10 00:46:17 Connection closed
+clipper: 2019/10/10 01:16:23 Got signal terminated
+clipper: 2019/10/10 01:16:23 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/10 14:19:07 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/10 17:04:01 Dead socket found at: /home/emanon/.clipper.sock (removing)
+clipper: 2019/10/10 17:04:02 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/10 17:51:37 Echoed 23 bytes
+clipper: 2019/10/10 17:51:37 Connection closed
+clipper: 2019/10/10 17:52:53 Echoed 23 bytes
+clipper: 2019/10/10 17:52:53 Connection closed
+clipper: 2019/10/10 17:53:42 Echoed 23 bytes
+clipper: 2019/10/10 17:53:42 Connection closed
+clipper: 2019/10/10 18:05:39 Echoed 26 bytes
+clipper: 2019/10/10 18:05:39 Connection closed
+clipper: 2019/10/10 18:14:42 Echoed 23 bytes
+clipper: 2019/10/10 18:14:42 Connection closed
+clipper: 2019/10/10 18:45:57 Got signal terminated
+clipper: 2019/10/10 20:43:34 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/10 22:58:41 Got signal terminated
+clipper: 2019/10/11 18:50:57 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/11 19:06:08 Echoed 37 bytes
+clipper: 2019/10/11 19:06:08 Connection closed
+clipper: 2019/10/11 19:06:39 Echoed 37 bytes
+clipper: 2019/10/11 19:06:39 Connection closed
+clipper: 2019/10/11 20:07:23 Echoed 24 bytes
+clipper: 2019/10/11 20:07:23 Connection closed
+clipper: 2019/10/11 20:09:20 Echoed 24 bytes
+clipper: 2019/10/11 20:09:20 Connection closed
+clipper: 2019/10/11 20:20:44 Echoed 21 bytes
+clipper: 2019/10/11 20:20:44 Connection closed
+clipper: 2019/10/11 20:20:49 Echoed 26 bytes
+clipper: 2019/10/11 20:20:49 Connection closed
+clipper: 2019/10/11 20:33:59 Echoed 4 bytes
+clipper: 2019/10/11 20:33:59 Connection closed
+clipper: 2019/10/11 20:34:31 Echoed 26 bytes
+clipper: 2019/10/11 20:34:31 Connection closed
+clipper: 2019/10/11 20:45:54 Got signal terminated
+clipper: 2019/10/11 20:45:54 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/12 00:09:32 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/12 01:18:01 Got signal terminated
+clipper: 2019/10/12 08:47:13 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/12 09:40:01 Echoed 24 bytes
+clipper: 2019/10/12 09:40:01 Connection closed
+clipper: 2019/10/12 10:35:20 Echoed 68 bytes
+clipper: 2019/10/12 10:35:20 Connection closed
+clipper: 2019/10/12 10:40:09 Got signal terminated
+clipper: 2019/10/12 10:40:09 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/12 12:20:58 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/12 19:47:20 Got signal terminated
+clipper: 2019/10/12 21:22:48 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/12 21:27:26 Got signal terminated
+clipper: 2019/10/12 21:28:42 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/12 22:10:33 Got signal terminated
+clipper: 2019/10/13 08:45:32 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/13 09:42:45 Echoed 82 bytes
+clipper: 2019/10/13 09:42:45 Connection closed
+clipper: 2019/10/13 10:03:52 Got signal terminated
+clipper: 2019/10/13 10:03:52 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/13 12:44:51 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/13 13:30:15 Echoed 84 bytes
+clipper: 2019/10/13 13:30:15 Connection closed
+clipper: 2019/10/13 13:36:35 Echoed 84 bytes
+clipper: 2019/10/13 13:36:35 Connection closed
+clipper: 2019/10/13 13:53:55 Echoed 40 bytes
+clipper: 2019/10/13 13:53:55 Connection closed
+clipper: 2019/10/13 14:05:59 Echoed 84 bytes
+clipper: 2019/10/13 14:05:59 Connection closed
+clipper: 2019/10/13 14:15:41 Got signal terminated
+clipper: 2019/10/13 14:15:41 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/13 15:37:19 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/13 15:41:12 Echoed 40 bytes
+clipper: 2019/10/13 15:41:12 Connection closed
+clipper: 2019/10/13 15:41:39 Echoed 27 bytes
+clipper: 2019/10/13 15:41:39 Connection closed
+clipper: 2019/10/13 15:42:25 Echoed 40 bytes
+clipper: 2019/10/13 15:42:25 Connection closed
+clipper: 2019/10/13 15:43:57 Echoed 40 bytes
+clipper: 2019/10/13 15:43:57 Connection closed
+clipper: 2019/10/13 15:45:37 Echoed 125 bytes
+clipper: 2019/10/13 15:45:37 Connection closed
+clipper: 2019/10/13 15:49:14 Echoed 56 bytes
+clipper: 2019/10/13 15:49:14 Connection closed
+clipper: 2019/10/13 15:53:12 Echoed 31 bytes
+clipper: 2019/10/13 15:53:12 Connection closed
+clipper: 2019/10/13 16:10:31 Echoed 102 bytes
+clipper: 2019/10/13 16:10:31 Connection closed
+clipper: 2019/10/13 16:12:14 Echoed 578 bytes
+clipper: 2019/10/13 16:12:14 Connection closed
+clipper: 2019/10/13 16:17:20 Echoed 577 bytes
+clipper: 2019/10/13 16:17:20 Connection closed
+clipper: 2019/10/13 16:19:18 Echoed 174 bytes
+clipper: 2019/10/13 16:19:18 Connection closed
+clipper: 2019/10/13 16:25:41 Echoed 102 bytes
+clipper: 2019/10/13 16:25:41 Connection closed
+clipper: 2019/10/13 17:36:24 Echoed 14 bytes
+clipper: 2019/10/13 17:36:24 Connection closed
+clipper: 2019/10/13 17:36:43 Echoed 14 bytes
+clipper: 2019/10/13 17:36:43 Connection closed
+clipper: 2019/10/13 17:37:11 Echoed 12 bytes
+clipper: 2019/10/13 17:37:11 Connection closed
+clipper: 2019/10/13 17:38:17 Echoed 14 bytes
+clipper: 2019/10/13 17:38:17 Connection closed
+clipper: 2019/10/13 17:47:07 Echoed 28 bytes
+clipper: 2019/10/13 17:47:07 Connection closed
+clipper: 2019/10/13 17:48:13 Echoed 62 bytes
+clipper: 2019/10/13 17:48:13 Connection closed
+clipper: 2019/10/13 17:48:24 Echoed 121 bytes
+clipper: 2019/10/13 17:48:24 Connection closed
+clipper: 2019/10/13 17:53:17 Echoed 53 bytes
+clipper: 2019/10/13 17:53:17 Connection closed
+clipper: 2019/10/13 18:22:10 Echoed 13 bytes
+clipper: 2019/10/13 18:22:10 Connection closed
+clipper: 2019/10/13 19:09:24 Echoed 31 bytes
+clipper: 2019/10/13 19:09:25 Connection closed
+clipper: 2019/10/13 19:11:30 Echoed 33 bytes
+clipper: 2019/10/13 19:11:30 Connection closed
+clipper: 2019/10/13 19:14:20 Echoed 507 bytes
+clipper: 2019/10/13 19:14:20 Connection closed
+clipper: 2019/10/13 19:33:59 Echoed 2617 bytes
+clipper: 2019/10/13 19:33:59 Connection closed
+clipper: 2019/10/13 20:53:05 Echoed 40 bytes
+clipper: 2019/10/13 20:53:05 Connection closed
+clipper: 2019/10/13 22:43:52 Got signal terminated
+clipper: 2019/10/13 22:43:52 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/14 05:55:29 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/14 05:56:16 Got signal terminated
+clipper: 2019/10/14 05:56:17 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/14 06:06:21 Got signal terminated
+clipper: 2019/10/14 15:11:58 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/14 15:48:47 Echoed 352 bytes
+clipper: 2019/10/14 15:48:47 Connection closed
+clipper: 2019/10/14 15:52:57 Echoed 79 bytes
+clipper: 2019/10/14 15:52:57 Connection closed
+clipper: 2019/10/14 16:37:32 Echoed 276 bytes
+clipper: 2019/10/14 16:37:32 Connection closed
+clipper: 2019/10/14 17:01:55 Got signal terminated
+clipper: 2019/10/14 17:01:55 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/14 17:07:32 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/14 17:26:41 Echoed 35 bytes
+clipper: 2019/10/14 17:26:41 Connection closed
+clipper: 2019/10/14 17:26:54 Echoed 35 bytes
+clipper: 2019/10/14 17:26:54 Connection closed
+clipper: 2019/10/14 17:35:04 Echoed 37 bytes
+clipper: 2019/10/14 17:35:04 Connection closed
+clipper: 2019/10/14 17:35:06 Echoed 35 bytes
+clipper: 2019/10/14 17:35:06 Connection closed
+clipper: 2019/10/14 17:47:36 Echoed 189 bytes
+clipper: 2019/10/14 17:47:36 Connection closed
+clipper: 2019/10/14 17:57:15 Echoed 15 bytes
+clipper: 2019/10/14 17:57:15 Connection closed
+clipper: 2019/10/14 18:12:36 Echoed 77 bytes
+clipper: 2019/10/14 18:12:36 Connection closed
+clipper: 2019/10/14 18:22:45 Got signal terminated
+clipper: 2019/10/14 18:22:45 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/14 18:23:58 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/14 18:50:36 Echoed 1523 bytes
+clipper: 2019/10/14 18:50:36 Connection closed
+clipper: 2019/10/14 18:53:44 Got signal terminated
+clipper: 2019/10/14 18:53:44 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/14 20:08:50 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/14 20:32:56 Echoed 30 bytes
+clipper: 2019/10/14 20:32:56 Connection closed
+clipper: 2019/10/14 20:41:40 Echoed 67 bytes
+clipper: 2019/10/14 20:41:40 Connection closed
+clipper: 2019/10/14 20:49:57 Echoed 85 bytes
+clipper: 2019/10/14 20:49:57 Connection closed
+clipper: 2019/10/14 20:51:43 Echoed 20 bytes
+clipper: 2019/10/14 20:51:43 Connection closed
+clipper: 2019/10/14 20:51:46 Echoed 23 bytes
+clipper: 2019/10/14 20:51:46 Connection closed
+clipper: 2019/10/14 20:51:49 Echoed 25 bytes
+clipper: 2019/10/14 20:51:49 Connection closed
+clipper: 2019/10/14 20:52:10 Echoed 439 bytes
+clipper: 2019/10/14 20:52:10 Connection closed
+clipper: 2019/10/14 21:31:06 Echoed 30 bytes
+clipper: 2019/10/14 21:31:07 Connection closed
+clipper: 2019/10/14 21:41:26 Got signal terminated
+clipper: 2019/10/14 21:41:26 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/15 14:32:17 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/15 15:45:42 Got signal terminated
+clipper: 2019/10/15 20:55:52 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/15 22:17:51 Echoed 140 bytes
+clipper: 2019/10/15 22:17:51 Connection closed
+clipper: 2019/10/15 22:23:05 Echoed 109 bytes
+clipper: 2019/10/15 22:23:05 Connection closed
+clipper: 2019/10/15 22:29:54 Echoed 110 bytes
+clipper: 2019/10/15 22:29:54 Connection closed
+clipper: 2019/10/15 22:33:00 Echoed 109 bytes
+clipper: 2019/10/15 22:33:00 Connection closed
+clipper: 2019/10/15 22:41:34 Echoed 54 bytes
+clipper: 2019/10/15 22:41:34 Connection closed
+clipper: 2019/10/15 23:02:16 Echoed 84 bytes
+clipper: 2019/10/15 23:02:16 Connection closed
+clipper: 2019/10/15 23:10:47 Echoed 86 bytes
+clipper: 2019/10/15 23:10:47 Connection closed
+clipper: 2019/10/15 23:22:55 Echoed 86 bytes
+clipper: 2019/10/15 23:22:56 Connection closed
+clipper: 2019/10/15 23:53:26 Echoed 86 bytes
+clipper: 2019/10/15 23:53:26 Connection closed
+clipper: 2019/10/15 23:54:41 Echoed 70 bytes
+clipper: 2019/10/15 23:54:41 Connection closed
+clipper: 2019/10/16 00:08:08 Echoed 44 bytes
+clipper: 2019/10/16 00:08:08 Connection closed
+clipper: 2019/10/16 00:09:32 Echoed 44 bytes
+clipper: 2019/10/16 00:09:32 Connection closed
+clipper: 2019/10/16 00:35:36 Got signal terminated
+clipper: 2019/10/16 00:35:36 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/16 14:22:42 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/16 14:28:08 Echoed 24 bytes
+clipper: 2019/10/16 14:28:08 Connection closed
+clipper: 2019/10/16 14:28:30 Echoed 24 bytes
+clipper: 2019/10/16 14:28:30 Connection closed
+clipper: 2019/10/16 17:30:42 Got signal terminated
+clipper: 2019/10/16 17:30:42 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/16 18:23:32 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/16 18:58:03 Got signal terminated
+clipper: 2019/10/16 19:59:42 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/16 21:08:54 Got signal terminated
+clipper: 2019/10/16 21:35:51 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/16 21:52:31 Echoed 58 bytes
+clipper: 2019/10/16 21:52:31 Connection closed
+clipper: 2019/10/16 21:53:17 Echoed 15 bytes
+clipper: 2019/10/16 21:53:17 Connection closed
+clipper: 2019/10/16 21:53:24 Echoed 130 bytes
+clipper: 2019/10/16 21:53:24 Connection closed
+clipper: 2019/10/16 22:06:28 Echoed 19 bytes
+clipper: 2019/10/16 22:06:28 Connection closed
+clipper: 2019/10/16 22:06:50 Echoed 19 bytes
+clipper: 2019/10/16 22:06:50 Connection closed
+clipper: 2019/10/16 22:07:23 Echoed 30 bytes
+clipper: 2019/10/16 22:07:23 Connection closed
+clipper: 2019/10/16 22:07:33 Echoed 66 bytes
+clipper: 2019/10/16 22:07:33 Connection closed
+clipper: 2019/10/16 22:10:01 Echoed 37 bytes
+clipper: 2019/10/16 22:10:01 Connection closed
+clipper: 2019/10/16 22:31:06 Got signal terminated
+clipper: 2019/10/16 22:31:06 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/17 17:09:16 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/17 18:19:06 Got signal terminated
+clipper: 2019/10/18 00:04:28 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/18 00:14:45 Got signal terminated
+clipper: 2019/10/18 00:17:16 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/18 01:18:53 Got signal terminated
+clipper: 2019/10/18 20:02:02 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/18 20:19:43 Echoed 75 bytes
+clipper: 2019/10/18 20:19:43 Connection closed
+clipper: 2019/10/18 21:08:28 Echoed 19 bytes
+clipper: 2019/10/18 21:08:28 Connection closed
+clipper: 2019/10/18 21:08:41 Echoed 13 bytes
+clipper: 2019/10/18 21:08:41 Connection closed
+clipper: 2019/10/18 21:09:11 Echoed 19 bytes
+clipper: 2019/10/18 21:09:11 Connection closed
+clipper: 2019/10/19 00:39:17 Got signal terminated
+clipper: 2019/10/19 00:39:17 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/19 09:12:04 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/19 10:07:36 Echoed 24 bytes
+clipper: 2019/10/19 10:07:36 Connection closed
+clipper: 2019/10/19 10:07:49 Echoed 24 bytes
+clipper: 2019/10/19 10:07:49 Connection closed
+clipper: 2019/10/19 10:08:51 Echoed 24 bytes
+clipper: 2019/10/19 10:08:51 Connection closed
+clipper: 2019/10/19 11:05:20 Echoed 1 bytes
+clipper: 2019/10/19 11:05:20 Connection closed
+clipper: 2019/10/19 11:05:38 Echoed 4 bytes
+clipper: 2019/10/19 11:05:38 Connection closed
+clipper: 2019/10/19 11:05:56 Echoed 4 bytes
+clipper: 2019/10/19 11:05:56 Connection closed
+clipper: 2019/10/19 11:09:15 Echoed 4 bytes
+clipper: 2019/10/19 11:09:15 Connection closed
+clipper: 2019/10/19 11:12:23 Echoed 4 bytes
+clipper: 2019/10/19 11:12:23 Connection closed
+clipper: 2019/10/19 11:35:03 Echoed 8 bytes
+clipper: 2019/10/19 11:35:03 Connection closed
+clipper: 2019/10/19 11:36:27 Echoed 110 bytes
+clipper: 2019/10/19 11:36:27 Connection closed
+clipper: 2019/10/19 11:37:04 Echoed 134 bytes
+clipper: 2019/10/19 11:37:04 Connection closed
+clipper: 2019/10/19 11:37:47 Echoed 93 bytes
+clipper: 2019/10/19 11:37:47 Connection closed
+clipper: 2019/10/19 11:39:16 Echoed 98 bytes
+clipper: 2019/10/19 11:39:16 Connection closed
+clipper: 2019/10/19 11:39:54 Echoed 119 bytes
+clipper: 2019/10/19 11:39:54 Connection closed
+clipper: 2019/10/19 11:47:03 Echoed 86 bytes
+clipper: 2019/10/19 11:47:03 Connection closed
+clipper: 2019/10/19 12:32:53 Echoed 45 bytes
+clipper: 2019/10/19 12:32:53 Connection closed
+clipper: 2019/10/19 12:59:28 Got signal terminated
+clipper: 2019/10/19 12:59:28 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/19 14:22:06 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/19 14:39:35 Echoed 2 bytes
+clipper: 2019/10/19 14:39:35 Connection closed
+clipper: 2019/10/19 14:39:57 Echoed 337 bytes
+clipper: 2019/10/19 14:39:57 Connection closed
+clipper: 2019/10/19 14:40:01 Echoed 5 bytes
+clipper: 2019/10/19 14:40:01 Connection closed
+clipper: 2019/10/19 15:14:59 Got signal terminated
+clipper: 2019/10/19 15:14:59 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/19 18:31:40 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/19 18:47:08 Echoed 0 bytes
+clipper: 2019/10/19 18:47:08 Connection closed
+clipper: 2019/10/19 18:55:20 Got signal terminated
+clipper: 2019/10/19 18:55:20 accept unix /home/emanon/.clipper.sock: use of closed network connection
+clipper: 2019/10/19 19:11:57 Starting UNIX domain socket server at /home/emanon/.clipper.sock

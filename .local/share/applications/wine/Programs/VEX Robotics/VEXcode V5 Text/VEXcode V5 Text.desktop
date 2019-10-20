@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=VEXcode V5 Text
+Exec=env WINEPREFIX="/home/emanon/.wine" wine-stable C:\\\\windows\\\\command\\\\start.exe /Unix /home/emanon/.wine/dosdevices/c:/users/emanon/Start\\ Menu/Programs/VEX\\ Robotics/VEXcode\\ V5\\ Text/VEXcode\\ V5\\ Text.lnk
+Type=Application
+StartupNotify=true
+Path=/home/emanon/.wine/dosdevices/c:/Program Files (x86)/VEX Robotics/VEXcode V5 Text/
+Icon=FC07_VEXcode_V5_Text.ex_0E743FDE885F494ABC2E1FB7B7B35E82.0
+StartupWMClass=vexcode v5 text.exe

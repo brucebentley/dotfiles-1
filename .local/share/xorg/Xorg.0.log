@@ -1,0 +1,440 @@
+[   139.585] 
+X.Org X Server 1.20.4
+X Protocol Version 11, Revision 0
+[   139.585] Build Operating System: Linux 4.9.0-8-amd64 x86_64 Debian
+[   139.585] Current Operating System: Linux toaster 5.2.0-kali3-amd64 #1 SMP Debian 5.2.17-1kali2 (2019-10-17) x86_64
+[   139.585] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.2.0-kali3-amd64 root=UUID=5512655c-0155-47d0-86c3-489cbc7a105f ro ipv6.disable=1 zswap.enabled=1 zswap.compressor=lz4 quiet text
+[   139.585] Build Date: 05 March 2019  08:11:12PM
+[   139.586] xorg-server 2:1.20.4-1 (https://www.debian.org/support) 
+[   139.586] Current version of pixman: 0.36.0
+[   139.586] 	Before reporting problems, check http://wiki.x.org
+	to make sure that you have the latest version.
+[   139.586] Markers: (--) probed, (**) from config file, (==) default setting,
+	(++) from command line, (!!) notice, (II) informational,
+	(WW) warning, (EE) error, (NI) not implemented, (??) unknown.
+[   139.586] (==) Log file: "/home/emanon/.local/share/xorg/Xorg.0.log", Time: Sat Oct 19 19:13:12 2019
+[   139.587] (==) Using config file: "/etc/X11/xorg.conf"
+[   139.587] (==) Using system config directory "/usr/share/X11/xorg.conf.d"
+[   139.587] (==) No Layout section.  Using the first Screen section.
+[   139.587] (==) No screen section available. Using defaults.
+[   139.587] (**) |-->Screen "Default Screen Section" (0)
+[   139.587] (**) |   |-->Monitor "<default monitor>"
+[   139.588] (==) No device specified for screen "Default Screen Section".
+	Using the first device section listed.
+[   139.588] (**) |   |-->Device "Intel Graphics"
+[   139.588] (**) |   |-->GPUDevice "Card0"
+[   139.588] (==) No monitor specified for screen "Default Screen Section".
+	Using a default monitor configuration.
+[   139.588] (==) Automatically adding devices
+[   139.588] (==) Automatically enabling devices
+[   139.588] (==) Automatically adding GPU devices
+[   139.588] (==) Max clients allowed: 256, resource mask: 0x1fffff
+[   139.588] (WW) The directory "/usr/share/fonts/X11/cyrillic" does not exist.
+[   139.588] 	Entry deleted from font path.
+[   139.588] (==) FontPath set to:
+	/usr/share/fonts/X11/misc,
+	/usr/share/fonts/X11/100dpi/:unscaled,
+	/usr/share/fonts/X11/75dpi/:unscaled,
+	/usr/share/fonts/X11/Type1,
+	/usr/share/fonts/X11/100dpi,
+	/usr/share/fonts/X11/75dpi,
+	built-ins
+[   139.588] (==) ModulePath set to "/usr/lib/xorg/modules"
+[   139.588] (II) The server relies on udev to provide the list of input devices.
+	If no devices become available, reconfigure udev or disable AutoAddDevices.
+[   139.588] (II) Loader magic: 0x56403ba82e20
+[   139.588] (II) Module ABI versions:
+[   139.588] 	X.Org ANSI C Emulation: 0.4
+[   139.588] 	X.Org Video Driver: 24.0
+[   139.588] 	X.Org XInput driver : 24.1
+[   139.588] 	X.Org Server Extension : 10.0
+[   139.590] (++) using VT number 1
+
+[   139.594] (II) systemd-logind: took control of session /org/freedesktop/login1/session/_31
+[   139.595] (II) xfree86: Adding drm device (/dev/dri/card0)
+[   139.597] (II) systemd-logind: got fd for /dev/dri/card0 226:0 fd 11 paused 0
+[   139.601] (--) PCI:*(0@0:2:0) 8086:5917:1043:1d30 rev 7, Mem @ 0xee000000/16777216, 0xd0000000/268435456, I/O @ 0x0000f000/64, BIOS @ 0x????????/131072
+[   139.601] (II) LoadModule: "glx"
+[   139.601] (II) Loading /usr/lib/xorg/modules/extensions/libglx.so
+[   139.603] (II) Module glx: vendor="X.Org Foundation"
+[   139.603] 	compiled for 1.20.4, module version = 1.0.0
+[   139.603] 	ABI class: X.Org Server Extension, version 10.0
+[   139.603] (II) LoadModule: "intel"
+[   139.603] (II) Loading /usr/lib/xorg/modules/drivers/intel_drv.so
+[   139.603] (II) Module intel: vendor="X.Org Foundation"
+[   139.603] 	compiled for 1.20.4, module version = 2.99.917
+[   139.603] 	Module class: X.Org Video Driver
+[   139.603] 	ABI class: X.Org Video Driver, version 24.0
+[   139.603] (II) intel: Driver for Intel(R) Integrated Graphics Chipsets:
+	i810, i810-dc100, i810e, i815, i830M, 845G, 854, 852GM/855GM, 865G,
+	915G, E7221 (i915), 915GM, 945G, 945GM, 945GME, Pineview GM,
+	Pineview G, 965G, G35, 965Q, 946GZ, 965GM, 965GME/GLE, G33, Q35, Q33,
+	GM45, 4 Series, G45/G43, Q45/Q43, G41, B43
+[   139.604] (II) intel: Driver for Intel(R) HD Graphics
+[   139.604] (II) intel: Driver for Intel(R) Iris(TM) Graphics
+[   139.604] (II) intel: Driver for Intel(R) Iris(TM) Pro Graphics
+[   139.604] xf86EnableIOPorts: failed to set IOPL for I/O (Operation not permitted)
+[   139.604] (II) intel(0): Using Kernel Mode Setting driver: i915, version 1.6.0 20190417
+[   139.604] (II) intel(0): SNA compiled: xserver-xorg-video-intel 2:2.99.917+git20190815-1 (Timo Aaltonen <tjaalton@debian.org>)
+[   139.604] (II) intel(0): SNA compiled for use with valgrind
+[   139.626] (WW) VGA arbiter: cannot open kernel arbiter, no multi-card support
+[   139.626] (--) intel(0): gen9 engineering sample
+[   139.626] (--) intel(0): CPU: x86-64, sse2, sse3, ssse3, sse4.1, sse4.2, avx, avx2; using a maximum of 4 threads
+[   139.626] (II) intel(0): Creating default Display subsection in Screen section
+	"Default Screen Section" for depth/fbbpp 24/32
+[   139.626] (==) intel(0): Depth 24, (--) framebuffer bpp 32
+[   139.626] (==) intel(0): RGB weight 888
+[   139.626] (==) intel(0): Default visual is TrueColor
+[   139.626] (**) intel(0): Option "Backlight" "/sys/class/backlight/intel_backlight"
+[   139.627] (II) intel(0): Output eDP1 has no monitor section
+[   139.628] (EE) intel(0): Unrecognised backlight control interface '/sys/class/backlight/intel_backlight'
+[   139.637] (**) intel(0): Found backlight control interface intel_backlight (type 'raw') for output eDP1
+[   139.637] (II) intel(0): Enabled output eDP1
+[   139.637] (II) intel(0): Output HDMI1 has no monitor section
+[   139.637] (II) intel(0): Enabled output HDMI1
+[   139.637] (--) intel(0): Using a maximum size of 256x256 for hardware cursors
+[   139.637] (II) intel(0): Output VIRTUAL1 has no monitor section
+[   139.637] (II) intel(0): Enabled output VIRTUAL1
+[   139.637] (--) intel(0): Output eDP1 using initial mode 1920x1080 on pipe 0
+[   139.637] (==) intel(0): TearFree disabled
+[   139.638] (==) intel(0): Using gamma correction (1.0, 1.0, 1.0)
+[   139.638] (==) intel(0): DPI set to (96, 96)
+[   139.638] (II) Loading sub module "dri3"
+[   139.638] (II) LoadModule: "dri3"
+[   139.638] (II) Module "dri3" already built-in
+[   139.638] (II) Loading sub module "dri2"
+[   139.638] (II) LoadModule: "dri2"
+[   139.638] (II) Module "dri2" already built-in
+[   139.638] (II) Loading sub module "present"
+[   139.638] (II) LoadModule: "present"
+[   139.638] (II) Module "present" already built-in
+[   139.638] (II) intel(0): SNA initialized with Kabylake (gen9) backend
+[   139.638] (==) intel(0): Backing store enabled
+[   139.638] (==) intel(0): Silken mouse enabled
+[   139.638] (II) intel(0): HW Cursor enabled
+[   139.639] (==) intel(0): DPMS enabled
+[   139.639] (==) intel(0): Display hotplug detection enabled
+[   139.639] (II) intel(0): [DRI2] Setup complete
+[   139.639] (II) intel(0): [DRI2]   DRI driver: i965
+[   139.639] (II) intel(0): [DRI2]   VDPAU driver: va_gl
+[   139.639] (II) intel(0): direct rendering: DRI2 enabled
+[   139.639] (II) intel(0): hardware support for Present enabled
+[   139.639] (II) Initializing extension Generic Event Extension
+[   139.640] (II) Initializing extension SHAPE
+[   139.640] (II) Initializing extension MIT-SHM
+[   139.640] (II) Initializing extension XInputExtension
+[   139.641] (II) Initializing extension XTEST
+[   139.641] (II) Initializing extension BIG-REQUESTS
+[   139.641] (II) Initializing extension SYNC
+[   139.641] (II) Initializing extension XKEYBOARD
+[   139.642] (II) Initializing extension XC-MISC
+[   139.642] (II) Initializing extension SECURITY
+[   139.642] (II) Initializing extension XFIXES
+[   139.643] (II) Initializing extension RENDER
+[   139.643] (II) Initializing extension RANDR
+[   139.644] (II) Initializing extension COMPOSITE
+[   139.644] (II) Initializing extension DAMAGE
+[   139.644] (II) Initializing extension MIT-SCREEN-SAVER
+[   139.644] (II) Initializing extension DOUBLE-BUFFER
+[   139.645] (II) Initializing extension RECORD
+[   139.645] (II) Initializing extension DPMS
+[   139.645] (II) Initializing extension Present
+[   139.646] (II) Initializing extension DRI3
+[   139.646] (II) Initializing extension X-Resource
+[   139.646] (II) Initializing extension XVideo
+[   139.646] (II) Initializing extension XVideo-MotionCompensation
+[   139.646] (II) Initializing extension SELinux
+[   139.646] (II) SELinux: Disabled on system
+[   139.646] (II) Initializing extension GLX
+[   139.659] (II) AIGLX: Loaded and initialized i965
+[   139.659] (II) GLX: Initialized DRI2 GL provider for screen 0
+[   139.659] (II) Initializing extension XFree86-VidModeExtension
+[   139.659] (II) Initializing extension XFree86-DGA
+[   139.659] (II) Initializing extension XFree86-DRI
+[   139.659] (II) Initializing extension DRI2
+[   139.662] (II) intel(0): switch to mode 1920x1080@60.0 on eDP1 using pipe 0, position (0, 0), rotation normal, reflection none
+[   139.667] (II) intel(0): Setting screen physical size to 508 x 285
+[   139.694] (II) config/udev: Adding input device Power Button (/dev/input/event4)
+[   139.694] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[   139.694] (II) LoadModule: "libinput"
+[   139.694] (II) Loading /usr/lib/xorg/modules/input/libinput_drv.so
+[   139.695] (II) Module libinput: vendor="X.Org Foundation"
+[   139.695] 	compiled for 1.20.4, module version = 0.29.0
+[   139.695] 	Module class: X.Org XInput Driver
+[   139.695] 	ABI class: X.Org XInput driver, version 24.1
+[   139.695] (II) Using input driver 'libinput' for 'Power Button'
+[   139.696] (II) systemd-logind: got fd for /dev/input/event4 13:68 fd 21 paused 0
+[   139.696] (**) Power Button: always reports core events
+[   139.696] (**) Option "Device" "/dev/input/event4"
+[   139.696] (**) Option "_source" "server/udev"
+[   139.697] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[   139.697] (II) event4  - Power Button: device is a keyboard
+[   139.697] (II) event4  - Power Button: device removed
+[   139.697] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXPWRBN:00/input/input4/event4"
+[   139.697] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 6)
+[   139.697] (**) Option "xkb_model" "pc105"
+[   139.697] (**) Option "xkb_layout" "us"
+[   139.698] (II) event4  - Power Button: is tagged by udev as: Keyboard
+[   139.698] (II) event4  - Power Button: device is a keyboard
+[   139.698] (II) config/udev: Adding input device Asus Wireless Radio Control (/dev/input/event10)
+[   139.698] (**) Asus Wireless Radio Control: Applying InputClass "libinput keyboard catchall"
+[   139.698] (II) Using input driver 'libinput' for 'Asus Wireless Radio Control'
+[   139.699] (II) systemd-logind: got fd for /dev/input/event10 13:74 fd 24 paused 0
+[   139.699] (**) Asus Wireless Radio Control: always reports core events
+[   139.699] (**) Option "Device" "/dev/input/event10"
+[   139.699] (**) Option "_source" "server/udev"
+[   139.700] (II) event10 - Asus Wireless Radio Control: is tagged by udev as: Keyboard
+[   139.700] (II) event10 - Asus Wireless Radio Control: device is a keyboard
+[   139.700] (II) event10 - Asus Wireless Radio Control: device removed
+[   139.700] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ATK4002:00/input/input10/event10"
+[   139.700] (II) XINPUT: Adding extended input device "Asus Wireless Radio Control" (type: KEYBOARD, id 7)
+[   139.700] (**) Option "xkb_model" "pc105"
+[   139.700] (**) Option "xkb_layout" "us"
+[   139.700] (II) event10 - Asus Wireless Radio Control: is tagged by udev as: Keyboard
+[   139.700] (II) event10 - Asus Wireless Radio Control: device is a keyboard
+[   139.701] (II) config/udev: Adding input device Video Bus (/dev/input/event5)
+[   139.701] (**) Video Bus: Applying InputClass "libinput keyboard catchall"
+[   139.701] (II) Using input driver 'libinput' for 'Video Bus'
+[   139.702] (II) systemd-logind: got fd for /dev/input/event5 13:69 fd 25 paused 0
+[   139.702] (**) Video Bus: always reports core events
+[   139.702] (**) Option "Device" "/dev/input/event5"
+[   139.702] (**) Option "_source" "server/udev"
+[   139.702] (II) event5  - Video Bus: is tagged by udev as: Keyboard
+[   139.702] (II) event5  - Video Bus: device is a keyboard
+[   139.702] (II) event5  - Video Bus: device removed
+[   139.702] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A08:00/LNXVIDEO:00/input/input5/event5"
+[   139.702] (II) XINPUT: Adding extended input device "Video Bus" (type: KEYBOARD, id 8)
+[   139.702] (**) Option "xkb_model" "pc105"
+[   139.702] (**) Option "xkb_layout" "us"
+[   139.703] (II) event5  - Video Bus: is tagged by udev as: Keyboard
+[   139.703] (II) event5  - Video Bus: device is a keyboard
+[   139.703] (II) config/udev: Adding input device Lid Switch (/dev/input/event1)
+[   139.703] (II) No input driver specified, ignoring this device.
+[   139.703] (II) This device may have been added with another device file.
+[   139.704] (II) config/udev: Adding input device Power Button (/dev/input/event3)
+[   139.704] (**) Power Button: Applying InputClass "libinput keyboard catchall"
+[   139.704] (II) Using input driver 'libinput' for 'Power Button'
+[   139.705] (II) systemd-logind: got fd for /dev/input/event3 13:67 fd 26 paused 0
+[   139.705] (**) Power Button: always reports core events
+[   139.705] (**) Option "Device" "/dev/input/event3"
+[   139.705] (**) Option "_source" "server/udev"
+[   139.705] (II) event3  - Power Button: is tagged by udev as: Keyboard
+[   139.705] (II) event3  - Power Button: device is a keyboard
+[   139.705] (II) event3  - Power Button: device removed
+[   139.705] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0C:00/input/input3/event3"
+[   139.705] (II) XINPUT: Adding extended input device "Power Button" (type: KEYBOARD, id 9)
+[   139.705] (**) Option "xkb_model" "pc105"
+[   139.705] (**) Option "xkb_layout" "us"
+[   139.706] (II) event3  - Power Button: is tagged by udev as: Keyboard
+[   139.706] (II) event3  - Power Button: device is a keyboard
+[   139.706] (II) config/udev: Adding input device Sleep Button (/dev/input/event2)
+[   139.706] (**) Sleep Button: Applying InputClass "libinput keyboard catchall"
+[   139.706] (II) Using input driver 'libinput' for 'Sleep Button'
+[   139.707] (II) systemd-logind: got fd for /dev/input/event2 13:66 fd 27 paused 0
+[   139.707] (**) Sleep Button: always reports core events
+[   139.707] (**) Option "Device" "/dev/input/event2"
+[   139.707] (**) Option "_source" "server/udev"
+[   139.708] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[   139.708] (II) event2  - Sleep Button: device is a keyboard
+[   139.708] (II) event2  - Sleep Button: device removed
+[   139.708] (**) Option "config_info" "udev:/sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0E:00/input/input2/event2"
+[   139.708] (II) XINPUT: Adding extended input device "Sleep Button" (type: KEYBOARD, id 10)
+[   139.708] (**) Option "xkb_model" "pc105"
+[   139.708] (**) Option "xkb_layout" "us"
+[   139.708] (II) event2  - Sleep Button: is tagged by udev as: Keyboard
+[   139.708] (II) event2  - Sleep Button: device is a keyboard
+[   139.709] (II) config/udev: Adding input device Lenovo Lenovo Y Gaming Precision Mouse (/dev/input/event8)
+[   139.709] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "libinput pointer catchall"
+[   139.709] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "libinput keyboard catchall"
+[   139.709] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "My Mouse"
+[   139.709] (II) Using input driver 'libinput' for 'Lenovo Lenovo Y Gaming Precision Mouse'
+[   139.710] (II) systemd-logind: got fd for /dev/input/event8 13:72 fd 28 paused 0
+[   139.710] (**) Lenovo Lenovo Y Gaming Precision Mouse: always reports core events
+[   139.710] (**) Option "Device" "/dev/input/event8"
+[   139.710] (**) Option "_source" "server/udev"
+[   139.711] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: is tagged by udev as: Keyboard Mouse
+[   139.711] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: device is a pointer
+[   139.711] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: device is a keyboard
+[   139.711] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: device removed
+[   139.711] (**) Option "AccelProfile" "flat"
+[   139.711] (II) libinput: Lenovo Lenovo Y Gaming Precision Mouse: needs a virtual subdevice
+[   139.711] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:17EF:6078.0002/input/input8/event8"
+[   139.711] (II) XINPUT: Adding extended input device "Lenovo Lenovo Y Gaming Precision Mouse" (type: MOUSE, id 11)
+[   139.711] (**) Option "AccelerationScheme" "none"
+[   139.711] (**) Lenovo Lenovo Y Gaming Precision Mouse: (accel) selected scheme none/0
+[   139.711] (**) Lenovo Lenovo Y Gaming Precision Mouse: (accel) acceleration factor: 2.000
+[   139.711] (**) Lenovo Lenovo Y Gaming Precision Mouse: (accel) acceleration threshold: 4
+[   139.712] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: is tagged by udev as: Keyboard Mouse
+[   139.712] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: device is a pointer
+[   139.712] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: device is a keyboard
+[   139.713] (II) config/udev: Adding input device Lenovo Lenovo Y Gaming Precision Mouse (/dev/input/mouse2)
+[   139.713] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "My Mouse"
+[   139.713] (II) Using input driver 'libinput' for 'Lenovo Lenovo Y Gaming Precision Mouse'
+[   139.713] (**) Lenovo Lenovo Y Gaming Precision Mouse: always reports core events
+[   139.713] (**) Option "Device" "/dev/input/mouse2"
+[   139.713] (**) Option "_source" "server/udev"
+[   139.713] (EE) xf86OpenSerial: Cannot open device /dev/input/mouse2
+	Permission denied.
+[   139.713] (II) mouse2: opening input device '/dev/input/mouse2' failed (Permission denied).
+[   139.713] (II) mouse2  - failed to create input device '/dev/input/mouse2'.
+[   139.713] (EE) libinput: Lenovo Lenovo Y Gaming Precision Mouse: Failed to create a device for /dev/input/mouse2
+[   139.713] (EE) PreInit returned 2 for "Lenovo Lenovo Y Gaming Precision Mouse"
+[   139.713] (II) UnloadModule: "libinput"
+[   139.713] (II) config/udev: Adding input device Lenovo Lenovo Y Gaming Precision Mouse Consumer Control (/dev/input/event9)
+[   139.713] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: Applying InputClass "libinput keyboard catchall"
+[   139.713] (II) Using input driver 'libinput' for 'Lenovo Lenovo Y Gaming Precision Mouse Consumer Control'
+[   139.714] (II) systemd-logind: got fd for /dev/input/event9 13:73 fd 29 paused 0
+[   139.714] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: always reports core events
+[   139.714] (**) Option "Device" "/dev/input/event9"
+[   139.714] (**) Option "_source" "server/udev"
+[   139.715] (II) event9  - Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: is tagged by udev as: Keyboard
+[   139.715] (II) event9  - Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: device is a keyboard
+[   139.715] (II) event9  - Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: device removed
+[   139.715] (II) libinput: Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: needs a virtual subdevice
+[   139.715] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:17EF:6078.0002/input/input9/event9"
+[   139.715] (II) XINPUT: Adding extended input device "Lenovo Lenovo Y Gaming Precision Mouse Consumer Control" (type: MOUSE, id 12)
+[   139.715] (**) Option "AccelerationScheme" "none"
+[   139.715] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: (accel) selected scheme none/0
+[   139.715] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: (accel) acceleration factor: 2.000
+[   139.715] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: (accel) acceleration threshold: 4
+[   139.716] (II) event9  - Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: is tagged by udev as: Keyboard
+[   139.716] (II) event9  - Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: device is a keyboard
+[   139.717] (II) config/udev: Adding input device ELAN1300:00 04F3:3057 Touchpad (/dev/input/event6)
+[   139.717] (**) ELAN1300:00 04F3:3057 Touchpad: Applying InputClass "libinput touchpad catchall"
+[   139.717] (**) ELAN1300:00 04F3:3057 Touchpad: Applying InputClass "touchpad catchall"
+[   139.717] (**) ELAN1300:00 04F3:3057 Touchpad: Applying InputClass "Default clickpad buttons"
+[   139.717] (**) ELAN1300:00 04F3:3057 Touchpad: Applying InputClass "touchpad"
+[   139.717] (II) LoadModule: "synaptics"
+[   139.717] (II) Loading /usr/lib/xorg/modules/input/synaptics_drv.so
+[   139.717] (II) Module synaptics: vendor="X.Org Foundation"
+[   139.717] 	compiled for 1.20.1, module version = 1.9.1
+[   139.717] 	Module class: X.Org XInput Driver
+[   139.717] 	ABI class: X.Org XInput driver, version 24.1
+[   139.717] (II) Using input driver 'synaptics' for 'ELAN1300:00 04F3:3057 Touchpad'
+[   139.826] (II) systemd-logind: got fd for /dev/input/event6 13:70 fd 30 paused 0
+[   139.826] (**) ELAN1300:00 04F3:3057 Touchpad: always reports core events
+[   139.826] (**) Option "Device" "/dev/input/event6"
+[   139.826] (II) synaptics: ELAN1300:00 04F3:3057 Touchpad: found clickpad property
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: x-axis range 0 - 3208 (res 31)
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: y-axis range 0 - 2210 (res 32)
+[   139.826] (II) synaptics: ELAN1300:00 04F3:3057 Touchpad: device does not report pressure, will use touch data.
+[   139.826] (II) synaptics: ELAN1300:00 04F3:3057 Touchpad: device does not report finger width.
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: buttons: left double triple
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: Vendor 0x4f3 Product 0x3057
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: invalid pressure range.  defaulting to 0 - 255
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: invalid finger width range.  defaulting to 0 - 15
+[   139.826] (**) Option "FingerLow" "30"
+[   139.826] (**) Option "FingerHigh" "50"
+[   139.826] (**) Option "MaxTapTime" "200"
+[   139.826] (**) Option "EmulateTwoFingerMinZ" "40"
+[   139.826] (**) Option "EmulateTwoFingerMinW" "8"
+[   139.826] (**) Option "VertEdgeScroll" "on"
+[   139.826] (**) Option "HorizEdgeScroll" "on"
+[   139.826] (**) Option "VertTwoFingerScroll" "on"
+[   139.826] (**) Option "HorizTwoFingerScroll" "on"
+[   139.826] (**) Option "TapButton1" "1"
+[   139.826] (**) Option "TapButton2" "3"
+[   139.826] (**) Option "TapButton3" "2"
+[   139.826] (**) Option "CircularScrolling" "on"
+[   139.826] (**) Option "CircScrollTrigger" "2"
+[   139.826] (**) Option "CoastingSpeed" "0"
+[   139.826] (**) Option "SoftButtonAreas" "50% 0 82% 0 0 0 0 0"
+[   139.826] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: touchpad found
+[   139.826] (**) ELAN1300:00 04F3:3057 Touchpad: always reports core events
+[   139.826] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:15.1/i2c_designware.1/i2c-6/i2c-ELAN1300:00/0018:04F3:3057.0001/input/input13/event6"
+[   139.826] (II) XINPUT: Adding extended input device "ELAN1300:00 04F3:3057 Touchpad" (type: TOUCHPAD, id 13)
+[   139.826] (**) synaptics: ELAN1300:00 04F3:3057 Touchpad: (accel) MinSpeed is now constant deceleration 2.5
+[   139.826] (**) synaptics: ELAN1300:00 04F3:3057 Touchpad: (accel) MaxSpeed is now 1.75
+[   139.826] (**) synaptics: ELAN1300:00 04F3:3057 Touchpad: (accel) AccelFactor is now 0.051
+[   139.827] (**) ELAN1300:00 04F3:3057 Touchpad: (accel) keeping acceleration scheme 1
+[   139.827] (**) ELAN1300:00 04F3:3057 Touchpad: (accel) acceleration profile 1
+[   139.827] (**) ELAN1300:00 04F3:3057 Touchpad: (accel) acceleration factor: 2.000
+[   139.827] (**) ELAN1300:00 04F3:3057 Touchpad: (accel) acceleration threshold: 4
+[   139.827] (--) synaptics: ELAN1300:00 04F3:3057 Touchpad: touchpad found
+[   139.827] (II) config/udev: Adding input device ELAN1300:00 04F3:3057 Touchpad (/dev/input/mouse0)
+[   139.827] (**) ELAN1300:00 04F3:3057 Touchpad: Ignoring device from InputClass "touchpad ignore duplicates"
+[   139.828] (II) config/udev: Adding input device HDA Intel PCH Mic (/dev/input/event12)
+[   139.828] (II) No input driver specified, ignoring this device.
+[   139.828] (II) This device may have been added with another device file.
+[   139.828] (II) config/udev: Adding input device HDA Intel PCH Headphone (/dev/input/event13)
+[   139.828] (II) No input driver specified, ignoring this device.
+[   139.828] (II) This device may have been added with another device file.
+[   139.828] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=3 (/dev/input/event14)
+[   139.828] (II) No input driver specified, ignoring this device.
+[   139.828] (II) This device may have been added with another device file.
+[   139.829] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=7 (/dev/input/event15)
+[   139.829] (II) No input driver specified, ignoring this device.
+[   139.829] (II) This device may have been added with another device file.
+[   139.829] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=8 (/dev/input/event16)
+[   139.829] (II) No input driver specified, ignoring this device.
+[   139.829] (II) This device may have been added with another device file.
+[   139.829] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=9 (/dev/input/event17)
+[   139.829] (II) No input driver specified, ignoring this device.
+[   139.829] (II) This device may have been added with another device file.
+[   139.830] (II) config/udev: Adding input device HDA Intel PCH HDMI/DP,pcm=10 (/dev/input/event18)
+[   139.830] (II) No input driver specified, ignoring this device.
+[   139.830] (II) This device may have been added with another device file.
+[   139.830] (II) config/udev: Adding input device Asus WMI hotkeys (/dev/input/event7)
+[   139.830] (**) Asus WMI hotkeys: Applying InputClass "libinput keyboard catchall"
+[   139.830] (II) Using input driver 'libinput' for 'Asus WMI hotkeys'
+[   139.831] (II) systemd-logind: got fd for /dev/input/event7 13:71 fd 31 paused 0
+[   139.831] (**) Asus WMI hotkeys: always reports core events
+[   139.831] (**) Option "Device" "/dev/input/event7"
+[   139.831] (**) Option "_source" "server/udev"
+[   139.832] (II) event7  - Asus WMI hotkeys: is tagged by udev as: Keyboard
+[   139.832] (II) event7  - Asus WMI hotkeys: device is a keyboard
+[   139.832] (II) event7  - Asus WMI hotkeys: device removed
+[   139.832] (**) Option "config_info" "udev:/sys/devices/platform/asus-nb-wmi/input/input14/event7"
+[   139.832] (II) XINPUT: Adding extended input device "Asus WMI hotkeys" (type: KEYBOARD, id 14)
+[   139.832] (**) Option "xkb_model" "pc105"
+[   139.832] (**) Option "xkb_layout" "us"
+[   139.833] (II) event7  - Asus WMI hotkeys: is tagged by udev as: Keyboard
+[   139.833] (II) event7  - Asus WMI hotkeys: device is a keyboard
+[   139.834] (II) config/udev: Adding input device AT Translated Set 2 keyboard (/dev/input/event0)
+[   139.834] (**) AT Translated Set 2 keyboard: Applying InputClass "libinput keyboard catchall"
+[   139.834] (II) Using input driver 'libinput' for 'AT Translated Set 2 keyboard'
+[   139.835] (II) systemd-logind: got fd for /dev/input/event0 13:64 fd 32 paused 0
+[   139.835] (**) AT Translated Set 2 keyboard: always reports core events
+[   139.835] (**) Option "Device" "/dev/input/event0"
+[   139.835] (**) Option "_source" "server/udev"
+[   139.836] (II) event0  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[   139.837] (II) event0  - AT Translated Set 2 keyboard: device is a keyboard
+[   139.837] (II) event0  - AT Translated Set 2 keyboard: device removed
+[   139.837] (**) Option "config_info" "udev:/sys/devices/platform/i8042/serio0/input/input0/event0"
+[   139.837] (II) XINPUT: Adding extended input device "AT Translated Set 2 keyboard" (type: KEYBOARD, id 15)
+[   139.837] (**) Option "xkb_model" "pc105"
+[   139.837] (**) Option "xkb_layout" "us"
+[   139.839] (II) event0  - AT Translated Set 2 keyboard: is tagged by udev as: Keyboard
+[   139.839] (II) event0  - AT Translated Set 2 keyboard: device is a keyboard
+[   139.840] (II) config/udev: Adding input device PC Speaker (/dev/input/event11)
+[   139.840] (II) No input driver specified, ignoring this device.
+[   139.840] (II) This device may have been added with another device file.
+[   139.851] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "libinput pointer catchall"
+[   139.851] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "libinput keyboard catchall"
+[   139.851] (**) Lenovo Lenovo Y Gaming Precision Mouse: Applying InputClass "My Mouse"
+[   139.851] (II) Using input driver 'libinput' for 'Lenovo Lenovo Y Gaming Precision Mouse'
+[   139.851] (II) systemd-logind: returning pre-existing fd for /dev/input/event8 13:72
+[   139.851] (**) Lenovo Lenovo Y Gaming Precision Mouse: always reports core events
+[   139.851] (**) Option "Device" "/dev/input/event8"
+[   139.851] (**) Option "_source" "_driver/libinput"
+[   139.851] (II) libinput: Lenovo Lenovo Y Gaming Precision Mouse: is a virtual subdevice
+[   139.851] (**) Option "AccelProfile" "flat"
+[   139.851] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:17EF:6078.0002/input/input8/event8"
+[   139.851] (II) XINPUT: Adding extended input device "Lenovo Lenovo Y Gaming Precision Mouse" (type: KEYBOARD, id 16)
+[   139.851] (**) Option "xkb_model" "pc105"
+[   139.851] (**) Option "xkb_layout" "us"
+[   139.851] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: Applying InputClass "libinput keyboard catchall"
+[   139.851] (II) Using input driver 'libinput' for 'Lenovo Lenovo Y Gaming Precision Mouse Consumer Control'
+[   139.851] (II) systemd-logind: returning pre-existing fd for /dev/input/event9 13:73
+[   139.851] (**) Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: always reports core events
+[   139.851] (**) Option "Device" "/dev/input/event9"
+[   139.851] (**) Option "_source" "_driver/libinput"
+[   139.851] (II) libinput: Lenovo Lenovo Y Gaming Precision Mouse Consumer Control: is a virtual subdevice
+[   139.851] (**) Option "config_info" "udev:/sys/devices/pci0000:00/0000:00:14.0/usb1/1-3/1-3:1.0/0003:17EF:6078.0002/input/input9/event9"
+[   139.851] (II) XINPUT: Adding extended input device "Lenovo Lenovo Y Gaming Precision Mouse Consumer Control" (type: KEYBOARD, id 17)
+[   139.851] (**) Option "xkb_model" "pc105"
+[   139.851] (**) Option "xkb_layout" "us"
+[   141.641] (II) intel(0): EDID vendor "LGD", prod id 1395
+[   141.641] (II) intel(0): Printing DDC gathered Modelines:
+[   141.641] (II) intel(0): Modeline "1920x1080"x0.0  138.60  1920 1968 2000 2080  1080 1083 1088 1111 -hsync -vsync (66.6 kHz eP)
+[  4460.470] (II) event8  - Lenovo Lenovo Y Gaming Precision Mouse: SYN_DROPPED event - some input events have been lost.

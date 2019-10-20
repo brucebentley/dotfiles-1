@@ -1,0 +1,14 @@
+Q
+rename Videos
+rm
+rm -r
+delete
+set colorscheme jungle
+set colorscheme snow
+set colorscheme solarized
+hidden
+search .conifg
+search .config
+show hidden?
+
+delete 

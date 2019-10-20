@@ -1,0 +1,24 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+"http://www.freedesktop.org/standards/menu-spec/menu-1.0.dtd">
+<Menu>
+  <Name>Applications</Name>
+  <Menu>
+    <Name>wine-wine</Name>
+    <Directory>wine-wine.directory</Directory>
+  <Menu>
+    <Name>wine-Programs</Name>
+    <Directory>wine-Programs.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-VEX Robotics</Name>
+    <Directory>wine-Programs-VEX Robotics.directory</Directory>
+  <Menu>
+    <Name>wine-Programs-VEX Robotics-VEXcode V5 Text</Name>
+    <Directory>wine-Programs-VEX Robotics-VEXcode V5 Text.directory</Directory>
+    <Include>
+      <Filename>wine-Programs-VEX Robotics-VEXcode V5 Text-VEXcode V5 Text.desktop</Filename>
+    </Include>
+  </Menu>
+  </Menu>
+  </Menu>
+  </Menu>
+</Menu>
