@@ -4,3 +4,150 @@
 [submodule ".vim/pack/bundle/opt/--force"]
 	path = .vim/pack/bundle/opt/--force
 	url = https://github.com/chriskempson/base16-vim/
+[submodule ".vim/pack/bundle/opt/Command-T"]
+	path = .vim/pack/bundle/opt/Command-T
+	url = https://github.com/wincent/Command-T
+[submodule ".vim/pack/bundle/opt/deoplete.nvim"]
+	path = .vim/pack/bundle/opt/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule ".vim/pack/bundle/opt/ferret"]
+	path = .vim/pack/bundle/opt/ferret
+	url = https://github.com/wincent/ferret
+[submodule ".vim/pack/bundle/opt/float-preview.nvim"]
+	path = .vim/pack/bundle/opt/float-preview.nvim
+	url = https://github.com/ncm2/float-preview.nvim
+[submodule ".vim/pack/bundle/opt/goyo.vim"]
+	path = .vim/pack/bundle/opt/goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/pack/bundle/opt/indentLine"]
+	path = .vim/pack/bundle/opt/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule ".vim/pack/bundle/opt/LanguageClient-neovim"]
+	path = .vim/pack/bundle/opt/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule ".vim/pack/bundle/opt/https:/github.com/eagletmt/neco-ghc"]
+	path = .vim/pack/bundle/opt/https:/github.com/eagletmt/neco-ghc
+	url = https://github.com/wincent/loupe
+[submodule ".vim/pack/bundle/opt/loupe"]
+	path = .vim/pack/bundle/opt/loupe
+	url = https://github.com/wincent/loupe
+[submodule ".vim/pack/bundle/opt/neco-ghc"]
+	path = .vim/pack/bundle/opt/neco-ghc
+	url = https://github.com/eagletmt/neco-ghc
+[submodule ".vim/pack/bundle/opt/nerdtree"]
+	path = .vim/pack/bundle/opt/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule ".vim/pack/bundle/opt/pinnacle"]
+	path = .vim/pack/bundle/opt/pinnacle
+	url = https://github.com/wincent/pinnacle
+[submodule ".vim/pack/bundle/opt/replay"]
+	path = .vim/pack/bundle/opt/replay
+	url = https://github.com/wincent/replay
+[submodule ".vim/pack/bundle/opt/scalpel"]
+	path = .vim/pack/bundle/opt/scalpel
+	url = https://github.com/wincent/scalpel
+[submodule ".vim/pack/bundle/opt/tcomment_vim"]
+	path = .vim/pack/bundle/opt/tcomment_vim
+	url = https://github.com/tomtom/tcomment_vim
+[submodule ".vim/pack/bundle/opt/terminus"]
+	path = .vim/pack/bundle/opt/terminus
+	url = https://github.com/wincent/terminus
+[submodule ".vim/pack/bundle/opt/typescript-vim"]
+	path = .vim/pack/bundle/opt/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
+[submodule ".vim/pack/bundle/opt/UltiSnips"]
+	path = .vim/pack/bundle/opt/UltiSnips
+	url = https://github.com/sirver/UltiSnips
+[submodule ".vim/pack/bundle/opt/undotree"]
+	path = .vim/pack/bundle/opt/undotree
+	url = https://github.com/mbbill/undotree
+[submodule ".vim/pack/bundle/opt/vcs-jump"]
+	path = .vim/pack/bundle/opt/vcs-jump
+	url = https://github.com/wincent/vcs-jump
+[submodule ".vim/pack/bundle/opt/vim-abolish"]
+	path = .vim/pack/bundle/opt/vim-abolish
+	url = https://github.com/tpope/vim-abolish
+[submodule ".vim/pack/bundle/opt/vim-ansible-yaml"]
+	path = .vim/pack/bundle/opt/vim-ansible-yaml
+	url = https://github.com/chase/vim-ansible-yaml
+[submodule ".vim/pack/bundle/opt/vim-clipper"]
+	path = .vim/pack/bundle/opt/vim-clipper
+	url = https://github.com/wincent/vim-clipper
+[submodule ".vim/pack/bundle/opt/vim-dispatch"]
+	path = .vim/pack/bundle/opt/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule ".vim/pack/bundle/opt/vim-docvim"]
+	path = .vim/pack/bundle/opt/vim-docvim
+	url = https://github.com/wincent/vim-docvim
+[submodule ".vim/pack/bundle/opt/vim-easydir"]
+	path = .vim/pack/bundle/opt/vim-easydir
+	url = https://github.com/duggiefresh/vim-easydir
+[submodule ".vim/pack/bundle/opt/vim-eunuch"]
+	path = .vim/pack/bundle/opt/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
+[submodule ".vim/pack/bundle/opt/vim-fugitive"]
+	path = .vim/pack/bundle/opt/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule ".vim/pack/bundle/opt/vim-git"]
+	path = .vim/pack/bundle/opt/vim-git
+	url = https://github.com/tpope/vim-git
+[submodule ".vim/pack/bundle/opt/vim-javascript"]
+	path = .vim/pack/bundle/opt/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule ".vim/pack/bundle/opt/vim-json"]
+	path = .vim/pack/bundle/opt/vim-json
+	url = https://github.com/elzr/vim-json
+[submodule ".vim/pack/bundle/opt/vim-jsx"]
+	path = .vim/pack/bundle/opt/vim-jsx
+	url = https://github.com/mxw/vim-jsx
+[submodule ".vim/pack/bundle/opt/vim-lion"]
+	path = .vim/pack/bundle/opt/vim-lion
+	url = https://github.com/tommcdo/vim-lion
+[submodule ".vim/pack/bundle/opt/vim-markdown"]
+	path = .vim/pack/bundle/opt/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown
+[submodule ".vim/pack/bundle/opt/vim-multiple-cursors"]
+	path = .vim/pack/bundle/opt/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule ".vim/pack/bundle/opt/vim-operator-user"]
+	path = .vim/pack/bundle/opt/vim-operator-user
+	url = https://github.com/kana/vim-operator-user
+[submodule ".vim/pack/bundle/opt/vim-pathogen"]
+	path = .vim/pack/bundle/opt/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen
+[submodule ".vim/pack/bundle/opt/vim-projectionist"]
+	path = .vim/pack/bundle/opt/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist
+[submodule ".vim/pack/bundle/opt/vim-reason-plus"]
+	path = .vim/pack/bundle/opt/vim-reason-plus
+	url = https://github.com/reasonml-editor/vim-reason-plus
+[submodule ".vim/pack/bundle/opt/vim-repeat"]
+	path = .vim/pack/bundle/opt/vim-repeat
+	url = https://github.com/tpope/vim-repeat
+[submodule ".vim/pack/bundle/opt/vim-signature"]
+	path = .vim/pack/bundle/opt/vim-signature
+	url = https://github.com/kshenoy/vim-signature
+[submodule ".vim/pack/bundle/opt/vim-slime"]
+	path = .vim/pack/bundle/opt/vim-slime
+	url = https://github.com/jpalardy/vim-slime
+[submodule ".vim/pack/bundle/opt/vim-soy"]
+	path = .vim/pack/bundle/opt/vim-soy
+	url = https://github.com/duganchen/vim-soy
+[submodule ".vim/pack/bundle/opt/vim-speeddating"]
+	path = .vim/pack/bundle/opt/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating
+[submodule ".vim/pack/bundle/opt/vim-surround"]
+	path = .vim/pack/bundle/opt/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule ".vim/pack/bundle/opt/vim-textobj-comment"]
+	path = .vim/pack/bundle/opt/vim-textobj-comment
+	url = https://github.com/glts/vim-textobj-comment
+[submodule ".vim/pack/bundle/opt/vim-textobj-rubyblock"]
+	path = .vim/pack/bundle/opt/vim-textobj-rubyblock
+	url = https://github.com/nelstrom/vim-textobj-rubyblock
+[submodule ".vim/pack/bundle/opt/vim-textobj-user"]
+	path = .vim/pack/bundle/opt/vim-textobj-user
+	url = https://github.com/kana/vim-textobj-user
+[submodule ".vim/pack/bundle/opt/vim-zsh"]
+	path = .vim/pack/bundle/opt/vim-zsh
+	url = https://github.com/chrisbra/vim-zsh
