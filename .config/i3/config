@@ -155,7 +155,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # take screenshot
-bindsym $mod+q exec "maim -u -s -m 10 /home/emanon/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym $mod+q exec "maim -u /home/emanon/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 
 # Enable media key (Fn)
 # Sreen brightness controls
