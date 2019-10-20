@@ -151,3 +151,18 @@
 [submodule ".vim/pack/bundle/opt/vim-zsh"]
 	path = .vim/pack/bundle/opt/vim-zsh
 	url = https://github.com/chrisbra/vim-zsh
+[submodule ".zsh/vendor/base16-shell"]
+	path = .zsh/vendor/base16-shell
+	url = https://github.com/chriskempson/base16-shell
+[submodule ".zsh/vendor/skim"]
+	path = .zsh/vendor/skim
+	url = https://github.com/lotabout/skim
+[submodule ".zsh/vendor/zsh-autosuggestions"]
+	path = .zsh/vendor/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule ".zsh/vendor/zsh-syntax-highlighting"]
+	path = .zsh/vendor/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule ".zsh/vendor/the_silver_searcher"]
+	path = .zsh/vendor/the_silver_searcher
+	url = https://github.com/ggreer/the_silver_searcher
