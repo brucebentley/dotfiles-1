@@ -1,4 +1,4 @@
-# Set mod key (Mod1=<Alt>, Mod4=<Super>) 
+# Set mod key (Mod1=<Alt>, Mod4=<Super>)
 set $mod Mod4
 
 # set default desktop layout (default is tiling)
@@ -239,42 +239,6 @@ set $base0C #8ec07c
 set $base0D #83a598
 set $base0E #d3869b
 set $base0F #d65d0e
-
-# Base16 Material-Darker
-# set $base00 #212121
-# set $base01 #303030
-# set $base02 #353535
-# set $base03 #4A4A4A
-# set $base04 #B2CCD6
-# set $base05 #EEFFFF
-# set $base06 #EEFFFF
-# set $base07 #FFFFFF
-# set $base08 #F07178
-# set $base09 #F78C6C
-# set $base0A #FFCB6B
-# set $base0B #C3E88D
-# set $base0C #89DDFF
-# set $base0D #82AAFF
-# set $base0E #C792EA
-# set $base0F #FF5370
-
-# Base16 Grayscale Dark
-# set $base00 #101010
-# set $base01 #252525
-# set $base02 #464646
-# set $base03 #525252
-# set $base04 #ababab
-# set $base05 #b9b9b9
-# set $base06 #e3e3e3
-# set $base07 #f7f7f7
-# set $base08 #7c7c7c
-# set $base09 #999999
-# set $base0A #a0a0a0
-# set $base0B #8e8e8e
-# set $base0C #868686
-# set $base0D #686868
-# set $base0E #747474
-# set $base0F #5e5e5e
 
 # Basic bar configuration using the Base16 variables.
 bar {
