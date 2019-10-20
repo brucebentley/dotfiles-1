@@ -2,7 +2,7 @@ if v:progname == 'vi'
   set noloadplugins
 endif
 
-let mapleader=" "
+let mapleader="\<Space>"
 let maplocalleader="\\"
 
 " Extension -> filetype mappings.
