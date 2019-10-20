@@ -172,7 +172,7 @@ if &loadplugins
   if has('packages')
     packadd! LanguageClient-neovim
     packadd! base16-vim
-    packadd! command-t
+    packadd! Command-T
     packadd! ferret
     packadd! indentLine
     packadd! loupe
@@ -183,7 +183,7 @@ if &loadplugins
     packadd! tcomment_vim
     packadd! terminus
     packadd! typescript-vim
-    packadd! ultisnips
+    packadd! UltiSnips
     packadd! vcs-jump
     packadd! vim-abolish
     packadd! vim-multiple-cursors
