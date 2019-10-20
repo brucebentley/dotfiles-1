@@ -127,7 +127,7 @@ replace_placeholders() {
     if [ "${fe_sign[$i]}" = "=" ] || [ "${fe_sign[$i]}" = "!=" ]; then
       pval="${!fe_placeholder[$i]}"
     else
-      pval="$( echo "${!fe_placeholder[$i]}" | grep -oE '[0-9]*' | head -1 )"
+      pval="$( echo "${!fe_placeholder[$i]}" | rg -oE '[0-9]*' | head -1 )"
     fi
 
     if [ "${fe_sign[$i]}" = "<" ]; then
@@ -486,7 +486,7 @@ while [ $# -gt 0  ]; do
       -cd)
       # default color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -496,7 +496,7 @@ while [ $# -gt 0  ]; do
     -cg)
       # good color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -506,7 +506,7 @@ while [ $# -gt 0  ]; do
     -cw)
       # warning color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -516,7 +516,7 @@ while [ $# -gt 0  ]; do
     -cc)
       # critical color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -526,7 +526,7 @@ while [ $# -gt 0  ]; do
     -ci)
       # info color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1

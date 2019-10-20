@@ -1,6 +1,9 @@
 #!/bin/sh
+# Background
+/usr/bin/hsetroot -solid '#000000'
+
 # Remap bindings
-# /usr/bin/setxkbmap -option 'caps:super'
+/usr/bin/setxkbmap -option 'caps:super'
 
 session=${1:-i3}
 

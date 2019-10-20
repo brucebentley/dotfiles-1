@@ -135,12 +135,12 @@ custom_action() {
 
     _output="$( ip addr show "${iface}" 2>/dev/null )"
 
-    ip="$(     echo "${_output}" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | head -1 )"
-    ip_nm="$(  echo "${_output}" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' | head -1 )"
-    ip6="$(    echo "${_output}" | grep -oE 'inet6' | grep -oE '[0-9a-fA-F]*::.*/[0-9]+' | sed 's/\/.*//g' )"
-    ip6_nm="$( echo "${_output}" | grep -oE 'inet6' | grep -oE '[0-9a-fA-F]*::.*/[0-9]+' )"
-    mac="$(    echo "${_output}" | grep 'link/' | grep -oE '([0-9a-fA-F]{2}:)+[0-9a-fA-F]{2}' | head -1 )"
-    mtu="$(    echo "${_output}" | grep -oE 'mtu\s*[0-9]+' | sed 's/mtu\s//g' )"
+    ip="$(     echo "${_output}" | rg -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+' | head -1 )"
+    ip_nm="$(  echo "${_output}" | rg -oE '[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/[0-9]+' | head -1 )"
+    ip6="$(    echo "${_output}" | rg -oE 'inet6' | rg -oE '[0-9a-fA-F]*::.*/[0-9]+' | sed 's/\/.*//g' )"
+    ip6_nm="$( echo "${_output}" | rg -oE 'inet6' | rg -oE '[0-9a-fA-F]*::.*/[0-9]+' )"
+    mac="$(    echo "${_output}" | rg 'link/' | rg -oE '([0-9a-fA-F]{2}:)+[0-9a-fA-F]{2}' | head -1 )"
+    mtu="$(    echo "${_output}" | rg -oE 'mtu\s*[0-9]+' | sed 's/mtu\s//g' )"
 
     if [ "$( cat "/sys/class/net/${iface}/operstate" )" = "down" ]; then
       status="down"
@@ -208,7 +208,7 @@ replace_placeholders() {
     if [ "${fe_sign[$i]}" = "=" ] || [ "${fe_sign[$i]}" = "!=" ]; then
       pval="${!fe_placeholder[$i]}"
     else
-      pval="$( echo "${!fe_placeholder[$i]}" | grep -oE '[0-9]*' | head -1 )"
+      pval="$( echo "${!fe_placeholder[$i]}" | rg -oE '[0-9]*' | head -1 )"
     fi
 
     if [ "${fe_sign[$i]}" = "<" ]; then
@@ -566,7 +566,7 @@ while [ $# -gt 0  ]; do
       -cd)
       # default color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -576,7 +576,7 @@ while [ $# -gt 0  ]; do
     -cg)
       # good color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -586,7 +586,7 @@ while [ $# -gt 0  ]; do
     -cw)
       # warning color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -596,7 +596,7 @@ while [ $# -gt 0  ]; do
     -cc)
       # critical color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1
@@ -606,7 +606,7 @@ while [ $# -gt 0  ]; do
     -ci)
       # info color
       shift
-      if ! echo "${1}" | grep -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
+      if ! echo "${1}" | rg -qE '#[0-9a-fA-F]{6}' >/dev/null 2>&1; then
         echo "Error, invalid color string: ${1}"
         echo "Type ${appname} -h for help"
         exit 1

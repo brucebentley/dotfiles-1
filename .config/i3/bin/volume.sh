@@ -7,8 +7,8 @@
 # For ALSA users, you may use "default" for your primary card
 # or you may use hw:# where # is the number of the card desired
 MIXER="default"
-[ -n "$(lsmod | grep pulse)" ] && MIXER="pulse"
-[ -n "$(lsmod | grep jack)" ] && MIXER="jackplug"
+[ -n "$(lsmod | rg pulse)" ] && MIXER="pulse"
+[ -n "$(lsmod | rg jack)" ] && MIXER="jackplug"
 MIXER="${2:-$MIXER}"
 
 # The instance option sets the control to report and configure

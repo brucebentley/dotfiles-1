@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-charge=$(acpi -b | grep -oP "\d+%" | tr -d "%")
+charge=$(acpi -b | rg -oP "\d+%" | tr -d "%")
 status=$(acpi -b | awk '{print $3}')
 echo $charge%
 echo $charge%

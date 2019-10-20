@@ -16,7 +16,7 @@ function launchNagbar
 function killNagbar
 {
   if [[ $NAGBAR_PID -ne 0 ]]; then
-    ps -p $NAGBAR_PID | grep "i3-nagbar"
+    ps -p $NAGBAR_PID | rg "i3-nagbar"
     if [[ $? -eq 0 ]]; then
       kill $NAGBAR_PID
     fi
@@ -27,8 +27,8 @@ function killNagbar
 while [ true ]; do
   killNagbar
 
-  if [[ -n $(acpi -b | grep -i discharging) ]]; then
-    rem_bat=$(acpi -b | grep -Eo "[0-9]+%" | grep -Eo "[0-9]+")
+  if [[ -n $(acpi -b | rg -i discharging) ]]; then
+    rem_bat=$(acpi -b | rg -Eo "[0-9]+%" | rg -Eo "[0-9]+")
 
     if [[ $rem_bat -gt $SAFE_PERCENT ]]; then
       SLEEP_TIME=10
