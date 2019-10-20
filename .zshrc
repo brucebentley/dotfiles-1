@@ -309,9 +309,9 @@ test -e "$CHRUBY/auto.sh" && source "$CHRUBY/auto.sh"
 
 # Skim
 
-test -e "$HOME/.zsh/plugin/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/plugin/skim/shell/key-bindings.zsh"
-test -e "$HOME/.zsh/plugin/skim/shell/completion.zsh" && source "$HOME/.zsh/plugin/skim/shell/completion.zsh"
-export PATH="$PATH:$HOME/.zsh/plugin/skim/bin"
+test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
+test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
+export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
 #
 # Hooks
 #
@@ -467,17 +467,17 @@ test -f $HOST_RC && source $HOST_RC
 # Plug-ins
 #
 
-source /home/emanon/.zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /home/emanon/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
 # Uncomment this to get syntax highlighting:
-source /home/emanon/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/emanon/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Skim
-source /home/emanon/.zsh/plugin/skim/bin
+source /home/emanon/.zsh/vendor/skim/bin
 
 # Silver Searcher
-source /home/emanon/.zsh/plugin/the_silver_searcher/
+source /home/emanon/.zsh/vendor/the_silver_searcher/
 
 #
 # /etc/motd
