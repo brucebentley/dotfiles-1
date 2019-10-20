@@ -834,3 +834,5 @@ clipper: 2019/10/19 18:47:08 Connection closed
 clipper: 2019/10/19 18:55:20 Got signal terminated
 clipper: 2019/10/19 18:55:20 accept unix /home/emanon/.clipper.sock: use of closed network connection
 clipper: 2019/10/19 19:11:57 Starting UNIX domain socket server at /home/emanon/.clipper.sock
+clipper: 2019/10/19 23:04:27 Got signal terminated
+clipper: 2019/10/19 23:34:26 Starting UNIX domain socket server at /home/emanon/.clipper.sock
