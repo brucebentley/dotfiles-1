@@ -30,7 +30,7 @@ focus_follows_mouse yes
 mouse_warping output
 
 # OPENING A TERMINAL
-set $myTerm terminator
+set $myTerm kitty
 bindsym $mod+Return exec $myTerm
 
 # KILL FOCUSED WINDOW
