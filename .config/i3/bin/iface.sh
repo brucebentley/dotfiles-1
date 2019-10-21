@@ -671,6 +671,6 @@ if [ "${pango}" = "1" ]; then
 else
   echo "${format} "	# Long output
   echo "${format} "	# short output
-  fi
+fi
 
-  exit 0
+exit 0

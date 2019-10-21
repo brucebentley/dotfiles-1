@@ -6,10 +6,4 @@ artist=$(cmus-remote -Q 2> /dev/null | rg ' artist ' | cut -d ' ' -f3-)
 song=$(cmus-remote -Q 2> /dev/null | rg title | cut -d ' ' -f3-)
 if [[ "$stat" != "" && "$artist" != "" ]]; then
   echo "$artist - $song $current / $duration "
-  echo "$song"
-  if [[ "$stat" == "playing" ]]; then
-    echo "#83a598"
-  else
-    echo "#fb4934"
-  fi
 fi
