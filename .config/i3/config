@@ -245,14 +245,12 @@ bar {
     position top
     output primary
     i3bar_command i3bar
-    # status_command i3status -c /home/emanon/.config/i3/i3status.conf
     status_command i3blocks -c /home/emanon/.config/i3/i3blocks.conf
     strip_workspace_numbers yes
-    separator_symbol "|"
     workspace_buttons yes
     bindsym button4 nop
     bindsym button5 nop
-    font pango:Hack Regular 10
+    font pango:Hack 10
     tray_padding 0
     tray_output none
 
