@@ -106,8 +106,8 @@ bindsym $mod+Ctrl+h workspace prev
 set $ws1 "1: terminal"
 set $ws2 "2:♪ sound"
 set $ws3 "3: screencast"
-set $ws4 "4: email"
-set $ws5 "5: web"
+set $ws4 "4: git"
+set $ws5 "5: email"
 set $ws6 "6: libre"
 set $ws7 "7:seven"
 set $ws8 "8:eight"
@@ -252,6 +252,7 @@ bar {
     workspace_buttons yes
     bindsym button4 nop
     bindsym button5 nop
+    font pango:Hack Regular 10
     tray_padding 0
     tray_output none
 

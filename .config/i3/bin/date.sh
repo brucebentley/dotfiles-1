@@ -12,7 +12,7 @@
 ### Custom Defines
 appname="date"
 time="${BLOCK_INSTANCE:-%D %H:%M}"
-format=" {time}"
+format=" {time}"
 
 ### Thresholds
 
