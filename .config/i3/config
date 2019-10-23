@@ -37,7 +37,7 @@ bindsym $mod+Return exec $myTerm
 bindsym $mod+Shift+c kill
 
 # MY PROGRAM LAUNCHER (DMENU)
-bindsym $mod+Shift+Return exec dmenu_run -i  -nb '#1d2021' -nf '#bdae93' -sb '#83a598' -sf '#1d2021' -fn 'Roboto Regular Font:pixelsize=14'
+bindsym $mod+Shift+Return exec dmenu_run -i  -nb '#1d2021' -nf '#bdae93' -sb '#83a598' -sf '#1d2021' -fn 'Hack Regular Font:pixelsize=14'
 
 # MY DMENU SCRIPTS
 bindsym Mod1+e exec ./
