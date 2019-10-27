@@ -253,23 +253,12 @@ bindkey -M visual "''" vi-cmd-mode
 # Set default vi-mode state
 DEFAULT_VI_MODE=viins
 
-# Make CTRL-Z background things and unbackground them.
-function fg-bg() {
-  if [[ $#BUFFER -eq 0 ]]; then
-    fg
-  else
-    zle push-input
-  fi
-}
-zle -N fg-bg
-bindkey '^Z' fg-bg
-
 # Cursor shape changes in different modes
 function set_vi_mode_cursor() {
   if [ $KEYMAP = vicmd ]; then
-    echo -ne "\033]12;gray\007\e[2 q"
+    echo -ne "\033]12;white\007\e[2 q"
   else
-    echo -ne "\033]12;gray\007\e[6 q"
+    echo -ne "\033]12;white\007\e[6 q"
   fi
 }
 zle -N set_vi_mode_cursor
@@ -283,6 +272,17 @@ zle -N zle-keymap-select
   zle -K $DEFAULT_VI_MODE
 }
 zle -N zle-line-init
+
+# Make CTRL-Z background things and unbackground them.
+function fg-bg() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    fg
+  else
+    zle push-input
+  fi
+}
+zle -N fg-bg
+bindkey '^Z' fg-bg
 
 #
 # Other
