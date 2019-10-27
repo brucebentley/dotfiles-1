@@ -158,7 +158,7 @@ if filereadable(s:vimrc_local)
   execute 'source ' . s:vimrc_local
 endif
 
-if has('gui')
+if has('gui_running')
   " Turn off scrollbars. (Default on macOS is "egmrL").
   set guioptions-=L
   set guioptions-=R
