@@ -83,6 +83,9 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format %F{default}%B%{$__emanon[ITALIC_ON]%}--- %d ---%{$__EMANON[ITALIC_OFF]%}%b%f
 
+# Highlight selection
+zstyle ':completion:*' menu select
+
 #
 # Correction
 #
