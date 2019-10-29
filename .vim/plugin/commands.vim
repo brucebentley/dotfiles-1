@@ -2,7 +2,7 @@
 " TODO: check escaping is correct
 command! -nargs=* -complete=file Find call emanon#commands#find(<q-args>)
 
-command! -nargs=* -complete=file OpenOnGitHub call emanon#commands#open_on_github(<f-args>)
+command! -nargs=* -complete=file -range OpenOnGitHub <line1>,<line2>call emanon#commands#open_on_github(<f-args>)
 
 command! Lint call emanon#commands#lint()
 
