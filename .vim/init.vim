@@ -1,1 +1,1 @@
-/home/emanon/.dotfiles/.vim/vimrc
+vimrc
