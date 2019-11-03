@@ -294,13 +294,3 @@ function backlit() {
   emulate -L zsh
   xbacklight -set $1
 }
-
-# check weather
-function weather() {
-  emulate -L zsh
-  curl wttr.in/$1
-}
-
-####################
-## MY FUN SECTION ##
-####################
