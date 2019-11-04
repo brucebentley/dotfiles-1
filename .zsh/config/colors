@@ -52,7 +52,7 @@ color() {
     SCHEME=$1
     local FILE="$BASE16_DIR/base16-$SCHEME.sh"
     if [[ -e "$FILE" ]]; then
-      local BG=$(grep color_background= "$FILE" | cut -d \" -f2 | sed -e 's#/##g')
+      local BG=$(ag color_background= "$FILE" | cut -d \" -f2 | sed -e 's#/##g')
       local LUMA=$(luma "$BG")
       local LIGHT=$((LUMA > 127.5))
       local BACKGROUND=dark
@@ -69,7 +69,7 @@ color() {
       sh "$FILE"
 
       if [ -n "$TMUX" ]; then
-        local CC=$(grep color18= "$FILE" | cut -d \" -f2 | sed -e 's#/##g')
+        local CC=$(ag color18= "$FILE" | cut -d \" -f2 | sed -e 's#/##g')
         if [ -n "$BG" -a -n "$CC" ]; then
           command tmux set -g window-active-style "bg=#$BG"
           command tmux set -g window-style "bg=#$CC"
