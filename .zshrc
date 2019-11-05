@@ -291,16 +291,16 @@ bindkey '^Z' fg-bg
 # Other
 #
 
-source /home/emanon/.zsh/config/aliases
-source /home/emanon/.zsh/config/common
-source /home/emanon/.zsh/config/colors
-source /home/emanon/.zsh/config/exports
-source /home/emanon/.zsh/config/functions
-source /home/emanon/.zsh/config/hash
-source /home/emanon/.zsh/config/path
-source /home/emanon/.zsh/config/vars
-source /home/emanon/.zsh/config/compinit
-source /home/emanon/.zsh/config/maxfiles
+source ~/.zsh/config/aliases
+source ~/.zsh/config/common
+source ~/.zsh/config/colors
+source ~/.zsh/config/exports
+source ~/.zsh/config/functions
+source ~/.zsh/config/hash
+source ~/.zsh/config/path
+source ~/.zsh/config/vars
+source ~/.zsh/config/compinit
+source ~/.zsh/config/maxfiles
 
 #
 # Third-party
@@ -470,14 +470,14 @@ test -f $HOST_RC && source $HOST_RC
 # Plug-ins
 #
 
-source /home/emanon/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
 # Uncomment this to get syntax highlighting:
-source /home/emanon/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Silver Searcher
-source /home/emanon/.zsh/vendor/the_silver_searcher/
+source ~/.zsh/vendor/the_silver_searcher/
 
 #
 # /etc/motd
