@@ -103,24 +103,44 @@ bindsym $mod+Ctrl+h workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 "1: terminal"
-set $ws2 "2:♪ sound"
-set $ws3 "3: screencast"
+set $ws1 "1:I"
+set $ws2 "2:II"
+set $ws3 "3:III"
+set $ws4 "4:IV"
+set $ws5 "5:V"
+set $ws6 "6:VI"
+set $ws7 "7:VII"
+set $ws8 "8:VIII"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
 
 # Move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace $ws1
 bindsym $mod+Ctrl+2 move container to workspace $ws2
 bindsym $mod+Ctrl+3 move container to workspace $ws3
+bindsym $mod+Ctrl+4 move container to workspace $ws4
+bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+Ctrl+6 move container to workspace $ws6
+bindsym $mod+Ctrl+7 move container to workspace $ws7
+bindsym $mod+Ctrl+8 move container to workspace $ws8
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2; workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3; workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6; workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7; workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8; workspace $ws8
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -135,7 +155,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exit
 
 # take screenshot
-bindsym $mod+q exec "maim -u -s -m 10 /home/emanon/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym $mod+q exec "maim -u -s -m 10 ~/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 
 # Enable media key (Fn)
 # Sreen brightness controls
@@ -225,7 +245,7 @@ bar {
     position top
     output primary
     i3bar_command i3bar
-    status_command i3blocks -c /home/emanon/.config/i3/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
     strip_workspace_numbers yes
     workspace_buttons yes
     bindsym button4 nop
