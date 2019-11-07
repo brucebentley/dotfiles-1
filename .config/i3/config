@@ -206,11 +206,9 @@ exec_always --no-startup-id /usr/bin/compton --config '/home/emanon/.config/comp
 ###############
 exec_always --no-startup-id /usr/bin/hsetroot -solid '#000000'
 
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-# exec --no-startup-id pulseaudio
+###################
+## sound-section ##
+###################
 exec --no-startup-id i3-msg 'workspace $ws2 ; exec pulseeffects'
 
 #########################
