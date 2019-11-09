@@ -256,22 +256,6 @@ function tick() {
         fi
       }
 
-# Set sudo lecture
-# function sudo() {
-#   emulate -L zsh
-#   echo -e "     \033[32m  \^V//"
-#   echo -e "     \033[33m  |\033[37m. \033[37m.\033[33m|   \033[34m I AM (G)ROOT!"
-#   echo -e "     \033[32m- \033[33m\ - / \033[32m_"
-#   echo -e "     \033[33m \_| |_/"
-#   echo -e "     \033[33m   \ \ "
-#   echo -e "     \033[31m __\033[33m/\033[31m_\033[33m/\033[31m__"
-#   echo -e "     \033[31m|_______|  \033[37m With great power comes great responsibility."
-#   echo -e "     \033[31m \     /   \033[37m Use sudo wisely."
-#   echo -e "     \033[31m  \___/"
-#   echo -e "     \033[0m"
-#   /usr/bin/sudo "$@"
-# }
-
 # Nightlight toggle
 function nightlight() {
   emulate -L zsh
