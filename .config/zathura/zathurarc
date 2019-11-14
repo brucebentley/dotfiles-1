@@ -1,0 +1,8 @@
+set dbus-service            "true"
+set recolor                 "true"
+set default-fg              '#ebdbb2'
+set default-bg              '#1d2021'
+set recolor-darkcolor       '#ebdbb2'
+set recolor-lightcolor      '#1d2021'
+set guioptions              ''
+set font                    "FuturaBT-Medium 12"
