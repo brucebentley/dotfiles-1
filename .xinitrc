@@ -1,6 +1,4 @@
 #!/bin/sh
-# Background
-/usr/bin/hsetroot -solid '#000000'
 
 # Remap bindings
 /usr/bin/setxkbmap -option 'caps:super'
