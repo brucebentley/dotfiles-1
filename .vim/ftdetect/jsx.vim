@@ -14,21 +14,22 @@ function! s:ScanFile()
   return 0
 endfunction
 
-function! s:DetectJSX(file)
-  if a:file =~# "\\v\\.html"
-    if s:ScanFile()
-      set ft=html.jsx
-    endif
-  elseif a:file =~# "\\v(_spec|Spec|-test)\\.js"
-    if s:ScanFile()
-      set ft=javascript.jasmine.jsx
-    endif
-  elseif a:file =~# "\\v\\.js"
-    if s:ScanFile()
-      set ft=javascript.jsx
-    endif
+function! s:DetectJSX()
+  if match(&filetype, '\v<jsx>') != -1
+    return
+  endif
+  if s:ScanFile()
+    call s:SetJSX()
   endif
 endfunction
 
-autocmd BufNewFile,BufRead *.js.jsx set ft=javascript.jsx
-autocmd BufNewFile,BufRead *.html,*.js call s:DetectJSX(expand("<afile>"))
+function! s:SetJSX()
+  noautocmd set filetype+=.jsx
+
+  if exists(':LanguageClientStart') == 2
+    LanguageClientStart
+  endif
+endfunction
+
+autocmd BufNewFile,BufRead *.js.jsx,*.jsx call s:SetJSX()
+autocmd BufNewFile,BufRead *.html,*.js call s:DetectJSX()

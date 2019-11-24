@@ -242,7 +242,7 @@ set $base0F #d65d0e
 bar {
     position top
     output primary
-    i3bar_command i3bar
+    i3bar_command lemonbar
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     strip_workspace_numbers yes
     workspace_buttons yes
