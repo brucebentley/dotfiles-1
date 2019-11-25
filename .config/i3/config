@@ -191,33 +191,30 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-###############################
-## REMAP KEYBOARD ON STARTUP ##
-###############################
-exec_always --no-startup-id /usr/bin/setxkbmap -option 'caps:super'
-
 ########################
 ## SCREEN COMPOSITION ##
 ########################
 exec_always --no-startup-id /usr/bin/compton --config '/home/emanon/.config/compton/compton.conf'
-
-###################
-## sound-section ##
-###################
-exec --no-startup-id i3-msg 'workspace $ws2 ; exec pulseeffects'
 
 #########################
 ## TERMINAL AT STARTUP ##
 #########################
 exec --no-startup-id i3-msg 'workspace $ws1 ; exec kitty'
 
+###################
+## SOUND-SECTION ##
+###################
+exec --no-startup-id i3-msg 'workspace $ws2 ; exec pulseeffects'
+
 #############################
 ### settings for i3-gaps: ###
 #############################
 
 # Set inner/outer gaps
-gaps inner 10
+gaps inner 16
 gaps outer 0
+gaps vertical 0
+gaps horizontal 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 # on|inverse_gaps (on=gaps used if only more than one container on the workspace and inverse_gaps=enable outer gaps when there is exactly one container)
@@ -226,6 +223,14 @@ smart_gaps on
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders no_gaps
+
+#####################################
+### settings for i3-gaps-rounded: ###
+#####################################
+
+# set rounded edge radius
+for_window [class=".*"] border pixel 0
+border_radius 6
 
 ##################
 ## BASE16 COLOR ##
@@ -253,7 +258,7 @@ set $base0F #d65d0e
 bar {
     position top
     output primary
-    i3bar_command i3bar
+    i3bar_command i3bar -t
     status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
     strip_workspace_numbers yes
     workspace_buttons yes
