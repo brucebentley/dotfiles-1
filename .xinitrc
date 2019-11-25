@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Set wallpaper
+/usr/bin/hsetroot -full ~/Pictures/pacman-gruvbox.png
+
 # Remap bindings
 /usr/bin/setxkbmap -option 'caps:super'
 
