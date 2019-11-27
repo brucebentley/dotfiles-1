@@ -1,4 +1,0 @@
-# See /usr/local/etc/lbdb.rc for base configuration.
-
-MUTT_DIRECTORY="$HOME/.mutt/config"
-MUTTALIAS_FILES="aliases.mutt"
