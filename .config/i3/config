@@ -255,16 +255,15 @@ set $base0F #d65d0e
 # Basic bar configuration using the Base16 variables.
 bar {
     position top
-    output primary
-    i3bar_command i3bar -t
+    i3bar_command i3bar --transparency
     status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+    font pango:Hack Regular 10
+    workspace_buttons no
     strip_workspace_numbers yes
-    workspace_buttons yes
-    bindsym button4 nop
-    bindsym button5 nop
+    binding_mode_indicator yes
     tray_padding 0
     tray_output none
-    font pango:Hack Regular 10
+    output primary
 
     colors {
         background $base00
