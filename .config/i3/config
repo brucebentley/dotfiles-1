@@ -226,9 +226,10 @@ smart_borders no_gaps
 ### settings for i3-gaps-rounded: ###
 #####################################
 
-# set rounded edge radius
-for_window [class=".*"] border pixel 0
-border_radius 10
+# Default Border
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
+border_radius 8
 
 ##################
 ## BASE16 COLOR ##
