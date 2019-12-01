@@ -60,7 +60,7 @@ focus_follows_mouse yes
 mouse_warping output
 
 # OPENING A TERMINAL
-set $myTerm alacritty
+set $myTerm /usr/bin/alacritty
 bindsym $mod+Return exec $myTerm
 
 # KILL FOCUSED WINDOW
@@ -230,7 +230,7 @@ exec_always --no-startup-id /usr/bin/compton --config '/home/emanon/.config/comp
 ###################
 ## SOUND-SECTION ##
 ###################
-exec --no-startup-id i3-msg 'workspace $ws2 ; exec pulseeffects'
+exec --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
 
 #########################
 ## TERMINAL AT STARTUP ##
@@ -267,7 +267,7 @@ bar {
     font pango:Hack 10
     workspace_buttons no
     strip_workspace_numbers yes
-    binding_mode_indicator no
+    binding_mode_indicator yes
     tray_padding 0
     tray_output none
     output primary

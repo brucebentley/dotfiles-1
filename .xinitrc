@@ -10,6 +10,10 @@ case $session in
     /usr/bin/hsetroot -full ~/Pictures/wallpaper/pacman-gruvbox.png
     exec i3
     ;;
+  dwm)
+    /usr/bin/hsetroot -full ~/Pictures/wallpaper/pacman-gruvbox.png
+    exec dwm
+    ;;
   kde) exec startkde;;
   xfce|xfce4) exec startxfce4;;
   gnome|gnome-session) exec gnome-session;;
