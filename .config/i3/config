@@ -46,10 +46,6 @@ hide_edge_borders none
 # change borders
 default_border pixel 0
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-font xft:Roboto 10
-
 # USE MOUSE + MODKEY TO DRAG FLOATING WINDOWS
 floating_modifier $mod
 
@@ -226,16 +222,6 @@ mode "resize" {
 ## SCREEN COMPOSITION ##
 ########################
 exec_always --no-startup-id /usr/bin/compton --config '/home/emanon/.config/compton/compton.conf'
-
-###################
-## SOUND-SECTION ##
-###################
-exec --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
-
-#########################
-## TERMINAL AT STARTUP ##
-#########################
-exec --no-startup-id i3-msg 'workspace $ws1 ; exec $Terminal'
 
 ##################
 ## BASE16 COLOR ##

@@ -260,8 +260,8 @@ DEFAULT_VI_MODE=viins
 function zle-keymap-select zle-line-init zle-line-finish
 {
   case $KEYMAP in
-      vicmd)      print -n '\033[2 q';; # block cursor
-      viins|main) print -n '\033[6 q';; # line cursor
+      vicmd)      echo -ne '\e[2 q';; # block cursor
+      viins|main) echo -ne '\e[6 q';; # line cursor
   esac
 }
 
