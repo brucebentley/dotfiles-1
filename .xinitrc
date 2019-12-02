@@ -7,7 +7,7 @@ session=${1:-i3}
 
 case $session in
   i3|i3wm)
-    /usr/bin/hsetroot -fill ~/Pictures/wallpaper/abstract/0051.jpg
+    /usr/bin/hsetroot -fill ~/Pictures/wallpaper/pacman-gruvbox.png.jpg
     exec i3
     ;;
   dwm)
