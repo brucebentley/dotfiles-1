@@ -41,7 +41,7 @@ new_window none
 new_float none
 
 # Hide borders
-hide_edge_borders none
+hide_edge_borders both
 
 # change borders
 default_border pixel 0
