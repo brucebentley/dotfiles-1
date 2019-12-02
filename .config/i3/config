@@ -45,6 +45,7 @@ hide_edge_borders both
 
 # change borders
 default_border pixel 0
+default_floating_border pixel 0
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
