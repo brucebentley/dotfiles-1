@@ -7,7 +7,7 @@ gaps inner 16
 gaps outer -4
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# on|inverse_gaps (on=gaps used if only more than one container on the workspace and inverse_gaps=enable outer gaps when there is exactly one container)
+# on|inverse_outer (on=gaps used if only more than one container on the workspace and inverse_outer=enable outer gaps when there is exactly one container)
 smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
