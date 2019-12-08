@@ -226,7 +226,7 @@ mode "resize" {
 ########################
 ## SCREEN COMPOSITION ##
 ########################
-exec_always --no-startup-id /usr/bin/compton --config '/home/emanon/.config/compton/compton.conf'
+exec_always --no-startup-id /usr/local/bin/compton --config '/home/emanon/.config/compton/compton.conf'
 
 ###################
 ## SOUND-SECTION ##
