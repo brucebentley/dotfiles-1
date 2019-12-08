@@ -187,6 +187,7 @@ bindsym $mod+Shift+e exit
 
 # take screenshot
 bindsym $mod+q exec "maim -u -s -m 10 ~/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym $mod+Shift+q exec "maim -u -m 10 ~/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
 
 # Enable media key (Fn)
 # Sreen brightness controls
@@ -224,19 +225,10 @@ mode "resize" {
 }
 
 ########################
-## SCREEN COMPOSITION ##
+## STARTUP SERVICE ##
 ########################
 exec_always --no-startup-id /usr/local/bin/compton --config '/home/emanon/.config/compton/compton.conf'
-
-###################
-## SOUND-SECTION ##
-###################
-exec --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
-
-#########################
-## TERMINAL AT STARTUP ##
-#########################
-exec --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'
+exec --no-startup-id i3-msg 'workspace "2:2" ; exec /usr/bin/pulseeffects'
 
 ##################
 ## BASE16 COLOR ##
