@@ -228,7 +228,8 @@ mode "resize" {
 ## STARTUP SERVICE ##
 ########################
 exec_always --no-startup-id /usr/local/bin/compton --config '/home/emanon/.config/compton/compton.conf'
-exec --no-startup-id i3-msg 'workspace "2:2" ; exec /usr/bin/pulseeffects'
+exec_always --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
+exec_always --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'
 
 ##################
 ## BASE16 COLOR ##
