@@ -86,6 +86,8 @@ alias sc-edit="sudo systemctl edit"
 alias sc-enable-now="sudo systemctl enable --now"
 alias sc-disable-now="sudo systemctl disable --now"
 alias sc-mask-now="sudo systemctl mask --now"
+alias sc-suspend="sudo systemctl suspend"
+alias sc-hibernate="sudo systemctl hibernate"
 
 #
 # user
