@@ -3,7 +3,7 @@
 #############################
 
 # Set inner/outer gaps
-gaps inner 30
+gaps inner 20
 gaps outer -4
 
 # Smart gaps (gaps used if only more than one container on the workspace)
