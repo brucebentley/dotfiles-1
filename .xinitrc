@@ -7,7 +7,7 @@ session=${1:-i3}
 
 case $session in
   i3|i3wm)
-    /usr/bin/hsetroot -tile ~/Pictures/wallpaper/collections/0002.jpg
+    /usr/bin/feh --bg-scale ~/Pictures/wallpaper/collections/0002.jpg
     exec i3
     ;;
   dwm)
