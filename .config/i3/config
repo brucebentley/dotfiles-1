@@ -58,7 +58,13 @@ floating_modifier $mod
 focus_follows_mouse yes
 
 # Mouse warping
-mouse_warping output
+mouse_warping none
+
+# Popups during fullscreen mode
+popup_during_fullscreen smart
+
+# Focus wrapping
+focus_wrapping no
 
 # OPENING A TERMINAL
 set $Terminal /usr/local/bin/st
