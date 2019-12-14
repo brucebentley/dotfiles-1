@@ -7,7 +7,7 @@ session=${1:-i3}
 
 case $session in
   i3|i3wm)
-    /usr/bin/feh --bg-scale ~/Pictures/wallpaper/collections/0002.jpg
+    /home/emanon/bin/wallpaper
     exec i3
     ;;
   dwm)
