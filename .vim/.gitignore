@@ -2,3 +2,5 @@
 .netrwhist
 /rplugin
 /vimrc.local
+.base16
+.base16.previous
