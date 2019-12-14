@@ -68,7 +68,7 @@ bindsym $mod+Return exec $Terminal
 bindsym $mod+Shift+c kill
 
 # MY PROGRAM LAUNCHER (DMENU)
-bindsym $mod+Shift+Return exec dmenu_run -i  -nb '#1d2021' -nf '#bdae93' -sb '#83a598' -sf '#1d2021' -fn 'Hack Font:pixelsize=14'
+bindsym $mod+Shift+Return exec /usr/bin/dmenu_run -i -f
 
 # MY DMENU SCRIPTS
 bindsym Mod1+e exec ./
@@ -255,7 +255,7 @@ set $base0F #d65d0e
 
 # Basic bar configuration using the Base16 variables.
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks/i3blocks.conf
+    status_command i3blocks -c ~/.config/i3/i3blocks/powerline-bar.conf
     i3bar_command i3bar -t
     font pango:Hack 10
     workspace_buttons no
