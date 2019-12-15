@@ -1,10 +1,17 @@
 ############################
 ### settings for i3-gaps: ###
 #############################
+# Set gaps variables
+set $inner 20
+set $outer 16
 
 # Set inner/outer gaps
-gaps inner 20
-gaps outer -4
+gaps inner $inner
+gaps outer $outer
+
+# TOGGLE GAPS
+bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
+bindsym $mod+Shift+g exec compton; gaps inner all set 0; gaps outer all set 0
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 # on|inverse_outer (on=gaps used if only more than one container on the workspace and inverse_outer=enable outer gaps when there is exactly one container)
@@ -233,9 +240,9 @@ mode "resize" {
 ########################
 ## STARTUP SERVICE ##
 ########################
-exec_always --no-startup-id /usr/local/bin/compton --config '/home/emanon/.config/compton/compton.conf'
-exec_always --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
+exec_always --no-startup-id /usr/local/bin/compton -b --config '/home/emanon/.config/compton/compton.conf'
 exec_always --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'
+exec_always --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
 
 ##################
 ## BASE16 COLOR ##
