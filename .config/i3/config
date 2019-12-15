@@ -1,9 +1,20 @@
+####################################
+### settings for i3-gaps-rounded: ###
+#####################################
+
+# Default Border
+for_window [class="^.*"] border pixel 0
+for_window [title="^.*"] border pixel 0
+
+# Default border radius
+border_radius 10
+
 ############################
 ### settings for i3-gaps: ###
 #############################
 # Set gaps variables
 set $inner 20
-set $outer -6
+set $outer -4
 
 # Set inner/outer gaps
 gaps inner $inner
@@ -25,17 +36,6 @@ smart_gaps inverse_outer
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders no_gaps
-
-#####################################
-### settings for i3-gaps-rounded: ###
-#####################################
-
-# Default Border
-for_window [class="^.*"] border pixel 0
-for_window [title="^.*"] border pixel 0
-
-# Default border radius
-border_radius 10
 
 ###################
 ### KEY BINDING ###
@@ -222,10 +222,10 @@ bindsym $mod+m mode "move" focus floating
 mode "move" {
   bindsym $mod+Tab focus right
 
-  bindsym h     move left
-  bindsym j     move down
-  bindsym k     move up
-  bindsym l     move right
+  bindsym h     move left 20px
+  bindsym j     move down 20px
+  bindsym k     move up 20px
+  bindsym l     move right 20px
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
