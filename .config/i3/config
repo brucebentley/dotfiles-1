@@ -3,15 +3,20 @@
 #############################
 # Set gaps variables
 set $inner 20
-set $outer 16
+set $outer -6
 
 # Set inner/outer gaps
 gaps inner $inner
 gaps outer $outer
 
 # TOGGLE GAPS
-bindsym $mod+g exec compton; gaps inner all set $inner; gaps outer all set $outer
-bindsym $mod+Shift+g exec compton; gaps inner all set 0; gaps outer all set 0
+bindsym $mod+g exec "if [ `i3-msg -t get_tree | grep -Po '.*\\"gaps\\":{\\"inner\\":\K(-|)[0-9]+(?=.*\\"focused\\":true)'` -eq 0 ]; then \
+        i3-msg gaps inner current set 0; \
+        i3-msg gaps outer current set 0; \
+    else \
+        i3-msg gaps inner current set $inner; \
+        i3-msg gaps outer current set $outer; \
+    fi"
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 # on|inverse_outer (on=gaps used if only more than one container on the workspace and inverse_outer=enable outer gaps when there is exactly one container)
@@ -98,23 +103,11 @@ bindsym $mod+p focus parent
 # Focus child container
 bindsym $mod+c focus child
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
@@ -215,34 +208,35 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        # Originally set to jkl;.
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 4 px or 4 ppt
-        bindsym k resize grow height 4 px or 4 ppt
-        bindsym j resize shrink height 4 px or 4 ppt
-        bindsym l resize grow width 4 px or 4 ppt
+  bindsym h resize shrink width 4 px or 4 ppt
+  bindsym k resize grow height 4 px or 4 ppt
+  bindsym j resize shrink height 4 px or 4 ppt
+  bindsym l resize grow width 4 px or 4 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+# Move floating window
+bindsym $mod+m mode "move" focus floating
+mode "move" {
+  bindsym $mod+Tab focus right
+
+  bindsym h     move left
+  bindsym j     move down
+  bindsym k     move up
+  bindsym l     move right
+
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 ########################
 ## STARTUP SERVICE ##
 ########################
 exec_always --no-startup-id /usr/local/bin/compton -b --config '/home/emanon/.config/compton/compton.conf'
-exec_always --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'
 exec_always --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
+exec_always --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'
 
 ##################
 ## BASE16 COLOR ##
@@ -268,7 +262,7 @@ set $base0F #d65d0e
 
 # Basic bar configuration using the Base16 variables.
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks/powerline-bar.conf
+  status_command i3blocks -c ~/.config/i3/i3blocks/powerline-bar.conf
     i3bar_command i3bar -t
     font pango:Hack 10
     workspace_buttons no
@@ -280,9 +274,9 @@ bar {
     height 0
 
     colors {
-        background #00000000
-        separator  #00000000
-        statusline #00000000
+      background #00000000
+      separator  #00000000
+      statusline #00000000
 
         # State             Border  BG      Text
         focused_workspace   $base05 $base0D $base00
