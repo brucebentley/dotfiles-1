@@ -14,7 +14,5 @@ case $session in
     exec dwm
     ;;
   kde) exec startkde;;
-  xfce|xfce4) exec startxfce4;;
-  gnome|gnome-session) exec gnome-session;;
   *) exec $1;;
 esac
