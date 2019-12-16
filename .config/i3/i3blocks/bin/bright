@@ -1027,4 +1027,11 @@ else
   echo "\\${color}"	# color code '\#RRGGBB'
   fi
 
+#------------------------------------------------------------------------
+
+case $BLOCK_BUTTON in
+  4) xbacklight -set 0 +10% ;; # scroll up, increase
+  5) xbacklight -set 0 -10% ;; # scroll down, decrease
+esac
+
   exit 0
