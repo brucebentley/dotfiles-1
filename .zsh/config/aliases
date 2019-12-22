@@ -37,81 +37,9 @@ alias t=tmux
 alias upload='prosv5 upload'
 alias v=vim
 
-# Random utilities
-alias screencast='ffmpeg -f x11grab -r 25 -s 1920x1080 -i :0.0 /tmp/outputFile.mpg'
-alias battery=' upower -i /org/freedesktop/UPower/devices/battery_BAT0| ag --nocolor "state|to\ full|percentage"'
-
 # IP related
 alias publicip="curl -fSs https://1.1.1.1/cdn-cgi/trace | awk -F= '/ip/ { print $2 }'"
 alias privateip="ip addr | ag 'inet ' | awk -F'[: ]+' '{ if (\$4 ~ /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/) { print \$4 } else { print \$3 }}'"
-
-# Systemctl aliases
-#
-# root
-#
-alias sc-list-units="systemctl list-units"
-alias sc-is-active="systemctl is-active"
-alias sc-status="systemctl status"
-alias sc-show="systemctl show"
-alias sc-help="systemctl help"
-alias sc-list-unit-files="systemctl list-unit-files"
-alias sc-is-enabled="systemctl is-enabled"
-alias sc-list-jobs="systemctl list-jobs"
-alias sc-show-environment="systemctl show-environment"
-alias sc-cat="systemctl cat"
-alias sc-list-timers="systemctl list-timers"
-alias sc-start="sudo systemctl start"
-alias sc-stop="sudo systemctl stop"
-alias sc-reload="sudo systemctl reload"
-alias sc-restart="sudo systemctl restart"
-alias sc-try-restart="sudo systemctl try-restart"
-alias sc-isolate="sudo systemctl isolate"
-alias sc-kill="sudo systemctl kill"
-alias sc-reset-failed="sudo systemctl reset-failed"
-alias sc-enable="sudo systemctl enable"
-alias sc-disable="sudo systemctl disable"
-alias sc-reenable="sudo systemctl reenable"
-alias sc-preset="sudo systemctl preset"
-alias sc-mask="sudo systemctl mask"
-alias sc-unmask="sudo systemctl unmask"
-alias sc-link="sudo systemctl link"
-alias sc-load="sudo systemctl load"
-alias sc-cancel="sudo systemctl cancel"
-alias sc-set-environment="sudo systemctl set-environment"
-alias sc-unset-environment="sudo systemctl unset-environment"
-alias sc-edit="sudo systemctl edit"
-alias sc-enable-now="sudo systemctl enable --now"
-alias sc-disable-now="sudo systemctl disable --now"
-alias sc-mask-now="sudo systemctl mask --now"
-alias sc-suspend="sudo systemctl suspend"
-alias sc-hibernate="sudo systemctl hibernate"
-
-#
-# user
-#
-alias usc-start="systemctl --user start"
-alias usc-stop="systemctl --user stop"
-alias usc-reload="systemctl --user reload"
-alias usc-restart="systemctl --user restart"
-alias usc-try-restart="systemctl --user try-restart"
-alias usc-isolate="systemctl --user isolate"
-alias usc-kill="systemctl --user kill"
-alias usc-reset-failed="systemctl --user reset-failed"
-alias usc-enable="systemctl --user enable"
-alias usc-disable="systemctl --user disable"
-alias usc-reenable="systemctl --user reenable"
-alias usc-preset="systemctl --user preset"
-alias usc-mask="systemctl --user mask"
-alias usc-unmask="systemctl --user unmask"
-alias usc-link="systemctl --user link"
-alias usc-load="systemctl --user load"
-alias usc-cancel="systemctl --user cancel"
-alias usc-set-environment="systemctl --user set-environment"
-alias usc-unset-environment="systemctl --user unset-environment"
-alias usc-edit="systemctl --user edit"
-alias usc-enable-now="systemctl --user enable --now"
-alias usc-disable-now="systemctl --user disable --now"
-alias usc-mask-now="systemctl --user mask --now"
 
 # Type vim to use neovim
 if command -v nvim &> /dev/null; then
