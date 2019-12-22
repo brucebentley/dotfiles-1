@@ -13,7 +13,7 @@ function s:CheckColorScheme()
     let g:base16colorspace=256
   endif
 
-  let s:config_file = expand('/home/emanon/.vim/.base16')
+  let s:config_file = expand('~/.vim/.base16')
 
   if filereadable(s:config_file)
     let s:config = readfile(s:config_file, '', 2)
@@ -31,7 +31,7 @@ function s:CheckColorScheme()
     endif
   else " default
     set background=dark
-    colorscheme base16-monokai
+    colorscheme base16-gruvbox-dark-hard
   endif
 
   if emanon#pinnacle#active()
