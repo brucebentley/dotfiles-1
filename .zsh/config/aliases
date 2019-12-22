@@ -37,9 +37,6 @@ alias t=tmux
 alias upload='prosv5 upload'
 alias v=vim
 
-# use xinitrc when using xinit | startx
-alias startx='startx /home/emanon/.xinitrc'
-
 # Random utilities
 alias screencast='ffmpeg -f x11grab -r 25 -s 1920x1080 -i :0.0 /tmp/outputFile.mpg'
 alias battery=' upower -i /org/freedesktop/UPower/devices/battery_BAT0| ag --nocolor "state|to\ full|percentage"'
