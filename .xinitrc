@@ -3,7 +3,7 @@
 # Remap bindings
 /usr/bin/setxkbmap -option 'caps:super'
 
-session=${1:-i3}
+session=${1}
 
 case $session in
   i3|i3wm)
