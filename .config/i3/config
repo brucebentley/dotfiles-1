@@ -79,7 +79,7 @@ popup_during_fullscreen smart
 focus_wrapping no
 
 # OPENING A TERMINAL
-set $Terminal /usr/local/bin/st
+set $Terminal /usr/bin/st
 bindsym $mod+Return exec $Terminal
 
 # KILL FOCUSED WINDOW
@@ -280,6 +280,7 @@ mode "$mode_gaps_outer" {
 ########################
 ## STARTUP SERVICE ##
 ########################
+exec_always --no-startup-id /usr/bin/feh --randomize --bg-fill ~/Pictures/wallpaper/*
 exec_always --no-startup-id /usr/local/bin/compton -b --config '/home/emanon/.config/compton/compton.conf'
 exec --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
 exec --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'; focus
@@ -307,7 +308,7 @@ set $base0E #d3869b
 set $base0F #d65d0e
 set $transparent #00000000
 
-# Basic bar configuration using the Base16 variables.
+Basic bar configuration using the Base16 variables.
 bar { # top bar
   status_command i3blocks -c ~/.config/i3/i3blocks/powerline-bar.conf
   i3bar_command i3bar -t

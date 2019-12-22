@@ -259,10 +259,10 @@ DEFAULT_VI_MODE=viins
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init zle-line-finish
 {
-  case $KEYMAP in
-      vicmd)      echo -ne '\e[2 q';; # block cursor
-      viins|main) echo -ne '\e[6 q';; # line cursor
-  esac
+ case $KEYMAP in
+     vicmd)      echo -ne '\e[2';; # block cursor
+     viins|main) echo -ne '\e[6';; # line cursor
+ esac
 }
 
 zle -N zle-line-init
