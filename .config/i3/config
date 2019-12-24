@@ -281,7 +281,7 @@ mode "$mode_gaps_outer" {
 ## STARTUP SERVICE ##
 ########################
 exec_always --no-startup-id /usr/bin/feh --randomize --bg-fill ~/Pictures/wallpaper/*
-exec_always --no-startup-id /usr/local/bin/compton -b --config '/home/emanon/.config/compton/compton.conf'
+exec_always --no-startup-id /usr/local/bin/compton -b --config '~/.config/compton/compton.conf'
 exec --no-startup-id i3-msg 'workspace $ws2 ; exec /usr/bin/pulseeffects'
 exec --no-startup-id i3-msg 'workspace $ws1 ; exec /usr/local/bin/st'; focus
 

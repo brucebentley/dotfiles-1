@@ -23,7 +23,7 @@
   # unsetopt EXTENDEDGLOB
   # compinit -C
 
-  zstyle ':compinstall' filename '/home/emanon/.zshrc'
+  zstyle ':compinstall' filename '~/.zshrc'
    
   _update_zcomp() {
     setopt local_options
