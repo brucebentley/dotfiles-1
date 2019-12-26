@@ -1,1 +1,1 @@
-/root/dotfiles/.vim/vimrc
+vimrc
