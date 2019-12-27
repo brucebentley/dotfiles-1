@@ -255,26 +255,3 @@ function tick() {
           export GIT_COMMITTER_DATE="$TS $TZ"
         fi
       }
-
-# Nightlight toggle
-function nightlight() {
-  emulate -L zsh
-
-  if [ $# -ne 1 ]; then
-    echo "error: a host arguement is required"
-    return 1
-  fi
-
-  if [ $1 = "on" ]; then
-    redshift -O 2000 >> /dev/null
-  elif [ $1 = "off" ]; then
-    redshift -x >> /dev/null
-  else
-  fi
-}
-
-# set backlight
-function backlit() {
-  emulate -L zsh
-  xbacklight -set $1
-}
