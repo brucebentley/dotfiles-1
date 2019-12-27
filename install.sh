@@ -21,3 +21,6 @@ bash $HOME/.vim/pack/bundle/opt/LanguageClient-neovim/install.sh
 cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
 ruby extconf.rb
 make
+
+# Install skim
+bash $HOME/.zsh/vendor/skim/install
