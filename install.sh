@@ -22,5 +22,10 @@ cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
 ruby extconf.rb
 make
 
+# Setup clipper
+mkdir -p $HOME/.config/clipper/logs
+touch clipper.log $HOME/.config/clipper/logs
+ln -sf $PWD/.clipper.json $HOME/.config/clipper/clipper.json
+
 # Install skim
 bash $HOME/.zsh/vendor/skim/install
