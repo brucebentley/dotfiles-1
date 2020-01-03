@@ -14,18 +14,20 @@ ln -sfr $PWD/.fonts $HOME
 ln -sfr $PWD/.config/* $HOME/.config/
 ln -sfr $PWD/.vim $HOME/.config/nvim
 
+# Setup clipper
+mkdir -p $HOME/.config/clipper/logs
+touch $HOME/.config/clipper/logs/clipper.log
+ln -sf $PWD/.clipper.json $HOME/.config/clipper/clipper.json
+
 # Install Language Client
-bash $HOME/.vim/pack/bundle/opt/LanguageClient-neovim/install.sh
+cd $HOME/.vim/pack/bundle/opt/LanguageClient-neovim
+bash install.sh
 
 # Setup Command-T
 cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
 ruby extconf.rb
 make
 
-# Setup clipper
-mkdir -p $HOME/.config/clipper/logs
-touch clipper.log $HOME/.config/clipper/logs
-ln -sf $PWD/.clipper.json $HOME/.config/clipper/clipper.json
-
 # Install skim
-bash $HOME/.zsh/vendor/skim/install
+cd $HOME/.zsh/vendor/skim
+bash install
