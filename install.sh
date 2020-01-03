@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
-# SIMPLE BASH SCRIPT (TOO LAZY TO SETUP ANSIBLE)
+# SIMPLE BASH INSTALLATION SCRIPT (TOO LAZY TO SETUP ANSIBLE)
 
 # HOME DIRECTORY
+ln -sf $PWD/.asoundrc $HOME
+ln -sfr $PWD/.fonts $HOME
+ln -sf $PWD/.tmux.conf $HOME
+ln -sfr $PWD/.vim $HOME
+ln -sf $PWD/.xinitrc $HOME
 ln -sf $PWD/.z* $HOME
 ln -sfr $PWD/.zsh $HOME
-ln -sf $PWD/.tmux.conf $HOME
-ln -sf $PWD/.xinitrc $HOME
-ln -sfr $PWD/.vim $HOME
-ln -sfr $PWD/.fonts $HOME
 
 # ~/.config
 ln -sfr $PWD/.config/* $HOME/.config/
