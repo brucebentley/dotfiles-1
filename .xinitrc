@@ -1,7 +1,7 @@
 #!/bin/sh
 
 /usr/bin/setxkbmap -option 'caps:super'
-/usr/bin/feh --randomize --bg-tile --no-fehbg ~/Pictures/wallpaper/
+/usr/bin/feh --randomize --bg-tile --no-xinerama --no-fehbg ~/Pictures/wallpaper/
 /usr/bin/compton -b --config ~/.config/compton/compton.conf
 
 session=${1}
