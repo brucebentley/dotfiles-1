@@ -10,3 +10,11 @@ pcm.!default {
   }
 }
 
+ctl.equal {
+    type equal;
+}
+
+pcm.plugequal {
+    type equal;
+    slave.pcm "plug:dmix";
+}
