@@ -27,14 +27,12 @@ alias l='ls --color=tty'
 alias ll='ls -al --color=tty'
 alias o='git oneline'
 alias p='git patch'
-alias pros='prosv5'
 alias prettyjson='python -m json.tool'
 alias oo='git oneline -10'
 alias r=ranger
 alias s=ssh
 alias server='python -m SimpleHTTPServer' # optional arg: port (defaults to 8000)
 alias t=tmux
-alias upload='prosv5 upload'
 alias v=vim
 
 # IP related
