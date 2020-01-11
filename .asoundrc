@@ -3,13 +3,6 @@ pcm.!spdif {
   card 0
 }
 
-pcm.!default {
-  type plug
-  slave {
-    pcm "dmix"
-  }
-}
-
 ctl.equal {
     type equal;
 }
@@ -17,4 +10,10 @@ ctl.equal {
 pcm.plugequal {
     type equal;
     slave.pcm "plug:dmix";
+}
+
+pcm.!default {
+  type plug;
+  slave.pcm "dmix";
+  # slave.pcm plugequal;
 }
