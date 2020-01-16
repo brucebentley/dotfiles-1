@@ -411,7 +411,7 @@ emulate -L zsh
 # Only in response to a user-initiated `cd`, not indirectly (eg. via another
 # function).
 if [ "$ZSH_EVAL_CONTEXT" = "toplevel:shfunc" ]; then
-  ls -a --color=tty
+  ls -a --color=auto
 fi
 }
 add-zsh-hook chpwd -auto-ls-after-cd

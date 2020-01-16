@@ -23,8 +23,8 @@ alias g=git
 alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias h=history
 alias j=jump
-alias l='ls --color=tty'
-alias ll='ls -al --color=tty'
+alias l='ls --color=auto'
+alias ll='ls -al --color=auto'
 alias o='git oneline'
 alias p='git patch'
 alias prettyjson='python -m json.tool'
