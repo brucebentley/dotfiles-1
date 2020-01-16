@@ -1,6 +1,8 @@
+default.pcm.rate_converter "speexrate_best";
+
 pcm.!spdif {
-  type hw
-  card 0
+  type hw;
+  card 0;
 }
 
 ctl.equal {
@@ -14,6 +16,6 @@ pcm.plugequal {
 
 pcm.!default {
   type plug;
-  slave.pcm "dmix";
-  # slave.pcm plugequal;
+  # slave.pcm "dmix";
+  slave.pcm plugequal;
 }
