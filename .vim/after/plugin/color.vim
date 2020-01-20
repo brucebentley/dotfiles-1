@@ -31,7 +31,6 @@ function s:CheckColorScheme()
     endif
   else " default
     set background=dark
-    colorscheme base16-gruvbox-dark-hard
   endif
 
   if emanon#pinnacle#active()
