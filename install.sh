@@ -12,6 +12,8 @@ ln -sf $PWD/.z* $HOME
 ln -sfr $PWD/.zsh $HOME
 
 # ~/.config
+mkdir $HOME/.config
+
 ln -sfr $PWD/.config/* $HOME/.config/
 ln -sfr $PWD/.vim $HOME/.config/nvim
 
