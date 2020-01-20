@@ -141,7 +141,7 @@ let g:LanguageClient_diagnosticsList='Location'
 
 if filereadable('/usr/bin/python2')
   " Avoid search, speeding up start-up.
-  let g:python2_host_prog='/usr/bin/python2'
+  let g:python_host_prog='/usr/bin/python2'
 endif
 
 if filereadable('/usr/bin/python3')
