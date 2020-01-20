@@ -139,9 +139,14 @@ endif
 
 let g:LanguageClient_diagnosticsList='Location'
 
-if filereadable('/usr/local/bin/python3')
+if filereadable('/usr/bin/python2')
   " Avoid search, speeding up start-up.
-  let g:python3_host_prog='/usr/local/bin/python3'
+  let g:python2_host_prog='/usr/bin/python2'
+endif
+
+if filereadable('/usr/bin/python3')
+  " Avoid search, speeding up start-up.
+  let g:python3_host_prog='/usr/bin/python3'
 endif
 
 " Normally <leader>s (mnemonic: "[s]earch");
