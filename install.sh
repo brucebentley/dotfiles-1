@@ -17,11 +17,6 @@ mkdir $HOME/.config
 ln -sfr $PWD/.config/* $HOME/.config/
 ln -sfr $PWD/.vim $HOME/.config/nvim
 
-# Setup clipper
-mkdir -p $HOME/.config/clipper/logs
-touch $HOME/.config/clipper/logs/clipper.log
-ln -sf $PWD/.clipper.json $HOME/.config/clipper/clipper.json
-
 # Install Language Client
 cd $HOME/.vim/pack/bundle/opt/LanguageClient-neovim
 bash install.sh

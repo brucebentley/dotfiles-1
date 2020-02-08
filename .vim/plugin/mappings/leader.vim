@@ -12,10 +12,6 @@ nnoremap <Leader>o :only<CR>
 " you have a lot of splits and the status line gets truncated).
 nnoremap <Leader>p :echo expand('%') <CR>
 
-" <Leader>pp -- Like <Leader>p, but additionally yanks the filename and sends it
-" off to Clipper.
-nnoremap <Leader>pp :let @0=expand('%') <Bar> :Clip<CR> :echo expand('%')<CR>
-
 nnoremap <Leader>q :quit<CR>
 
 " <Leader>r -- Cycle through relativenumber + number, number (only), and no

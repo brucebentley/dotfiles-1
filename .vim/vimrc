@@ -203,7 +203,6 @@ if &loadplugins
     packadd! vim-abolish
     packadd! vim-multiple-cursors
     packadd! vim-ansible-yaml
-    packadd! vim-clipper
     packadd! vim-dispatch
     packadd! vim-docvim
     packadd! vim-easydir

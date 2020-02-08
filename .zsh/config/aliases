@@ -13,7 +13,6 @@ alias b=bundle
 alias be='bundle exec'
 alias cat='fortune | cowsay | lolcat'
 alias cd..='cd ..'
-alias clip='nc -UN ~/.clipper.sock'
 alias c='cmus'
 alias d='hash -d'
 alias e=exit
