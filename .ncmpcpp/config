@@ -6,10 +6,11 @@ mpd_crossfade_time = "2"
 
 [visualizer]
 visualizer_fifo_path = "/tmp/mpd.fifo"
-visualizer_in_stereo = "no"
+visualizer_in_stereo = "yes"
 visualizer_type = "spectrum"
+visualizer_sync_interval = 30
 visualizer_output_name = "my_fifo"
-visualizer_look = "●┃"
+visualizer_look = "◆▋"
 visualizer_color = "blue, cyan, green, yellow, magenta, red"
 
 [header]
