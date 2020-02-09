@@ -13,7 +13,6 @@ alias b=bundle
 alias be='bundle exec'
 alias cat='fortune | cowsay | lolcat'
 alias cd..='cd ..'
-alias c='cmus'
 alias d='hash -d'
 alias e=exit
 alias f='find . -name'
@@ -27,6 +26,7 @@ alias ll='ls -al --color=auto'
 alias o='git log --oneline'
 alias p='git format-patch'
 alias prettyjson='python -m json.tool'
+alias n='ncmpcpp'
 alias oo='git log --oneline -10'
 alias r=ranger
 alias s=ssh
