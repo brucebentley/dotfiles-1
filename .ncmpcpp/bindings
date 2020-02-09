@@ -3,6 +3,14 @@ def_key "/"
 def_key "/"
   find_item_forward
 
+def_key "0"
+  replay_song
+
+def_key "g"
+  move_home
+def_key "G"
+  move_end
+
 def_key "j"
   scroll_down
 def_key "k"
@@ -11,6 +19,11 @@ def_key "h"
   previous_column
 def_key "l"
   next_column
+
+def_key "J"
+  move_sort_order_down
+def_key "K"
+  move_sort_order_up
 
 def_key "ctrl-u"
   page_up
