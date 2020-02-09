@@ -2,7 +2,7 @@
 mpd_music_dir = "~/Music/"
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_crossfade_time = "0"
+mpd_crossfade_time = "2"
 
 [visualizer]
 visualizer_fifo_path = "/tmp/mpd.fifo"
@@ -10,7 +10,7 @@ visualizer_in_stereo = "no"
 visualizer_type = "spectrum"
 visualizer_output_name = "my_fifo"
 visualizer_look = "●┃"
-visualizer_color = "default"
+visualizer_color = "blue, cyan, green, yellow, magenta, red"
 
 [header]
 header_visibility = "no"
@@ -19,25 +19,30 @@ volume_color = "default"
 state_line_color = "black"
 
 [playlist]
-playlist_display_mode = "classic"
-song_list_format = "{{%a - %t}|{%f}}{$R%l}"
+playlist_display_mode = "columns"
+playlist_separate_albums = "no"
+playlist_disable_highlight_delay = 0
+titles_visibility = "no"
+song_list_format = "  {{$0%t $R $4%a$9}|{%f}        }{$R%l}"
 now_playing_prefix = "$b$5"
 now_playing_suffix = "$/b$9"
 
 [statusbar]
-progressbar_look = "─╼ "
+progressbar_look = "━━─"
 progressbar_color = "black"
-statusbar_visibility = "no"
+progressbar_elapsed_color = 7
+statusbar_visibility = "yes"
 statusbar_color = "default"
-song_status_format = "{{%a{ - %t}}|{ - %f}{ - %b{ (%y)}}}"
+song_status_format = "{{%a{ "%b"{ (%y)}} - }{%t$/b}}|{$b%f$/b}"
 
 [library]
-song_library_format = "{{%a - %t}|{%f}}{$R%l}"
-empty_tag_color = "black"
+song_library_format = "{{%a - %t} (%b)}|{%f}"
+empty_tag_color = "cyan"
 
 [global]
 colors_enabled = "yes"
 main_window_color = "default"
+autocenter_mode = "no"
 centered_cursor = "yes"
-enable_window_title = "yes"
+enable_window_title = "no"
 external_editor = "nvim"
