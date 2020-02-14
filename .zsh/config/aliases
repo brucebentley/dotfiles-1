@@ -30,7 +30,7 @@ alias n='ncmpcpp'
 alias oo='git log --oneline -10'
 alias r=ranger
 alias s=ssh
-alias server='python -m SimpleHTTPServer' # optional arg: port (defaults to 8000)
+alias server='python -m littlehttpserver' # optional arg: port (defaults to 8000)
 alias t=tmux
 alias v=vim
 
