@@ -19,10 +19,6 @@ mkdir $HOME/.config
 ln -sfr $PWD/.config/* $HOME/.config/
 ln -sfr $PWD/.vim $HOME/.config/nvim
 
-# Install Language Client
-cd $HOME/.vim/pack/bundle/opt/LanguageClient-neovim
-bash install.sh
-
 # Setup Command-T
 cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
 ruby extconf.rb

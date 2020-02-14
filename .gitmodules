@@ -22,9 +22,6 @@
 [submodule ".vim/pack/bundle/opt/indentLine"]
 	path = .vim/pack/bundle/opt/indentLine
 	url = https://github.com/Yggdroot/indentLine
-[submodule ".vim/pack/bundle/opt/LanguageClient-neovim"]
-	path = .vim/pack/bundle/opt/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim
 [submodule ".vim/pack/bundle/opt/https:/github.com/eagletmt/neco-ghc"]
 	path = .vim/pack/bundle/opt/https:/github.com/eagletmt/neco-ghc
 	url = https://github.com/wincent/loupe
