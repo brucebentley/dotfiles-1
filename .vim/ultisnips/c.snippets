@@ -38,14 +38,16 @@ $0
 endsnippet
 
 snippet main "main() (main)"
-int main(int argc, char *argv[]) {
+int
+main(int argc, char *argv[]) {
 	${VISUAL}$0
 	return 0;
 }
 endsnippet
 
 snippet mainn "main() (void)"
-int main(void) {
+int
+main(void) {
 	${0}
 	return 0;
 }
@@ -145,55 +147,64 @@ struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 endsnippet
 
 snippet fun "function" b
-${1:void} ${2:function_name}($3) {
+${1:void}
+${2:function_name}($3) {
 	${VISUAL}$0
 }
 endsnippet
 
 snippet fun0 "function definition with zero parameters"
-${1:void} ${2:function_name}() {
+${1:void}
+${2:function_name}() {
 	${3}
 }
 endsnippet
 
 snippet dfun0 "function definition with Doxygen documentation"
-${4:void} ${5:function_name}() {
+${4:void}
+${5:function_name}() {
 	${6}
 }
 endsnippet
 
 snippet fun1 "function definition with one parameter"
-${1:void} ${2:function_name}(${3:Type} ${4:Parameter}) {
+${1:void}
+${2:function_name}(${3:Type} ${4:Parameter}) {
 	${5}
 }
 endsnippet
 
 snippet dfun1 "function definition with one parameter with Doxygen documentation"
-${6:void} ${7:function_name}(${8:Type} ${3:Parameter}) {
+${6:void}
+${7:function_name}(${8:Type} ${3:Parameter}) {
 	${9}
 }
 endsnippet
 
-snippet fun2 "function definition with two parameters" 
-${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}) {
+snippet fun2 "function definition with two parameters"
+${1:void}
+${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}) {
 	${7}
 }
 endsnippet
 
 snippet dfun2 "function definition with two parameters with Doxygen documentation"
-${8:void} ${9:function_name}(${10:Type} ${3:Parameter}, ${11:Type} ${5:Parameter}) {
+${8:void}
+${9:function_name}(${10:Type} ${3:Parameter}, ${11:Type} ${5:Parameter}) {
 	${12}
 }
 endsnippet
 
 snippet fun3 "function definition with three parameters"
-${1:void} ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter}) {
+${1:void}
+${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter}) {
 	${9}
 }
 endsnippet
 
 snippet dfun3 "function definition with three parameters with Doxygen documentation"
-${10:void} ${11:function_name}(${12:Type} ${3:Parameter}, ${13:Type} ${5:Parameter}, ${14:Type} ${7:Parameter}) {
+${10:void}
+${11:function_name}(${12:Type} ${3:Parameter}, ${13:Type} ${5:Parameter}, ${14:Type} ${7:Parameter}) {
 	${15}
 }
 endsnippet
@@ -303,19 +314,19 @@ snippet head "File Header" b
 /******************************************************************************
 * File:             `!p snip.rv = fn`
 *
-* Author:           ${2}  
-* Created:          `date +%m/%d/%y` 
+* Author:           ${2}
+* Created:          `date +%m/%d/%y`
 * Description:      ${4:${VISUAL}}
 *****************************************************************************/
 ${0}
 endsnippet
 
 post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
-snippet func "Function Header" 
+snippet func "Function Header"
 /******************************************************************************
 * Function:         $1
 * Description:      ${4:${VISUAL}}
-* Where:`!p 
+* Where:`!p
 snip.rv = ""
 snip >> 2
 
