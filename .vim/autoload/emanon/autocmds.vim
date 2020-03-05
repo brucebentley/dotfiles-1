@@ -220,32 +220,20 @@ let s:emanon_override_filetypes=[
 function! emanon#autocmds#apply_overrides(file, type) abort
   let l:pattern=join(s:emanon_override_filetypes, '\|')
   if match(a:type, '\<\(' . l:pattern . '\)\>') != -1
-    let l:detected=emanon#liferay#detect(a:file)
-    if l:detected
-      setlocal noexpandtab
-      setlocal shiftwidth=4
-      setlocal tabstop=4
-      setlocal noshiftround
+    setlocal noexpandtab
+    setlocal shiftwidth=4
+    setlocal tabstop=4
+    setlocal noshiftround
 
-      if match(&formatprg, '^par ') != -1
-        " "T", turns tabs to spaces, and I can't seem to turn it off, but I can
-        " at least make it use the right number of them...
-        let &l:formatprg=substitute(&formatprg, 'T\d*', 'T4', '')
+    if match(&formatprg, '^par ') != -1
+      " "T", turns tabs to spaces, and I can't seem to turn it off, but I can
+      " at least make it use the right number of them...
+      let &l:formatprg=substitute(&formatprg, 'T\d*', 'T4', '')
 
-        " ... and then override the |gq| operator to do a |:retab!| after
-        " applying.
-        map <buffer> gq <Plug>(operator-format-and-retab)
-        call operator#user#define('format-and-retab', 'emanon#autocmds#format')
-      endif
-
-      if l:detected == 2
-        " Additional settings for main liferay-portal repo, but not for *.js or
-        " *.scss.
-        if match(a:type, '\<\(javascript\|scss\)\>') == -1
-          setlocal noendofline
-          setlocal nofixendofline
-        endif
-      endif
+      " ... and then override the |gq| operator to do a |:retab!| after
+      " applying.
+      map <buffer> gq <Plug>(operator-format-and-retab)
+      call operator#user#define('format-and-retab', 'emanon#autocmds#format')
     endif
   endif
 endfunction
