@@ -1,6 +1,6 @@
 call emanon#plugin#lazy({
-      \   'pack': 'goyo.vim',
-      \   'plugin': 'goyo.vim',
+      \   'pack': 'goyo',
+      \   'plugin': 'goyo',
       \   'commands': {
       \     'Goyo': '-nargs=? -bar -bang'
       \   }
