@@ -220,11 +220,6 @@ let s:emanon_override_filetypes=[
 function! emanon#autocmds#apply_overrides(file, type) abort
   let l:pattern=join(s:emanon_override_filetypes, '\|')
   if match(a:type, '\<\(' . l:pattern . '\)\>') != -1
-    setlocal noexpandtab
-    setlocal shiftwidth=4
-    setlocal tabstop=4
-    setlocal noshiftround
-
     if match(&formatprg, '^par ') != -1
       " "T", turns tabs to spaces, and I can't seem to turn it off, but I can
       " at least make it use the right number of them...
