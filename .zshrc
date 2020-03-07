@@ -426,9 +426,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 # Uncomment this to get syntax highlighting:
 source ~/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# Silver Searcher
-source ~/.zsh/vendor/the_silver_searcher/
-
 #
 # /etc/motd
 #
