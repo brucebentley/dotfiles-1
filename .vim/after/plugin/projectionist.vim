@@ -41,28 +41,3 @@ function! s:project(...)
     let g:projectionist_heuristics['*'][l:pattern] = l:projection
   endfor
 endfunction
-
-" Set up projections for JS variants.
-for s:extension in ['.js', '.jsx', '.ts', '.tsx']
-  call s:project(
-        \ ['*' . s:extension, {
-        \   'alternate': [
-        \     '{dirname}/{basename}.test' . s:extension,
-        \     '{dirname}/__tests__/{basename}-test' . s:extension,
-        \     '{dirname}/__tests__/{basename}-mocha' . s:extension
-        \   ],
-        \   'type': 'source'
-        \ }],
-        \ ['*.test' . s:extension, {
-        \   'alternate': '{basename}' . s:extension,
-        \   'type': 'test',
-        \ }],
-        \ ['**/__tests__/*-test' . s:extension, {
-        \   'alternate': '{dirname}/{basename}' . s:extension,
-        \   'type': 'test'
-        \ }],
-        \ ['**/__tests__/*-mocha' . s:extension, {
-        \   'alternate': '{dirname}/{basename}' . s:extension,
-        \   'type': 'test'
-        \ }])
-endfor

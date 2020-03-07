@@ -51,14 +51,6 @@ if has('autocmd')
       endif
 
       autocmd BufWritePost */spell/*.add silent! :mkspell! %
-
-      autocmd BufWritePost * call emanon#autocmds#encrypt(expand('<afile>:p'))
-
-      " Beware, if no path yet, <aname> will be the filetype (eg. `javascript`).
-      " When we later expand it with ":p", that will make it look like a
-      " file (eg. "javascript") in the current directory. Fortunately, this
-      " serves our purposes adequately.
-      autocmd FileType * call emanon#autocmds#apply_overrides(expand('<afile>'), expand('<amatch>'))
     augroup END
   endfunction
 
