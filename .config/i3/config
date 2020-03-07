@@ -197,11 +197,7 @@ bindsym $mod+Ctrl+r reload
 bindsym $mod+Shift+r restart
 
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exit
-
-# take screenshot
-bindsym $mod+q exec "maim -u -s -m 10 ~/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
-bindsym $mod+Shift+q exec "maim -u -m 10 ~/Pictures/screenshot/screenshot-$(date -Iseconds | cut -d'+' -f1).png"
+bindsym $mod+Shift+q exit
 
 # Enable media key (Fn)
 # Sreen brightness controls
