@@ -13,9 +13,6 @@
 [submodule ".vim/pack/bundle/opt/ferret"]
 	path = .vim/pack/bundle/opt/ferret
 	url = https://github.com/wincent/ferret
-[submodule ".vim/pack/bundle/opt/float-preview.nvim"]
-	path = .vim/pack/bundle/opt/float-preview.nvim
-	url = https://github.com/ncm2/float-preview.nvim
 [submodule ".vim/pack/bundle/opt/goyo.vim"]
 	path = .vim/pack/bundle/opt/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
