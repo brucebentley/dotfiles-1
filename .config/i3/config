@@ -13,7 +13,7 @@
 ### settings for i3-gaps: ###
 #############################
 # Set gaps variables
-set $inner 20
+set $inner 10
 set $outer -4
 
 # Set inner/outer gaps
@@ -31,7 +31,7 @@ bindsym $mod+g exec "if [ `i3-msg -t get_tree | grep -Po '.*\\"gaps\\":{\\"inner
 
 # Smart gaps (gaps used if only more than one container on the workspace)
 # on|inverse_outer (on=gaps used if only more than one container on the workspace and inverse_outer=enable outer gaps when there is exactly one container)
-smart_gaps inverse_outer
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
