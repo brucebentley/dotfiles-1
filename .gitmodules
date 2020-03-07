@@ -118,9 +118,6 @@
 [submodule ".vim/pack/bundle/opt/vim-signature"]
 	path = .vim/pack/bundle/opt/vim-signature
 	url = https://github.com/kshenoy/vim-signature
-[submodule ".vim/pack/bundle/opt/vim-slime"]
-	path = .vim/pack/bundle/opt/vim-slime
-	url = https://github.com/jpalardy/vim-slime
 [submodule ".vim/pack/bundle/opt/vim-soy"]
 	path = .vim/pack/bundle/opt/vim-soy
 	url = https://github.com/duganchen/vim-soy
