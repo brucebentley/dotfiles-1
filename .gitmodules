@@ -121,9 +121,6 @@
 [submodule ".zsh/vendor/zsh-syntax-highlighting"]
 	path = .zsh/vendor/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".zsh/vendor/the_silver_searcher"]
-	path = .zsh/vendor/the_silver_searcher
-	url = https://github.com/ggreer/the_silver_searcher
 [submodule ".mutt/vendor/mutt-notmuch-py"]
 	path = .mutt/vendor/mutt-notmuch-py
 	url = https://github.com/honza/mutt-notmuch-py
