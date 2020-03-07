@@ -14,20 +14,14 @@
 	path = .vim/pack/bundle/opt/ferret
 	url = https://github.com/wincent/ferret
 [submodule ".vim/pack/bundle/opt/goyo.vim"]
-	path = .vim/pack/bundle/opt/goyo.vim
+	path = .vim/pack/bundle/opt/goyo
 	url = https://github.com/junegunn/goyo.vim
 [submodule ".vim/pack/bundle/opt/indentLine"]
 	path = .vim/pack/bundle/opt/indentLine
 	url = https://github.com/Yggdroot/indentLine
-[submodule ".vim/pack/bundle/opt/https:/github.com/eagletmt/neco-ghc"]
-	path = .vim/pack/bundle/opt/https:/github.com/eagletmt/neco-ghc
-	url = https://github.com/wincent/loupe
 [submodule ".vim/pack/bundle/opt/loupe"]
 	path = .vim/pack/bundle/opt/loupe
 	url = https://github.com/wincent/loupe
-[submodule ".vim/pack/bundle/opt/neco-ghc"]
-	path = .vim/pack/bundle/opt/neco-ghc
-	url = https://github.com/eagletmt/neco-ghc
 [submodule ".vim/pack/bundle/opt/nerdtree"]
 	path = .vim/pack/bundle/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree
@@ -46,9 +40,6 @@
 [submodule ".vim/pack/bundle/opt/terminus"]
 	path = .vim/pack/bundle/opt/terminus
 	url = https://github.com/wincent/terminus
-[submodule ".vim/pack/bundle/opt/typescript-vim"]
-	path = .vim/pack/bundle/opt/typescript-vim
-	url = https://github.com/leafgarland/typescript-vim
 [submodule ".vim/pack/bundle/opt/UltiSnips"]
 	path = .vim/pack/bundle/opt/UltiSnips
 	url = https://github.com/sirver/UltiSnips
@@ -61,9 +52,6 @@
 [submodule ".vim/pack/bundle/opt/vim-abolish"]
 	path = .vim/pack/bundle/opt/vim-abolish
 	url = https://github.com/tpope/vim-abolish
-[submodule ".vim/pack/bundle/opt/vim-ansible-yaml"]
-	path = .vim/pack/bundle/opt/vim-ansible-yaml
-	url = https://github.com/chase/vim-ansible-yaml
 [submodule ".vim/pack/bundle/opt/vim-dispatch"]
 	path = .vim/pack/bundle/opt/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
@@ -85,12 +73,6 @@
 [submodule ".vim/pack/bundle/opt/vim-javascript"]
 	path = .vim/pack/bundle/opt/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
-[submodule ".vim/pack/bundle/opt/vim-json"]
-	path = .vim/pack/bundle/opt/vim-json
-	url = https://github.com/elzr/vim-json
-[submodule ".vim/pack/bundle/opt/vim-lion"]
-	path = .vim/pack/bundle/opt/vim-lion
-	url = https://github.com/tommcdo/vim-lion
 [submodule ".vim/pack/bundle/opt/vim-markdown"]
 	path = .vim/pack/bundle/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
