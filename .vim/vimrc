@@ -105,7 +105,6 @@ if &loadplugins
     packadd! vim-git
     packadd! vim-javascript
     packadd! vim-json
-    packadd! vim-jsx
     packadd! vim-lion
     packadd! vim-markdown
     packadd! vim-operator-user
