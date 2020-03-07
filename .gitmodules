@@ -13,9 +13,6 @@
 [submodule ".vim/pack/bundle/opt/ferret"]
 	path = .vim/pack/bundle/opt/ferret
 	url = https://github.com/wincent/ferret
-[submodule ".vim/pack/bundle/opt/goyo.vim"]
-	path = .vim/pack/bundle/opt/goyo
-	url = https://github.com/junegunn/goyo.vim
 [submodule ".vim/pack/bundle/opt/indentLine"]
 	path = .vim/pack/bundle/opt/indentLine
 	url = https://github.com/Yggdroot/indentLine
@@ -136,3 +133,6 @@
 [submodule ".config/clipper/clipper"]
 	path = .config/clipper/clipper
 	url = https://github.com/wincent/clipper
+[submodule ".vim/pack/bundle/opt/goyo"]
+	path = .vim/pack/bundle/opt/goyo
+	url = https://github.com/junegunn/goyo.vim
