@@ -1,4 +1,6 @@
 defaults.pcm.rate_converter "samplerate_best"
+defaults.pcm.format S16_LE
+defaults.pcm.rate 44100
 
 pcm.!spdif {
   type hw
