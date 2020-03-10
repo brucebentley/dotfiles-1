@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # SIMPLE BASH INSTALLATION SCRIPT (TOO LAZY TO SETUP ANSIBLE)
 
@@ -17,7 +17,10 @@ ln -sfr $PWD/.zsh $HOME
 mkdir $HOME/.config
 
 ln -sfr $PWD/.config/* $HOME/.config/
-ln -sfr $PWD/.vim $HOME/.config/nvim
+
+if [ ! -L $HOME/.config/vim ]; then
+  ln -sfr $PWD/.vim $HOME/.config/nvim
+fi
 
 # Setup Command-T
 cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
