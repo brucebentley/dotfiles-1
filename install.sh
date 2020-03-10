@@ -20,8 +20,9 @@ fi
 ln -sfr $PWD/.config/* $HOME/.config/
 
 # create symlink to .vim if target path doesn't exist
-if [ ! -L $HOME/.config/vim ]; then
+if [ ! -d $HOME/.config/nvim ]; then
   ln -sfr $PWD/.vim $HOME/.config/nvim
+elif [ ! -d $HOME/.vim ]; then
   ln -sfr $PWD/.vim $HOME
 fi
 
