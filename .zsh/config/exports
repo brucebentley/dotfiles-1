@@ -26,22 +26,6 @@ if [ -d /usr/local/opt/mysql@5.7 ]; then
   # export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
 fi
 
-case "$(uname)" in
-  Darwin*)
-    if [ -x /usr/libexec/java_home ]; then
-      if /usr/libexec/java_home &> /dev/null ; then
-        export ANT_OPTS="-Xmx4096m -Xms4096m -XX:MaxPermSize=1024m -XX:-UseGCOverheadLimit -Dorg.gradle.workers.max=4"
-        export GRADLE_OPTS="-Dorg.gradle.workers.max=4"
-        export JAVA_HOME=$(/usr/libexec/java_home)
-        export JAVA_OPTS="-Xmx4096m -Xms1024m -XX:MaxPermSize=512m"
-      fi
-    fi
-    ;;
-  Linux*)
-    export JAVA_HOME=/usr/lib/jvm/jre-1.6.0-openjdk.x86_64
-    ;;
-esac
-
 # usually this means running on a machine with a statically-linked, hand-built
 # tmux (and ncurses)
 if [ -d "$HOME/share/terminfo" ]; then
@@ -73,12 +57,3 @@ export FTP_PASSIVE=1
 
 # colour ls listings
 export CLICOLOR=true
-
-# for Amazon Web Services EC2 API
-export GPG_TTY=$(tty)
-
-export GOPATH=~/code/go
-
-test -e $HOME/.zsh/exports.private && source $HOME/.zsh/exports.private
-
-test -d $HOME/n && export N_PREFIX="$HOME/n"
