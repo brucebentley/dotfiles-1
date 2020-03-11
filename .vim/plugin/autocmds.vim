@@ -89,7 +89,7 @@ if has('autocmd')
           \ }
 
     set showbreak=
-    set statusline=\ 
+    set statusline=\
     set nocursorline
     set noshowmode
 
