@@ -98,13 +98,13 @@ end
 def usage
   puts <<-END.gsub(/^ {4}/, '')
     Usage:
-      git hub get <pr>        [fetch a PR to a local branch]
-      git hub link [pr]       [show web URL for PR]
-      git hub ls              [list open PRs]
-      git hub merge [pr]      [merge a PR]
-      git hub open [pr]       [open web URL for PR]
-      git hub show [pr]       [show a PR on standard out]
-      git hub update          [pull in new commits from current PR]
+      github get <pr>        [fetch a PR to a local branch]
+      github link [pr]       [show web URL for PR]
+      github ls              [list open PRs]
+      github merge [pr]      [merge a PR]
+      github open [pr]       [open web URL for PR]
+      github show [pr]       [show a PR on standard out]
+      github update          [pull in new commits from current PR]
     Environment variables:
       REMOTE=...              [override auto-detected remote name]
   END
