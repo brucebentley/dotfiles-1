@@ -102,7 +102,7 @@ endif
 set scrolloff=10                       " start scrolling 3 lines before edge of viewporthhhhhhhhhhh
 set shell=sh                          " shell to use for `!`, `:!`, `system()` etc.
 set shiftround                        " always indent by multiple of shiftwidth
-set shiftwidth=2                      " spaces per tab (when shifting)
+set shiftwidth=8                      " spaces per tab (when shifting)
 set shortmess+=A                      " ignore annoying swapfile messages
 set shortmess+=I                      " no splash screen
 set shortmess+=O                      " file-read message overwrites previous
@@ -152,7 +152,7 @@ if has('syntax')
   set synmaxcol=200                   " don't bother syntax highlighting long lines
 endif
 
-set tabstop=2                         " spaces per tab
+set tabstop=8                         " spaces per tab
 
 if has('termguicolors')
   set termguicolors                   " use guifg/guibg instead of ctermfg/ctermbg in terminal
