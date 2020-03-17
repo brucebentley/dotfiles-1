@@ -1,3 +1,6 @@
+setlocal shiftwidth=2
+setlocal tabstop=2
+
 if has('conceal')
   setlocal concealcursor=nc
 
