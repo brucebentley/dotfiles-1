@@ -14,5 +14,6 @@
 ## INSTALL
 ```
 ./install.sh will install everything on the local system by creating symbolic links to the target location
+```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
