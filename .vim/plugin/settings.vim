@@ -100,7 +100,7 @@ if exists('+relativenumber')
 endif
 
 set scrolloff=10                       " start scrolling 3 lines before edge of viewporthhhhhhhhhhh
-set shell=sh                          " shell to use for `!`, `:!`, `system()` etc.
+set shell=zsh                          " shell to use for `!`, `:!`, `system()` etc.
 set shiftround                        " always indent by multiple of shiftwidth
 set shiftwidth=8                      " spaces per tab (when shifting)
 set shortmess+=A                      " ignore annoying swapfile messages
