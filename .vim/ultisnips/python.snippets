@@ -17,11 +17,11 @@ snippet #!3 "#!/usr/bin/env python3" b
 #!/usr/bin/env python3
 endsnippet
 
-snippet imp "import (module)"
+snippet imp "import (module)" b
 import ${0:module}
 endsnippet
 
-snippet uni "def __unicode__(self)"
+snippet uni "def __unicode__(self)" b
 def __unicode__(self):
 ${0:representation}
 endsnippet
@@ -551,11 +551,6 @@ endsnippet
 snippet /(^|(?<=\W))\./ "self." r
 self.
 endsnippet
-
-snippet from "from module import name" b
-from ${1:module} import ${2:Stuff}
-endsnippet
-
 
 ##############
 # PROPERTIES #
