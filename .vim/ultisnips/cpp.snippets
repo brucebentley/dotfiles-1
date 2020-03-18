@@ -187,28 +187,32 @@ endsnippet
 
 snippet mfun "member function implementation" b
 ${4:void}
-${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3}) {
+${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3})
+{
 	${0:FunctionBody}
 }
 endsnippet
 
 snippet dmfun0 "member function implementation without parameters" b
 ${3:void}
-${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}() {
+${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}()
+{
 	${0:FunctionBody}
 }
 endsnippet
 
 snippet dmfun1 "member function implementation with one parameter" b
 ${5:void}
-${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter}) {
+${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter})
+{
 	${0:FunctionBody}
 }
 endsnippet
 
 snippet dmfun2 "member function implementation with two parameters" b
 ${7:void}
-${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter}) {
+${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter})
+{
 	${0:FunctionBody}
 }
 endsnippet
