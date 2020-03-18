@@ -6,6 +6,7 @@
 ln -sf $PWD/.asoundrc  $HOME
 ln -sf $PWD/.fonts     $HOME
 ln -sf $PWD/.inputrc   $HOME
+ln -sf $PWD/.lynxrc    $HOME
 ln -sf $PWD/.mpd       $HOME
 ln -sf $PWD/.ncmpcpp   $HOME
 ln -sf $PWD/.tmux.conf $HOME
