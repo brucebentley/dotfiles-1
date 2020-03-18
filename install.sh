@@ -15,27 +15,27 @@ ln -sf $PWD/.zsh       $HOME
 
 # ~/.config
 if [ ! -d $HOME/.config ]; then
-  mkdir $HOME/.config
+        mkdir $HOME/.config
 fi
 
 ln -sf $PWD/.config/* $HOME/.config/
 
 # create symlink to .vim if target path doesn't exist
 if [ ! -d $HOME/.config/nvim ]; then
-  ln -sf $PWD/.vim $HOME/.config/nvim
+        ln -sf $PWD/.vim $HOME/.config/nvim
 elif [ ! -d $HOME/.vim ]; then
-  ln -sf $PWD/.vim $HOME
+        ln -sf $PWD/.vim $HOME
 fi
 
 # Setup Command-T
 if [ ! -f $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/ext.so ]; then
-  cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
-  ruby extconf.rb
-  make
+        cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
+        ruby extconf.rb
+        make
 fi
 
 # Install skim
 if [ ! -f $HOME/.zsh/vendor/skim/bin/sk ]; then
-  cd $HOME/.zsh/vendor/skim
-  bash install
+        cd $HOME/.zsh/vendor/skim
+        bash install
 fi
