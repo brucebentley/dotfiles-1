@@ -1,8 +1,17 @@
 #!/bin/sh
 
-/usr/bin/setxkbmap -option 'caps:super'
-/usr/bin/feh --randomize --bg-scale --no-xinerama ~/Pictures/wallpaper/images
-/usr/bin/compton -b --config ~/.config/compton/compton.conf
+if [ -x "$(command -v setxkbmap)" ]; then
+        setxkbmap -option 'caps:super' &
+fi
+
+if [ -x "$(command -v feh)" ]; then
+        feh --randomize --bg-scale --no-xinerama ~/Pictures/wallpaper/images &
+fi
+
+if [ -x "$(command -v compton)" ]; then
+        compton -b --config ~/.config/compton/compton.conf &
+fi
+
 
 session=${1}
 
