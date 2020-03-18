@@ -5,6 +5,7 @@
 # HOME DIRECTORY
 ln -sfr $PWD/.asoundrc  $HOME
 ln -sfr $PWD/.fonts     $HOME
+ln -sfr $PWD/.inputrc   $HOME
 ln -sfr $PWD/.mpd       $HOME
 ln -sfr $PWD/.ncmpcpp   $HOME
 ln -sfr $PWD/.tmux.conf $HOME
