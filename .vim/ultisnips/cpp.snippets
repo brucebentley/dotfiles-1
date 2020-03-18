@@ -38,11 +38,11 @@ snippet incc "#include <...>" b
 #include <${1:iostream}>
 endsnippet
 
-snippet binc "#include <boost/shared_ptr.hpp>" r
+snippet binc "#include <boost/shared_ptr.hpp>" b
 #include <boost/${1:shared_ptr}.hpp>
 endsnippet
 
-snippet beginend "$1.begin(), $1.end() (beginend)" r
+snippet beginend "$1.begin(), $1.end() (beginend)" b
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
