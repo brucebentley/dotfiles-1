@@ -4,19 +4,19 @@
 
 priority -50
 
-snippet def "#define ..."
+snippet def "#define ..." b
 #define $1
 endsnippet
 
-snippet incc "#include <...>"
+snippet incc "#include <...>" b
 #include <${1:stdio}.h>
 endsnippet
 
-snippet inc "#include '...'"
+snippet inc "#include '...'" b
 #include "${1:`vim_snippets#Filename("$1.h")`}"
 endsnippet
 
-snippet #ifndef "#ifndef ... #define ... #endif"
+snippet #ifndef "#ifndef ... #define ... #endif" b
 #ifndef ${1/([A-Za-z0-9_]+).*/$1/}
 #define ${1:SYMBOL} ${2:value}
 #endif /* ifndef $1 */
@@ -28,7 +28,7 @@ ${VISUAL}$0
 #endif
 endsnippet
 
-snippet nocxx "#ifdef _cplusplus ... extern C .. #endif"
+snippet nocxx "#ifdef _cplusplus ... extern C .. #endif" b
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -40,7 +40,7 @@ ${0}
 #endif
 endsnippet
 
-snippet mark "#pragma mark (mark)"
+snippet mark "#pragma mark (mark)" b
 #if 0
 ${1:#pragma mark -
 }#pragma mark $2
@@ -49,7 +49,7 @@ ${1:#pragma mark -
 $0
 endsnippet
 
-snippet main "main() (main)"
+snippet main "main() (main)" b
 int
 main(int argc, char *argv[])
 {
@@ -58,7 +58,7 @@ main(int argc, char *argv[])
 }
 endsnippet
 
-snippet mainn "main() (void)"
+snippet mainn "main() (void)" b
 int
 main(void)
 {
@@ -67,7 +67,7 @@ main(void)
 }
 endsnippet
 
-snippet switch "switch (var) ... case: ... default:"
+snippet switch "switch (var) ... case: ... default:" b
 switch (${1:/* variable */}) {
 case ${2:/* variable case */}:
 	${3}
@@ -77,7 +77,7 @@ default:
 }
 endsnippet
 
-snippet switchndef "switch (var) ... case: "
+snippet switchndef "switch (var) ... case:" b
 switch (${1:/* variable */}) {
 case ${2:/* variable case */}:
 	${3}
@@ -91,31 +91,31 @@ case ${1:/* variable case */}:
 	${3:break;}
 endsnippet
 
-snippet for "for loop (for)"
+snippet for "for loop (for)" b
 for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${VISUAL}$0
 }
 endsnippet
 
-snippet fori "for int loop (fori)"
+snippet fori "for int loop (fori)" b
 for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${VISUAL}$0
 }
 endsnippet
 
-snippet wh "while"
+snippet wh "while" b
 while (${1:/* condition */}) {
 	${0:${VISUAL}}
 }
 endsnippet
 
-snippet do "do ... while"
+snippet do "do ... while" b
 do {
 		${0:${VISUAL}}
 } while (${1:/* condition */});
 endsnippet
 
-snippet once "Include header once only guard"
+snippet once "Include header once only guard" b
 #ifndef ${1:`!p
 if not snip.c:
 	import random, string
@@ -131,13 +131,13 @@ ${VISUAL}$0
 #endif /* end of include guard: $1 */
 endsnippet
 
-snippet if "if .. (if)"
+snippet if "if .. (if)" b
 if (${1:/*condition */}) {
 	${VISUAL}$2
 }
 endsnippet
 
-snippet ife "if / else / .. (eli)"
+snippet ife "if / else / .. (eli)" b
 if (${1:/* condition */}) {
 	${VISUAL}$2
 } else {
@@ -145,7 +145,7 @@ if (${1:/* condition */}) {
 }
 endsnippet
 
-snippet ifee "if / elif / else / .. (elie)"
+snippet ifee "if / elif / else / .. (elie)" b
 if (${1:/* condition */}) {
 	${VISUAL}$2
 } else if (${3:/* condition */}) {
@@ -155,11 +155,11 @@ if (${1:/* condition */}) {
 }
 endsnippet
 
-snippet fpr "fprintf ..."
+snippet fpr "fprintf ..." b
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
-snippet pr "printf .. (printf)"
+snippet pr "printf .. (printf)" b
 printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
@@ -175,7 +175,7 @@ snippet prx
 printf("${1:} = %${2}\n", $1);
 endsnippet
 
-snippet st "struct"
+snippet st "struct" b
 struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
 	${0:/* data */}
 };
@@ -189,7 +189,7 @@ ${2:function_name}($3)
 }
 endsnippet
 
-snippet fun0 "function definition with zero parameters"
+snippet fun0 "function definition with zero parameters" b
 ${1:void}
 ${2:function_name}() 
 {
@@ -197,7 +197,7 @@ ${2:function_name}()
 }
 endsnippet
 
-snippet dfun0 "function definition with Doxygen documentation"
+snippet dfun0 "function definition with Doxygen documentation" b
 ${4:void}
 ${5:function_name}() 
 {
@@ -205,7 +205,7 @@ ${5:function_name}()
 }
 endsnippet
 
-snippet fun1 "function definition with one parameter"
+snippet fun1 "function definition with one parameter" b
 ${1:void}
 ${2:function_name}(${3:Type} ${4:Parameter}) 
 {
@@ -213,7 +213,7 @@ ${2:function_name}(${3:Type} ${4:Parameter})
 }
 endsnippet
 
-snippet dfun1 "function definition with one parameter with Doxygen documentation"
+snippet dfun1 "function definition with one parameter with Doxygen documentation" b
 ${6:void}
 ${7:function_name}(${8:Type} ${3:Parameter}) 
 {
@@ -221,7 +221,7 @@ ${7:function_name}(${8:Type} ${3:Parameter})
 }
 endsnippet
 
-snippet fun2 "function definition with two parameters"
+snippet fun2 "function definition with two parameters" b
 ${1:void}
 ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}) 
 {
@@ -229,7 +229,7 @@ ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter})
 }
 endsnippet
 
-snippet dfun2 "function definition with two parameters with Doxygen documentation"
+snippet dfun2 "function definition with two parameters with Doxygen documentation" b
 ${8:void}
 ${9:function_name}(${10:Type} ${3:Parameter}, ${11:Type} ${5:Parameter}) 
 {
@@ -237,7 +237,7 @@ ${9:function_name}(${10:Type} ${3:Parameter}, ${11:Type} ${5:Parameter})
 }
 endsnippet
 
-snippet fun3 "function definition with three parameters"
+snippet fun3 "function definition with three parameters" b
 ${1:void}
 ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter}) 
 {
@@ -245,7 +245,7 @@ ${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type}
 }
 endsnippet
 
-snippet dfun3 "function definition with three parameters with Doxygen documentation"
+snippet dfun3 "function definition with three parameters with Doxygen documentation" b
 ${10:void}
 ${11:function_name}(${12:Type} ${3:Parameter}, ${13:Type} ${5:Parameter}, ${14:Type} ${7:Parameter}) 
 {
@@ -253,37 +253,37 @@ ${11:function_name}(${12:Type} ${3:Parameter}, ${13:Type} ${5:Parameter}, ${14:T
 }
 endsnippet
 
-snippet fund "function declaration"
+snippet fund "function declaration" b
 ${1:void} ${2:function_name}(${3});
 endsnippet
 
-snippet td "typedef"
+snippet td "typedef" b
 typedef ${1:int} ${2:MyCustomType};
 endsnippet
 
-snippet st "struct"
+snippet st "struct" b
 struct ${1:`vim_snippets#Filename('$1_t', 'name')`} {
 	${2:Data} /*!< ${4:Description} */
 }${5: /* optional variable list */};
 endsnippet
 
-snippet tds "typedef struct"
+snippet tds "typedef struct" b
 typedef struct ${2:_$1 }{
 	m_${3:Data} /*!< ${4:Description} */
 } ${1:`vim_snippets#Filename('$1_t', 'name')`};
 endsnippet
 
-snippet enum "enum"
+snippet enum "enum" b
 enum ${1:name} { ${0} };
 endsnippet
 
-snippet tde "typedef enum"
+snippet tde "typedef enum" b
 typedef enum {
 	${1:Data}
 } ${2:foo};
 endsnippet
 
-snippet getopt "getopt"
+snippet getopt "getopt" b
 int choice;
 while (1) {
 	static struct option long_options[] = {

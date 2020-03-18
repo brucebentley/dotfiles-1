@@ -26,7 +26,7 @@ def __unicode__(self):
 ${0:representation}
 endsnippet
 
-snippet from "from (package) import (module)"
+snippet from "from (package) import (module)" b
 from ${1:package} import ${0:module}
 endsnippet
 
@@ -388,7 +388,7 @@ def __delete__(self, instance):
 endsnippet
 
 
-snippet cmp "methods implementing rich comparison"
+snippet cmp "methods implementing rich comparison" b
 def __eq__(self, other):
 	${1:pass}
 
@@ -412,7 +412,7 @@ def __cmp__(self, other):
 endsnippet
 
 
-snippet repr "methods implementing string representation"
+snippet repr "methods implementing string representation" b
 def __repr__(self):
 	${1:pass}
 
