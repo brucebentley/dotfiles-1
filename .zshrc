@@ -19,7 +19,7 @@ autoload -Uz compinit
 if [[ -n $HOME/.zcompdump(#qN.md-1) ]]; then
         compinit -C
 else
-        compinit -u
+        compinit
         touch $HOME/.zcompdump
 fi
 
