@@ -363,14 +363,9 @@ local LAST="$__emanon[LAST_COMMAND]"
   # In case user just hit enter, overwrite LAST_COMMAND, because preexec
   # won't run and it will otherwise linger.
   __emanon[LAST_COMMAND]="<unset>"
-
-  # Check first word; via:
-  # http://tim.vanwerkhoven.org/post/2012/10/28/ZSH/Bash-string-manipulation
-  case "$LAST[(w)1]" in
-          cd|cp|git|rm|touch|mv|..|)
-                  vcs_info
-                  ;;
-  esac
+  if [[ "$LAST[(w)1]" =~ "cd|cp|rm|git|touch|mv" || "$LAST[1,2]" == "./" ]]; then
+          vcs_info
+  fi
 }
 add-zsh-hook precmd -maybe-show-vcs-info
 
