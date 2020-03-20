@@ -5,6 +5,6 @@
 # test -d $SOME_DIR && hash -d $SHORTCUT=$SOME_DIR
 
 # Work machine:
-local DOTFILES=~/dotfiles
-
-test -d "$DOTFILES" && hash -d "$DOTFILES"
+# local DOTFILES=~/dotfiles
+#
+# test -d "$DOTFILES" && hash -d "$DOTFILES"
