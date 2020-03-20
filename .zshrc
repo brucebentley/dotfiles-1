@@ -58,6 +58,9 @@ alias mv='nocorrect mv'
 autoload -U colors
 colors
 
+# speed up load time
+DISABLE_UPDATE_PROMPT=true
+
 # http://zsh.sourceforge.net/Doc/Release/User-Contributions.html
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git hg
