@@ -1,22 +1,22 @@
 # Execute code inn the background to not affect the current session
 (
-    # <https://github.com/zimfw/zimfw/blob/master/login_init.zsh>
-    setopt LOCAL_OPTIONS EXTENDED_GLOB
+        zcompare() {
+                if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
+                        zcompile -M ${1}
+                fi
+        }
+        # <https://github.com/zimfw/zimfw/blob/master/login_init.zsh>
+        setopt EXTENDED_GLOB
 
-    # Compile zcompdump, if modified, to increase startup speed.
-    local zcompdump="$HOME/.zcompdump"
-    if [[ -s "$zcompdump" && (! -s "${zcompdump}.zwc" || "$zcompdump" -nt "${zcompdump}.zwc") ]]; then
-        zcompile -M "$zcompdump"
-    fi
-    # zcompile .zshrc
-    zcompile -M $HOME/.zshrc
-    zcompile -M $HOME/.zprofile
-    zcompile -M $HOME/.zshenv
-    # recompile all zsh or sh
-    for f in $HOME/.zsh/config/**/*.*sh
-    do
-        zcompile $f
-    done
+        # recompile zshrc and .zshenv if modified
+        zcompare $HOME/.zcompdump
+        zcompare $HOME/.zshrc
+        zcompare $HOME/.zshenv
+
+        # recompile all zsh or sh if modified
+        for file in $HOME/.zsh/config/**/*.*sh; do
+                zcompare ${file}
+        done
 ) &!
 
 #eval "$(rbenv init -)"
