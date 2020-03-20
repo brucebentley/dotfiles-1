@@ -241,15 +241,15 @@ bindkey '^Z' fg-bg
 # Other
 #
 
-source ~/.zsh/config/aliases
-source ~/.zsh/config/common
-source ~/.zsh/config/colors
-source ~/.zsh/config/exports
-source ~/.zsh/config/functions
-source ~/.zsh/config/hash
-source ~/.zsh/config/path
-source ~/.zsh/config/vars
-source ~/.zsh/config/compinit
+source ~/.zsh/config/aliases.zsh
+source ~/.zsh/config/common.zsh
+source ~/.zsh/config/colors.zsh
+source ~/.zsh/config/exports.zsh
+source ~/.zsh/config/functions.zsh
+source ~/.zsh/config/hash.zsh
+source ~/.zsh/config/path.zsh
+source ~/.zsh/config/vars.zsh
+source ~/.zsh/config/compinit.zsh
 
 #
 # Third-party
