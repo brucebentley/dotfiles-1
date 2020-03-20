@@ -171,7 +171,7 @@ function tmux() {
     else
       local DIR="${*%%/}"
 
-      if [ $(hash -d| cut -d= -f1 | ag -c "^${DIR}\$") = 0 ]; then
+      if [ $(hash -d|cut -d= -f1 | ag -c "^${DIR}\$") = 0 ]; then
         # Not in `hash -d`: use as initial argument to fd.
         fd "$*"
       else
