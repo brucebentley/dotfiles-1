@@ -82,28 +82,28 @@ zstyle ':vcs_info:hg*+gen-hg-bookmark-string:*' hooks hg-bookmarks
 zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
 
 function +vi-hg-bookmarks() {
-  emulate -L zsh
-  if [[ -n "${hook_com[hg-active-bookmark]}" ]]; then
-    hook_com[hg-bookmark-string]="${(Mj:,:)@}"
-    ret=1
-  fi
+emulate -L zsh
+if [[ -n "${hook_com[hg-active-bookmark]}" ]]; then
+        hook_com[hg-bookmark-string]="${(Mj:,:)@}"
+        ret=1
+fi
 }
 
 function +vi-hg-message() {
-  emulate -L zsh
+emulate -L zsh
 
   # Suppress hg branch display if we can display a bookmark instead.
   if [[ -n "${hook_com[misc]}" ]]; then
-    hook_com[branch]=''
+          hook_com[branch]=''
   fi
   return 0
 }
 
 function +vi-git-untracked() {
-  emulate -L zsh
-  if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
-    hook_com[unstaged]+="%F{blue}●%f"
-  fi
+emulate -L zsh
+if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
+        hook_com[unstaged]+="%F{blue}●%f"
+fi
 }
 
 RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
@@ -111,28 +111,28 @@ setopt PROMPT_SUBST
 
 # Anonymous function to avoid leaking variables.
 function () {
-  # Check for tmux by looking at $TERM, because $TMUX won't be propagated to any
-  # nested sudo shells but $TERM will.
-  local TMUXING=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
-  if [ -n "$TMUXING" -a -n "$TMUX" ]; then
-    # In a a tmux session created in a non-root or root shell.
-    local LVL=$(($SHLVL-1))
-  else
-    # Either in a root shell created inside a non-root tmux session,
-    # or not in a tmux session.
-    local LVL=$(($SHLVL-0))
-  fi
-  if [[ $EUID -eq 0 ]]; then
-    local SUFFIX='%F{yellow}%n%f'$(printf '%%F{yellow}\u276f%.0s%%f' {1..$LVL})
-  else
-    local SUFFIX=$(printf '%%F{red}\u276f%.0s%%f' {1..$LVL})
-  fi
-  export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
-  if [[ -n "$TMUXING" ]]; then
-    # Outside tmux, ZLE_RPROMPT_INDENT ends up eating the space after PS1, and
-    # prompt still gets corrupted even if we add an extra space to compensate.
-    export ZLE_RPROMPT_INDENT=0
-  fi
+        # Check for tmux by looking at $TERM, because $TMUX won't be propagated to any
+        # nested sudo shells but $TERM will.
+        local TMUXING=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
+        if [ -n "$TMUXING" -a -n "$TMUX" ]; then
+                # In a a tmux session created in a non-root or root shell.
+                local LVL=$(($SHLVL-1))
+        else
+                # Either in a root shell created inside a non-root tmux session,
+                # or not in a tmux session.
+                local LVL=$(($SHLVL-0))
+        fi
+        if [[ $EUID -eq 0 ]]; then
+                local SUFFIX='%F{yellow}%n%f'$(printf '%%F{yellow}\u276f%.0s%%f' {1..$LVL})
+        else
+                local SUFFIX=$(printf '%%F{red}\u276f%.0s%%f' {1..$LVL})
+        fi
+        export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
+        if [[ -n "$TMUXING" ]]; then
+                # Outside tmux, ZLE_RPROMPT_INDENT ends up eating the space after PS1, and
+                # prompt still gets corrupted even if we add an extra space to compensate.
+                export ZLE_RPROMPT_INDENT=0
+        fi
 }
 
 export RPROMPT=$RPROMPT_BASE
@@ -181,7 +181,7 @@ bindkey -v # set to -e for emacs bindings, set to -v for vi bindings
 
 # Use "cbt" capability ("back_tab", as per `man terminfo`), if we have it:
 if tput cbt &> /dev/null; then
-  bindkey "$(tput cbt)" reverse-menu-complete # make Shift-tab go to previous completion
+        bindkey "$(tput cbt)" reverse-menu-complete # make Shift-tab go to previous completion
 fi
 
 autoload history-search-end
@@ -193,11 +193,11 @@ bindkey "\e[B" history-beginning-search-forward-end   # cursor down
 autoload -U select-word-style
 select-word-style bash # only alphanumeric chars are considered WORDCHARS
 
-autoload -U edit-command-line
-zle -N edit-command-line
-bindkey '^x^x' edit-command-line
+        autoload -U edit-command-line
+        zle -N edit-command-line
+        bindkey '^x^x' edit-command-line
 
-bindkey ' ' magic-space # do history expansion on space
+        bindkey ' ' magic-space # do history expansion on space
 
 # Replace standard history-incremental-search-{backward,forward} bindings.
 # These are the same but permit patterns (eg. a*b) to be used.
@@ -214,12 +214,12 @@ DEFAULT_VI_MODE=viins
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init zle-line-finish
 {
-  if [ "$TERM" != "linux" ]; then
-    case $KEYMAP in
-      vicmd)      echo -ne '\e[2 q';; # block cursor
-      viins|main) echo -ne '\e[6 q';; # line cursor
-    esac
-  fi
+        if [ "$TERM" != "linux" ]; then
+                case $KEYMAP in
+                        vicmd)      echo -ne '\e[2 q';; # block cursor
+                        viins|main) echo -ne '\e[6 q';; # line cursor
+                esac
+        fi
 }
 
 zle -N zle-line-init
@@ -228,11 +228,11 @@ zle -N zle-keymap-select
 
 # Make CTRL-Z background things and unbackground them.
 function fg-bg() {
-  if [[ $#BUFFER -eq 0 ]]; then
-    fg
-  else
-    zle push-input
-  fi
+        if [[ $#BUFFER -eq 0 ]]; then
+                fg
+        else
+                zle push-input
+        fi
 }
 zle -N fg-bg
 bindkey '^Z' fg-bg
@@ -281,22 +281,22 @@ HISTCMD_LOCAL=0
 function -update-window-title-precmd() {
 emulate -L zsh
 if [[ HISTCMD_LOCAL -eq 0 ]]; then
-  # About to display prompt for the first time; nothing interesting to show in
-    # the history. Show $PWD.
-    -set-tab-and-window-title "$(basename $PWD)"
-  else
-    local LAST=$(history | tail -1 | awk '{print $2}')
-    if [ -n "$TMUX" ]; then
-      # Inside tmux, just show the last command: tmux will prefix it with the
-      # session name (for context).
-        -set-tab-and-window-title "$LAST"
-      else
-        # Outside tmux, show $PWD (for context) followed by the last command.
-          -set-tab-and-window-title "$(basename $PWD) > $LAST"
+        # About to display prompt for the first time; nothing interesting to show in
+        # the history. Show $PWD.
+        -set-tab-and-window-title "$(basename $PWD)"
+else
+        local LAST=$(history | tail -1 | awk '{print $2}')
+        if [ -n "$TMUX" ]; then
+                # Inside tmux, just show the last command: tmux will prefix it with the
+                # session name (for context).
+                -set-tab-and-window-title "$LAST"
+        else
+                # Outside tmux, show $PWD (for context) followed by the last command.
+                -set-tab-and-window-title "$(basename $PWD) > $LAST"
         fi
-      fi
-    }
-  add-zsh-hook precmd -update-window-title-precmd
+fi
+}
+add-zsh-hook precmd -update-window-title-precmd
 
 # Executed before executing a command: $2 is one-line (truncated) version of
 # the command.
@@ -310,47 +310,47 @@ HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
   #   https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/termsupport.zsh
   local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
   if [ -n "$TMUX" ]; then
-    # Inside tmux, show the running command: tmux will prefix it with the
-    # session name (for context).
-      -set-tab-and-window-title "$TRIMMED"
-    else
-      # Outside tmux, show $PWD (for context) followed by the running command.
-        -set-tab-and-window-title "$(basename $PWD) > $TRIMMED"
-      fi
-    }
-  add-zsh-hook preexec -update-window-title-preexec
+          # Inside tmux, show the running command: tmux will prefix it with the
+          # session name (for context).
+          -set-tab-and-window-title "$TRIMMED"
+  else
+          # Outside tmux, show $PWD (for context) followed by the running command.
+          -set-tab-and-window-title "$(basename $PWD) > $TRIMMED"
+  fi
+}
+add-zsh-hook preexec -update-window-title-preexec
 
-  typeset -F SECONDS
-  function -record-start-time() {
-  emulate -L zsh
-  ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
+typeset -F SECONDS
+function -record-start-time() {
+emulate -L zsh
+ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
 }
 add-zsh-hook preexec -record-start-time
 
 function -report-start-time() {
 emulate -L zsh
 if [ $ZSH_START_TIME ]; then
-  local DELTA=$(($SECONDS - $ZSH_START_TIME))
-  local DAYS=$((~~($DELTA / 86400)))
-  local HOURS=$((~~(($DELTA - $DAYS * 86400) / 3600)))
-  local MINUTES=$((~~(($DELTA - $DAYS * 86400 - $HOURS * 3600) / 60)))
-  local SECS=$(($DELTA - $DAYS * 86400 - $HOURS * 3600 - $MINUTES * 60))
-  local ELAPSED=''
-  test "$DAYS" != '0' && ELAPSED="${DAYS}d"
-  test "$HOURS" != '0' && ELAPSED="${ELAPSED}${HOURS}h"
-  test "$MINUTES" != '0' && ELAPSED="${ELAPSED}${MINUTES}m"
-  if [ "$ELAPSED" = '' ]; then
-    SECS="$(print -f "%.2f" $SECS)s"
-  elif [ "$DAYS" != '0' ]; then
-    SECS=''
-  else
-    SECS="$((~~$SECS))s"
-  fi
-  ELAPSED="${ELAPSED}${SECS}"
-  export RPROMPT="%F{cyan}%{$__emanon[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
-  unset ZSH_START_TIME
+        local DELTA=$(($SECONDS - $ZSH_START_TIME))
+        local DAYS=$((~~($DELTA / 86400)))
+        local HOURS=$((~~(($DELTA - $DAYS * 86400) / 3600)))
+        local MINUTES=$((~~(($DELTA - $DAYS * 86400 - $HOURS * 3600) / 60)))
+        local SECS=$(($DELTA - $DAYS * 86400 - $HOURS * 3600 - $MINUTES * 60))
+        local ELAPSED=''
+        test "$DAYS" != '0' && ELAPSED="${DAYS}d"
+        test "$HOURS" != '0' && ELAPSED="${ELAPSED}${HOURS}h"
+        test "$MINUTES" != '0' && ELAPSED="${ELAPSED}${MINUTES}m"
+        if [ "$ELAPSED" = '' ]; then
+                SECS="$(print -f "%.2f" $SECS)s"
+        elif [ "$DAYS" != '0' ]; then
+                SECS=''
+        else
+                SECS="$((~~$SECS))s"
+        fi
+        ELAPSED="${ELAPSED}${SECS}"
+        export RPROMPT="%F{cyan}%{$__emanon[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
+        unset ZSH_START_TIME
 else
-  export RPROMPT="$RPROMPT_BASE"
+        export RPROMPT="$RPROMPT_BASE"
 fi
 }
 add-zsh-hook precmd -report-start-time
@@ -362,7 +362,7 @@ emulate -L zsh
 # Only in response to a user-initiated `cd`, not indirectly (eg. via another
 # function).
 if [ "$ZSH_EVAL_CONTEXT" = "toplevel:shfunc" ]; then
-  ls -a --color=auto
+        ls -a --color=auto
 fi
 }
 add-zsh-hook chpwd -auto-ls-after-cd
@@ -378,30 +378,30 @@ function -maybe-show-vcs-info() {
 local LAST="$__emanon[LAST_COMMAND]"
 
   # In case user just hit enter, overwrite LAST_COMMAND, because preexec
-    # won't run and it will otherwise linger.
-    __emanon[LAST_COMMAND]="<unset>"
+  # won't run and it will otherwise linger.
+  __emanon[LAST_COMMAND]="<unset>"
 
   # Check first word; via:
   # http://tim.vanwerkhoven.org/post/2012/10/28/ZSH/Bash-string-manipulation
   case "$LAST[(w)1]" in
-    cd|cp|git|rm|touch|mv|)
-      vcs_info
-      ;;
-    *)
-      ;;
+          cd|cp|git|rm|touch|mv|)
+                  vcs_info
+                  ;;
+          *)
+                  ;;
   esac
 }
 add-zsh-hook precmd -maybe-show-vcs-info
 
 # adds `cdr` command for navigating to recent directories
-  autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-  add-zsh-hook chpwd chpwd_recent_dirs
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
 
 # enable menu-style completion for cdr
-  zstyle ':completion:*:*:cdr:*:*' menu selection
+zstyle ':completion:*:*:cdr:*:*' menu selection
 
 # fall through to cd if cdr is passed a non-recent dir as an argument
-  zstyle ':chpwd:*' recent-dirs-default true
+zstyle ':chpwd:*' recent-dirs-default true
 
 # Local and host-specific overrides.
 
@@ -426,7 +426,7 @@ source ~/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 #
 
 if [ -e /etc/motd ]; then
-  if ! cmp -s $HOME/.hushlogin /etc/motd; then
-    tee $HOME/.hushlogin < /etc/motd
-  fi
+        if ! cmp -s $HOME/.hushlogin /etc/motd; then
+                tee $HOME/.hushlogin < /etc/motd
+        fi
 fi
