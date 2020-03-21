@@ -3,13 +3,9 @@
 #
 
 alias ....='cd ../..'
-alias :e=vim
-alias :qa=exit
 alias :sp='test -n "$TMUX" && tmux split-window'
 alias :vs='test -n "$TMUX" && tmux split-window -h'
-alias :wq=exit
 alias a=ag
-alias cd..='cd ..'
 alias d='hash -d'
 alias e=exit
 alias f='find . -name'
@@ -19,11 +15,10 @@ alias h=history
 alias j=jump
 alias l='ls --color'
 alias ll='ls -al --color'
-alias o='git log --oneline'
-alias p='git format-patch'
-alias prettyjson='python -m json.tool'
 alias n=ncmpcpp
+alias o='git log --oneline'
 alias oo='git log --oneline -10'
+alias p='git format-patch'
 alias r=ranger
 alias s=ssh
 alias server='python -m littlehttpserver' # optional arg: port (defaults to 8000)
