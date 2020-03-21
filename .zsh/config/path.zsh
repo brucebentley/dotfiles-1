@@ -2,16 +2,7 @@ SYSTEM_PATH=$PATH
 unset PATH
 
 # keep these on separate lines to make changing their order easier
-PATH=$PATH:$HOME/bin/
 PATH=$PATH:$HOME/.zsh/bin
-
-test -n "$N_PREFIX" && PATH=$PATH:$N_PREFIX/bin
-
-PATH=$PATH:$HOME/.cargo/bin
-
-if [ -d /usr/local/opt/mysql@5.7 ]; then
-  PATH=$PATH:/usr/local/opt/mysql@5.7/bin
-fi
 
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
@@ -19,9 +10,4 @@ PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/sbin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
-PATH=$PATH:/usr/local/opt/srm/bin
-PATH=$PATH:$SYSTEM_PATH
-PATH=$PATH:$EC2_HOME/bin
-PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/.cabal/bin
 export PATH
