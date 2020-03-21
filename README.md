@@ -26,6 +26,9 @@
 - `tw` ("time warp"): overrides `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` (eg. `tw -1d`).
 
 ## INSTALL
+1. git clone --recursive https://github.com/Z5483/dotfiles
+2. ./install
+
 ```
 ./install.sh will install everything on the local system by creating symbolic links to the target location
 ```
