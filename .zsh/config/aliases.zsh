@@ -31,5 +31,5 @@ alias privateip="ip addr | ag 'inet ' | awk -F'[: ]+' '{ if (\$4 ~ /[0-9]+\.[0-9
 
 # Type vim to use neovim
 if command -v nvim &> /dev/null; then
-alias vim=nvim # Use `\vim` or `command vim` to get the real vim.
+        alias vim=nvim # Use `\vim` or `command vim` to get the real vim.
 fi
