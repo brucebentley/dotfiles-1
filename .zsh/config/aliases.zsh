@@ -2,6 +2,7 @@
 # Command aliases
 #
 
+alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
 alias :sp='test -n "$TMUX" && tmux split-window'
