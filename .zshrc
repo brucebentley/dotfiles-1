@@ -363,7 +363,7 @@ local LAST="$__emanon[LAST_COMMAND]"
   # In case user just hit enter, overwrite LAST_COMMAND, because preexec
   # won't run and it will otherwise linger.
   __emanon[LAST_COMMAND]="<unset>"
-  if [[ "$LAST[1,2]" =~ "./|cd|cp|rm|mv" ]]; then
+  if [[ "$LAST[(w)1]" =~ "cd|cp|rm|mv|touch|git" || "$LAST[1,2]" =~ "./" ]]; then
           vcs_info
   fi
 }
