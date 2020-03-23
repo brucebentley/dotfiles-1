@@ -43,5 +43,5 @@ fi
 # Install skim
 if [ ! -f $HOME/.zsh/vendor/skim/bin/sk ]; then
         cd $HOME/.zsh/vendor/skim
-        bash install
+        ./install
 fi
