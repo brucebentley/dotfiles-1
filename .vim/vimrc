@@ -80,7 +80,7 @@ endif
 if &loadplugins
   if has('packages')
     packadd! base16-vim
-    packadd! Command-T
+    packadd! command-t
     packadd! ferret
     packadd! indentLine
     packadd! loupe

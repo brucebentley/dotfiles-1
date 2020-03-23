@@ -4,9 +4,6 @@
 [submodule ".vim/pack/bundle/opt/--force"]
 	path = .vim/pack/bundle/opt/--force
 	url = https://github.com/chriskempson/base16-vim/
-[submodule ".vim/pack/bundle/opt/Command-T"]
-	path = .vim/pack/bundle/opt/Command-T
-	url = https://github.com/wincent/Command-T
 [submodule ".vim/pack/bundle/opt/deoplete.nvim"]
 	path = .vim/pack/bundle/opt/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
@@ -133,3 +130,6 @@
 [submodule ".vim/pack/bundle/opt/goyo"]
 	path = .vim/pack/bundle/opt/goyo
 	url = https://github.com/junegunn/goyo.vim
+[submodule ".vim/pack/bundle/opt/command-t"]
+	path = .vim/pack/bundle/opt/command-t
+	url = https://github.com/wincent/command-t

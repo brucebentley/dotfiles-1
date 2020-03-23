@@ -37,8 +37,8 @@ else
 fi
 
 # Setup Command-T
-if [ ! -f $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/ext.so ]; then
-        cd $HOME/.vim/pack/bundle/opt/Command-T/ruby/command-t/ext/command-t/
+if [ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]; then
+        cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
         ruby extconf.rb
         make
 fi
