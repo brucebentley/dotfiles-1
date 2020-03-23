@@ -8,6 +8,7 @@
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
+	cf = "!f() { git add -A && git commit -av; }; f"
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
