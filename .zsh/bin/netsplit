@@ -1,5 +1,6 @@
 #!/usr/bin/env python3.6
 # Script to split subnets for parallel port scanning large network
+# Example: netsplit 0.0.0.0/0 | xargs -I stdout -P 50 nmap -Pn -sT -sV -T5 -p 5900 -append-output stdout
 import ipaddress, sys
 ip = ipaddress.ip_network(sys.argv[1])
 subnet_list = ip.subnets(new_prefix = 24)
