@@ -34,9 +34,6 @@
 [submodule ".vim/pack/bundle/opt/terminus"]
 	path = .vim/pack/bundle/opt/terminus
 	url = https://github.com/wincent/terminus
-[submodule ".vim/pack/bundle/opt/UltiSnips"]
-	path = .vim/pack/bundle/opt/UltiSnips
-	url = https://github.com/sirver/UltiSnips
 [submodule ".vim/pack/bundle/opt/undotree"]
 	path = .vim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree
@@ -133,3 +130,6 @@
 [submodule ".vim/pack/bundle/opt/command-t"]
 	path = .vim/pack/bundle/opt/command-t
 	url = https://github.com/wincent/command-t
+[submodule ".vim/pack/bundle/opt/ultisnips"]
+	path = .vim/pack/bundle/opt/ultisnips
+	url = https://github.com/SirVer/ultisnips

@@ -89,7 +89,7 @@ if &loadplugins
     packadd! scalpel
     packadd! tcomment_vim
     packadd! terminus
-    packadd! UltiSnips
+    packadd! ultisnips
     packadd! vcs-jump
     packadd! vim-abolish
     packadd! vim-multiple-cursors
