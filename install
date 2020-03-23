@@ -3,6 +3,7 @@
 # HOME DIRECTORY
 ln -sf $PWD/.asoundrc  $HOME
 ln -sf $PWD/.fonts     $HOME
+ln -sf $PWD/.gitconfig $HOME
 ln -sf $PWD/.inputrc   $HOME
 ln -sf $PWD/.lynxrc    $HOME
 ln -sf $PWD/.mpd       $HOME
