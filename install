@@ -46,3 +46,5 @@ if [ ! -f $HOME/.zsh/vendor/skim/bin/sk ]; then
         cd $HOME/.zsh/vendor/skim
         ./install
 fi
+
+echo success!!!
