@@ -33,5 +33,13 @@
 ./install.sh will install everything on the local system by creating symbolic links to the target location
 ```
 
-**Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.  
+**Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
+
+**Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
+
+```
+git config --file ~/.gitconfig.local user.name "username"
+git config --file ~/.gitconfig.local user.email "user@example.com"
+```
+
 **Note:** Before open vim, you should use `color` to set a color first
