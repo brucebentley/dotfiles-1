@@ -12,7 +12,7 @@ alias d='hash -d'
 alias e=exit
 alias f='find . -name'
 alias g=git
-alias graph="git log --graph --color --pretty=format:%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+alias graph="git log --graph --color"
 alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias h=history
 alias j=jump
