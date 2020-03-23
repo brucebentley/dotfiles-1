@@ -15,7 +15,7 @@
 ## SHELL FUNCTIONS
 - `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
-- `fd`: "find directory" using fast `bfs` and `fzf`; automatically `cd`s into the selected directory.
+- `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
 - `fh`: "find [in] history"; selecting a history item inserts it into the command line but does not execute it.
 - `history`: overrides the (tiny) default history count.
 - `jump` (aliased to `j`): to jump to hashed directories.
@@ -34,3 +34,4 @@
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
+**Note:** Before open vim, you should use `color` to set a color first
