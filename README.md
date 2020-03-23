@@ -42,4 +42,4 @@ git config --file ~/.gitconfig.local user.name "username"
 git config --file ~/.gitconfig.local user.email "user@example.com"
 ```
 
-**Note:** Before open vim, you should use `color` to set a color first
+**Note:** Before opening vim for the first time, you should use the `color` function to set a color first because there's no default color
