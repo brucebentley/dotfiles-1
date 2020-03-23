@@ -1,6 +1,7 @@
 [alias]
 	# View the current working tree status using the short format
 	s = status -s
+	st = status
 
 	# Clone a repository including all submodules
 	c = clone --recursive
