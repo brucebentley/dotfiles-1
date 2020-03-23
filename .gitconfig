@@ -1,0 +1,70 @@
+[branch]
+	autosetupmerge = always
+	autosetuprebase = local
+
+[branch "master"]
+	rebase = true
+
+[color]
+	ui = auto
+
+[color "diff-highlight"]
+	newhighlight = reverse
+	newreset = noreverse
+	oldhighlight = reverse
+	oldreset = noreverse
+
+[color "interactive"]
+	prompt = blue reverse
+
+[color "status"]
+	untracked = blue
+
+[core]
+	excludesfile = ~/.gitignore
+	pager = sh -c "~/.zsh/bin/diff-highlight | less -iFMRSX" -
+	attributesfile = ~/.gitattributes
+
+[diff]
+	algorithm = histogram
+	compactionHeuristic = true
+
+[difftool]
+	prompt = false
+{% if github_username != '' %}
+
+[github]
+	username = {{ github_username }}
+{% endif %}
+
+[grep]
+	lineNumber = true
+
+[help]
+	autocorrect = 2
+
+[interactive]
+	diffFilter = diff-highlight
+
+[log]
+	decorate = short
+
+[merge]
+	conflictStyle = diff3
+	log = 1000
+
+[pager]
+	show-branch = true
+	status = true
+
+[protocol]
+	version = 2
+
+[push]
+	default = simple
+
+[rebase]
+	autosquash = true
+
+[rerere]
+	enabled = true
