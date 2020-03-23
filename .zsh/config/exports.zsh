@@ -5,31 +5,31 @@ export CORRECT_IGNORE_FILE='.*'
 export PAGER=less
 
 if [ "$TERM" != "linux" ]; then
-  export TERM="xterm-256color"
+        export TERM="xterm-256color"
 fi
 
 
 if which nvim &> /dev/null; then
-  export EDITOR=$(which nvim)
+        export EDITOR=$(which nvim)
 elif [ -x "$HOME/bin/vim" ]; then
-  # PATH isn't set yet (.zsh/path depends on this file), so we do this check
-  # instead of a simple `export EDITOR=$(which vim)`:
-  export EDITOR=$HOME/bin/vim
+        # PATH isn't set yet (.zsh/path depends on this file), so we do this check
+        # instead of a simple `export EDITOR=$(which vim)`:
+        export EDITOR=$HOME/bin/vim
 else
-  export EDITOR=vim
+        export EDITOR=vim
 fi
 
 if [ -d /usr/local/opt/mysql@5.7 ]; then
-  # Uncomment if you need to build anything that links against this version:
-  # export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
-  # export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
-  # export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
+        # Uncomment if you need to build anything that links against this version:
+        # export LDFLAGS="-L/usr/local/opt/mysql@5.7/lib"
+        # export CPPFLAGS="-I/usr/local/opt/mysql@5.7/include"
+        # export PKG_CONFIG_PATH="/usr/local/opt/mysql@5.7/lib/pkgconfig"
 fi
 
 # usually this means running on a machine with a statically-linked, hand-built
 # tmux (and ncurses)
 if [ -d "$HOME/share/terminfo" ]; then
-  export TERMINFO=$HOME/share/terminfo
+        export TERMINFO=$HOME/share/terminfo
 fi
 
 # filename (if known), line number if known, falling back to percent if known,
