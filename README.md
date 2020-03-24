@@ -35,7 +35,7 @@ Depends on the mode, the cursor will change its shape. In insert mode, the
 cursor will be a thin vertical bar. In normal/visual mode, the cursor will be in
 a block shape.
 
-**Note:**the cursor shapeshifting function only work on terminal emulators and
+**Note:** the cursor shapeshifting function only work on terminal emulators and
 not on console.
 
 # INSTALL
