@@ -225,29 +225,6 @@ zle -N fg-bg
 bindkey '^Z' fg-bg
 
 #
-# Other
-#
-
-source ~/.zsh/config/aliases.zsh
-source ~/.zsh/config/common.zsh
-source ~/.zsh/config/colors.zsh
-source ~/.zsh/config/exports.zsh
-source ~/.zsh/config/functions.zsh
-source ~/.zsh/config/hash.zsh
-source ~/.zsh/config/path.zsh
-source ~/.zsh/config/vars.zsh
-
-#
-# Third-party
-#
-
-# Skim
-
-test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
-test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
-export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
-
-#
 # Hooks
 #
 
@@ -346,6 +323,29 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
 # Uncomment this to get syntax highlighting:
 source ~/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#
+# Third-party
+#
+
+# Skim
+
+test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
+test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
+export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
+
+#
+# Other
+#
+
+source ~/.zsh/config/aliases.zsh
+source ~/.zsh/config/common.zsh
+source ~/.zsh/config/colors.zsh
+source ~/.zsh/config/exports.zsh
+source ~/.zsh/config/functions.zsh
+source ~/.zsh/config/hash.zsh
+source ~/.zsh/config/path.zsh
+source ~/.zsh/config/vars.zsh
 
 #
 # /etc/motd
