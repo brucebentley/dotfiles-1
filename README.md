@@ -44,6 +44,7 @@ not on the console.
 
 - `epr`: CLI EPUB files reader (https://github.com/wustho/epr)
 - `speedtest`: a CLI script for testing internet bandwidth using Ookla's speedtest.net (https://github.com/sivel/speedtest-cli)
+- `setup-tor-iptables`: setup iptables for tor service (https://github.com/jessfraz/dotfiles/blob/master/bin/setup-tor-iptables)
 - `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware)
 - `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi)
 - `bonsai`: a CLI bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh)
