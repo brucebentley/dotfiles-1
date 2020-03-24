@@ -115,7 +115,6 @@ if &loadplugins
     packadd! vim-markdown
     packadd! vim-operator-user
     packadd! vim-projectionist
-    packadd! vim-reason-plus
     packadd! vim-repeat
     packadd! vim-signature
     packadd! vim-speeddating

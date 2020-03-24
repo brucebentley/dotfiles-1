@@ -76,9 +76,6 @@
 [submodule ".vim/pack/bundle/opt/vim-projectionist"]
 	path = .vim/pack/bundle/opt/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist
-[submodule ".vim/pack/bundle/opt/vim-reason-plus"]
-	path = .vim/pack/bundle/opt/vim-reason-plus
-	url = https://github.com/reasonml-editor/vim-reason-plus
 [submodule ".vim/pack/bundle/opt/vim-repeat"]
 	path = .vim/pack/bundle/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat
