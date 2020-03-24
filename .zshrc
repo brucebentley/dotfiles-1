@@ -197,21 +197,20 @@ export KEYTIMEOUT=25
 
 # vi-mode bindings for esc
 bindkey -M viins "''" vi-cmd-mode
-bindkey -M visual "''" vi-cmd-mode
+bindkey -M visual "''" deactivate-region
 
 # Cursor shape changes in different modes
-function zle-keymap-select zle-line-init zle-line-finish
+function zle-keymap-select zle-line-init
 {
         if [ "$TERM" != "linux" ]; then
                 case $KEYMAP in
-                        vicmd)      echo -ne '\e[2 q';; # block cursor
-                        viins|main) echo -ne '\e[6 q';; # line cursor
+                        vicmd|visual)   echo -ne '\e[2 q';; # block cursor
+                        viins|main)     echo -ne '\e[6 q';; # line cursor
                 esac
         fi
 }
 
 zle -N zle-line-init
-zle -N zle-line-finish
 zle -N zle-keymap-select
 
 # Make CTRL-Z background things and unbackground them.
