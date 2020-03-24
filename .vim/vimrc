@@ -11,7 +11,7 @@ let filetype_pl='prolog'
 
 " Stark highlighting is enough to see the current match; don't need the
 " centering, which can be annoying.
-let g:LoupeCenterResults=1
+let g:LoupeCenterResults=0
 
 " Would be useful mappings, but they interfere with my default window movement
 " bindings (<C-j> and <C-k>).
