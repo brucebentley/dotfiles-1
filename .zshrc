@@ -188,12 +188,15 @@ if tput cbt &> /dev/null; then
         bindkey "$(tput cbt)" reverse-menu-complete # make Shift-tab go to previous completion
 fi
 
-export DEFAULT_VI_MODE=viins # set default vi-mode
+# Set default vi-mode state
+export DEFAULT_VI_MODE=viins
+
+# Make vi-mode transition faster
+export KEYTIMEOUT=15 # easier to type out a single quote if desired
 
 # vi-mode bindings for esc
 bindkey -M viins "''" vi-cmd-mode
 bindkey -M visual "''" vi-cmd-mode
-
 
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init zle-line-finish
