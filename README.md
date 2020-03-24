@@ -1,8 +1,8 @@
-## SCREENSHOT
+# SCREENSHOT
 <img src="screenshot/0001">
 <img src="screenshot/0002">
 
-## SYSTEM CONFIGURATION
+# SYSTEM CONFIGURATION
 * `distro`: gentoo
 * `wm`: dwm
 * `terminal`: st
@@ -11,8 +11,7 @@
 * `editor`: neovim
 * `music player`: ncmpcpp/spotify
 * `font`: Deja Vu Sans Mono
-
-## SHELL FUNCTIONS
+# SHELL FUNCTIONS
 - `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
 - `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
@@ -25,7 +24,7 @@
 - `tmux`: wrapper that reattches to pre-existing sessions, or creates new ones based on the current directory name; additionally, looks for a `.tmux` file to set up windows and panes (note that the first time a given `.tmux` file is encountered the wrapper asks the user whether to trust or skip it).
 - `tw` ("time warp"): overrides `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` (eg. `tw -1d`).
 
-## INSTALL
+# INSTALL
 1. git clone --recursive https://github.com/Z5483/dotfiles
 2. ./install
 
