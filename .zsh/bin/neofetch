@@ -45,7 +45,6 @@ LANG=C
 export GIO_EXTRA_MODULES=/usr/lib/x86_64-linux-gnu/gio/modules/
 
 # Neofetch default config.
-read -rd '' config <<'EOF'
 # See this wiki page for more info:
 # https://github.com/dylanaraps/neofetch/wiki/Customizing-Info
 print_info() {
@@ -164,7 +163,7 @@ package_managers="on"
 # Example:
 # on:  '/bin/bash'
 # off: 'bash'
-shell_path="off"
+shell_path="on"
 # Show $SHELL version
 #
 # Default: 'on'
@@ -194,7 +193,7 @@ speed_type="bios_limit"
 # Example:
 # on:    'i7-6500U (4) @ 3.1GHz'
 # off:   'i7-6500U (4) @ 3.100GHz'
-speed_shorthand="off"
+speed_shorthand="on"
 # Enable/Disable CPU brand in output.
 #
 # Default: 'on'
@@ -763,7 +762,6 @@ background_color=
 # Default: 'off'
 # Values: 'on', 'off'
 stdout="off"
-EOF
 
 # DETECT INFORMATION
 
@@ -4326,30 +4324,6 @@ get_full_path() {
     [[ -e "$full_dir" ]] && printf '%s\n' "$full_dir"
 }
 
-get_user_config() {
-    # --config /path/to/config.conf
-    if [[ -f "$config_file" ]]; then
-        source "$config_file"
-        err "Config: Sourced user config. (${config_file})"
-        return
-
-    elif [[ -f "${XDG_CONFIG_HOME}/neofetch/config.conf" ]]; then
-        source "${XDG_CONFIG_HOME}/neofetch/config.conf"
-        err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/neofetch/config.conf)"
-
-    elif [[ -f "${XDG_CONFIG_HOME}/neofetch/config" ]]; then
-        source "${XDG_CONFIG_HOME}/neofetch/config"
-        err "Config: Sourced user config.    (${XDG_CONFIG_HOME}/neofetch/config)"
-
-    elif [[ -z "$no_config" ]]; then
-        config_file="${XDG_CONFIG_HOME}/neofetch/config.conf"
-
-        # The config file doesn't exist, create it.
-        mkdir -p "${XDG_CONFIG_HOME}/neofetch/"
-        printf '%s\n' "$config" > "$config_file"
-    fi
-}
-
 bar() {
     # Get the values.
     elapsed="$(($1 * bar_length / $2))"
@@ -4719,7 +4693,7 @@ exit 1
 
 get_args() {
     # Check the commandline flags early for '--config'.
-    [[ "$*" != *--config* && "$*" != *--no_config* ]] && get_user_config
+    [[ "$*" != *--config* && "$*" != *--no_config* ]]
 
     while [[ "$1" ]]; do
         case $1 in
