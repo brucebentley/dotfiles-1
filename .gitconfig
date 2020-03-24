@@ -62,6 +62,9 @@
 	algorithm = histogram
 	compactionHeuristic = true
 
+[difftool]
+	prompt = false
+
 [grep]
 	lineNumber = true
 
