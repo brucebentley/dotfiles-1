@@ -11,7 +11,10 @@
 * `editor`: neovim
 * `music player`: ncmpcpp/spotify
 * `font`: Deja Vu Sans Mono
-# SHELL FUNCTIONS
+
+# ZSH
+
+## SHELL FUNCTIONS
 - `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
 - `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
@@ -23,6 +26,17 @@
 - `tick`: moves an existing time warp (eg. `tick +1h`); see `tw` below for a description of time warp.
 - `tmux`: wrapper that reattches to pre-existing sessions, or creates new ones based on the current directory name; additionally, looks for a `.tmux` file to set up windows and panes (note that the first time a given `.tmux` file is encountered the wrapper asks the user whether to trust or skip it).
 - `tw` ("time warp"): overrides `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` (eg. `tw -1d`).
+
+## VI MODE
+
+Escape key is mapped to `esc key` and `''`(two single quotes).
+
+Depends on the mode, the cursor will change its shape. In insert mode, the
+cursor will be a thin vertical bar. In normal/visual mode, the cursor will be in
+a block shape.
+
+**Note:**the cursor shapeshifting function only work on terminal emulators and
+not on console.
 
 # INSTALL
 1. git clone --recursive https://github.com/Z5483/dotfiles
