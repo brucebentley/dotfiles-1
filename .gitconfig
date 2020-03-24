@@ -3,6 +3,9 @@
 	s = status -s
 	st = status
 
+	# Checkout branch
+	co = checkout
+
 	# Clone a repository including all submodules
 	c = clone --recursive
 
