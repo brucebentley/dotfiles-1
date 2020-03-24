@@ -15,8 +15,8 @@ let g:LoupeCenterResults=0
 
 " And it turns out that if we're going to turn off the centering, we don't even
 " need the mappings; see: https://github.com/wincent/loupe/pull/15
-nmap <Nop> <Plug>(LoupeN)
-nmap <Nop> <Plug>(Loupen)
+map <Nop> <Plug>(LoupeN)
+map <Nop> <Plug>(Loupen)
 
 " Would be useful mappings, but they interfere with my default window movement
 " bindings (<C-j> and <C-k>).
