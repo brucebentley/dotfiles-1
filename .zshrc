@@ -192,7 +192,8 @@ fi
 export DEFAULT_VI_MODE=viins
 
 # Make vi-mode transition faster
-export KEYTIMEOUT=15 # easier to type out a single quote if desired
+# easier to type out a single quote if desired
+export KEYTIMEOUT=25
 
 # vi-mode bindings for esc
 bindkey -M viins "''" vi-cmd-mode
