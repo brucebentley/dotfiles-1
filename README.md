@@ -3,6 +3,7 @@
 <img src="screenshot/0002">
 
 # SYSTEM CONFIGURATION
+
 * `distro`: gentoo
 * `wm`: dwm
 * `terminal`: st
@@ -15,6 +16,7 @@
 # ZSH
 
 ## SHELL FUNCTIONS
+
 - `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
 - `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
@@ -38,7 +40,18 @@ a block shape.
 **Note:** the cursor shapeshifting function only works on terminal emulators and
 not on the console.
 
+## THIRD-PARTY SCRIPT
+
+- `epr`: CLI EPUB files reader (https://github.com/wustho/epr)
+- `speedtest`: a CLI script for testing internet bandwidth using Ookla's speedtest.net (https://github.com/sivel/speedtest-cli)
+- `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware)
+- `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi)
+- `bonsai`: a CLI bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh)
+- `pfetch`: a simple system information displayer (https://github.com/dylanaraps/pfetch)
+- `neofetch`: a CLI system information tool (https://github.com/dylanaraps/neofetch)
+-
 # INSTALL
+
 1. git clone --recursive https://github.com/Z5483/dotfiles
 2. ./install
 
