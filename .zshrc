@@ -203,10 +203,11 @@ bindkey -M visual "''" deactivate-region
 function zle-keymap-select zle-line-init
 {
         if [ "$TERM" != "linux" ]; then
-                case $KEYMAP in
-                        vicmd|visual)   printf '\033[2 q';; # block cursor
-                        viins|main)     printf '\033[6 q';; # line cursor
-                esac
+                if [[ $KEYMAP == main ]]; then
+                        printf '\033[6 q' # line cursor
+                else
+                        printf '\033[2 q' # block cursor
+                fi
         fi
 }
 
