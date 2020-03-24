@@ -204,8 +204,8 @@ function zle-keymap-select zle-line-init
 {
         if [ "$TERM" != "linux" ]; then
                 case $KEYMAP in
-                        vicmd|visual)   printf '\e[2 q';; # block cursor
-                        viins|main)     printf '\e[6 q';; # line cursor
+                        vicmd|visual)   printf '\033[2 q';; # block cursor
+                        viins|main)     printf '\033[6 q';; # line cursor
                 esac
         fi
 }
