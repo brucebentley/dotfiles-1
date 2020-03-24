@@ -12,7 +12,6 @@ if [ -x "$(command -v compton)" ]; then
         compton -b --config ~/.config/compton/compton.conf
 fi
 
-
 session=${1}
 
 case $session in
