@@ -20,9 +20,6 @@ function! emanon#functions#plaintext() abort
 
   call emanon#functions#spell()
 
-  nnoremap <buffer> j gj
-  nnoremap <buffer> k gk
-
   " Ideally would keep 'list' set, and restrict 'listchars' to just show
   " whitespace errors, but 'listchars' is global and I don't want to go through
   " the hassle of saving and restoring.
