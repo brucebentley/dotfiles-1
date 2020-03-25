@@ -1,6 +1,5 @@
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TIME=en_AU.UTF-8
+export LC_ALL=C.utf8
+export LANG=C.utf8
 
 if [ -d "$HOME/.zshenv.d" ]; then
         for EXTENSION_FILE in $(find $HOME/.zshenv.d/ -name '*.zsh'); do
