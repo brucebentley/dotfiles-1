@@ -4,13 +4,16 @@
 	st = status
 
 	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+	d = !"git diff-index --quiet HEAD; git --no-pager diff --patch-with-stat"
 
 	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
 	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
 	# Switch to a branch, creating it if necessary
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Single letter alias for commit
+	c = commit -v
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
@@ -27,8 +30,8 @@
 	# Hard reset all commits that are not pushed
 	hreset = reset HEAD --hard
 
-	# Clone a repository including all submodules
-	c = clone --recursive
+	# Clone a repository including all submodules (Clone Recursive)
+	cr = clone --recursive
 
 	# Clone a repository with depth of 1 (Shallow Clone)
 	sc = clone --depth=1
