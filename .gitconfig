@@ -3,8 +3,29 @@
 	s = status -s
 	st = status
 
-	# Checkout branch
-	co = checkout
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
+	# Switch to a branch, creating it if necessary
+	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+	# Commit all changes
+	ca = !git add -A && git commit -av
+
+	# Amend the currenly staged file to latest commit
+	amend = !git add -A && git commit --amend --no-edit
+
+	# Push current branch to origin
+	p = !git push origin $(git rev-parse --abbrev-ref HEAD)
+
+	# Undo last commit (https://gist.github.com/sethvargo/6b2f7b592853381690bfe3bd00947e8f)
+	undo = !git reset HEAD~1 --mixed
+
+	# Hard reset all commits that are not pushed
+	hreset = reset HEAD --hard
 
 	# Clone a repository including all submodules
 	c = clone --recursive
@@ -12,28 +33,16 @@
 	# Clone a repository with depth of 1 (Shallow Clone)
 	sc = clone --depth=1
 
-	# Commit all changes
-	ca = !git add -A && git commit -av
+	# Get working branch up to date
+	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
-	# Switch to a branch, creating it if necessary
-	go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+	# Update all submodules
+	update-bundle = pull --recurse-submodules
 
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
-
-	# Push current branch to origin
-	p = !git push origin $(git rev-parse --abbrev-ref HEAD)
-
-	# Amend the currenly staged file to latest commit
-	amend = !git add -A && git commit --amend --no-edit
 
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
@@ -52,21 +61,6 @@
 
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
-
-	# Sync with the remote
-	f = !git fetch --all && git rebase origin/master
-
-	# Get working branch up to date
-	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
-	
-	# Update all submodules
-	update-bundle = pull --recurse-submodules
-
-	# Undo last commit (https://gist.github.com/sethvargo/6b2f7b592853381690bfe3bd00947e8f)
-	undo = !git reset HEAD~1 --mixed
-
-	# Hard reset all commits that are not pushed
-	hreset = reset HEAD --hard
 
 [branch]
 	autosetupmerge = always
