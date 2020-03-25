@@ -369,26 +369,6 @@ HOST_RC=$HOME/.zsh/host/$(hostname -s)
 test -f $HOST_RC && source $HOST_RC
 
 #
-# Plug-ins
-#
-
-source ~/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
-
-# Uncomment this to get syntax highlighting:
-source ~/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-#
-# Third-party
-#
-
-# Skim
-
-test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
-test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
-export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
-
-#
 # Other
 #
 
@@ -400,6 +380,23 @@ source ~/.zsh/config/functions.zsh
 source ~/.zsh/config/hash.zsh
 source ~/.zsh/config/path.zsh
 source ~/.zsh/config/vars.zsh
+
+#
+# Plug-ins
+#
+source ~/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
+source ~/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#
+# Third-party
+#
+
+# Skim
+
+test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
+test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
+export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
 
 #
 # /etc/motd
