@@ -26,6 +26,9 @@
 	branches = branch -a
 	remotes = remote -v
 
+	# Interactive rebase with the given number of latest commits
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
 	# Find branches containing commit
 	fb = "!f() { git branch -a --contains $1; }; f"
 
