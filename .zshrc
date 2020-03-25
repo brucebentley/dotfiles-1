@@ -87,7 +87,7 @@ zstyle ':vcs_info:hg*+set-message:*' hooks hg-message
 
 function +vi-hg-bookmarks() {
         emulate -L zsh
-        if [[ -n "${hook_com[hg-active-bookmark]}" ]]; then
+        if [[ -n ${hook_com[hg-active-bookmark]} ]]; then
                 hook_com[hg-bookmark-string]="${(Mj:,:)@}"
                 ret=1
         fi
@@ -96,7 +96,7 @@ function +vi-hg-bookmarks() {
 function +vi-hg-message() {
         emulate -L zsh
         # Suppress hg branch display if we can display a bookmark instead.
-        if [[ -n "${hook_com[misc]}" ]]; then
+        if [[ -n ${hook_com[misc]} ]]; then
                 hook_com[branch]=''
         fi
         return 0
@@ -116,7 +116,7 @@ setopt PROMPT_SUBST
 function () {
         # Check for tmux by looking at $TERM, because $TMUX won't be propagated to any
         # nested sudo shells but $TERM will.
-        local TMUXING=$([[ "$TERM" =~ "tmux" ]] && echo tmux)
+        local TMUXING=$([[ $TERM == tmux ]] && echo tmux)
         if [ -n "$TMUXING" -a -n "$TMUX" ]; then
                 # In a a tmux session created in a non-root or root shell.
                 local LVL=$(($SHLVL-1))
@@ -201,7 +201,7 @@ bindkey -M visual "''" deactivate-region
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init
 {
-        if [ "$TERM" != "linux" ]; then
+        if [[ $TERM != linux ]]; then
                 if [[ $KEYMAP == main ]]; then
                         printf '\033[6 q' # line cursor
                 else
@@ -344,8 +344,8 @@ function -maybe-show-vcs-info() {
         # In case user just hit enter, overwrite LAST_COMMAND, because preexec
         # won't run and it will otherwise linger.
         __emanon[LAST_COMMAND]="<unset>"
-        if [[ "$LAST[(w)1]" =~ "cd|cp|rm|mv|touch|git" || "$LAST[1,2]" =~ "./" ]]; then
-                vcs_info 
+        if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git" || $LAST[1,2] == ./ ]]; then
+                vcs_info
         fi
 }
 add-zsh-hook precmd -maybe-show-vcs-info
