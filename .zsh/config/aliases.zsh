@@ -27,6 +27,7 @@ alias s=ssh
 alias server='python -m littlehttpserver' # optional arg: port (defaults to 8000)
 alias t=tmux
 alias v=vim
+alias x='xinit && exit'
 
 # IP related
 alias publicip="curl -fSs https://1.1.1.1/cdn-cgi/trace | awk -F= '/ip/ { print $2 }'"
