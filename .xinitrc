@@ -12,9 +12,4 @@ if [ -x "$(command -v compton)" ]; then
         compton -b --config ~/.config/compton/compton.conf
 fi
 
-session=${1}
-
-case $session in
-  dwm) exec dwm;;
-  *) exec $1;;
-esac
+exec dwm
