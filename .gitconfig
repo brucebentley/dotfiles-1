@@ -29,6 +29,9 @@
 	branches = branch -a
 	remotes = remote -v
 
+	# Amend the currenly staged file to latest commit
+	amend = !git add -A && git commit --amend --no-edit
+
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
