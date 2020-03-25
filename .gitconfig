@@ -12,6 +12,12 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
+	# Show the diff between the latest commit and the current state
+	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+
+	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
+	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+
 	# Show verbose output about tags, branches or remotes
 	tags = tag -l
 	branches = branch -a
