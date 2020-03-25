@@ -116,14 +116,14 @@ setopt PROMPT_SUBST
 function () {
         # Check for tmux by looking at $TERM, because $TMUX won't be propagated to any
         # nested sudo shells but $TERM will.
-        local TMUXING=$([[ $TERM == tmux ]] && echo tmux)
+        local TMUXING=$([[ $TERM =~ tmux ]] && echo tmux)
         if [ -n "$TMUXING" -a -n "$TMUX" ]; then
                 # In a a tmux session created in a non-root or root shell.
                 local LVL=$(($SHLVL-1))
         else
                 # Either in a root shell created inside a non-root tmux session,
                 # or not in a tmux session.
-                local LVL=$(($SHLVL-0))
+                local LVL=$SHLVL
         fi
         if [[ $EUID -eq 0 ]]; then
                 local SUFFIX='%F{yellow}%n%f'$(printf '%%F{yellow}\u276f%.0s%%f' {1..$LVL})
@@ -131,7 +131,7 @@ function () {
                 local SUFFIX=$(printf '%%F{red}\u276f%.0s%%f' {1..$LVL})
         fi
                 PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
-        if [[ -n "$TMUXING" ]]; then
+        if [[ -n $TMUXING ]]; then
                 # Outside tmux, ZLE_RPROMPT_INDENT ends up eating the space after PS1, and
                 # prompt still gets corrupted even if we add an extra space to compensate.
                 ZLE_RPROMPT_INDENT=0
@@ -250,7 +250,7 @@ function -update-window-title-precmd() {
                 -set-tab-and-window-title "$(basename $PWD)"
         else
                 local LAST=$(history | tail -1 | awk '{print $2}')
-                if [ -n "$TMUX" ]; then
+                if [[ -n $TMUX ]]; then
                         # Inside tmux, just show the last command: tmux will prefix it with the
                         # session name (for context).
                         -set-tab-and-window-title "$LAST"
@@ -273,7 +273,7 @@ function -update-window-title-preexec() {
         # mostly stolen from:
         #   https://github.com/robbyrussell/oh-my-zsh/blob/master/lib/termsupport.zsh
         local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
-        if [ -n "$TMUX" ]; then
+        if [[ -n $TMUX ]]; then
                 # Inside tmux, show the running command: tmux will prefix it with the
                 # session name (for context).
                 -set-tab-and-window-title "$TRIMMED"

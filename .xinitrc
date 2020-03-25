@@ -1,14 +1,14 @@
 #!/bin/sh
 
-if [ -x "$(command -v setxkbmap)" ]; then
+if [[ -x $(command -v setxkbmap) ]]; then
         setxkbmap -option 'caps:super'
 fi
 
-if [ -x "$(command -v feh)" ]; then
+if [[ -x $(command -v feh) ]]; then
         feh --randomize --bg-scale --no-xinerama ~/Pictures/wallpaper
 fi
 
-if [ -x "$(command -v compton)" ]; then
+if [[ -x $(command -v compton) ]]; then
         compton -b --config ~/.config/compton/compton.conf
 fi
 
