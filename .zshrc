@@ -130,24 +130,24 @@ function () {
         else
                 local SUFFIX=$(printf '%%F{red}\u276f%.0s%%f' {1..$LVL})
         fi
-        export PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
+                PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
         if [[ -n "$TMUXING" ]]; then
                 # Outside tmux, ZLE_RPROMPT_INDENT ends up eating the space after PS1, and
                 # prompt still gets corrupted even if we add an extra space to compensate.
-                export ZLE_RPROMPT_INDENT=0
+                ZLE_RPROMPT_INDENT=0
         fi
 }
 
-export RPROMPT=$RPROMPT_BASE
-export SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
+RPROMPT=$RPROMPT_BASE
+SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
 
 #
 # History
 #
 
-export HISTSIZE=100000
-export HISTFILE="$HOME/.history"
-export SAVEHIST=$HISTSIZE
+HISTSIZE=100000
+HISTFILE="$HOME/.history"
+SAVEHIST=$HISTSIZE
 
 #
 # Options
@@ -188,11 +188,11 @@ if tput cbt &> /dev/null; then
 fi
 
 # Set default vi-mode state
-export DEFAULT_VI_MODE=viins
+DEFAULT_VI_MODE=viins
 
 # Make vi-mode transition faster
 # easier to type out a single quote if desired
-export KEYTIMEOUT=25
+KEYTIMEOUT=25
 
 # vi-mode bindings for esc
 bindkey -M viins "''" vi-cmd-mode
@@ -311,10 +311,10 @@ function -report-start-time() {
                         SECS="$((~~$SECS))s"
                 fi
                 ELAPSED="${ELAPSED}${SECS}"
-                export RPROMPT="%F{cyan}%{$__emanon[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
+                RPROMPT="%F{cyan}%{$__emanon[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
                 unset ZSH_START_TIME
         else
-                export RPROMPT="$RPROMPT_BASE"
+                RPROMPT="$RPROMPT_BASE"
         fi
 }
 add-zsh-hook precmd -report-start-time
