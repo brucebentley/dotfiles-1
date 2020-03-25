@@ -56,7 +56,7 @@
 	undo = !git reset HEAD~1 --mixed
 
 	# Hard reset all commits that are not pushed
-	hreset = reset --hard
+	hreset = reset HEAD --hard
 
 [branch]
 	autosetupmerge = always
