@@ -6,7 +6,7 @@
 # See the downloaded file itself for the copyright notice.
 #
 
-if [ "$EUID" -ne 0 ]; then
+if [[ $EUID -ne 0 ]]; then
         echo "Please run as root."
         exit 0
 fi
