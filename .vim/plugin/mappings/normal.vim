@@ -1,5 +1,9 @@
 " Normal mode mappings.
 
+"Move cursor by display lines
+nnoremap <buffer> j  gj
+nnoremap <buffer> k  gk
+
 " Toggle fold at current position.
 nnoremap <Tab> za
 
@@ -21,7 +25,7 @@ nnoremap <C-l> <C-w>l
 " Repurpose cursor keys (accessible near homerow via "SpaceFN" layout) for one
 " of my most oft-use key sequences.
 nnoremap <silent> <Up> :cprevious<CR>
-nnoremap <silent> <Down> :cnevt<CR>
+nnoremap <silent> <Down> :cnext<CR>
 nnoremap <silent> <Left> :cpfile<CR>
 nnoremap <silent> <Right> :cnfile<CR>
 

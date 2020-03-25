@@ -2,8 +2,8 @@
 " Visual mode mappings.
 
 "Move cursor by display lines
-vnoremap <silent> j  gj
-vnoremap <silent> k  gk
+vnoremap <buffer> j  gj
+vnoremap <buffer> k  gk
 
 "remap Escape key
 vnoremap '' <Esc>
