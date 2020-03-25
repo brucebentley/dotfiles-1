@@ -15,7 +15,7 @@ set -o pipefail
 update_firmware(){
         if [ "$EUID" -ne 0 ]; then
                 echo "Please run as root."
-                return 1
+                exit 0
         fi
 
         (
