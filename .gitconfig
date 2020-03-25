@@ -29,6 +29,9 @@
 	branches = branch -a
 	remotes = remote -v
 
+	# Push current branch to origin
+	p = !git push origin $(git rev-parse --abbrev-ref HEAD)
+
 	# Amend the currenly staged file to latest commit
 	amend = !git add -A && git commit --amend --no-edit
 
@@ -50,8 +53,12 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+	# Sync with the remote
+	f = !git fetch --all && git rebase origin/master
+
 	# Get working branch up to date
 	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	
 	# Update all submodules
 	update-bundle = pull --recurse-submodules
 
