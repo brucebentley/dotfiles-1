@@ -18,6 +18,9 @@
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
+	# Single letter alias for restore
+	r = restore
+
 	# Amend the currenly staged file to latest commit
 	amend = !git add -A && git commit --amend --no-edit
 
