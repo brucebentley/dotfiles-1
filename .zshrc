@@ -360,14 +360,6 @@ zstyle ':completion:*:*:cdr:*:*' menu selection
 # fall through to cd if cdr is passed a non-recent dir as an argument
 zstyle ':chpwd:*' recent-dirs-default true
 
-# Local and host-specific overrides.
-
-LOCAL_RC=$HOME/.zshrc.local
-test -f $LOCAL_RC && source $LOCAL_RC
-
-HOST_RC=$HOME/.zsh/host/$(hostname -s)
-test -f $HOST_RC && source $HOST_RC
-
 #
 # Other
 #
