@@ -31,7 +31,7 @@
 
 ## VI MODE
 
-Escape key is mapped to `esc key` and `''`(two single quotes).
+Escape key is mapped to `esc key` and `'' (two single quotes)`.
 
 Depends on the mode, the cursor will change its shape. In insert mode, the
 cursor will be a thin vertical bar. In normal/visual mode, the cursor will be in
