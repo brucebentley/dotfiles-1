@@ -47,6 +47,8 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+	# Get working branch up to date
+	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	# Update all submodules
 	update-bundle = pull --recurse-submodules
 
