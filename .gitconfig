@@ -9,6 +9,9 @@
 	# Clone a repository including all submodules
 	c = clone --recursive
 
+	# Clone a repository with depth of 1 (Shallow Clone)
+	sc = clone --depth=1
+
 	# Commit all changes
 	ca = !git add -A && git commit -av
 
