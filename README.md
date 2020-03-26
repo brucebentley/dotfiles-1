@@ -42,13 +42,13 @@ not on the console.
 
 ## THIRD-PARTY SCRIPT
 
-- `epr`: CLI EPUB files reader (https://github.com/wustho/epr)
-- `speedtest`: a CLI script for testing internet bandwidth using Ookla's speedtest.net (https://github.com/sivel/speedtest-cli)
-- `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware)
-- `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi)
-- `bonsai`: a CLI bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh)
-- `pfetch`: a simple system information displayer (https://github.com/dylanaraps/pfetch)
-- `neofetch`: a CLI system information tool (https://github.com/dylanaraps/neofetch)
+- `epr`: CLI EPUB files reader (https://github.com/wustho/epr).
+- `speedtest`: a CLI script for testing internet bandwidth using Ookla's speedtest.net (https://github.com/sivel/speedtest-cli).
+- `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware).
+- `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi).
+- `bonsai`: a CLI bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh).
+- `pfetch`: a simple system information displayer (https://github.com/dylanaraps/pfetch).
+- `neofetch`: a CLI system information tool (https://github.com/dylanaraps/neofetch).
 
 # INSTALL
 
@@ -59,7 +59,7 @@ not on the console.
 ./install help - display all options
 ```
 
-**Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script
+**Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script.
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
 
@@ -71,7 +71,6 @@ not on the console.
 git config --file ~/.gitconfig.local user.name "username"
 git config --file ~/.gitconfig.local user.email "user@example.com"
 ```
-**Note:** You can also run the script `setup-git-user` in the `example`
-directory to quickly do the above
+**Note:** You can also run the script `setup-git-user` in the `example` directory to quickly do the above.
 
-**Note:** Before opening vim for the first time, you should use the `color` function to set a color first because there's no default color
+**Note:** Before opening vim for the first time, you should use the `color` function to set a color first because there's no default color.
