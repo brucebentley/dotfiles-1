@@ -3,7 +3,8 @@
 homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
 configDirFile=(compton fontconfig ranger)
 
-usage() {
+usage()
+{
         echo "Usage:"
         echo -e "       \e[36m./install \e[39m[ \e[32moptions \e[39m]"
         echo -e "\e[39mOptions:"
@@ -14,7 +15,8 @@ usage() {
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
 }
 
-setup-zsh() {
+setup-zsh()
+{
         ln -sf $PWD/.z* $HOME
 
         if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
@@ -23,7 +25,8 @@ setup-zsh() {
         fi
 }
 
-setup-vim() {
+setup-vim()
+{
         if [[ ! -d $HOME/.config/nvim ]]; then
                 ln -sf $PWD/.vim $HOME/.config/nvim
         else
@@ -45,7 +48,8 @@ setup-vim() {
         fi
 }
 
-setup-misc() {
+setup-misc()
+{
         # create ~/.config if doesn't exist
         if [[ ! -d $HOME/.config ]]; then
                 mkdir $HOME/.config
@@ -65,13 +69,15 @@ setup-misc() {
 }
 
 
-setup-all() {
+setup-all()
+{
         setup-zsh
         setup-vim
         setup-misc
 }
 
-clean-symlink() {
+clean-symlink()
+{
         for h in ${homeDirFile[@]}; do
                 if [[ -L $HOME/.$h ]]; then
                         rm -f $HOME/.$h
