@@ -56,7 +56,8 @@ not on the console.
 2. ./install
 
 ```
-./install.sh will install everything on the local system by creating symbolic links to the target location
+./install will install everything on the local system by creating symbolic links to the target location
+Use ./install to display all options
 ```
 
 **Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before runnign the script
