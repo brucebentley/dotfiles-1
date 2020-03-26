@@ -68,5 +68,6 @@ not on the console.
 git config --file ~/.gitconfig.local user.name "username"
 git config --file ~/.gitconfig.local user.email "user@example.com"
 ```
+**Note:** You can also run the script `setup-git-user` to quickly do the above
 
 **Note:** Before opening vim for the first time, you should use the `color` function to set a color first because there's no default color
