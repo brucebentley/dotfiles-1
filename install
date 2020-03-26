@@ -7,10 +7,10 @@ usage() {
         echo "Usage:"
         echo -e "       \e[36m./install \e[39m[ \e[32moptions \e[39m]"
         echo -e "\e[39mOptions:"
-        echo -e "       \e[39m[ \e[36mhelp \e[39m]  - \e[32mdisplay options"
-        echo -e "       \e[39m[ \e[36mvim \e[39m]   - \e[32msymlink vim config files only"
-        echo -e "       \e[39m[ \e[36mzsh \e[39m]   - \e[32msymlink zsh config files only"
-        echo -e "       \e[39m[ \e[36mall \e[39m]   - \e[32msymlink all config files"
+        echo -e "       \e[39m[  \e[36mhelp \e[39m] - \e[32mdisplay options"
+        echo -e "       \e[39m[  \e[36mvim  \e[39m] - \e[32msymlink vim config files only"
+        echo -e "       \e[39m[  \e[36mzsh  \e[39m] - \e[32msymlink zsh config files only"
+        echo -e "       \e[39m[  \e[36mall  \e[39m] - \e[32msymlink all config files"
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
 }
 
