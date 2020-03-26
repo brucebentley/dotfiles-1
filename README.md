@@ -63,6 +63,8 @@ not on the console.
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
 
+**Note:** When `./install clean` is executed, it might remove the existing symlink that has identical name as one of file in asis repository.
+
 **Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
 
 ```
