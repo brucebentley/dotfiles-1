@@ -1,6 +1,6 @@
 # SCREENSHOT
-<img src="img/0001">
-<img src="img/0002">
+<img src=".img/0001">
+<img src=".img/0002">
 
 # SYSTEM CONFIGURATION
 
