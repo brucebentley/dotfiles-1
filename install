@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc)
+configDirFile=(compton fontconfig ranger)
+
 usage() {
         echo "Usage:"
         echo -e "       \e[36m./install \e[39m[ \e[32moptions \e[39m]"
@@ -53,15 +56,17 @@ setup-misc() {
                 mkdir $HOME/.config
         fi
 
-        ln -sf $PWD/.config/*  $HOME/.config/
-        ln -sf $PWD/.asoundrc  $HOME
-        ln -sf $PWD/.fonts     $HOME
-        ln -sf $PWD/.gitconfig $HOME
-        ln -sf $PWD/.lynxrc    $HOME
-        ln -sf $PWD/.mpd       $HOME
-        ln -sf $PWD/.ncmpcpp   $HOME
-        ln -sf $PWD/.tmux.conf $HOME
-        ln -sf $PWD/.xinitrc   $HOME
+        for h in ${homeDirFile[@]}; do
+                if [[ ! -f $HOME/.$h ]]; then
+                        ln -sf $PWD/.$h $HOME
+                fi
+        done
+
+        for c in ${configDirFile[@]}; do
+                if [[ ! -f $HOME/.config/$c ]]; then
+                        ln -sf $PWD/.config/$c $HOME/.config
+                fi
+        done
 }
 
 
@@ -72,10 +77,6 @@ setup-all() {
 }
 
 clean-symlink() {
-        local homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc)
-
-        local configDirFile=(compton nvim fontconfig ranger)
-
         for h in ${homeDirFile[@]}; do
                 if [[ -L $HOME/.$h ]]; then
                         rm -f $HOME/.$h
