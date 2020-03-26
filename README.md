@@ -53,14 +53,13 @@ not on the console.
 # INSTALL
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
-2. ./install
+2. ./install  `use ./install help to display all options`
 
 ```
 ./install will install everything on the local system by creating symbolic links to the target location
-Use ./install to display all options
 ```
 
-**Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before runnign the script
+**Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
 
 **Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
