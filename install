@@ -53,11 +53,10 @@ setup-misc() {
                 mkdir $HOME/.config
         fi
 
-        ln -sf $PWD/.config/* $HOME/.config/
+        ln -sf $PWD/.config/*  $HOME/.config/
         ln -sf $PWD/.asoundrc  $HOME
         ln -sf $PWD/.fonts     $HOME
         ln -sf $PWD/.gitconfig $HOME
-        ln -sf $PWD/.inputrc   $HOME
         ln -sf $PWD/.lynxrc    $HOME
         ln -sf $PWD/.mpd       $HOME
         ln -sf $PWD/.ncmpcpp   $HOME
@@ -73,7 +72,7 @@ setup-all() {
 }
 
 clean-symlink() {
-        local homeDirFile=(asoundrc fonts gitconfig inputrc lynxrc mpd ncmpcpp tmux.conf xinitrc)
+        local homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc)
 
         local configDirFile=(compton nvim fontconfig ranger)
 
