@@ -54,10 +54,9 @@ not on the console.
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
 2. ./install
-  * `use ./install help to display all options`
 
 ```
-./install will install everything on the local system by creating symbolic links to the target location
+./install help - display all options
 ```
 
 **Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script
