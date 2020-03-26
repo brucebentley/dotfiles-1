@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc)
+homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
 configDirFile=(compton fontconfig ranger)
 
 usage() {
