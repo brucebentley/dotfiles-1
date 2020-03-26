@@ -88,6 +88,10 @@ clean-symlink() {
                         rm -f $HOME/.config/$c
                 fi
         done
+
+        if [[ -d $HOME/.config/nvim ]]; then
+                rm -r $HOME/.config/nvim
+        fi
 }
 
 case "$1" in
