@@ -14,24 +14,13 @@ usage() {
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
 }
 
-setup-zsh-submodule() {
-        # Setup Command-T
-        if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
-                cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
-                ruby extconf.rb
-                make
-        fi
+setup-zsh() {
+        ln -sf $PWD/.z* $HOME
 
-        # Setup skim
         if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
                 cd $HOME/.zsh/vendor/skim
                 ./install
         fi
-}
-
-setup-zsh() {
-        ln -sf $PWD/.z* $HOME
-        setup-zsh-submodule
 }
 
 setup-vim() {
@@ -47,6 +36,12 @@ setup-vim() {
         else
                 rm -r $HOME/.vim
                 ln -sf $PWD/.vim $HOME
+        fi
+
+        if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
+                cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
+                ruby extconf.rb
+                make
         fi
 }
 
