@@ -60,6 +60,7 @@ not on the console.
 ```
 
 **Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script
+
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
 
 **Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
