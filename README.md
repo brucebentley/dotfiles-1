@@ -53,7 +53,8 @@ not on the console.
 # INSTALL
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
-2. ./install  `use ./install help to display all options`
+2. ./install
+  * `use ./install help to display all options`
 
 ```
 ./install will install everything on the local system by creating symbolic links to the target location
