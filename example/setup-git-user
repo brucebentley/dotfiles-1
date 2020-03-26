@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-echo "Please type in your username"
+printf "Username for 'https://github.com': "
 read name
-echo "Please type in your email"
+printf "Email for 'https://$name@github.com': "
 read email
 
 git config --file "$HOME/.gitconfig.local" user.name "$name"
