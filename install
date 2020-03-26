@@ -73,20 +73,21 @@ setup-all() {
 }
 
 clean-symlink() {
-        rm -f $HOME/.asoundrc
-        rm -f $HOME/.fonts
-        rm -f $HOME/.gitconfig
-        rm -f $HOME/.inputrc
-        rm -f $HOME/.lynxrc
-        rm -f $HOME/.mpd
-        rm -f $HOME/.ncmpcpp
-        rm -f $HOME/.tmux.conf
-        rm -f $HOME/.xinitrc
+        local homeDirFile=(asoundrc fonts gitconfig inputrc lynxrc mpd ncmpcpp tmux.conf xinitrc)
 
-        rm -f $HOME/.config/compton
-        rm -f $HOME/.config/nvim
-        rm -f $HOME/.config/fontconfig
-        rm -f $HOME/.config/ranger
+        local configDirFile=(compton nvim fontconfig ranger)
+
+        for h in ${homeDirFile[@]}; do
+                if [[ -L $HOME/.$h ]]; then
+                        rm -f $HOME/.$h
+                fi
+        done
+
+        for c in ${configDirFile[@]}; do
+                if [[ -L $HOME/.config/$c ]]; then
+                        rm -f $HOME/.config/$c
+                fi
+        done
 }
 
 case "$1" in
