@@ -53,7 +53,7 @@ not on the console.
 # INSTALL
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
-2. ./install
+2. ./install all
 
 ```
 ./install help - display all options
