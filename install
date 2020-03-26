@@ -1,50 +1,92 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-# HOME DIRECTORY
-ln -sf $PWD/.asoundrc  $HOME
-ln -sf $PWD/.fonts     $HOME
-ln -sf $PWD/.gitconfig $HOME
-ln -sf $PWD/.inputrc   $HOME
-ln -sf $PWD/.lynxrc    $HOME
-ln -sf $PWD/.mpd       $HOME
-ln -sf $PWD/.ncmpcpp   $HOME
-ln -sf $PWD/.tmux.conf $HOME
-ln -sf $PWD/.xinitrc   $HOME
-ln -sf $PWD/.z*        $HOME
+usage() {
+        echo "./install [options]"
+        echo "Options:"
+        echo "  help - display options"
+        echo "  vim  - setup vim configurations"
+        echo "  zsh  - setup zsh configurations"
+        echo "  all  - symlink all configuration files"
+}
 
-# ~/.config
-if [ ! -d $HOME/.config ]; then
-        mkdir $HOME/.config
-fi
+setup-zsh() {
+        ln -sf $PWD/.z* $HOME
+        setup-zsh-submodule
+}
 
-ln -sf $PWD/.config/* $HOME/.config/
+setup-vim() {
+        if [ ! -d $HOME/.config/nvim ]; then
+                ln -sf $PWD/.vim $HOME/.config/nvim
+        else
+                rm -r $HOME/.config/nvim
+                ln -sf $PWD/.vim $HOME/.config/nvim
+        fi
 
-# create symlink to .vim if target path doesn't exist
-if [ ! -d $HOME/.config/nvim ]; then
-        ln -sf $PWD/.vim $HOME/.config/nvim
-else
-        rm -r $HOME/.config/nvim
-        ln -sf $PWD/.vim $HOME/.config/nvim
-fi
+        if [ ! -d $HOME/.vim ]; then
+                ln -sf $PWD/.vim $HOME
+        else
+                rm -r $HOME/.vim
+                ln -sf $PWD/.vim $HOME
+        fi
+}
 
-if [ ! -d $HOME/.vim ]; then
-        ln -sf $PWD/.vim $HOME
-else
-        rm -r $HOME/.vim
-        ln -sf $PWD/.vim $HOME
-fi
+setup-misc() {
+        # create ~/.config if doesn't exist
+        if [ ! -d $HOME/.config ]; then
+                mkdir $HOME/.config
+        fi
 
-# Setup Command-T
-if [ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]; then
-        cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
-        ruby extconf.rb
-        make
-fi
+        ln -sf $PWD/.config/* $HOME/.config/
+        ln -sf $PWD/.asoundrc  $HOME
+        ln -sf $PWD/.fonts     $HOME
+        ln -sf $PWD/.gitconfig $HOME
+        ln -sf $PWD/.inputrc   $HOME
+        ln -sf $PWD/.lynxrc    $HOME
+        ln -sf $PWD/.mpd       $HOME
+        ln -sf $PWD/.ncmpcpp   $HOME
+        ln -sf $PWD/.tmux.conf $HOME
+        ln -sf $PWD/.xinitrc   $HOME
+}
 
-# Install skim
-if [ ! -f $HOME/.zsh/vendor/skim/bin/sk ]; then
-        cd $HOME/.zsh/vendor/skim
-        ./install
-fi
+setup-zsh-submodule() {
+        # Setup Command-T
+        if [ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]; then
+                cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
+                ruby extconf.rb
+                make
+        fi
 
-echo success!!!
+        # Setup skim
+        if [ ! -f $HOME/.zsh/vendor/skim/bin/sk ]; then
+                cd $HOME/.zsh/vendor/skim
+                ./install
+        fi
+}
+
+setup-all() {
+        setup-zsh
+        setup-vim
+        setup-misc
+}
+
+main() {
+        case "$1" in
+        zsh)
+                setup-zsh
+                ;;
+        vim)
+                setup-vim
+                ;;
+        all)
+                setup-all
+                ;;
+        help)
+                usage
+                ;;
+        *)
+                usage
+                ;;
+        esac
+}
+
+main
