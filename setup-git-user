@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo "Please type in your username"
+read name
+echo "Please type in your email"
+read email
+
+git config --file "$HOME/.gitconfig.local" user.name "$name"
+git config --file "$HOME/.gitconfig.local" user.email "$email"
