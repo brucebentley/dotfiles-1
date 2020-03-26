@@ -10,6 +10,21 @@ usage() {
         echo -e "       \e[39m[ \e[36mall \e[39m] - \e[32mdisplay options"
 }
 
+setup-zsh-submodule() {
+# Setup Command-T
+if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
+        cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
+        ruby extconf.rb
+        make
+fi
+
+        # Setup skim
+        if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
+                cd $HOME/.zsh/vendor/skim
+                ./install
+        fi
+}
+
 setup-zsh() {
         ln -sf $PWD/.z* $HOME
         setup-zsh-submodule
@@ -49,20 +64,6 @@ setup-misc() {
         ln -sf $PWD/.xinitrc   $HOME
 }
 
-setup-zsh-submodule() {
-        # Setup Command-T
-        if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
-                cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
-                ruby extconf.rb
-                make
-        fi
-
-        # Setup skim
-        if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
-                cd $HOME/.zsh/vendor/skim
-                ./install
-        fi
-}
 
 setup-all() {
         setup-zsh
