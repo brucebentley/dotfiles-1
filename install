@@ -71,6 +71,23 @@ setup-all() {
         setup-misc
 }
 
+clean-symlink() {
+        rm -f $HOME/.asoundrc
+        rm -f $HOME/.fonts
+        rm -f $HOME/.gitconfig
+        rm -f $HOME/.inputrc
+        rm -f $HOME/.lynxrc
+        rm -f $HOME/.mpd
+        rm -f $HOME/.ncmpcpp
+        rm -f $HOME/.tmux.conf
+        rm -f $HOME/.xinitrc
+
+        rm -f $HOME/.config/compton
+        rm -f $HOME/.config/nvim
+        rm -f $HOME/.config/fontconfig
+        rm -f $HOME/.config/ranger
+}
+
 case "$1" in
 zsh)
         setup-zsh
@@ -83,6 +100,9 @@ all)
         ;;
 help)
         usage
+        ;;
+clean)
+        clean-symlink
         ;;
 *)
         usage
