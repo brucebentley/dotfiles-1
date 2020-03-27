@@ -4,7 +4,7 @@ set autoindent                        " maintain indent of current line
 set backspace=indent,start,eol        " allow unrestricted backspacing in insert mode
 
 "change timeout thats vim wait if in keycode sequence is happening
-set timeoutlen=1000
+set timeoutlen=500
 set ttimeoutlen=0
 
 if exists('$SUDO_USER')
