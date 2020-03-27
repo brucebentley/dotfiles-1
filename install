@@ -115,5 +115,6 @@ clean)
         ;;
 *)
         usage
+        echo -e "\e[31merror: unrecognized options: $1"
         ;;
 esac
