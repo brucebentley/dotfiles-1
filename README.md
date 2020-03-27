@@ -35,12 +35,15 @@ Heavily inspired by https://github.com/wincent/wincent
 
 Escape key is mapped to `esc key` and `'' (two single quotes)`.
 
-Depends on the mode, the cursor will change its shape. In insert mode, the
-cursor will be a thin vertical bar. In normal/visual mode, the cursor will be in
-a block shape.
+Depends on the mode, the cursor will change its shape.
 
-**Note:** the cursor shapeshifting function only works on terminal emulators and
-not on the console.
+| State  | Cursor Shapte |
+| ------------- | ------------- |
+| normal  | block ("█")  |
+| insert  | vertial bar ("|") |
+| visual  | block ("█") |
+
+> **Note:** the cursor shapeshifting function only works on terminal emulators and not on the console.
 
 ## PROMPT
 
