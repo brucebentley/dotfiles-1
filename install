@@ -2,7 +2,8 @@
 
 homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
 configDirFile=(compton fontconfig ranger)
-dotfilePath=$PWD
+REPOPATH=$PWD
+
 usage()
 {
         echo "Usage:"
@@ -17,36 +18,36 @@ usage()
 
 setup-zsh()
 {
-        ln -sf $PWD/.z* $HOME
+        ln -sf $REPOPATH/.z* $HOME
 
         if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
                cd $HOME/.zsh/vendor/skim
                ./install
-               cd $dotfilePath
+               cd $REPOPATH
         fi
 }
 
 setup-vim()
 {
         if [[ ! -d $HOME/.config/nvim ]]; then
-                ln -sf $PWD/.vim $HOME/.config/nvim
+                ln -sf $REPOPATH/.vim $HOME/.config/nvim
         else
                 rm -r $HOME/.config/nvim
-                ln -sf $PWD/.vim $HOME/.config/nvim
+                ln -sf $REPOPATH/.vim $HOME/.config/nvim
         fi
 
         if [[ ! -d $HOME/.vim ]]; then
-                ln -sf $PWD/.vim $HOME
+                ln -sf $REPOPATH/.vim $HOME
         else
                 rm -r $HOME/.vim
-                ln -sf $PWD/.vim $HOME
+                ln -sf $REPOPATH/.vim $HOME
         fi
 
         if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
                cd "$HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
                ruby extconf.rb
                make
-               cd $dotfilePath
+               cd $REPOPATH
         fi
 }
 
@@ -59,13 +60,13 @@ setup-misc()
 
         for h in ${homeDirFile[@]}; do
                 if [[ ! -f $HOME/.$h ]]; then
-                        ln -sf $PWD/.$h $HOME
+                        ln -sf $REPOPATH/.$h $HOME
                 fi
         done
 
         for c in ${configDirFile[@]}; do
                 if [[ ! -f $HOME/.config/$c ]]; then
-                        ln -sf $PWD/.config/$c $HOME/.config
+                        ln -sf $REPOPATH/.config/$c $HOME/.config
                 fi
         done
 }
