@@ -100,7 +100,7 @@ If there are background processes, a yellow asterisk is shown:
 - `pfetch`: a simple system information displayer (https://github.com/dylanaraps/pfetch).
 - `neofetch`: a CLI system information tool (https://github.com/dylanaraps/neofetch).
 
-# INSTALL
+# INSTALLATION
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
 2. ./install all
