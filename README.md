@@ -103,13 +103,13 @@ If there are background processes, a yellow asterisk is shown:
 # INSTALLATION
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
-2. ./install all
+2. ./install [options]
 
 ```
 ./install help # display all options
 ./install zsh  # only install zsh
 ./install vim  # only install vim
-./install all  # install everythin
+./install all  # install everything
 ```
 
 **Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script.
