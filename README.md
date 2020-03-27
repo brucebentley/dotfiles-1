@@ -111,6 +111,7 @@ If there are background processes, a yellow asterisk is shown:
 ./install vim  # only install vim
 ./install all  # install everything
 ```
+> Must be inside the dotfiles directory for the script to work
 
 **Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script.
 
