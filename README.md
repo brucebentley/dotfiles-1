@@ -106,7 +106,10 @@ If there are background processes, a yellow asterisk is shown:
 2. ./install all
 
 ```
-./install help - display all options
+./install help # display all options
+./install zsh  # only install zsh
+./install vim  # only install vim
+./install all  # install everythin
 ```
 
 **Note:** The installation script will delete existing nvim and vim directories so make sure to backup any file you want to keep before running the script.
@@ -124,3 +127,10 @@ git config --file ~/.gitconfig.local user.email "user@example.com"
 **Note:** You can also run the script `setup-git-user` in the `example` directory to quickly do the above.
 
 **Note:** Before opening vim for the first time, you should use the `color` function to set a color first because there's no default color.
+
+# TROUBLESHOOTING
+
+# INSTALL
+If `install` script doesn't work, try again using the following command: `bash
+install [options]`.  
+If the above doesn't solve your problem, then please create an issue.
