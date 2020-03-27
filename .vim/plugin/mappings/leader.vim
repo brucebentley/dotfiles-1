@@ -42,7 +42,6 @@ nnoremap <silent> <LocalLeader>dl :diffget //3<CR>
 "   <LocalLeader>e -- Edit file, starting in same directory as current file.
 nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 
-
 "   <LocalLeader>p -- [P]rint the syntax highlighting group(s) that apply at the
 "   current cursor position.
 "

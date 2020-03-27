@@ -7,10 +7,6 @@ nnoremap <buffer> k  gk
 " Toggle fold at current position.
 nnoremap <Tab> za
 
-" Relying on Karabiner-Elements to avoid collision between <Tab> and
-" <C-i> (have it send F6 instead for <C-i>).
-nnoremap <F6> <C-i>
-
 " Avoid unintentional switches to Ev mode.
 nnoremap Q <nop>
 

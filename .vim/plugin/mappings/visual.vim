@@ -1,4 +1,3 @@
-
 " Visual mode mappings.
 
 "Move cursor by display lines
