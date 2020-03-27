@@ -113,6 +113,9 @@ help)
 clean)
         clean-symlink
         ;;
+"")
+        usage
+        ;;
 *)
         usage
         echo -e "\e[31merror: unrecognized options: $1"
