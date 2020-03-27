@@ -37,11 +37,11 @@ Escape key is mapped to `esc key` and `'' (two single quotes)`.
 
 Depends on the mode, the cursor will change its shape.
 
-| State  | Cursor Shapte |
+| State  | Cursor Shape |
 | ------------- | ------------- |
-| normal  | block ("█")  |
-| insert  | vertial bar ("|") |
-| visual  | block ("█") |
+| normal  | `block ("█")`  |
+| insert  | `vertial bar ("\|")` |
+| visual  | `block ("█")` |
 
 > **Note:** the cursor shapeshifting function only works on terminal emulators and not on the console.
 
