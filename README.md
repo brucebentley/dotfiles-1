@@ -15,7 +15,7 @@
 
 # ZSH
 
-heavily inspired by https://github.com/wincent/wincent
+Heavily inspired by https://github.com/wincent/wincent
 
 ## SHELL FUNCTIONS
 
