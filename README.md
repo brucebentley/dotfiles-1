@@ -1,6 +1,6 @@
 # SCREENSHOT
-<img src=".img/0001">
-<img src=".img/0002">
+![](https://raw.githubusercontent.com/Z5483/dotfiles/.img/001)
+![](https://raw.githubusercontent.com/Z5483/dotfiles/.img/002)
 
 # SYSTEM CONFIGURATION
 
