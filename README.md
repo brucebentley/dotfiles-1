@@ -130,7 +130,7 @@ git config --file ~/.gitconfig.local user.email "user@example.com"
 
 # TROUBLESHOOTING
 
-# INSTALL
+# Installation Script
 If `install` script doesn't work, try again using the following command: `bash
 install [options]`.  
 If the above doesn't solve your problem, then please create an issue.
