@@ -105,7 +105,7 @@ If there are background processes, a yellow asterisk is shown:
 1. git clone --recursive https://github.com/Z5483/dotfiles
 2. ./install [options]
 
-```
+```sh
 ./install help # display all options
 ./install zsh  # only install zsh
 ./install vim  # only install vim
@@ -120,7 +120,7 @@ If there are background processes, a yellow asterisk is shown:
 
 **Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
 
-```
+```sh
 git config --file ~/.gitconfig.local user.name "username"
 git config --file ~/.gitconfig.local user.email "user@example.com"
 ```
