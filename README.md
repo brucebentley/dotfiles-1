@@ -39,9 +39,9 @@ Depends on the mode, the cursor will change its shape.
 
 | State  | Cursor Shape |
 | ------------- | ------------- |
-| normal  | `block ("█")`  |
-| insert  | `vertial bar ("\|")` |
-| visual  | `block ("█")` |
+| `Normal`  | `block (█)`  |
+| `Insert`  | `vertial bar (\|)` |
+| `Visual`  | `block (█)` |
 
 > **Note:** the cursor shapeshifting function only works on terminal emulators and not on the console.
 
