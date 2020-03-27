@@ -2,7 +2,7 @@
 
 homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
 configDirFile=(compton fontconfig ranger)
-
+dotfilePath=$PWD
 usage()
 {
         echo "Usage:"
@@ -20,8 +20,9 @@ setup-zsh()
         ln -sf $PWD/.z* $HOME
 
         if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
-                cd $HOME/.zsh/vendor/skim
-                ./install
+               cd $HOME/.zsh/vendor/skim
+               ./install
+               cd $dotfilePath
         fi
 }
 
@@ -42,9 +43,10 @@ setup-vim()
         fi
 
         if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
-                cd $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/
-                ruby extconf.rb
-                make
+               cd "$HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
+               ruby extconf.rb
+               make
+               cd $dotfilePath
         fi
 }
 
