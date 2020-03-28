@@ -33,7 +33,7 @@ Heavily inspired by https://github.com/wincent/wincent
 
 ## VI MODE
 
-Escape key is mapped to `esc key` and `'' (two single quotes)`.
+Escape key is mapped to `esc` and `'' (two single quotes)`.
 
 Depends on the mode, the cursor will change its shape.
 
