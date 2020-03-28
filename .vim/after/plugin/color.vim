@@ -31,6 +31,7 @@ function s:CheckColorScheme()
     endif
   else " default
     set background=dark
+    colorscheme base16-default-dark
   endif
 
   if emanon#pinnacle#active()

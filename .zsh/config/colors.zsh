@@ -136,5 +136,8 @@ function () {
                         echo "warning: unknown background type in $__emanon[BASE16_CONFIG]"
                 fi
                 color "$SCHEME"
+        else
+                # Default
+                color default-dark
         fi
 }
