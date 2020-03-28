@@ -2,7 +2,7 @@
 
 homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
 configDirFile=(compton fontconfig ranger)
-REPOPATH=$PWD
+REPOPATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 usage()
 {
