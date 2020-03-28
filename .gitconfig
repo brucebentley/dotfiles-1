@@ -48,10 +48,17 @@
 	# Update all submodules
 	update-bundle = pull --recurse-submodules
 
-	# Show verbose output about tags, branches or remotes
+	# Show verbose output git repository
 	tags = tag -l
 	branches = branch -a
 	remotes = remote -v
+	full = show --format=fuller
+	msg = log -1 --pretty=format:%B
+	graph = log --graph --all --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset'
+	contributors = shortlog --summary --numbered
+
+	# Find given pattern in git repository
+	ack = grep --break --heading
 
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
@@ -68,8 +75,6 @@
 	# Remove branches that have already been merged with master
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
-	# List contributors with number of commits
-	contributors = shortlog --summary --numbered
 
 [branch]
 	autosetupmerge = always
@@ -94,9 +99,7 @@
 [diff]
 	algorithm = histogram
 	compactionHeuristic = true
-
-[difftool]
-	prompt = false
+	renames = copies
 
 [grep]
 	lineNumber = true
