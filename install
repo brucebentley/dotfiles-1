@@ -80,11 +80,15 @@ clean-symlink()
                 fi
         done
 
-        if [[ -d $HOME/.config/nvim ]]; then
-                rm -r $HOME/.config/nvim
+        if [[ -L $HOME/.vim ]]; then
+                rm $HOME/.vim
         fi
 
-        rm -f $HOME/.*.zwc
+        if [[ -L $HOME/.config/nvim ]]; then
+                rm $HOME/.config/nvim
+        fi
+
+        rm -f $HOME/.*.zwc*
 }
 
 case "$1" in
