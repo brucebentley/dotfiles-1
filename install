@@ -31,15 +31,9 @@ setup-vim()
 {
         if [[ ! -d $HOME/.config/nvim ]]; then
                 ln -sf $REPOPATH/.vim $HOME/.config/nvim
-        else
-                rm -r $HOME/.config/nvim
-                ln -sf $REPOPATH/.vim $HOME/.config/nvim
         fi
 
         if [[ ! -d $HOME/.vim ]]; then
-                ln -sf $REPOPATH/.vim $HOME
-        else
-                rm -r $HOME/.vim
                 ln -sf $REPOPATH/.vim $HOME
         fi
 
