@@ -112,7 +112,6 @@ If there are background processes, a yellow asterisk is shown:
 ./install vim     # only install vim
 ./install all     # install everything
 ./install clean   # remove all created symlink files
-./install help    # display all options
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
