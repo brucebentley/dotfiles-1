@@ -12,7 +12,6 @@ usage()
         echo -e "       \e[39m[  \e[36mvim  \e[39m] - \e[32msymlink vim config files only"
         echo -e "       \e[39m[  \e[36mall  \e[39m] - \e[32msymlink all config files"
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
-        echo -e "       \e[39m[  \e[36mhelp \e[39m] - \e[32mdisplay options"
 }
 
 setup-vim()
