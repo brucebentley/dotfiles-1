@@ -61,7 +61,7 @@ function color() {
                         fi
 
                         if [ -e "$__emanon[BASE16_CONFIG]" ]; then
-                                cp "$__emanon[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS"
+                                cp "$__emanon[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
                         fi
 
                         echo "$SCHEME" >! "$__emanon[BASE16_CONFIG]"
