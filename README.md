@@ -1,6 +1,6 @@
 # SCREENSHOT
-![](https://raw.githubusercontent.com/Z5483/dotfiles/master/.img/0001)
-![](https://raw.githubusercontent.com/Z5483/dotfiles/master/.img/0002)
+![](https://raw.githubusercontent.com/Z5483/dotfiles/master/.img/desktop-tiling)
+![](https://raw.githubusercontent.com/Z5483/dotfiles/master/.img/desktop-floating)
 
 # SYSTEM CONFIGURATION
 
