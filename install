@@ -4,8 +4,7 @@ homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogi
 configDirFile=(compton fontconfig ranger)
 REPOPATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
-usage()
-{
+usage() {
         echo "Usage:"
         echo -e "       \e[36m./install \e[39m[ \e[32moptions \e[39m]"
         echo -e "\e[39mOptions:"
@@ -14,8 +13,7 @@ usage()
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
 }
 
-setup-vim()
-{
+setup-vim() {
         if [[ ! -d $HOME/.config/nvim ]]; then
                 ln -sf $REPOPATH/.vim $HOME/.config/nvim
         fi
@@ -32,8 +30,7 @@ setup-vim()
         fi
 }
 
-setup-misc()
-{
+setup-misc() {
         # create ~/.config if doesn't exist
         if [[ ! -d $HOME/.config ]]; then
                 mkdir $HOME/.config
@@ -59,14 +56,12 @@ setup-misc()
 }
 
 
-setup-all()
-{
+setup-all() {
         setup-vim
         setup-misc
 }
 
-clean-symlink()
-{
+clean-symlink() {
         for h in ${homeDirFile[@]}; do
                 if [[ -L $HOME/.$h ]]; then
                         rm -f $HOME/.$h
