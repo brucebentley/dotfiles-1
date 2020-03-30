@@ -99,8 +99,8 @@ if exists('+relativenumber')
   set relativenumber                  " show relative numbers in gutter
 endif
 
-set scrolloff=10                       " start scrolling 3 lines before edge of viewport
-set shell=zsh                          " shell to use for `!`, `:!`, `system()` etc.
+set scrolloff=10                      " start scrolling 3 lines before edge of viewport
+set shell=zsh                         " shell to use for `!`, `:!`, `system()` etc.
 set shiftround                        " always indent by multiple of shiftwidth
 set shiftwidth=8                      " spaces per tab (when shifting)
 set shortmess+=A                      " ignore annoying swapfile messages
