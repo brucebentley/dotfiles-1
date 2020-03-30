@@ -4,11 +4,6 @@ export CORRECT_IGNORE_FILE='.*'
 
 export PAGER=less
 
-if [ "$TERM" != "linux" ]; then
-        export TERM="xterm-256color"
-fi
-
-
 if which nvim &> /dev/null; then
         export EDITOR=$(which nvim)
 elif [ -x "$HOME/bin/vim" ]; then
