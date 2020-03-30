@@ -109,9 +109,9 @@ If there are background processes, a yellow asterisk is shown:
 2. ./install [options]
 
 ```sh
-./install vim     # only install vim
-./install all     # install everything
-./install clean   # remove all created symlink files
+install vim     # only install vim
+install all     # install everything
+install clean   # remove all created symlink files
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
