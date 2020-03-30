@@ -11,7 +11,7 @@
 * `browser`: surf
 * `editor`: neovim
 * `music player`: ncmpcpp/spotify
-* `font`: Deja Vu Sans Mono
+* `font`: DejaVu Sans Mono
 
 # ZSH
 
