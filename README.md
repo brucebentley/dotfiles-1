@@ -116,7 +116,7 @@ If there are background processes, a yellow asterisk is shown:
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
 
-**Note:** When `./install clean` is executed, it will remove the existing symlink that has identical name as one of file in asis repository.
+**Note:** When `./install clean` is executed, it will remove the existing symlink that has identical name as one of file in this repository.
 
 **Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
 
