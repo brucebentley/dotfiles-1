@@ -1,8 +1,8 @@
 " Normal mode mappings.
 
 "Move cursor by display lines
-nnoremap <buffer> j  gj
-nnoremap <buffer> k  gk
+nnoremap j gj
+nnoremap k gk
 
 " Toggle fold at current position.
 nnoremap <Tab> za
