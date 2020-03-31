@@ -37,6 +37,6 @@ alias publicip="curl -fSs https://1.1.1.1/cdn-cgi/trace | awk -F= '/ip/ { print 
 alias privateip="ip addr | ag 'inet ' | awk -F'[: ]+' '{ if (\$4 ~ /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/) { print \$4 } else { print \$3 }}'"
 
 # Type vim to use neovim
-if command -v nvim &> /dev/null; then
+if [[ -x $(command -v nvim) ]]; then
         alias vim=nvim # Use `\vim` or `command vim` to get the real vim.
 fi
