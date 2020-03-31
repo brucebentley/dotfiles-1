@@ -86,6 +86,12 @@
 [color]
 	ui = auto
 
+[color "diff-highlight"]
+	newhighlight = reverse
+	newreset = noreverse
+	oldhighlight = reverse
+	oldreset = noreverse
+
 [color "interactive"]
 	prompt = blue reverse
 
@@ -94,7 +100,13 @@
 
 [core]
 	excludesfile = ~/.gitignore
+	pager = "diff-so-fancy | less --tabs=4 -RFX"
 	attributesfile = ~/.gitattributes
+
+[diff-so-fancy]
+	changeHunkIndicators = false
+	stripLeadingSymbols = false
+	markEmptyLines = false
 
 [diff]
 	algorithm = histogram
@@ -106,6 +118,9 @@
 
 [help]
 	autocorrect = 2
+
+[interactive]
+	diffFilter = diff-so-fancy
 
 [log]
 	decorate = short
