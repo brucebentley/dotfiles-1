@@ -8,9 +8,14 @@ usage() {
         echo "Usage:"
         echo -e "       \e[36minstall \e[39m[ \e[32moptions \e[39m]"
         echo -e "\e[39mOptions:"
+        echo -e "       \e[39m[ \e[36mfonts \e[39m] - \e[32msymlink font files only"
         echo -e "       \e[39m[  \e[36mvim  \e[39m] - \e[32msymlink vim config files only"
         echo -e "       \e[39m[  \e[36mall  \e[39m] - \e[32msymlink all config files"
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
+}
+
+setup-fonts() {
+        ln -sf $REPOPATH/.fonts $HOME
 }
 
 setup-vim() {
@@ -86,6 +91,9 @@ clean-symlink() {
 }
 
 case "$1" in
+fonts)
+        setup-fonts
+        ;;
 vim)
         setup-vim
         ;;
