@@ -109,9 +109,10 @@ If there are background processes, a yellow asterisk is shown:
 2. ./install [options]
 
 ```sh
-install fonts   # install font files only
+install zsh     # install zsh config only
 install vim     # only install vim
 install all     # install everything
+install fonts   # install font files only
 install clean   # remove all created symlink files
 ```
 
