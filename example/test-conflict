@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
+homeDirFile=(fonts mpd ncmpcpp vim zsh)
 configDirFile=(compton fontconfig ranger)
 
 for h in ${homeDirFile[@]}; do
-        if [[ -f $HOME/.$h ]]; then
+        if [[ -d $HOME/.$h ]]; then
                 echo -e "\e[31mconflict: \e[33m$HOME/.$h"
         fi
 done
 
 for c in ${configDirFile[@]}; do
-        if [[ ! -f $HOME/.config/$c ]]; then
+        if [[ -d $HOME/.config/$c ]]; then
                 echo -e "\e[31mconflict: \e[33m$HOME/.config/$c"
         fi
 done
