@@ -110,7 +110,7 @@ If there are background processes, a yellow asterisk is shown:
 
 ```sh
 install zsh     # install zsh config only
-install vim     # only install vim
+install vim     # install vim config only
 install all     # install everything
 install fonts   # install font files only
 install clean   # remove all created symlink files
