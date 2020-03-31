@@ -87,10 +87,20 @@
 	ui = auto
 
 [color "diff-highlight"]
-	newhighlight = reverse
-	newreset = noreverse
-	oldhighlight = reverse
-	oldreset = noreverse
+	oldNormal = "red"
+	oldHighlight = "red reverse"
+	oldReset = "noreverse"
+	newNormal = "green"
+	newHighlight = "green reverse"
+	newReset = "noreverse"
+
+[color "diff"]
+	meta = 11
+	frag = "magenta"
+	commit = "yellow"
+	old = "red"
+	new = "green"
+	whitespace = "red reverse"
 
 [color "interactive"]
 	prompt = blue reverse
