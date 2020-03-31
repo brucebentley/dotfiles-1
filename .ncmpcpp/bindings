@@ -2,6 +2,8 @@ def_key "/"
   find
 def_key "/"
   find_item_forward
+def_key "?"
+  find_item_backward
 
 def_key "0"
   replay_song
