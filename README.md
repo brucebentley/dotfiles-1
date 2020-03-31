@@ -116,6 +116,7 @@ install clean   # remove all created symlink files
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
+> use `test-conflict` script in the `example` directory to see conflicted directories
 
 **Note:** When `./install clean` is executed, it will remove the existing symlink that has identical name as one of file in this repository.
 
