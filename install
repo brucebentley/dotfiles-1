@@ -52,11 +52,6 @@ setup-vim() {
 }
 
 setup-misc() {
-        # create ~/.config if doesn't exist
-        if [[ ! -d $HOME/.config ]]; then
-                mkdir $HOME/.config
-        fi
-
         for h in ${homeDirFile[@]}; do
                 if [[ ! -f $HOME/.$h ]]; then
                         ln -sf $REPOPATH/.$h $HOME
@@ -106,6 +101,10 @@ clean-symlink() {
 
         rm -f $HOME/.*.zwc*
 }
+
+if [[ ! -d $HOME/.config ]]; then
+        mkdir $HOME/.config
+fi
 
 case "$1" in
 zsh)
