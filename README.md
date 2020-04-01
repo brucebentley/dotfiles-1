@@ -126,8 +126,8 @@ install clean   # remove all created symlink files
 **Note:** Given that `~/.gitconfig` is included with these dotfiles, any local configurations should be written to `~/.gitconfig.local` instead such as:
 
 ```sh
-git config --file ~/.gitconfig.local user.name "username"
-git config --file ~/.gitconfig.local user.email "user@example.com"
+git config --file ~/.gitconfig.local user.name  "John Doe"
+git config --file ~/.gitconfig.local user.email "johndoe@example.com"
 ```
 **Note:** You can also run the script `setup-git-user` in the `example` directory to quickly do the above.
 
