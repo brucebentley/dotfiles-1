@@ -3,14 +3,15 @@
 homeDirFile=(fonts mpd ncmpcpp vim zsh)
 configDirFile=(compton fontconfig ranger)
 
+echo -e "\e[31mconflicted directories:"
 for h in ${homeDirFile[@]}; do
         if [[ -d $HOME/.$h ]]; then
-                echo -e "\e[31mconflict: \e[33m$HOME/.$h"
+                echo -e "\e[33m$HOME/.$h"
         fi
 done
 
 for c in ${configDirFile[@]}; do
         if [[ -d $HOME/.config/$c ]]; then
-                echo -e "\e[31mconflict: \e[33m$HOME/.config/$c"
+                echo -e "\e[33m$HOME/.config/$c"
         fi
 done
