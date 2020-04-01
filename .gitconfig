@@ -43,7 +43,7 @@
 	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
 	# Update all submodules
-	update-bundle = pull --recurse-submodules
+	update-bundle = !git submodule update --remote --merge
 
 	# Show verbose output git repository
 	tags = tag -l
