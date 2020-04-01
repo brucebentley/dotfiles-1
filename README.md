@@ -95,13 +95,14 @@ If there are background processes, a yellow asterisk is shown:
 
 ## THIRD-PARTY SCRIPT
 
+- `bonsai`: a CLI bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh).
+- `diff-so-fancy`: a script that improves quality of diff (https://github.com/so-fancy/diff-so-fancy)
 - `epr`: CLI EPUB files reader (https://github.com/wustho/epr).
+- `neofetch`: a CLI system information tool (https://github.com/dylanaraps/neofetch).
+- `pfetch`: a simple system information displayer (https://github.com/dylanaraps/pfetch).
 - `speedtest`: a CLI script for testing internet bandwidth using Ookla's speedtest.net (https://github.com/sivel/speedtest-cli).
 - `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware).
 - `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi).
-- `bonsai`: a CLI bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh).
-- `pfetch`: a simple system information displayer (https://github.com/dylanaraps/pfetch).
-- `neofetch`: a CLI system information tool (https://github.com/dylanaraps/neofetch).
 
 # INSTALLATION
 
