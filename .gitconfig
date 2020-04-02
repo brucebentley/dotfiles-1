@@ -25,7 +25,7 @@
 	amend = !git add -A && git commit --amend --no-edit
 
 	# Push current branch to origin
-	p = !git push origin $(git rev-parse --abbrev-ref HEAD)
+	p = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
 
 	# Undo last commit (https://gist.github.com/sethvargo/6b2f7b592853381690bfe3bd00947e8f)
 	undo = !git reset HEAD~1 --mixed
