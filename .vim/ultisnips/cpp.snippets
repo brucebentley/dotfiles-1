@@ -30,29 +30,29 @@ endglobal
 ###########################################################################
 #                            TextMate Snippets                            #
 ###########################################################################
-snippet inc "#include '...'" b
+snippet inc "#include '...'"
 #include "${1:`vim_snippets#Filename("$1.h")`}"
 endsnippet
 
-snippet incc "#include <...>" b
+snippet incc "#include <...>"
 #include <${1:iostream}>
 endsnippet
 
-snippet binc "#include <boost/shared_ptr.hpp>" b
+snippet binc "#include <boost/shared_ptr.hpp>"
 #include <boost/${1:shared_ptr}.hpp>
 endsnippet
 
-snippet beginend "$1.begin(), $1.end() (beginend)" b
+snippet beginend "$1.begin(), $1.end() (beginend)"
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
-snippet ns "namespace .. (namespace)" b
+snippet ns "namespace .. (namespace)"
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`} {
 	${VISUAL}$0
 }${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
 endsnippet
 
-snippet readfile "read file (readF)" b
+snippet readfile "read file (readF)"
 std::vector<char> v;
 if (FILE *fp = fopen(${1:"filename"}, "r")) {
 	char buf[1024];
@@ -62,103 +62,103 @@ if (FILE *fp = fopen(${1:"filename"}, "r")) {
 }
 endsnippet
 
-snippet array "std::array" b
+snippet array "std::array"
 std::array<${1:T}, ${2:N}> ${3};
 endsnippet
 
-snippet map "std::map (map)" b
+snippet map "std::map (map)"
 std::map<${1:key}, ${2:value}> map$0;
 endsnippet
 
-snippet vector "std::vector" b
+snippet vector "std::vector"
 std::vector<${1:char}> ${2};
 endsnippet
 
-snippet deque "std::deque" b
+snippet deque "std::deque"
 std::deque<${1:T}> ${2};
 endsnippet
 
-snippet flist "std::forward_list" b
+snippet flist "std::forward_list"
 std::forward_list<${1:T}> ${2};
 endsnippet
 
-snippet list "std::list" b
+snippet list "std::list"
 std::list<${1:T}> ${2};
 endsnippet
 
-snippet set "std::set" b
+snippet set "std::set"
 std::set<${1:T}> ${2};
 endsnippet
 
-snippet map "std::map" b
+snippet map "std::map"
 std::map<${1:Key}, ${2:T}> ${3};
 endsnippet
 
-snippet mset "std::multiset" b
+snippet mset "std::multiset"
 std::multiset<${1:T}> ${2};
 endsnippet
 
-snippet mmap "std::multimap" b
+snippet mmap "std::multimap"
 std::multimap<${1:Key}, ${2:T}> ${3};
 endsnippet
 
-snippet uset "std::unordered_set" b
+snippet uset "std::unordered_set"
 std::unordered_set<${1:T}> ${2};
 endsnippet
 
-snippet umap "std::unordered_map" b
+snippet umap "std::unordered_map"
 std::unordered_map<${1:Key}, ${2:T}> ${3};
 endsnippet
 
-snippet umset "std::unordered_multiset" b
+snippet umset "std::unordered_multiset"
 std::unordered_multiset<${1:T}> ${2};
 endsnippet
 
-snippet ummap "std::unordered_multimap" b
+snippet ummap "std::unordered_multimap"
 std::unordered_multimap<${1:Key}, ${2:T}> ${3};
 endsnippet
 
-snippet stack "std::stack" b
+snippet stack "std::stack"
 std::stack<${1:T}> ${2};
 endsnippet
 
-snippet queue "std::queue" b
+snippet queue "std::queue"
 std::queue<${1:T}> ${2};
 endsnippet
 
-snippet pqueue "std::priority_queue" b
+snippet pqueue "std::priority_queue"
 std::priority_queue<${1:T}> ${2};
 endsnippet
 
-snippet tp "template <typename ..> (template)" b
+snippet tp "template <typename ..> (template)"
 template <typename ${1:_InputIter}>
 endsnippet
 
-snippet cout "std::cout" b
+snippet cout "std::cout"
 std::cout << ${1} << std::endl;
 endsnippet
 
-snippet cin "std::cin" b
+snippet cin "std::cin"
 std::cin >> ${1};
 endsnippet
 
-snippet sca "static_cast" b
+snippet sca "static_cast"
 static_cast<${1:unsigned}>(${2:expr})${3}
 endsnippet
 
-snippet dca "dynamic_cast" b
+snippet dca "dynamic_cast"
 dynamic_cast<${1:unsigned}>(${2:expr})${3}
 endsnippet
 
-snippet rca "reinterpret_cast" b
+snippet rca "reinterpret_cast"
 reinterpret_cast<${1:unsigned}>(${2:expr})${3}
 endsnippet
 
-snippet cca "constant_cast" b
+snippet cca "constant_cast"
 const_cast<${1:unsigned}>(${2:expr})${3}
 endsnippet
 
-snippet cla "An entire .h generator" b
+snippet cla "An entire .h generator"
 #ifndef ${2:`!vsubstitute(vim_snippets#Filename('$1_H','ClassName'),'.*','\U&\E','')`}
 #define $2
 
@@ -174,7 +174,7 @@ public:
 #endif /* $2 */
 endsnippet
 
-snippet cl "class ... (class)" b
+snippet cl "class ... (class)"
 class ${1:`vim_snippets#Filename('$1', 'name')`} {
 	public:
 		$1(${2});
@@ -185,7 +185,7 @@ class ${1:`vim_snippets#Filename('$1', 'name')`} {
 };
 endsnippet
 
-snippet mfun "member function implementation" b
+snippet mfun "member function implementation"
 ${4:void}
 ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3})
 {
@@ -193,7 +193,7 @@ ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3})
 }
 endsnippet
 
-snippet dmfun0 "member function implementation without parameters" b
+snippet dmfun0 "member function implementation without parameters"
 ${3:void}
 ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}()
 {
@@ -201,7 +201,7 @@ ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}()
 }
 endsnippet
 
-snippet dmfun1 "member function implementation with one parameter" b
+snippet dmfun1 "member function implementation with one parameter"
 ${5:void}
 ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter})
 {
@@ -209,7 +209,7 @@ ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} $
 }
 endsnippet
 
-snippet dmfun2 "member function implementation with two parameters" b
+snippet dmfun2 "member function implementation with two parameters"
 ${7:void}
 ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} ${4:Parameter},${5:Type} ${6:Parameter})
 {
@@ -217,35 +217,35 @@ ${1:`vim_snippets#Filename('$1', 'ClassName')`}::${2:memberFunction}(${3:Type} $
 }
 endsnippet
 
-snippet fore "foreach" b
+snippet fore "foreach"
 for (${1:auto} ${2:i} : ${3:container}) {
 	${4}
 }
 endsnippet
 
-snippet iter "iterator" b
+snippet iter "iterator"
 for (${1:std::vector}<${2:type}>::${3:const_iterator} ${4:i} = ${5:container}.begin(); $4 != $5.end(); ++$4) {
 	${6}
 }
 endsnippet
 
-snippet itera "auto iterator" b
+snippet itera "auto iterator"
 for (auto ${1:i} = ${2:container}.begin(); $1 != $2.end(); ++$1) {
 	${3:std::cout << *$1 << std::endl;}
 }
 endsnippet
 
-snippet ld "lamda (one line)" b
+snippet ld "lamda (one line)"
 [${1}](${2}){${3}};
 endsnippet
 
-snippet lld "lamda (multi-line)" b
+snippet lld "lamda (multi-line)"
 [${1}](${2}){
 	${3}
 };
 endsnippet
 
-snippet try "try ... catch()" b
+snippet try "try ... catch()"
 try {
 	$1
 }
@@ -254,14 +254,14 @@ catch(${2}) {
 }
 endsnippet
 
-snippet afa "auto function" b
+snippet afa "auto function"
 auto ${1:name}(${2}) -> ${3:void}
 {
 	${0:FunctionBody}
 };
 endsnippet
 
-snippet fnc "Basic c++ doxygen function template" b
+snippet fnc "Basic c++ doxygen function template"
 ${1:ReturnType} ${2:FunctionName}(${3:param})
 {
 	${0:FunctionBody}

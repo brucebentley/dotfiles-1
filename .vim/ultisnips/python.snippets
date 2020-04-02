@@ -4,44 +4,44 @@ priority -50
 #                            TEXTMATE SNIPPETS                            #
 ###########################################################################
 
-snippet #! "#!/usr/bin/env python3" b
+snippet #! "#!/usr/bin/env python3"
 #!/usr/bin/env python3
 endsnippet
 
-snippet #!2 "#!/usr/bin/env python2" b
+snippet #!2 "#!/usr/bin/env python2"
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 endsnippet
 
-snippet #!3 "#!/usr/bin/env python3" b
+snippet #!3 "#!/usr/bin/env python3"
 #!/usr/bin/env python3
 endsnippet
 
-snippet imp "import (module)" b
+snippet imp "import (module)"
 import ${0:module}
 endsnippet
 
-snippet uni "def __unicode__(self)" b
+snippet uni "def __unicode__(self)"
 def __unicode__(self):
 ${0:representation}
 endsnippet
 
-snippet from "from (package) import (module)" b
+snippet from "from (package) import (module)"
 from ${1:package} import ${0:module}
 endsnippet
 
-snippet ifmain "ifmain" b
+snippet ifmain "ifmain"
 if __name__ == `!p snip.rv = get_quoting_style(snip)`__main__`!p snip.rv = get_quoting_style(snip)`:
 	${1:${VISUAL:main()}}
 endsnippet
 
-snippet with "with" b
+snippet with "with"
 with ${1:expr}`!p snip.rv = " as " if t[2] else ""`${2:var}:
 	${3:${VISUAL:pass}}
 $0
 endsnippet
 
-snippet for "for loop" b
+snippet for "for loop"
 for ${1:item} in ${2:iterable}:
 	${3:${VISUAL:pass}}
 endsnippet
@@ -280,7 +280,7 @@ endglobal
 # Class & Special Method Name Snippets #
 ########################################
 
-snippet cl "class with docstrings" b
+snippet cl "class with docstrings"
 class ${1:MyClass}(${2:object}):
 
 	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
@@ -303,7 +303,7 @@ write_init_body(args, t[2], snip)
 endsnippet
 
 
-snippet slotcl "class with slots and docstrings" b
+snippet slotcl "class with slots and docstrings"
 class ${1:MyClass}(${2:object}):
 
 	`!p snip.rv = triple_quotes(snip)`${3:Docstring for $1. }`!p snip.rv = triple_quotes(snip)`
@@ -331,7 +331,7 @@ write_init_body(args, t[2], snip)
 endsnippet
 
 
-snippet contain "methods for emulating a container type" b
+snippet contain "methods for emulating a container type"
 def __len__(self):
 	${1:pass}
 
@@ -355,7 +355,7 @@ def __contains__(self, item):
 endsnippet
 
 
-snippet context "context manager methods" b
+snippet context "context manager methods"
 def __enter__(self):
 	${1:pass}
 
@@ -364,7 +364,7 @@ def __exit__(self, exc_type, exc_value, traceback):
 endsnippet
 
 
-snippet attr "methods for customizing attribute access" b
+snippet attr "methods for customizing attribute access"
 def __getattr__(self, name):
 	${1:pass}
 
@@ -376,7 +376,7 @@ def __delattr__(self, name):
 endsnippet
 
 
-snippet desc "methods implementing descriptors" b
+snippet desc "methods implementing descriptors"
 def __get__(self, instance, owner):
 	${1:pass}
 
@@ -388,7 +388,7 @@ def __delete__(self, instance):
 endsnippet
 
 
-snippet cmp "methods implementing rich comparison" b
+snippet cmp "methods implementing rich comparison"
 def __eq__(self, other):
 	${1:pass}
 
@@ -412,7 +412,7 @@ def __cmp__(self, other):
 endsnippet
 
 
-snippet repr "methods implementing string representation" b
+snippet repr "methods implementing string representation"
 def __repr__(self):
 	${1:pass}
 
@@ -426,7 +426,7 @@ endsnippet
 
 # note: reflected operands and augmented arithmeitc assignements have been
 # intentionally ommited to reduce verbosity.
-snippet numeric "methods for emulating a numeric type" b
+snippet numeric "methods for emulating a numeric type"
 def __add__(self, other):
 	${1:pass}
 
@@ -517,7 +517,7 @@ def ${1:fname}(`!p snip.rv = vim.eval('indent(".") ? "self" : ""')`$2):
 	$0
 endsnippet
 
-snippet def "function with docstrings" b
+snippet def "function with docstrings"
 def ${1:function}(`!p
 if snip.indent:
 	snip.rv = 'self' + (", " if len(t[2]) else "")`${2:arg1}):
@@ -527,7 +527,7 @@ write_function_docstring(t, snip) `
 endsnippet
 
 
-snippet defc "class method with docstrings" b
+snippet defc "class method with docstrings"
 @classmethod
 def ${1:function}(`!p
 if snip.indent:
@@ -538,7 +538,7 @@ write_function_docstring(t, snip) `
 endsnippet
 
 
-snippet defs "static method with docstrings" b
+snippet defs "static method with docstrings"
 @staticmethod
 def ${1:function}(${2:arg1}):
 	`!p snip.rv = triple_quotes(snip)`${4:TODO: Docstring for $1.}`!p
@@ -555,13 +555,13 @@ endsnippet
 ##############
 # PROPERTIES #
 ##############
-snippet roprop "Read Only Property" b
+snippet roprop "Read Only Property"
 @property
 def ${1:name}(self):
 	${2:return self._$1}$0
 endsnippet
 
-snippet rwprop "Read write property" b
+snippet rwprop "Read write property"
 def ${1:name}():
 	`!p snip.rv = triple_quotes(snip) if t[2] else ''
 `${2:TODO: Docstring for $1.}`!p
@@ -589,19 +589,19 @@ endsnippet
 ####################
 # If / Else / Elif #
 ####################
-snippet if "If" b
+snippet if "If"
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 endsnippet
 
-snippet ife "If / Else" b
+snippet ife "If / Else"
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 else:
 	${3:pass}
 endsnippet
 
-snippet ifee "If / Elif / Else" b
+snippet ifee "If / Elif / Else"
 if ${1:condition}:
 	${2:${VISUAL:pass}}
 elif ${3:condition}:
@@ -614,14 +614,14 @@ endsnippet
 ##########################
 # Try / Except / Finally #
 ##########################
-snippet try "Try / Except" b
+snippet try "Try / Except"
 try:
 	${1:${VISUAL:pass}}
 except ${2:Exception} as ${3:e}:
 	${4:raise $3}
 endsnippet
 
-snippet trye "Try / Except / Else" b
+snippet trye "Try / Except / Else"
 try:
 	${1:${VISUAL:pass}}
 except ${2:Exception} as ${3:e}:
@@ -630,7 +630,7 @@ else:
 	${5:pass}
 endsnippet
 
-snippet tryf "Try / Except / Finally" b
+snippet tryf "Try / Except / Finally"
 try:
 	${1:${VISUAL:pass}}
 except ${2:Exception} as ${3:e}:
@@ -639,7 +639,7 @@ finally:
 	${5:pass}
 endsnippet
 
-snippet tryef "Try / Except / Else / Finally" b
+snippet tryef "Try / Except / Else / Finally"
 try:
 	${1:${VISUAL:pass}}
 except${2: ${3:Exception} as ${4:e}}:
@@ -655,35 +655,35 @@ endsnippet
 # Assertions & Tests #
 ######################
 
-snippet ae "Assert equal" b
+snippet ae "Assert equal"
 self.assertEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
-snippet at "Assert True" b
+snippet at "Assert True"
 self.assertTrue(${1:${VISUAL:expression}})
 endsnippet
 
-snippet af "Assert False" b
+snippet af "Assert False"
 self.assertFalse(${1:${VISUAL:expression}})
 endsnippet
 
-snippet aae "Assert almost equal" b
+snippet aae "Assert almost equal"
 self.assertAlmostEqual(${1:${VISUAL:first}}, ${2:second})
 endsnippet
 
-snippet ar "Assert raises" b
+snippet ar "Assert raises"
 self.assertRaises(${1:exception}, ${2:${VISUAL:func}}${3/.+/, /}${3:arguments})
 endsnippet
 
-snippet an "Assert is None" b
+snippet an "Assert is None"
 self.assertIsNone(${1:${VISUAL:expression}})
 endsnippet
 
-snippet ann "Assert is not None" b
+snippet ann "Assert is not None"
 self.assertIsNotNone(${1:${VISUAL:expression}})
 endsnippet
 
-snippet testcase "pyunit testcase" b
+snippet testcase "pyunit testcase"
 class Test${1:Class}(${2:unittest.TestCase}):
 
 	`!p snip.rv = triple_quotes(snip)`${3:Test case docstring.}`!p snip.rv = triple_quotes(snip)`
@@ -698,13 +698,13 @@ class Test${1:Class}(${2:unittest.TestCase}):
 		${7:${VISUAL:pass}}
 endsnippet
 
-snippet " "triple quoted string (double quotes)" b
+snippet " "triple quoted string (double quotes)"
 """
 ${1:${VISUAL:doc}}
 `!p triple_quotes_handle_trailing(snip, '"')`
 endsnippet
 
-snippet ' "triple quoted string (single quotes)" b
+snippet ' "triple quoted string (single quotes)"
 '''
 ${1:${VISUAL:doc}}
 `!p triple_quotes_handle_trailing(snip, "'")`
@@ -716,7 +716,7 @@ ${1:${VISUAL:doc}}
 `!p snip.rv = triple_quotes(snip)`
 endsnippet
 
-snippet pmdoc "pocoo style module doc string" b
+snippet pmdoc "pocoo style module doc string"
 # -*- coding: utf-8 -*-
 """
 	`!p snip.rv = get_dir_and_file_name(snip)`
