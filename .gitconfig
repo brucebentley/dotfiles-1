@@ -11,12 +11,12 @@
 
 	br = branch
 
-	# Switch to a branch, creating it if necessary
+	# Switch to a branch, creating it if necessary ([C]heck [O]ut)
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	ci = commit -v
 
-	# Commit all changes
+	# Commit all changes ([C]ommit [A]ll)
 	ca = !git add -A && git commit -av
 
 	r = restore
@@ -33,10 +33,10 @@
 	# Hard reset all commits that are not pushed
 	hreset = reset HEAD --hard
 
-	# Clone a repository including all submodules (Clone Recursive)
+	# Clone a repository including all submodules ([C]lone [R]ecursive)
 	cr = clone --recursive
 
-	# Clone a repository with depth of 1 (Shallow Clone)
+	# Clone a repository with depth of 1 ([S]hallow [C]lone)
 	sc = clone --depth=1
 
 	# Get working branch up to date
@@ -60,16 +60,16 @@
 	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
-	# Find branches containing commit
+	# Find branches containing commit ([F]ind [B]ranch)
 	fb = "!f() { git branch -a --contains $1; }; f"
 
-	# Find commits by source code
+	# Find commits by source code ([F]ind [C]ode)
 	fc = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
 
-	# Find commits by commit message
+	# Find commits by commit message ([F]ind [M]essage)
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-	# Remove branches that have already been merged with master
+	# Remove branches that have already been merged with master ([D]elete [M]erged
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
 
