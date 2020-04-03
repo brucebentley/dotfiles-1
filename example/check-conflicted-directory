@@ -11,7 +11,7 @@ for h in ${homeDirFile[@]}; do
 done
 
 for c in ${configDirFile[@]}; do
-        if [[ -d -$HOME/.config/$c && -L $HOME/.config/$c ]]; then
+        if [[ -d $HOME/.config/$c && -L $HOME/.config/$c ]]; then
                 echo -e "\e[33m$HOME/.config/$c"
         fi
 done
