@@ -17,8 +17,8 @@ alias graph="git log --graph --color -p"
 alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias h=history
 alias j=jump
-alias l='ls --color'
-alias ll='ls -al --color'
+alias l='ls --color=auto'
+alias ll='ls -alF --color=auto'
 alias mkdir='mkdir -pv'
 alias n=ncmpcpp
 alias o='git log --oneline'
