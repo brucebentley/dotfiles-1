@@ -65,7 +65,7 @@ function ssh() {
                 command ssh dev
         else
                 local LOCAL_TERM=$(echo -n "$TERM" | sed -e s/tmux/screen/)
-                env TERM=$LOCAL_TERM ssh "$@"
+                command env TERM=$LOCAL_TERM ssh "$@"
         fi
 }
 
