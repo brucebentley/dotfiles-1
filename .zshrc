@@ -373,13 +373,6 @@ source $HOME/.zsh/config/hash.zsh
 source $HOME/.zsh/config/path.zsh
 source $HOME/.zsh/config/vars.zsh
 
-#
-# Plug-ins
-#
-source $HOME/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
-
-source $HOME/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #
 # Third-party
@@ -389,6 +382,14 @@ source $HOME/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
 test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
 export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
+
+#
+# Plug-ins
+#
+source $HOME/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
+
+source $HOME/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #
 # /etc/motd
