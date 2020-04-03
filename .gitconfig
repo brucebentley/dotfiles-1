@@ -26,10 +26,6 @@
 	tags     = "!git tag -l"
 	branches = "!git branch -a"
 	remotes  = "!git remote -v"
-	full     = "!git show --format=fuller"
-	msg      = "!git log -1 --pretty=format:%B"
-	oneline  = "!git log --pretty=format:'%C(auto)%h%Creset %s%C(auto)%d%Creset %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset'"
-	graph    = "!git log --graph --all --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset'"
 
 	contributors = "!git shortlog --summary --numbered"
 
