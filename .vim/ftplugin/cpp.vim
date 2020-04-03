@@ -1,5 +1,6 @@
 setlocal shiftwidth=8
 setlocal tabstop=8
+setlocal noexpandtab
 setlocal cindent
 setlocal cinoptions=:0,l1,t0,g0,(0
 
