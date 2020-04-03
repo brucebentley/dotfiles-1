@@ -2,7 +2,7 @@ function! emanon#variables#init() abort
   " Set up shortcut variables for "hash -d" directories.
   let l:dirs=system(
         \ 'zsh -c "' .
-        \ 'source ~/.zsh/hash; ' .
+        \ 'source ~/.zsh/config/hash.zsh; ' .
         \ 'hash -d"'
         \ )
   let l:lines=split(l:dirs, '\n')
