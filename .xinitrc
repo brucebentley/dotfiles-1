@@ -5,7 +5,7 @@ if [[ -x $(command -v setxkbmap) ]]; then
 fi
 
 if [[ -x $(command -v feh) ]]; then
-        feh --randomize --bg-scale --no-xinerama ~/Pictures/wallpaper
+        feh --randomize --bg-scale --no-xinerama ~/pictures/wallpaper
 fi
 
 if [[ -x $(command -v compton) ]]; then
