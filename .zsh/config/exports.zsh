@@ -4,8 +4,8 @@ export CORRECT_IGNORE_FILE='.*'
 
 export PAGER=less
 
-if which nvim &> /dev/null; then
-        export EDITOR=$(which nvim)
+if [[ -x $(which nvim) ]]; then
+        export EDITOR=nvim
 else
         export EDITOR=vim
 fi
