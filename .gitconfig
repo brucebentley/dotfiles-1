@@ -1,74 +1,49 @@
 [alias]
-	# View the current working tree status using the short format
-	s = status -s
-	st = status
+	s  = "!git status -s"
+	st = "!git status"
 
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-
-	br = branch
-
-	# Switch to a branch, creating it if necessary ([C]heck [O]ut)
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+	br = "!git branch"
 
-	ci = commit -v
+	ff = "!git merge --ff-only"
+	m  = "! gitmerge"
 
-	# Commit all changes ([C]ommit [A]ll)
-	ca = !git add -A && git commit -av
+	ca = "!git add -A && git commit -av"
+	ci = "!git commit -v"
 
-	r = restore
+	amend = "!git add -A && git commit --amend --no-edit"
 
-	# Amend the currenly staged file to latest commit
-	amend = !git add -A && git commit --amend --no-edit
+	p = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 
-	# Push current branch to origin
-	p = !git push -u origin $(git rev-parse --abbrev-ref HEAD)
+	undo   = "!git reset HEAD~1 --mixed"
+	hreset = "!git reset HEAD --hard"
 
-	# Undo last commit (https://gist.github.com/sethvargo/6b2f7b592853381690bfe3bd00947e8f)
-	undo = !git reset HEAD~1 --mixed
+	cr = "!git clone --recursive"
+	sc = "!git clone --depth=1"
 
-	# Hard reset all commits that are not pushed
-	hreset = reset HEAD --hard
+	update = "!git pull --rebase --prune $@ && git submodule update --init --recursive && git submodule update --remote --merge"
 
-	# Clone a repository including all submodules ([C]lone [R]ecursive)
-	cr = clone --recursive
+	tags     = "!git tag -l"
+	branches = "!git branch -a"
+	remotes  = "!git remote -v"
+	full     = "!git show --format=fuller"
+	msg      = "!git log -1 --pretty=format:%B"
+	oneline  = "!git log --pretty=format:'%C(auto)%h%Creset %s%C(auto)%d%Creset %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset'"
+	graph    = "!git log --graph --all --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset'"
 
-	# Clone a repository with depth of 1 ([S]hallow [C]lone)
-	sc = clone --depth=1
+	contributors = "!git shortlog --summary --numbered"
 
-	# Get working branch up to date
-	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	di  = "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
 
-	# Update all submodules
-	update-bundle = !git submodule update --remote --merge
+	ack = "!git grep --break --heading"
 
-	# Show verbose output git repository
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
-	full = show --format=fuller
-	msg = log -1 --pretty=format:%B
-	graph = log --graph --all --pretty=format:'%C(auto)%h%Creset%C(auto)%d%Creset %s %C(magenta bold)(%cr)%Creset %C(cyan)<%aN>%Creset'
-	contributors = shortlog --summary --numbered
-
-	# Find given pattern in git repository
-	ack = grep --break --heading
-
-	# Interactive rebase with the given number of latest commits
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
-	# Find branches containing commit ([F]ind [B]ranch)
 	fb = "!f() { git branch -a --contains $1; }; f"
-
-	# Find commits by source code ([F]ind [C]ode)
 	fc = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
-
-	# Find commits by commit message ([F]ind [M]essage)
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
 
-	# Remove branches that have already been merged with master ([D]elete [M]erged
 	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
-
 
 [branch]
 	autosetupmerge = always
