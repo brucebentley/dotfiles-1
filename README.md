@@ -1,8 +1,8 @@
-# SCREENSHOT
+# Screenshot
 ![](https://raw.githubusercontent.com/Z5483/dotfiles/master/.img/desktop-tiling)
 ![](https://raw.githubusercontent.com/Z5483/dotfiles/master/.img/desktop-floating)
 
-# SYSTEM CONFIGURATION
+# System Configuration
 
 * `distro`: gentoo
 * `wm`: dwm
@@ -17,7 +17,7 @@
 
 Heavily inspired by https://github.com/wincent/wincent
 
-## SHELL FUNCTIONS
+### Shell Functions
 
 - `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
@@ -31,7 +31,7 @@ Heavily inspired by https://github.com/wincent/wincent
 - `tmux`: wrapper that reattches to pre-existing sessions, or creates new ones based on the current directory name; additionally, looks for a `.tmux` file to set up windows and panes (note that the first time a given `.tmux` file is encountered the wrapper asks the user whether to trust or skip it).
 - `tw` ("time warp"): overrides `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` (eg. `tw -1d`).
 
-## VI MODE
+### VI Mode
 
 Escape key is mapped to `esc` and `'' (two single quotes)`.
 
@@ -45,7 +45,7 @@ Depends on the mode, the cursor will change its shape.
 
 > **Note:** the cursor shapeshifting function only works on terminal emulators and not on the console.
 
-## PROMPT
+### Prompt
 
 Zsh is configured with the following prompt:
 
@@ -93,7 +93,7 @@ If there are background processes, a yellow asterisk is shown:
 
 ![](https://raw.githubusercontent.com/wincent/wincent/media/prompt-bg.png)
 
-## THIRD-PARTY SCRIPT
+### Third-Party Script
 
 - `bonsai`: bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh).
 - `colortest`: quickly show all terminal colors (https://github.com/pablopunk/colortest)
@@ -105,7 +105,7 @@ If there are background processes, a yellow asterisk is shown:
 - `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware).
 - `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi).
 
-# INSTALLATION
+# Installation
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
 2. ./install [options]
@@ -131,9 +131,9 @@ git config --file ~/.gitconfig.local user.email "johndoe@example.com"
 ```
 **Note:** You can also run the script `setup-git-user` in the `example` directory to quickly do the above.
 
-# TROUBLESHOOTING
+# Troubleshooting
 
-## Installation Script
+### Installation Script
 If `install` script doesn't work, try again using the following command: `bash
 install [options]`.  
 If the above doesn't solve your problem, then please create an issue.
