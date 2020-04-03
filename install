@@ -27,7 +27,7 @@ setup-zsh() {
                 fi
         done
 
-        if [[ ! -f $HOME/.zsh/vendor/skim/bin/sk ]]; then
+        if [[ -d $HOME/.zsh/vendor/skim/ ]]; then
                 cd $HOME/.zsh/vendor/skim
                 ./install
                 cd $REPOPATH
@@ -43,7 +43,7 @@ setup-vim() {
                 ln -sf $REPOPATH/.vim $HOME
         fi
 
-        if [[ ! -f $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ext.so ]]; then
+        if [[ -d $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
                cd "$HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
                ruby extconf.rb
                make
