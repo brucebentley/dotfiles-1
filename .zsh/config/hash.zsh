@@ -9,6 +9,6 @@ local DOTFILES=~/dotfiles
 local PORTAGE=/etc/portage
 local LINUX=/usr/src/linux
 
-test -d "$DOTFILES" && hash -d dots="$DOTFILES"
+test -d "$DOTFILES" && hash -d dotfiles="$DOTFILES"
 test -d "$LINUX" && hash -d linux="$LINUX"
 test -d "$PORTAGE" && hash -d portage="$PORTAGE"
