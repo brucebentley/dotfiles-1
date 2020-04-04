@@ -95,15 +95,9 @@ If there are background processes, a yellow asterisk is shown:
 
 ### Third-Party Script
 
-- `bonsai`: bonsai tree generator (https://gitlab.com/jallbrit/bonsai.sh).
 - `colortest`: quickly show all terminal colors (https://github.com/pablopunk/colortest)
 - `diff-so-fancy`: improve quality of diff (https://github.com/so-fancy/diff-so-fancy)
-- `epr`: EPUB files reader (https://github.com/wustho/epr).
-- `neofetch`: system information displayer (https://github.com/dylanaraps/neofetch).
 - `pfetch`: simple system information displayer (https://github.com/dylanaraps/pfetch).
-- `speedtest`: testing internet bandwidth using Ookla's speedtest.net (https://github.com/sivel/speedtest-cli).
-- `update-firmware`: update firmware from the linux firmware repo which ahs the latest builds (https://github.com/jessfraz/dotfiles/blob/master/bin/update-firmware).
-- `update-iwlwifi`: update iwlwifi firmware from intel's linux fork (https://github.com/jessfraz/dotfiles/blob/master/bin/update-iwlwifi).
 
 # Installation
 
