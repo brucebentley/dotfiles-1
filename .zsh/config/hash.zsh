@@ -6,9 +6,9 @@
 
 # Work machine:
 local DOTFILES=~/dotfiles
+local LINUX=/usr/src/linux
 local OVERLAY=/var/db/repos
 local PORTAGE=/etc/portage
-local LINUX=/usr/src/linux
 
 test -d "$DOTFILES" && hash -d dotfiles="$DOTFILES"
 test -d "$LINUX" && hash -d linux="$LINUX"
