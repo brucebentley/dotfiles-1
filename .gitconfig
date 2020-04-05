@@ -6,7 +6,6 @@
 	br = "!git branch"
 
 	ff = "!git merge --ff-only"
-	m  = "! gitmerge"
 
 	ca = "!git add -A && git commit -av"
 	ci = "!git commit -v"
