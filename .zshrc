@@ -194,10 +194,6 @@ DEFAULT_VI_MODE=viins
 # easier to type out a single quote if desired
 KEYTIMEOUT=25
 
-# vi-mode bindings for esc
-bindkey -M viins "''" vi-cmd-mode
-bindkey -M visual "''" deactivate-region
-
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init
 {

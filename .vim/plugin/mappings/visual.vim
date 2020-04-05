@@ -4,9 +4,6 @@
 vnoremap j gj
 vnoremap k gk
 
-"remap Escape key
-vnoremap '' <Esc>
-
 "Move between windows
 vnoremap <C-h> <C-w>h
 vnoremap <C-j> <C-w>j

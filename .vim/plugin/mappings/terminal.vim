@@ -2,5 +2,5 @@
 
 if has('nvim')
   "Change escape to ''
-  tnoremap '' <C-\><C-n>
+  tnoremap <esc> <C-\><C-n>
 endif
