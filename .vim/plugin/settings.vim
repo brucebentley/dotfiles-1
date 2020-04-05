@@ -61,7 +61,7 @@ if v:version > 703 || v:version == 703 && has('patch541')
 endif
 
 set formatoptions+=n                  " smart auto-indenting inside numbered lists
-set guifont=Source\ Code\ Pro\ Light:h13
+set guifont=DejaVuSansMono\ NF:h18
 set guioptions-=T                     " don't show toolbar
 set hidden                            " allows you to hide buffers with unsaved changes without being prompted
 
