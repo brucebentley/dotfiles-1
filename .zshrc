@@ -187,9 +187,6 @@ if tput cbt &> /dev/null; then
         bindkey "$(tput cbt)" reverse-menu-complete # make Shift-tab go to previous completion
 fi
 
-# Set default vi-mode state
-DEFAULT_VI_MODE=viins
-
 # Make vi-mode transition faster
 # easier to type out a single quote if desired
 KEYTIMEOUT=1
