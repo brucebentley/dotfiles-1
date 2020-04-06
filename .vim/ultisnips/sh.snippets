@@ -45,42 +45,42 @@ endsnippet
 
 snippet if "if ... then (if)"
 if [[ ${1:condition} ]]; then
-	${2:#statements}
+	${VISUAL}$2
 fi
 endsnippet
 
 snippet elif "elif .. (elif)"
 elif [[ ${1:condition} ]]; then
-	${2:#statements}
+	${VISUAL}$2
 endsnippet
 
 snippet for "for ... done (for)"
-for (( i = 0; i < ${1:10}; i++ )); do
-	${2:#statements}
+for (( ${2:i} = 0; $2 < ${1:10}; ${3:++$2} )); do
+	${VISUAL}$4
 done
 endsnippet
 
 snippet fori "for ... in ... done (fori)"
 for ${1:i}${2/.+/ in /}${2:words}; do
-	${3:#statements}
+	${VISUAL}$2
 done
 endsnippet
 
 snippet until "until ... (done)"
 until [[ ${1:condition} ]]; do
-	${2:#statements}
+	${VISUAL}$2
 done
 endsnippet
 
 snippet while "while ... (done)"
 while [[ ${1:condition} ]]; do
-	${2:#statements}
+	${VISUAL}$2
 done
 endsnippet
 
 snippet fun "function"
 function ${1:function_name}() {
-	${1:#function_body}
+	${VISUAL}$2
 }
 endsnippet
 
@@ -91,14 +91,14 @@ fi
 endsnippet
 
 snippet (
-( ${1:#statement} )
+( ${VISUAL}$1 )
 endsnippet
 
 snippet {
-{ ${1:#statements} }
+{ ${VISUAL}$1 }
 endsnippet
 
 snippet [
-[[ ${1:statement} ]]
+[[ ${VISUAL}$1 ]]
 endsnippet
 # vim:ft=snippets:
