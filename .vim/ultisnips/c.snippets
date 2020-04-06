@@ -24,7 +24,7 @@ endsnippet
 
 snippet #if "#if #endif"
 #if ${1:0}
-${VISUAL}$0
+${VISUAL}$2
 #endif
 endsnippet
 
@@ -46,14 +46,14 @@ ${1:#pragma mark -
 }#pragma mark $2
 #endif
 
-$0
+$3
 endsnippet
 
 snippet main "main() (main)"
 int
 main(int argc, char *argv[])
 {
-	${VISUAL}$0
+	${VISUAL}$1
 	return 0;
 }
 endsnippet
@@ -93,13 +93,13 @@ endsnippet
 
 snippet for "for loop (for)"
 for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${VISUAL}$0
+	${VISUAL}$4
 }
 endsnippet
 
 snippet fori "for int loop (fori)"
 for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${VISUAL}$0
+	${VISUAL}$5
 }
 endsnippet
 
@@ -126,13 +126,19 @@ else:
 	snip.rv = snip.c`}
 #define $1
 
-${VISUAL}$0
+${VISUAL}$2
 
 #endif /* end of include guard: $1 */
 endsnippet
 
 snippet if "if .. (if)"
 if (${1:/*condition */}) {
+	${VISUAL}$2
+}
+endsnippet
+
+snippet elif "else if .. (else if)"
+else if (${1:/*condition*/}) {
 	${VISUAL}$2
 }
 endsnippet
@@ -185,7 +191,7 @@ snippet fun "function"
 ${1:void}
 ${2:function_name}($3)
 {
-	${VISUAL}$0
+	${VISUAL}$4
 }
 endsnippet
 
