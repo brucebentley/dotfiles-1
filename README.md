@@ -13,6 +13,14 @@
 * `music player`: ncmpcpp/spotify
 * `font`: DejaVu Sans Mono
 
+# Keyboard Mappings
+
+**[xcape](https://github.com/alols/xcape)** and **[setxkbmap](https://github.com/freedesktop/xorg-setxkbmap)** are used for the following mappings:
+
+- Make Caps Lock generate Escape (when tapped and released on its own) and Super (when chorded with another key).
+- Toggle Caps Lock by pressing both shift keys together.
+  - While Caps Lock is on, press either shift key to turn Caps Locks off.
+
 # ZSH
 
 Heavily inspired by https://github.com/wincent/wincent
