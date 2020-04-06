@@ -4,6 +4,10 @@ if [[ -x $(command -v setxkbmap) ]]; then
         setxkbmap -option 'caps:super'
 fi
 
+if [[ -x $(command -v xcape) ]]; then
+        xcape -t 0 -e 'Super_L=Escape'
+fi
+
 if [[ -x $(command -v feh) ]]; then
         feh --randomize --bg-scale --no-xinerama ~/pictures/wallpaper
 fi
