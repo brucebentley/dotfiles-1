@@ -192,7 +192,7 @@ DEFAULT_VI_MODE=viins
 
 # Make vi-mode transition faster
 # easier to type out a single quote if desired
-KEYTIMEOUT=25
+KEYTIMEOUT=1
 
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init
