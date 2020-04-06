@@ -5,7 +5,7 @@ if [[ -x $(command -v setxkbmap) ]]; then
 fi
 
 if [[ -x $(command -v xcape) ]]; then
-        xcape -t 0 -e 'Super_L=Escape'
+        xcape -e 'Super_L=Escape'
 fi
 
 if [[ -x $(command -v feh) ]]; then
