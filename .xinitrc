@@ -2,6 +2,7 @@
 
 if [[ -x $(command -v setxkbmap) ]]; then
         setxkbmap -option 'caps:super'
+        setxkbmap -option 'shift:both_shiftlock'
 fi
 
 if [[ -x $(command -v xcape) ]]; then
