@@ -105,6 +105,12 @@ If there are background processes, a yellow asterisk is shown:
 - `diff-so-fancy`: improve quality of diff (https://github.com/so-fancy/diff-so-fancy)
 - `pfetch`: simple system information displayer (https://github.com/dylanaraps/pfetch).
 
+# Dependencies
+- [tmux](https://github.com/tmux/tmux) => 2.8
+- [Neovim](https://github.com/neovim/neovim) => 0.4.3 or [Vim](https://github.com/vim/vim) => 8.0 with Ruby and Python support
+- [zsh](https://github.com/zsh-users/zsh) => 5.6
+- [git](https://github.com/git/git) => 1.8.2
+
 # Installation
 
 1. git clone --recursive https://github.com/Z5483/dotfiles
