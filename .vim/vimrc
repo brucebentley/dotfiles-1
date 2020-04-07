@@ -58,6 +58,32 @@ if exists('$DEBUG_LC_LOGFILE')
   let g:LanguageClient_loggingLevel='DEBUG'
 endif
 
+if executable('ccls')
+  if exists('$DEBUG_LC_LOGFILE')
+    let s:debug_arg[
+      \ '-v 2',
+      \ '--log-file=',
+      \ $DEBUG_LC_LOGFILE
+      \ [
+  else
+    let s:debug_arg=[]
+  endif
+  let s:ccl_lsp=extend([exepath('ccls')], s:debug_arg)
+endif
+
+let s:ccl_filetypes=[
+  \ 'c',
+  \ 'h',
+  \ 'cpp',
+  \ 'hpp'
+  \]
+
+if s:ccl_lsp != []
+  for s:ccl_filetype in s:ccl_filetypes
+    let g:LanguageClient_serverCommands[s:ccl_filetype]=s:ccl_lsp
+  endfo
+endif
+
 let g:LanguageClient_rootMarkers={}
 
 let g:LanguageClient_diagnosticsList='Location'
