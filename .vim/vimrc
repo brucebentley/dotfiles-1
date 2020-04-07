@@ -87,6 +87,7 @@ if &loadplugins
     packadd! command-t
     packadd! ferret
     packadd! indentLine
+    packadd! LanguageClient-neovim
     packadd! loupe
     packadd! pinnacle
     packadd! replay

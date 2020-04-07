@@ -49,6 +49,12 @@ setup-vim() {
                make
                cd $REPOPATH
         fi
+
+        if [[ -d $HOME/.vim/pack/bundle/opt/LanguageClient-neovim ]]; then
+               cd "$HOME/.vim/pack/bundle/opt/LanguageClient-neovim"
+               bash install.sh
+               cd $REPOPATH
+        fi
 }
 
 setup-misc() {
