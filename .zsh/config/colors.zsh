@@ -2,7 +2,7 @@
 # Colors
 #
 
-__emanon[BASE16_CONFIG]=~/.vim/.base16
+__EMANON[BASE16_CONFIG]=~/.vim/.base16
 
 # Takes a hex color in the form of "RRGGBB" and outputs its luma (0-255, where
 # 0 is black and 255 is white).
@@ -45,7 +45,7 @@ function color() {
 
         local SCHEME="$1"
         local BASE16_DIR=~/.zsh/vendor/base16-shell/scripts
-        local BASE16_CONFIG_PREVIOUS="${__emanon[BASE16_CONFIG]}.previous"
+        local BASE16_CONFIG_PREVIOUS="${__EMANON[BASE16_CONFIG]}.previous"
         local STATUS=0
 
         function __color() {
@@ -60,12 +60,12 @@ function color() {
                                 BACKGROUND=light
                         fi
 
-                        if [ -e "$__emanon[BASE16_CONFIG]" ]; then
-                                cp "$__emanon[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
+                        if [ -e "$__EMANON[BASE16_CONFIG]" ]; then
+                                cp "$__EMANON[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
                         fi
 
-                        echo "$SCHEME" >! "$__emanon[BASE16_CONFIG]"
-                        echo "$BACKGROUND" >> "$__emanon[BASE16_CONFIG]"
+                        echo "$SCHEME" >! "$__EMANON[BASE16_CONFIG]"
+                        echo "$BACKGROUND" >> "$__EMANON[BASE16_CONFIG]"
                         sh "$FILE"
 
                         if [ -n "$TMUX" ]; then
@@ -84,9 +84,9 @@ function color() {
         }
 
         if [ $# -eq 0 ]; then
-                if [ -s "$__emanon[BASE16_CONFIG]" ]; then
-                        cat "$__emanon[BASE16_CONFIG]"
-                        local SCHEME=$(head -1 "$__emanon[BASE16_CONFIG]")
+                if [ -s "$__EMANON[BASE16_CONFIG]" ]; then
+                        cat "$__EMANON[BASE16_CONFIG]"
+                        local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
                         __color "$SCHEME"
                         return
                 else
@@ -129,11 +129,11 @@ function color() {
 function () {
         emulate -L zsh
 
-        if [[ -s "$__emanon[BASE16_CONFIG]" ]]; then
-                local SCHEME=$(head -1 "$__emanon[BASE16_CONFIG]")
-                local BACKGROUND=$(sed -n -e '2 p' "$__emanon[BASE16_CONFIG]")
+        if [[ -s "$__EMANON[BASE16_CONFIG]" ]]; then
+                local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
+                local BACKGROUND=$(sed -n -e '2 p' "$__EMANON[BASE16_CONFIG]")
                 if [ "$BACKGROUND" != 'dark' -a "$BACKGROUND" != 'light' ]; then
-                        echo "warning: unknown background type in $__emanon[BASE16_CONFIG]"
+                        echo "warning: unknown background type in $__EMANON[BASE16_CONFIG]"
                 fi
                 color "$SCHEME"
         else

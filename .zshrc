@@ -3,10 +3,10 @@
 #
 # Create a hash table for globally stashing variables without polluting main
 # scope with a bunch of identifiers.
-typeset -A __emanon
+typeset -A __EMANON
 
-__emanon[ITALIC_ON]=$'\e[3m'
-__emanon[ITALIC_OFF]=$'\e[23m'
+__EMANON[ITALIC_ON]=$'\e[3m'
+__EMANON[ITALIC_OFF]=$'\e[23m'
 
 #
 # Completion
@@ -42,7 +42,7 @@ zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-
 
 # Categorize completion suggestions with headings:
 zstyle ':completion:*' group-name ''
-zstyle ':completion:*:descriptions' format %F{default}%B%{$__emanon[ITALIC_ON]%}--- %d ---%{$__EMANON[ITALIC_OFF]%}%b%f
+zstyle ':completion:*:descriptions' format %F{default}%B%{$__EMANON[ITALIC_ON]%}--- %d ---%{$__EMANON[ITALIC_OFF]%}%b%f
 
 # Highlight selection
 zstyle ':completion:*' menu select
@@ -304,7 +304,7 @@ function -report-start-time() {
                         SECS="$((~~$SECS))s"
                 fi
                 ELAPSED="${ELAPSED}${SECS}"
-                RPROMPT="%F{cyan}%{$__emanon[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
+                RPROMPT="%F{cyan}%{$__EMANON[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
                 unset ZSH_START_TIME
         else
                 RPROMPT="$RPROMPT_BASE"
@@ -326,17 +326,17 @@ add-zsh-hook chpwd -auto-ls-after-cd
 
 # Remember each command we run.
 function -record-command() {
-        __emanon[LAST_COMMAND]="$2"
+        __EMANON[LAST_COMMAND]="$2"
 }
 add-zsh-hook preexec -record-command
 
 # Update vcs_info (slow) after any command that probably changed it.
 function -maybe-show-vcs-info() {
-        local LAST="$__emanon[LAST_COMMAND]"
+        local LAST="$__EMANON[LAST_COMMAND]"
 
         # In case user just hit enter, overwrite LAST_COMMAND, because preexec
         # won't run and it will otherwise linger.
-        __emanon[LAST_COMMAND]="<unset>"
+        __EMANON[LAST_COMMAND]="<unset>"
         if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git" || $LAST[1,2] == ./ ]]; then
                 vcs_info
         fi
