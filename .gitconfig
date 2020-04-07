@@ -28,7 +28,8 @@
 
 	contributors = "!git shortlog --summary --numbered"
 
-	di  = "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
+	d   = !"git diff-index --quiet HEAD -- || git diff --patch-with-stat"
+	di  = "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD --; d"
 
 	ack = "!git grep --break --heading"
 
