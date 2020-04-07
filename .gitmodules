@@ -25,9 +25,6 @@
 [submodule ".vim/pack/bundle/opt/replay"]
 	path = .vim/pack/bundle/opt/replay
 	url = https://github.com/wincent/replay
-[submodule ".vim/pack/bundle/opt/scalpel"]
-	path = .vim/pack/bundle/opt/scalpel
-	url = https://github.com/wincent/scalpel
 [submodule ".vim/pack/bundle/opt/tcomment_vim"]
 	path = .vim/pack/bundle/opt/tcomment_vim
 	url = https://github.com/tomtom/tcomment_vim
@@ -61,12 +58,6 @@
 [submodule ".vim/pack/bundle/opt/vim-git"]
 	path = .vim/pack/bundle/opt/vim-git
 	url = https://github.com/tpope/vim-git
-[submodule ".vim/pack/bundle/opt/vim-javascript"]
-	path = .vim/pack/bundle/opt/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-[submodule ".vim/pack/bundle/opt/vim-multiple-cursors"]
-	path = .vim/pack/bundle/opt/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors
 [submodule ".vim/pack/bundle/opt/vim-operator-user"]
 	path = .vim/pack/bundle/opt/vim-operator-user
 	url = https://github.com/kana/vim-operator-user
@@ -112,12 +103,6 @@
 [submodule ".zsh/vendor/zsh-syntax-highlighting"]
 	path = .zsh/vendor/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".mutt/vendor/mutt-notmuch-py"]
-	path = .mutt/vendor/mutt-notmuch-py
-	url = https://github.com/honza/mutt-notmuch-py
-[submodule ".config/clipper/clipper"]
-	path = .config/clipper/clipper
-	url = https://github.com/wincent/clipper
 [submodule ".vim/pack/bundle/opt/goyo"]
 	path = .vim/pack/bundle/opt/goyo
 	url = https://github.com/junegunn/goyo.vim

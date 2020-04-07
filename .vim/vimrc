@@ -75,7 +75,6 @@ if &loadplugins
     packadd! terminus
     packadd! ultisnips
     packadd! vcs-jump
-    packadd! vim-multiple-cursors
     packadd! vim-dispatch
     packadd! vim-docvim
     packadd! vim-easydir
