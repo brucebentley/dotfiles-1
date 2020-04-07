@@ -181,12 +181,6 @@ snippet prx
 printf("${1:} = %${2}\n", $1);
 endsnippet
 
-snippet st "struct"
-struct ${1:`!p snip.rv = (snip.basename or "name") + "_t"`} {
-	${0:/* data */}
-};
-endsnippet
-
 snippet fun "function"
 ${1:void}
 ${2:function_name}($3)
@@ -268,19 +262,21 @@ typedef ${1:int} ${2:MyCustomType};
 endsnippet
 
 snippet st "struct"
-struct ${1:`vim_snippets#Filename('$1_t', 'name')`} {
-	${2:Data} /*!< ${4:Description} */
-}${5: /* optional variable list */};
+struct ${1:name} {
+	${VISUAL}$2
+}$3;
 endsnippet
 
 snippet tds "typedef struct"
-typedef struct ${2:_$1 }{
-	m_${3:Data} /*!< ${4:Description} */
-} ${1:`vim_snippets#Filename('$1_t', 'name')`};
+typedef struct ${1:name} {
+	${VISUAL}$2
+} $1;
 endsnippet
 
 snippet enum "enum"
-enum ${1:name} { ${0} };
+enum ${1:name} {
+	${VISUAL}$2
+};
 endsnippet
 
 snippet tde "typedef enum"
