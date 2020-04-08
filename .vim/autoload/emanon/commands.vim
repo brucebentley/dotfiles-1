@@ -1,19 +1,3 @@
-function! emanon#commands#find(args) abort
-    set errorformat+=%f
-
-    " TODO: make this async
-    cexpr system('find .' . a:args)
-endfunction
-
-function! s:Open(app, file)
-  if !executable('open')
-    echoerr 'No "open" executable'
-    return
-  endif
-
-  silent execute '!open -a ' . shellescape(a:app) . ' ' . shellescape(a:file)
-endfunction
-
 " Map of .git directories to GitHub user-or-org/project identifiers.
 let s:directories={}
 
@@ -88,15 +72,5 @@ function! emanon#commands#open_on_github(...) abort range
   endfor
   if !l:did_open
     call emanon#functions#echoerr('No filename')
-  endif
-endfunction
-
-function! emanon#commands#preview(...) abort
-  if a:0 == 0
-    call s:preview(expand('%'))
-  else
-    for l:file in a:000
-      call s:preview(l:file)
-    endfor
   endif
 endfunction
