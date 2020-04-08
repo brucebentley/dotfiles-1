@@ -4,6 +4,8 @@ endif
 
 let s:gcc='gcc'
 
+execute 'CompilerSet makeprg=' . s:gcc
+
 CompilerSet errorformat=
             \%*[^\"]\"%f\"%*\\D%l:%c:\ %m,
             \%*[^\"]\"%f\"%*\\D%l:\ %m,
@@ -25,14 +27,12 @@ CompilerSet errorformat=
             \%X%*\\a:\ Leaving\ directory\ %*[`']%f',
             \%DMaking\ %*\\a\ in\ %f
 
-execute 'CompilerSet makeprg=' . s:gcc
-
 if exists('g:compiler_gcc_ignore_unmatched_lines')
     CompilerSet errorformat+=%-G%.%#
 endif
 
-finish
-Compiled src/function.cpp 
+finish "Sample output follows
+Compiled src/function.cpp
 In file included from src/function.cpp:3:
 src/port-config.hpp:38:24: error: 'LEFT_INTAKE' was not declared in this scope; did you mean 'RIGHT_INTAKE'?
 38 |         -RIGHT_INTAKE, LEFT_INTAKE,
