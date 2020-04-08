@@ -6,12 +6,14 @@
 
 # Work machine:
 local BIN=~/bin
+local COMPILER=~/.vim/after/compiler
 local DOTFILES=~/dotfiles
 local LINUX=/usr/src/linux
 local OVERLAY=/var/db/repos
 local PORTAGE=/etc/portage
 
 test -d "$BIN" && hash -d bin="$BIN"
+test -d "$COMPILER" && hash -d compiler="$COMPILER"
 test -d "$DOTFILES" && hash -d dotfiles="$DOTFILES"
 test -d "$LINUX" && hash -d linux="$LINUX"
 test -d "$OVERLAY" && hash -d overlay="$OVERLAY"
