@@ -2,7 +2,7 @@ function! emanon#commands#find(args) abort
     set errorformat+=%f
 
     " TODO: make this async
-    cexpr system('find ' . a:args)
+    cexpr system('find .' . a:args)
 endfunction
 
 function! s:Open(app, file)
@@ -12,16 +12,6 @@ function! s:Open(app, file)
   endif
 
   silent execute '!open -a ' . shellescape(a:app) . ' ' . shellescape(a:file)
-endfunction
-
-function! emanon#commands#mvim() abort
-  let l:filename=expand('%')
-  if empty(l:filename)
-    echoerr 'No current file'
-    return
-  endif
-
-  call s:Open('MacVim.app', l:filename)
 endfunction
 
 " Map of .git directories to GitHub user-or-org/project identifiers.
@@ -70,13 +60,6 @@ function! s:open_on_github(file, range) abort
     let l:url=shellescape('https://github.com/' . l:address . '/tree/master' . l:relative_path, a:range)
     call system('open ' . l:url)
   endif
-endfunction
-
-function! s:preview(file) abort
-  " TODO: remove this hack once new version of Marked 2 is out:
-  " http://support.markedapp.com/discussions/questions/8670
-  silent! execute '!xattr -d com.apple.quarantine ' . shellescape(a:file)
-  call s:Open('Marked 2.app', a:file)
 endfunction
 
 function! emanon#commands#open_on_github(...) abort range

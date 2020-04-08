@@ -8,6 +8,4 @@ command! Lint call emanon#commands#lint()
 
 command! Typecheck call emanon#commands#typecheck()
 
-command! Mvim call emanon#commands#mvim()
-
 command! -nargs=* -complete=file Preview call emanon#commands#preview(<f-args>)
