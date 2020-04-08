@@ -110,6 +110,11 @@ If there are background processes, a yellow asterisk is shown:
 - [Neovim](https://github.com/neovim/neovim) => 0.4.3 or [Vim](https://github.com/vim/vim) => 8.0 with Ruby and Python support
 - [zsh](https://github.com/zsh-users/zsh) => 5.6
 - [git](https://github.com/git/git) => 1.8.2
+- [ueberzug](https://github.com/seebye/ueberzug)
+- [vifm](https://github.com/vifm/vifm) => 0.8
+  - [epub-thumbnailer](https://github.com/marianosimone/epub-thumbnailer)(optional) - for displaying cover of epub file
+  - [ffmpegthumbnailer](https://github.com/dirkvdb/ffmpegthumbnailer)(optional) - for video thumbnail preview
+  - [fontpreview](https://github.com/sdushantha/fontpreview)(optional) - for font preview
 
 # Installation
 
