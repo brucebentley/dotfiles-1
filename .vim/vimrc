@@ -74,9 +74,7 @@ endif
 
 let s:ccl_filetypes=[
   \ 'c',
-  \ 'h',
   \ 'cpp',
-  \ 'hpp',
   \]
 
 if s:ccl_lsp != []
