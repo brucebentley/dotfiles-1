@@ -216,33 +216,8 @@ fileviewer * file -b %c
 " Easily quit vifm by hitting q
 nmap q ZQ
 
-" Use comma to enter command mode
-nnoremap , : 
-
-" Set highlighted image as wallpaper
-nnoremap <C-w> :!bash ~/.config/ranger/scripts/wall.sh %c &<cr>
-
-" Upload highlighted file to 0x0.st and then save url to clipboard
-nnoremap 0x0 :!curl -s -F'file=@%c' https://0x0.st > /dev/null | xclip -sel clip && notify-send "vifm" "File uploaded: $(xclip -o -selection clipboard)" &<cr> 
-
-" Reverse image search with Tiney
-nnoremap re :!bash ~/bin/utils/tineye %c &<cr>
-
 " Go to the file that is right before "../" for going to the top most file
 nnoremap gg ggj
-
-" Quick shortcuts to some dirs 
-nnoremap bin :cd ~/bin<cr>
-nnoremap docs :cd ~/documents<cr>
-nnoremap dls :cd ~/downloads<cr>
-nnoremap pics :cd ~/pictures<cr>
-nnoremap walls :cd ~/pictures/walls<cr>
-nnoremap vids :cd ~/videos<cr>
-nnoremap dots :cd ~/dotfiles<cr>
-nnoremap shots :cd ~/pictures/screenshots<cr>
-nnoremap music :cd ~/music<cr>
-nnoremap cd :cd<cr>
-
 
 " Start shell in current directory
 nnoremap s :shell<cr>
@@ -276,10 +251,8 @@ nnoremap x :!/home/siddharth/bin/utils/extract %f &<cr>
 
 " Make a new directory
 nnoremap mkd :mkdir<space>
-"}}}
 
 
-"{{{ Icons 
 " file types
 set classify='  :dir:/,  :exe:,  :reg:,  :link:'
 " various file names
