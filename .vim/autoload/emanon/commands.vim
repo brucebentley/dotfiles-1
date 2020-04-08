@@ -42,7 +42,7 @@ function! s:open_on_github(file, range) abort
     let l:root=fnamemodify(l:git_dir, ':h')
     let l:relative_path=strcharpart(a:file, strchars(l:root))
     let l:url=shellescape('https://github.com/' . l:address . '/tree/master' . l:relative_path, a:range)
-    call system('open ' . l:url)
+    call system('xdg-open ' . l:url)
   endif
 endfunction
 
