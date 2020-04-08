@@ -116,5 +116,6 @@
 	path = .vim/pack/bundle/opt/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown
 [submodule ".vim/pack/bundle/opt/LanguageClient-neovim"]
+	branch = next
 	path = .vim/pack/bundle/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
