@@ -19,22 +19,22 @@ endsnippet
 ###################
 
 snippet * "italics"
-*${1:${VISUAL}}*$0
+*${1}*
 endsnippet
 
 snippet ** "bold"
-**${1:${VISUAL}}**$0
+**${1}**$0
 endsnippet
 
 snippet *** "bold italics"
-***${1:${VISUAL}}***$0
+***${1}***$0
 endsnippet
 
 ################
 # Common stuff #
 ################
 snippet link "Link to something"
-[${1:${VISUAL:Text}}](${3:http://${2:www.url.com}})$0
+[${1::Text}](${3:http://${2:www.url.com}})$0
 endsnippet
 
 snippet img "Image"
@@ -53,13 +53,13 @@ $0
 endsnippet
 
 snippet refl "Reference Link"
-[${1:${VISUAL:Text}}][${2:id}]$0
+[${1:Text}][${2:id}]$0
 
 [$2]:${4:http://${3:www.url.com}} "${5:$4}"
 endsnippet
 
 snippet fnt "Footnote"
-[^${1:${VISUAL:Footnote}}]$0
+[^${1:Footnote}]$0
 
 [^$1]:${2:Text}
 endsnippet
