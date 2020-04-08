@@ -235,13 +235,18 @@ function tick() {
 }
 
 function vifm() {
-        export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
-        rm "$FIFO_UEBERZUG" 2>/dev/null
-        mkfifo "$FIFO_UEBERZUG"
-        trap "rm "$FIFO_UEBERZUG" 2>/dev/null pkill -P $$ 2>/dev/null" EXIT
-        tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
+        if [[ ! -x $(command -v ueberzug) ]]; then
+                command vifm
+                exit
+        else
+                export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
+                rm "$FIFO_UEBERZUG" 2>/dev/null
+                mkfifo "$FIFO_UEBERZUG"
+                trap "rm "$FIFO_UEBERZUG" 2>/dev/null pkill -P $$ 2>/dev/null" EXIT
+                tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
 
-        command vifm "$@"
-        rm "$FIFO_UEBERZUG" 2>/dev/null
-        pkill -P $$ 2>/dev/null
+                command vifm "$@"
+                rm "$FIFO_UEBERZUG" 2>/dev/null
+                pkill -P $$ 2>/dev/null
+        fi
 }
