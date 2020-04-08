@@ -27,8 +27,6 @@ if has('autocmd')
       autocmd InsertLeave,VimEnter,WinEnter * if emanon#autocmds#should_cursorline() | setlocal cursorline | endif
       autocmd InsertEnter,WinLeave * if emanon#autocmds#should_cursorline() | setlocal nocursorline | endif
       if has('statusline')
-        " TODO: move this into statusline.vim? or move autocmd stuff in statusline.vim
-        " here?
         autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_statusline()
         autocmd FocusLost,WinLeave * call emanon#autocmds#blur_statusline()
       endif

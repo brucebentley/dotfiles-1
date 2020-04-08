@@ -3,7 +3,6 @@ function! emanon#debug#log(string) abort
 endfunction
 
 function! emanon#debug#compiler() abort
-  " TODO: add check to confirm we're in .vim/after/compiler/*.vim or similar
   source %
   call setqflist([])
   /\v^finish>/+1,$ :cgetbuffer
