@@ -4,173 +4,173 @@ let g:emanonCursorlineBlacklist = ['command-t']
 let g:emanonMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
 
 function! emanon#autocmds#attempt_select_last_file() abort
-  let l:previous=expand('#:t')
-  if l:previous !=# ''
-    call search('\v<' . l:previous . '>')
-  endif
+    let l:previous=expand('#:t')
+    if l:previous !=# ''
+        call search('\v<' . l:previous . '>')
+    endif
 endfunction
 
 function! emanon#autocmds#should_colorcolumn() abort
-  if index(g:emanonColorColumnBufferNameBlacklist, bufname(bufnr('%'))) != -1
-    return 0
-  endif
-  return index(g:emanonColorColumnFileTypeBlacklist, &filetype) == -1
+    if index(g:emanonColorColumnBufferNameBlacklist, bufname(bufnr('%'))) != -1
+        return 0
+    endif
+    return index(g:emanonColorColumnFileTypeBlacklist, &filetype) == -1
 endfunction
 
 function! emanon#autocmds#should_cursorline() abort
-  return index(g:emanonCursorlineBlacklist, &filetype) == -1
+    return index(g:emanonCursorlineBlacklist, &filetype) == -1
 endfunction
 
 " Loosely based on: http://vim.wikia.com/wiki/Make_views_automatic
 function! emanon#autocmds#should_mkview() abort
-  return
-        \ &buftype ==# '' &&
-        \ index(g:emanonMkviewFiletypeBlacklist, &filetype) == -1 &&
-        \ !exists('$SUDO_USER') " Don't create root-owned files.
+    return
+                \ &buftype ==# '' &&
+                \ index(g:emanonMkviewFiletypeBlacklist, &filetype) == -1 &&
+                \ !exists('$SUDO_USER') " Don't create root-owned files.
 endfunction
 
 function! emanon#autocmds#mkview() abort
-  try
-    if exists('*haslocaldir') && haslocaldir()
-      " We never want to save an :lcd command, so hack around it...
-      cd -
-      mkview
-      lcd -
-    else
-      mkview
-    endif
-  catch /\<E186\>/
-    " No previous directory: probably a `git` operation.
-  catch /\<E190\>/
-    " Could be name or path length exceeding NAME_MAX or PATH_MAX.
-  endtry
+    try
+        if exists('*haslocaldir') && haslocaldir()
+            " We never want to save an :lcd command, so hack around it...
+            cd -
+            mkview
+            lcd -
+        else
+            mkview
+        endif
+    catch /\<E186\>/
+        " No previous directory: probably a `git` operation.
+    catch /\<E190\>/
+        " Could be name or path length exceeding NAME_MAX or PATH_MAX.
+    endtry
 endfunction
 
 function! s:get_spell_settings() abort
-  return {
-        \   'spell': &l:spell,
-        \   'spellcapcheck': &l:spellcapcheck,
-        \   'spellfile': &l:spellfile,
-        \   'spelllang': &l:spelllang
-        \ }
+    return {
+                \   'spell': &l:spell,
+                \   'spellcapcheck': &l:spellcapcheck,
+                \   'spellfile': &l:spellfile,
+                \   'spelllang': &l:spelllang
+                \ }
 endfunction
 
 function! s:set_spell_settings(settings) abort
-  let &l:spell=a:settings.spell
-  let &l:spellcapcheck=a:settings.spellcapcheck
-  let &l:spellfile=a:settings.spellfile
-  let &l:spelllang=a:settings.spelllang
+    let &l:spell=a:settings.spell
+    let &l:spellcapcheck=a:settings.spellcapcheck
+    let &l:spellfile=a:settings.spellfile
+    let &l:spelllang=a:settings.spelllang
 endfunction
 
 function! emanon#autocmds#blur_window() abort
-  if emanon#autocmds#should_colorcolumn()
-    let l:settings=s:get_spell_settings()
-    ownsyntax off
-    set nolist
-    if has('conceal')
-      set conceallevel=0
+    if emanon#autocmds#should_colorcolumn()
+        let l:settings=s:get_spell_settings()
+        ownsyntax off
+        set nolist
+        if has('conceal')
+            set conceallevel=0
+        endif
+        call s:set_spell_settings(l:settings)
     endif
-    call s:set_spell_settings(l:settings)
-  endif
 endfunction
 
 function! emanon#autocmds#focus_window() abort
-  if emanon#autocmds#should_colorcolumn()
-    if !empty(&ft)
-      let l:settings=s:get_spell_settings()
-      ownsyntax on
-      set list
-      let l:conceal_exclusions=get(g:, 'indentLine_fileTypeExclude', [])
-      if has('conceal') && index(l:conceal_exclusions, &ft) == -1
-        set conceallevel=1
-      endif
-      call s:set_spell_settings(l:settings)
+    if emanon#autocmds#should_colorcolumn()
+        if !empty(&ft)
+            let l:settings=s:get_spell_settings()
+            ownsyntax on
+            set list
+            let l:conceal_exclusions=get(g:, 'indentLine_fileTypeExclude', [])
+            if has('conceal') && index(l:conceal_exclusions, &ft) == -1
+                set conceallevel=1
+            endif
+            call s:set_spell_settings(l:settings)
+        endif
     endif
-  endif
 endfunction
 
 function! emanon#autocmds#blur_statusline() abort
-  " Default blurred statusline (buffer number: filename).
-  let l:blurred='%{emanon#statusline#gutterpadding()}'
-  let l:blurred.='\ ' " space
-  let l:blurred.='\ ' " space
-  let l:blurred.='\ ' " space
-  let l:blurred.='\ ' " space
-  let l:blurred.='%<' " truncation point
-  let l:blurred.='%f' " filename
-  let l:blurred.='%=' " split left/right halves (makes background cover whole)
-  call s:update_statusline(l:blurred, 'blur')
+    " Default blurred statusline (buffer number: filename).
+    let l:blurred='%{emanon#statusline#gutterpadding()}'
+    let l:blurred.='\ ' " space
+    let l:blurred.='\ ' " space
+    let l:blurred.='\ ' " space
+    let l:blurred.='\ ' " space
+    let l:blurred.='%<' " truncation point
+    let l:blurred.='%f' " filename
+    let l:blurred.='%=' " split left/right halves (makes background cover whole)
+    call s:update_statusline(l:blurred, 'blur')
 endfunction
 
 function! emanon#autocmds#focus_statusline() abort
-  " `setlocal statusline=` will revert to global 'statusline' setting.
-  call s:update_statusline('', 'focus')
+    " `setlocal statusline=` will revert to global 'statusline' setting.
+    call s:update_statusline('', 'focus')
 endfunction
 
 function! s:update_statusline(default, action) abort
-  let l:statusline = s:get_custom_statusline(a:action)
-  if type(l:statusline) == type('')
-    " Apply custom statusline.
-    execute 'setlocal statusline=' . l:statusline
-  elseif l:statusline == 0
-    " Do nothing.
-    "
-    " Note that order matters here because of Vimscript's insane coercion rules:
-    " when comparing a string to a number, the string gets coerced to 0, which
-    " means that all strings `== 0`. So, we must check for string-ness first,
-    " above.
-    return
-  else
-    execute 'setlocal statusline=' . a:default
-  endif
+    let l:statusline = s:get_custom_statusline(a:action)
+    if type(l:statusline) == type('')
+        " Apply custom statusline.
+        execute 'setlocal statusline=' . l:statusline
+    elseif l:statusline == 0
+        " Do nothing.
+        "
+        " Note that order matters here because of Vimscript's insane coercion rules:
+        " when comparing a string to a number, the string gets coerced to 0, which
+        " means that all strings `== 0`. So, we must check for string-ness first,
+        " above.
+        return
+    else
+        execute 'setlocal statusline=' . a:default
+    endif
 endfunction
 
 function! s:get_custom_statusline(action) abort
-  if &ft ==# 'command-t'
-    " Will use Command-T-provided buffer name, but need to escape spaces.
-    return '\ \ ' . substitute(bufname('%'), ' ', '\\ ', 'g')
-  elseif &ft ==# 'diff' && exists('t:diffpanel') && t:diffpanel.bufname ==# bufname('%')
-    return 'Undotree\ preview' " Less ugly, and nothing really useful to show.
-  elseif &ft ==# 'undotree'
-    return 0 " Don't override; undotree does its own thing.
-  elseif &ft ==# 'nerdtree'
-    return 0 " Don't override; NERDTree does its own thing.
-  elseif &ft ==# 'qf'
-    if a:action ==# 'blur'
-      return
-            \ '%{emanon#statusline#gutterpadding()}'
-            \ . '\ '
-            \ . '\ '
-            \ . '\ '
-            \ . '\ '
-            \ . '%<'
-            \ . '%q'
-            \ . '\ '
-            \ . '%{get(w:,\"quickfix_title\",\"\")}'
-            \ . '%='
-    else
-      return g:emanonQuickfixStatusline
+    if &ft ==# 'command-t'
+        " Will use Command-T-provided buffer name, but need to escape spaces.
+        return '\ \ ' . substitute(bufname('%'), ' ', '\\ ', 'g')
+    elseif &ft ==# 'diff' && exists('t:diffpanel') && t:diffpanel.bufname ==# bufname('%')
+        return 'Undotree\ preview' " Less ugly, and nothing really useful to show.
+    elseif &ft ==# 'undotree'
+        return 0 " Don't override; undotree does its own thing.
+    elseif &ft ==# 'nerdtree'
+        return 0 " Don't override; NERDTree does its own thing.
+    elseif &ft ==# 'qf'
+        if a:action ==# 'blur'
+            return
+                        \ '%{emanon#statusline#gutterpadding()}'
+                        \ . '\ '
+                        \ . '\ '
+                        \ . '\ '
+                        \ . '\ '
+                        \ . '%<'
+                        \ . '%q'
+                        \ . '\ '
+                        \ . '%{get(w:,\"quickfix_title\",\"\")}'
+                        \ . '%='
+        else
+            return g:emanonQuickfixStatusline
+        endif
     endif
-  endif
 
-  return 1 " Use default.
+    return 1 " Use default.
 endfunction
 
 function! emanon#autocmds#idleboot() abort
-  " Make sure we automatically call emanon#autocmds#idleboot() only once.
-  augroup emanonIdleboot
-    autocmd!
-  augroup END
+    " Make sure we automatically call emanon#autocmds#idleboot() only once.
+    augroup emanonIdleboot
+        autocmd!
+    augroup END
 
-  " Make sure we run deferred tasks exactly once.
-  doautocmd User emanonDefer
-  autocmd! User emanonDefer
+    " Make sure we run deferred tasks exactly once.
+    doautocmd User emanonDefer
+    autocmd! User emanonDefer
 endfunction
 
 function! emanon#autocmds#format(motion) abort
-  if has('ex_extra')
-    let l:v=operator#user#visual_command_from_wise_name(a:motion)
-    silent execute 'normal!' '`[' . l:v . '`]gq'
-    '[,']retab!
-  endif
+    if has('ex_extra')
+        let l:v=operator#user#visual_command_from_wise_name(a:motion)
+        silent execute 'normal!' '`[' . l:v . '`]gq'
+        '[,']retab!
+    endif
 endfunction

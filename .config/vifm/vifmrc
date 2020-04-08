@@ -1,4 +1,3 @@
-" {{{ General config 
 " This is the actual command used to start vi.  The default is vim.
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
@@ -105,7 +104,7 @@ command! reload :write | restart
 " }}}
 
 
-" {{{ File preview & file opening  
+" {{{ File preview & file opening
 " The file type is for the default programs to be used with
 " a file extension.
 " :filetype pattern1,pattern2 defaultprogram,program2
@@ -205,14 +204,14 @@ fileviewer .*/ ls --color --group-directories-first
 
 " Other files
 " Using xdg-open to open the highlighted file with a compatible program and
-" the reason why I am using "file" to preview other files is so that "vifm" 
+" the reason why I am using "file" to preview other files is so that "vifm"
 " does not lag when trying "cat" the file
 filetype * xdg-open %c
 fileviewer * file -b %c
 " }}}
 
 
-"{{{ Key mappings 
+"{{{ Key mappings
 " Easily quit vifm by hitting q
 nmap q ZQ
 

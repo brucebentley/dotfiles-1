@@ -3,9 +3,9 @@
 "
 
 if &term =~# 'screen' || &term =~# 'tmux' || &term =~# 'xterm'
-  let g:CommandTCancelMap=['<ESC>', '<C-c>']
-  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
-  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
+    let g:CommandTCancelMap=['<ESC>', '<C-c>']
+    let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
+    let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
 endif
 
 let g:CommandTEncoding='UTF-8'
@@ -31,17 +31,17 @@ let g:CommandTWindowFilter='!&buflisted && &buftype == "nofile" && !exists("w:ne
 " tmux.
 
 function s:CommandTPreBoot()
-  augroup CommandTBoot
-    autocmd!
-    autocmd VimEnter * call s:CommandTPostBoot()
-  augroup END
+    augroup CommandTBoot
+        autocmd!
+        autocmd VimEnter * call s:CommandTPostBoot()
+    augroup END
 endfunction
 
 function s:CommandTPostBoot()
-  augroup CommandTBoot
-    autocmd!
-  augroup END
-  CommandT
+    augroup CommandTBoot
+        autocmd!
+    augroup END
+    CommandT
 endfunction
 
 command CommandTBoot call s:CommandTPreBoot()

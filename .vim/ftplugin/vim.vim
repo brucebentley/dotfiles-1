@@ -1,5 +1,5 @@
-setlocal shiftwidth=2
-setlocal tabstop=2
+setlocal shiftwidth=4
+setlocal tabstop=4
 
 if has('conceal')
   setlocal concealcursor=nc
