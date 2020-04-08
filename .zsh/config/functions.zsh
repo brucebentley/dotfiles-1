@@ -233,3 +233,20 @@ function tick() {
                 export GIT_COMMITTER_DATE="$TS $TZ"
         fi
 }
+
+function cleanup() {
+        rm "$FIFO_UEBERZUG" 2>/dev/null
+        pkill -P $$ 2>/dev/null
+}
+
+function vifmrun() {
+        export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
+        rm "$FIFO_UEBERZUG" 2>/dev/null
+        mkfifo "$FIFO_UEBERZUG"
+        trap "rm "$FIFO_UEBERZUG" 2>/dev/null pkill -P $$ 2>/dev/null" EXIT
+        tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
+
+        vifm "$@"
+        rm "$FIFO_UEBERZUG" 2>/dev/null
+        pkill -P $$ 2>/dev/null
+}
