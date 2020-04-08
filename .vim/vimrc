@@ -50,6 +50,7 @@ let g:LanguageClient_diagnosticsDisplay={
       \   3: {'signTexthl': 'LineNr', 'virtualTexthl': 'User8'},
       \   4: {'signTexthl': 'LineNr', 'virtualTexthl': 'User8'},
       \ }
+let g:LanguageClient_useVirtualText='Diagnostics'
 
 let g:LanguageClient_serverCommands={}
 
@@ -75,7 +76,7 @@ let s:ccl_filetypes=[
   \ 'c',
   \ 'h',
   \ 'cpp',
-  \ 'hpp'
+  \ 'hpp',
   \]
 
 if s:ccl_lsp != []
