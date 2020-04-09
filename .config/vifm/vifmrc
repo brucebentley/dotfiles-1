@@ -77,22 +77,43 @@ set confirm-=delete
 " Dont show preview on ../ as this confuses me at times
 fileview ../ echo >/dev/null
 
+" Text based files
+filetype <text/*> nvim
+fileviewer <text/*> less
+
+" HTMLs
+fileviewer *.html lynx -dump %c
+filextype *.html,*.htm firefox %f 2>/dev/null &
+
+" PDFs
+filextype *.pdf less %c %i &
+fileviewer *.pdf
+            \ less %px %py %pw %ph %c
+            \ %pc
+
+" Videos
+filetype <video/*> mpv %c %i &
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
             \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
             \ vifmimg video %px %py %pw %ph %c
             \ %pc
             \ vifmimg clear
 
+" Audios
+filetype <audio/*> mpv %c %i &
+fileviewer <audio/*>
+            \ vifmimg audio %px %py %pw %ph %c
+            \ %pc
+            \ vifmimg clear
+
+" Images
+filextype <image/*> feh %c %i &
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
             \ vifmimg draw %px %py %pw %ph %c
             \ %pc
             \ vifmimg clear
 
-fileviewer *.mp3
-            \ vifmimg audio %px %py %pw %ph %c
-            \ %pc
-            \ vifmimg clear
-
+" Fonts
 fileviewer *.tff,*.otf,*.woff
             \ vifmimg font %px %py %pw %ph %c
             \ %pc
