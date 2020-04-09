@@ -153,4 +153,4 @@ If the above doesn't solve your problem, then please create an issue.
 - [cirala](https://github.com/cirala) for his amazing [image previews](https://github.com/cirala) using [Ueberzug](https://github.com/seebye/ueberzug) for Vifm
 - [Greg Hurrell](https://github.com/wincent) for his amazing [vim and zsh config](https://github.com/wincent/wincent)
 - [Jess Frazelle](https://github.com/jessfraz) for her gitconfig
-- [Ingo Bürk](https://github.com/Airblader and his [dotfiles](https://github.com/Airblader/dotfiles-manjaro)
+- [Ingo Bürk](https://github.com/Airblader) and his [dotfiles](https://github.com/Airblader/dotfiles-manjaro)
