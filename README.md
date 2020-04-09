@@ -1,4 +1,4 @@
-# Screenshot
+# Screenshot (Not Updated)
 ![](https://raw.githubusercontent.com/Z5483/dotfiles/media/desktop-tiling)
 ![](https://raw.githubusercontent.com/Z5483/dotfiles/media/desktop-floating)
 
