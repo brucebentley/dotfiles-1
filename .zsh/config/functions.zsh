@@ -235,6 +235,8 @@ function tick() {
 }
 
 function vifm() {
+        emulate -L zsh
+
         if [[ ! -x $(command -v ueberzug) ]]; then
                 command vifm
                 exit
