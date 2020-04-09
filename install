@@ -108,7 +108,7 @@ clean-symlink() {
         rm -f $HOME/.*.zwc*
 }
 
-function main() {
+main() {
         if [[ ! -d $HOME/.config ]]; then
                 mkdir $HOME/.config
         fi
