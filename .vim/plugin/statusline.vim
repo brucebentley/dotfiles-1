@@ -4,6 +4,7 @@ scriptencoding utf-8
 if has('statusline')
     set statusline=%7*                                 " Switch to User7 highlight group
     set statusline+=%{emanon#statusline#lhs()}
+    set statusline+=\                                  " Space
     set statusline+=%*                                 " Reset highlight group.
     set statusline+=%4*                                " Switch to User4 highlight group (Powerline arrow).
     set statusline+=                                  " Powerline arrow.
