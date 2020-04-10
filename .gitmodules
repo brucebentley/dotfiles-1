@@ -103,9 +103,6 @@
 [submodule ".zsh/vendor/zsh-syntax-highlighting"]
 	path = .zsh/vendor/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule ".vim/pack/bundle/opt/goyo"]
-	path = .vim/pack/bundle/opt/goyo
-	url = https://github.com/junegunn/goyo.vim
 [submodule ".vim/pack/bundle/opt/command-t"]
 	path = .vim/pack/bundle/opt/command-t
 	url = https://github.com/wincent/command-t

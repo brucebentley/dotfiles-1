@@ -28,10 +28,10 @@ if has('autocmd')
             autocmd InsertEnter,WinLeave * if emanon#autocmds#should_cursorline() | setlocal nocursorline | endif
             if has('statusline')
                 autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_statusline()
-                autocmd FocusLost,WinLeave * call emanon#autocmds#blur_statusline()
+                autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_statusline()
             endif
             autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
-            autocmd FocusLost,WinLeave * call emanon#autocmds#blur_window()
+            autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
 
             if has('mksession')
                 " Save/restore folds and cursor position.
@@ -61,74 +61,4 @@ if has('autocmd')
             autocmd CursorHold,CursorHoldI * call emanon#autocmds#idleboot()
         endif
     augroup END
-
-    "
-    " Goyo
-    "
-
-    let s:settings={}
-
-    function! s:goyo_enter()
-        augroup emanonAutocmds
-            autocmd!
-        augroup END
-        augroup! emanonAutocmds
-
-        augroup emanonAutocolor
-            autocmd!
-        augroup END
-        augroup! emanonAutocolor
-
-        let s:settings = {
-                    \   'showbreak': &showbreak,
-                    \   'statusline': &statusline,
-                    \   'cursorline': &cursorline,
-                    \   'showmode': &showmode
-                    \ }
-
-        set showbreak=
-        set statusline=\
-        set nocursorline
-        set noshowmode
-
-        highlight! NonText ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-
-        if exists('$TMUX')
-            silent !tmux set status off
-        endif
-
-        let b:quitting=0
-        let b:quitting_bang=0
-        if has('patch-7.3.544')
-            autocmd QuitPre <buffer> let b:quitting=1
-            cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-        endif
-    endfunction
-
-    function! s:goyo_leave()
-        let l:is_last_buffer=len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-        if b:quitting && l:is_last_buffer
-            if b:quitting_bang
-                qa!
-            else
-                qa
-            endif
-        endif
-
-        for [k, v] in items(s:settings)
-            execute 'let &' . k . '=' . string(v)
-        endfor
-
-        highlight clear NonText
-        highlight link NonText Conceal
-
-        if exists('$TMUX')
-            silent !tmux set status on
-        endif
-
-        call s:emanonAutocmds()
-    endfunction
-
-    autocmd! User GoyoEnter nested call <SID>goyo_enter()
-    autocmd! User GoyoLeave nested call <SID>goyo_leave()
 endif
