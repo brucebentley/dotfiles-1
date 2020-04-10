@@ -114,28 +114,28 @@ main() {
         fi
 
         case "$1" in
-                zsh)
-                        setup-zsh
-                        ;;
-                vim)
-                        setup-vim
-                        ;;
-                all)
-                        setup-all
-                        ;;
-                fonts)
-                        setup-fonts
-                        ;;
-                clean)
-                        clean-symlink
-                        ;;
-                "")
-                        usage
-                        ;;
-                *)
-                        usage
-                        echo -e "\e[31merror: unrecognized options: $1"
-                        ;;
+        zsh)
+                setup-zsh
+                ;;
+        vim)
+                setup-vim
+                ;;
+        all)
+                setup-all
+                ;;
+        fonts)
+                setup-fonts
+                ;;
+        clean)
+                clean-symlink
+                ;;
+        "")
+                usage
+                ;;
+        *)
+                usage
+                echo -e "\e[31merror: unrecognized options: $1"
+                ;;
         esac
 }
 
