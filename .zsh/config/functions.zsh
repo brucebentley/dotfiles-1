@@ -7,6 +7,25 @@ function ag() {
         command ag --pager="less -iFMRSX" --color-path=34\;3 --color-line-number=35 --color-match=35\;1\;4 "$@"
 }
 
+function vifm() {
+        emulate -L zsh
+
+        if [[ ! -x $(command -v ueberzug) ]]; then
+                command vifm
+                exit
+        else
+                export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
+                rm "$FIFO_UEBERZUG" 2>/dev/null
+                mkfifo "$FIFO_UEBERZUG"
+                trap "rm "$FIFO_UEBERZUG" 2>/dev/null pkill -P $$ 2>/dev/null" EXIT
+                tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
+
+                command vifm "$@"
+                rm "$FIFO_UEBERZUG" 2>/dev/null
+                pkill -P $$ 2>/dev/null
+        fi
+}
+
 # fd - "find directory"
 # Inspired by: https://github.com/junegunn/fzf/wiki/examples#changing-directory
 function fd() {
@@ -231,24 +250,5 @@ function tick() {
                 echo "Bumping timestamp to: $TS $TZ"
                 export GIT_AUTHOR_DATE="$TS $TZ"
                 export GIT_COMMITTER_DATE="$TS $TZ"
-        fi
-}
-
-function vifm() {
-        emulate -L zsh
-
-        if [[ ! -x $(command -v ueberzug) ]]; then
-                command vifm
-                exit
-        else
-                export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
-                rm "$FIFO_UEBERZUG" 2>/dev/null
-                mkfifo "$FIFO_UEBERZUG"
-                trap "rm "$FIFO_UEBERZUG" 2>/dev/null pkill -P $$ 2>/dev/null" EXIT
-                tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
-
-                command vifm "$@"
-                rm "$FIFO_UEBERZUG" 2>/dev/null
-                pkill -P $$ 2>/dev/null
         fi
 }

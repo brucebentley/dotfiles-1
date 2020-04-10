@@ -25,7 +25,7 @@ function! s:Bind()
     nnoremap <buffer> <silent> <Esc> :call LanguageClient#closeFloatingHover()<CR>
 endfunction
 
-augroup WincentLanguageClientAutocmds
+augroup EmanonLanguageClientAutocmds
     autocmd!
     autocmd FileType * call s:Config()
 

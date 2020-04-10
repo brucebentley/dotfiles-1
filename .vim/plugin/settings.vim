@@ -171,7 +171,7 @@ if has('persistent_undo')
 endif
 
 set updatecount=80                    " update swapfiles every 80 typed chars
-set updatetime=2000                   " CursorHold interval
+set updatetime=200                    " CursorHold interval
 
 if has('viminfo') " ie. Vim.
     let s:viminfo='viminfo'
