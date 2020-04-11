@@ -1,14 +1,5 @@
 #!/bin/sh
 
-if [[ -x $(command -v setxkbmap) ]]; then
-        setxkbmap -option 'caps:super'
-        setxkbmap -option 'shift:both_shiftlock'
-fi
-
-if [[ -x $(command -v xcape) ]]; then
-        xcape -e 'Super_L=Escape'
-fi
-
 if [[ -x $(command -v feh) ]]; then
         feh --randomize --bg-scale --no-xinerama ~/pictures/wallpaper
 fi
