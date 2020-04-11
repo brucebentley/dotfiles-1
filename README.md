@@ -122,6 +122,7 @@ If there are background processes, a yellow asterisk is shown:
 2. ./install [options]
 
 ```sh
+install help    # display all options
 install zsh     # install zsh config only
 install vim     # install vim config only
 install all     # install everything

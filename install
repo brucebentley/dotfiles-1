@@ -114,6 +114,9 @@ main() {
         fi
 
         case "$1" in
+        help)
+                usage
+                ;;
         zsh)
                 setup-zsh
                 ;;
