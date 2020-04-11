@@ -94,10 +94,17 @@ fileviewer *.html lynx -dump %c
 filextype *.html,*.htm firefox %f 2>/dev/null &
 
 " PDFs
-filextype *.pdf less %c %i &
+filextype *.pdf less
 fileviewer *.pdf
             \ less %px %py %pw %ph %c
             \ %pc
+
+" EPUBs
+filextype *.epub vifmimg clear && epr
+fileviewer *.epub
+        \ vifmimg epub %px %py %pw %ph %c
+        \ %pc
+        \ vifmimg clear
 
 " Videos
 filetype <video/*> mpv %c %i &
