@@ -6,7 +6,7 @@ function! s:Config()
     nnoremap <buffer> <silent> K :call LanguageClient#textDocument_hover()<CR>
 
     if exists('+signcolumn')
-        setlocal signcolumn=yes
+        setlocal signcolumn=auto
     endif
 endfunction
 
