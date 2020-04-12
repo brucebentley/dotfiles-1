@@ -10,31 +10,22 @@ if has('statusline')
     set statusline+=%*                                 " Reset highlight group.
     set statusline+=\                                  " Space.
     set statusline+=%<                                 " Truncation point, if not enough width available.
-    set statusline+=%{emanon#statusline#fileprefix()} " Relative path to file's directory.
+    set statusline+=%{emanon#statusline#fileprefix()}  " Relative path to file's directory.
     set statusline+=%3*                                " Switch to User3 highlight group (bold).
     set statusline+=%t                                 " Filename.
     set statusline+=%*                                 " Reset highlight group.
     set statusline+=\                                  " Space.
     set statusline+=%1*                                " Switch to User1 highlight group (italics).
-
-    " Needs to be all on one line:
-    "   %(                           Start item group.
-    "   [                            Left bracket (literal).
-    "   %R                           Read-only flag: ,RO or nothing.
-    "   %{emanon#statusline#ft()}   Filetype (not using %Y because I don't want caps).
-    "   %{emanon#statusline#fenc()} File-encoding if not UTF-8.
-    "   ]                            Right bracket (literal).
-    "   %)                           End item group.
     set statusline+=%([%R%{emanon#statusline#ft()}%{emanon#statusline#fenc()}]%)
 
-    set statusline+=%*   " Reset highlight group.
-    set statusline+=%=   " Split point for left and right groups.
+    set statusline+=%*                                 " Reset highlight group.
+    set statusline+=%=                                 " Split point for left and right groups.
 
-    set statusline+=\               " Space.
-    set statusline+=                " Powerline arrow.
-    set statusline+=%5*             " Switch to User5 highlight group.
+    set statusline+=\                                  " Space.
+    set statusline+=                                  " Powerline arrow.
+    set statusline+=%5*                                " Switch to User5 highlight group.
     set statusline+=%{emanon#statusline#rhs()}
-    set statusline+=%*              " Reset highlight group.
+    set statusline+=%*                                 " Reset highlight group.
 
     if has('autocmd')
         augroup emanonStatusline
@@ -47,6 +38,13 @@ if has('statusline')
             else
                 autocmd BufWinEnter,BufWritePost,FileWritePost,WinEnter * call emanon#statusline#check_modified()
             endif
+
+            if has('statusline')
+                autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_statusline()
+                autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_statusline()
+            endif
+            autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
+            autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
         augroup END
     endif
 endif

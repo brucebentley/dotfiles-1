@@ -26,12 +26,6 @@ if has('autocmd')
             endif
             autocmd InsertLeave,VimEnter,WinEnter * if emanon#autocmds#should_cursorline() | setlocal cursorline | endif
             autocmd InsertEnter,WinLeave * if emanon#autocmds#should_cursorline() | setlocal nocursorline | endif
-            if has('statusline')
-                autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_statusline()
-                autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_statusline()
-            endif
-            autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
-            autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
 
             if has('mksession')
                 " Save/restore folds and cursor position.
