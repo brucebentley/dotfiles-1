@@ -126,7 +126,6 @@ if &loadplugins
         packadd! vim-speeddating
         packadd! vim-surround
         packadd! vim-textobj-comment
-        packadd! vim-textobj-rubyblock
         packadd! vim-textobj-user
         packadd! vim-zsh
     else
