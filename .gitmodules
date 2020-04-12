@@ -25,9 +25,6 @@
 [submodule ".vim/pack/bundle/opt/replay"]
 	path = .vim/pack/bundle/opt/replay
 	url = https://github.com/wincent/replay
-[submodule ".vim/pack/bundle/opt/tcomment_vim"]
-	path = .vim/pack/bundle/opt/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim
 [submodule ".vim/pack/bundle/opt/terminus"]
 	path = .vim/pack/bundle/opt/terminus
 	url = https://github.com/wincent/terminus
@@ -119,3 +116,6 @@
 [submodule ".vim/pack/bundle/opt/scalpel"]
 	path = .vim/pack/bundle/opt/scalpel
 	url = https://github.com/wincent/scalpel.git
+[submodule ".vim/pack/bundle/opt/vim-commentary"]
+	path = .vim/pack/bundle/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary
