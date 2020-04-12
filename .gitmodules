@@ -116,6 +116,6 @@
 	branch = next
 	path = .vim/pack/bundle/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
-[submodule "scalpel"]
-	path = roles/dotfiles/files/.vim/pack/bundle/opt/scalpel
+[submodule ".vim/pack/bundle/opt/scalpel"]
+	path = .vim/pack/bundle/opt/scalpel
 	url = https://github.com/wincent/scalpel.git
