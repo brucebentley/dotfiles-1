@@ -18,28 +18,37 @@ header_visibility = "no"
 header_window_color = "default"
 volume_color = "default"
 state_line_color = "black"
+state_flags_color = "black"
+window_border_color = "black"
+active_window_border = "cyan"
+alternative_ui_separator_color = "black"
 
 [playlist]
-playlist_display_mode = "columns"
-playlist_separate_albums = "no"
-playlist_disable_highlight_delay = 0
+playlist_display_mode = "classic"
+playlist_disable_highlight_delay = 1
+
 titles_visibility = "no"
-song_columns_list_format = "(30)[6]{a} (40)[8]{t|f:Title} (30)[2]{b}"
-song_list_format = "  {{$0%t $R $4%a$9}|{%f}        }{$R%l}"
-now_playing_prefix = $b
-now_playing_suffix = $/b$7<<<$/r$9
+song_list_format = " {%a - %t} $R {%l}"
+song_window_title_format = "{%a - }{%t}|{%f}"
+
+now_playing_prefix = "$4"
+now_playing_suffix = "$0"
+
+current_item_prefix = "$5"
+current_item_suffix = "$0"
+
+browser_playlist_prefix = "$1»$1 "
 
 [statusbar]
-progressbar_look = "━━─"
+progressbar_look = "━━━"
 progressbar_color = "4"
 progressbar_elapsed_color = "2"
-statusbar_visibility = "no"
-statusbar_color = "default"
-song_status_format = "{{%a{ "%b"{ (%y)}} - }{%t$/b}}|{$b%f$/b}"
 
-[library]
-song_library_format = "{{%a - %t} (%b)}|{%f}"
-empty_tag_color = "cyan"
+statusbar_visibility = "yes"
+statusbar_color = "default"
+song_status_format = "{%a - %t}"
+
+message_delay_time = "1"
 
 [global]
 colors_enabled = "yes"
