@@ -1,7 +1,9 @@
 set vicmd=nvim
 
 set syscalls
+
 set trash
+set trashdir=/tmp/trash/vifm
 
 view                    " Open with preview window
 set relativenumber
