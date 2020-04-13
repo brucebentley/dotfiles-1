@@ -121,7 +121,6 @@ if &loadplugins
         packadd! vim-operator-user
         packadd! vim-projectionist
         packadd! vim-repeat
-        packadd! vim-signature
         packadd! vim-speeddating
         packadd! vim-surround
         packadd! vim-textobj-comment

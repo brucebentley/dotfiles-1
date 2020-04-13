@@ -83,9 +83,6 @@
 [submodule ".vim/pack/bundle/opt/vim-repeat"]
 	path = .vim/pack/bundle/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule ".vim/pack/bundle/opt/vim-signature"]
-	path = .vim/pack/bundle/opt/vim-signature
-	url = https://github.com/kshenoy/vim-signature
 [submodule ".vim/pack/bundle/opt/vim-speeddating"]
 	path = .vim/pack/bundle/opt/vim-speeddating
 	url = https://github.com/tpope/vim-speeddating
