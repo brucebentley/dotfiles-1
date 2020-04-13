@@ -39,7 +39,8 @@ set confirm-=delete     " Dont show delete confirmation
 
 set rulerformat=\       " clear content of ruler
 
-fileview ../ echo >/dev/null " Dont show preview on ../ as this confuses me at times
+" Dont show preview on ../ as this confuses me at times
+fileview ../ echo >/dev/null 
 
 " Text based files
 filetype <text/*> nvim
