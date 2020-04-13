@@ -113,7 +113,6 @@ if &loadplugins
         packadd! vcs-jump
         packadd! vim-commentary
         packadd! vim-dispatch
-        packadd! vim-docvim
         packadd! vim-easydir
         packadd! vim-eunuch
         packadd! vim-fugitive

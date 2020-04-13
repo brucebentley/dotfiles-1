@@ -56,9 +56,6 @@
 [submodule ".vim/pack/bundle/opt/vim-dispatch"]
 	path = .vim/pack/bundle/opt/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule ".vim/pack/bundle/opt/vim-docvim"]
-	path = .vim/pack/bundle/opt/vim-docvim
-	url = https://github.com/wincent/vim-docvim
 [submodule ".vim/pack/bundle/opt/vim-easydir"]
 	path = .vim/pack/bundle/opt/vim-easydir
 	url = https://github.com/duggiefresh/vim-easydir
