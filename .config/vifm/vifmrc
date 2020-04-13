@@ -116,9 +116,6 @@ nnoremap S :sort<cr>
 nnoremap w :view<cr>
 vnoremap w :view<cr>gv
 
-" Open file in nvim
-nnoremap o :!nvim %f<cr>
-
 " File Icons
 set classify='  :dir:/,  :exe:,  :reg:,  :link:'
 set classify+='  ::../::,  ::*.sh::,  ::*.[hc]pp::,  ::*.[hc]::,  ::/^copying|license$/::,  ::.git/,,*.git/::,  ::*.epub,,*.fb2,,*.djvu::,  ::*.pdf::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::'
