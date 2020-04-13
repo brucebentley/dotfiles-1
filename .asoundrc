@@ -2,13 +2,4 @@ defaults.pcm.rate_converter "samplerate_best"
 defaults.pcm.format S32_LE
 defaults.pcm.rate 44100
 
-pcm.!spdif {
-  type hw
-  card 0
-  device 0
-}
-
-pcm.!default {
-  type plug
-  slave.pcm "spdif"
-}
+pcm.!default "hw:0,0"
