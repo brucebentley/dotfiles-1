@@ -12,8 +12,3 @@ pcm.!default {
   type plug
   slave.pcm "spdif"
 }
-
-pcm.!surround51 {
-    type vdownmix
-    slave.pcm "default"
-}
