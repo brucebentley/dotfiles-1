@@ -34,7 +34,7 @@ song_window_title_format = "{%a - }{%t}|{%f}"
 now_playing_prefix = "$4"
 now_playing_suffix = "$0"
 
-current_item_prefix = "$5"
+current_item_prefix = "$6"
 current_item_suffix = "$0"
 
 browser_playlist_prefix = "$1»$1 "
