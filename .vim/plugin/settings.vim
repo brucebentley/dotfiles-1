@@ -104,7 +104,8 @@ if exists('+relativenumber')
     set relativenumber                  " show relative numbers in gutter
 endif
 
-set scrolloff=4                       " start scrolling 3 lines before edge of viewport
+set scrolloff=1                       " start scrolling 1 lines before edge of viewport
+
 set shell=zsh                         " shell to use for `!`, `:!`, `system()` etc.
 set shiftround                        " always indent by multiple of shiftwidth
 set shiftwidth=8                      " spaces per tab (when shifting)
@@ -127,6 +128,8 @@ endif
 if has('showcmd')
     set noshowcmd                       " don't show extra info at end of command line
 endif
+
+set display+=lastline                 " display as much as possible of the last line when wrapped
 
 set sidescroll=0                      " sidescroll in jumps because terminals are slow
 set sidescrolloff=5                   " same as scrolloff, but for columns

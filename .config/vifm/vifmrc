@@ -30,7 +30,7 @@ set nohlsearch          " Don't highlight search results automatically
 
 set incsearch           " Use increment searching (search while typing)
 
-set scrolloff=4
+set scrolloff=1
 
 " Things that should be stored in vifminfo
 set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
