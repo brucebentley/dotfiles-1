@@ -4,7 +4,7 @@ set autoindent                        " maintain indent of current line
 set autoread                          " Rewrite file if modified outside of Vim
 set backspace=indent,start,eol        " allow unrestricted backspacing in insert mode
 
-set history=1000
+set history=10000
 
 "change timeout thats vim wait if in keycode sequence is happening
 set timeoutlen=500
