@@ -50,19 +50,14 @@ if has('folding')
         set fillchars+=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
     endif
 
-    if has('nvim-0.3.1')
-        set fillchars+=eob:\              " suppress ~ at EndOfBuffer
-    endif
+    set fillchars+=eob:\              " suppress ~ at EndOfBuffer
 
     set foldmethod=indent               " not as cool as syntax, but faster
     set foldlevelstart=99               " start unfolded
     set foldtext=emanon#settings#foldtext()
 endif
 
-if v:version > 703 || v:version == 703 && has('patch541')
-    set formatoptions+=j                " remove comment leader when joining comment lines
-endif
-
+set formatoptions+=j                " remove comment leader when joining comment lines
 set formatoptions+=n                  " smart auto-indenting inside numbered lists
 set guifont=DejaVuSansMono\ NF:h18
 set guioptions-=T                     " don't show toolbar
@@ -91,8 +86,7 @@ set tabpagemax=50                     " set maximum number of tab pages
 
 set list                              " show whitespace
 set listchars=nbsp:⦸                  " CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
-set listchars+=tab:▷┅                 " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7)
-" + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
+set listchars+=tab:▷┅                 " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
 set listchars+=extends:»              " RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
 set listchars+=precedes:«             " LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
 set listchars+=trail:•                " BULLET (U+2022, UTF-8: E2 80 A2)
@@ -115,9 +109,7 @@ set shortmess+=O                      " file-read message overwrites previous
 set shortmess+=T                      " truncate non-file messages in middle
 set shortmess+=W                      " don't echo "[w]"/"[written]" when writing
 set shortmess+=a                      " use abbreviations in messages eg. `[RO]` instead of `[readonly]`
-if has('patch-7.4.314')
-    set shortmess+=c                    " completion messages
-endif
+set shortmess+=c                    " completion messages
 set shortmess+=o                      " overwrite file-written messages
 set shortmess+=t                      " truncate file messages at start
 
