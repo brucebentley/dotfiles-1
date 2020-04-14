@@ -5,8 +5,6 @@
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
-alias :sp='test -n "$TMUX" && tmux split-window'
-alias :vs='test -n "$TMUX" && tmux split-window -h'
 alias a=ag
 alias cp='cp -rfv'
 alias d='hash -d'
@@ -23,7 +21,6 @@ alias mkdir='mkdir -pv'
 alias n=ncmpcpp
 alias o='git log --oneline'
 alias oo='git log --oneline -n 20'
-alias p='git format-patch'
 alias r=vifm
 alias rm='rm -rfv'
 alias s=ssh
