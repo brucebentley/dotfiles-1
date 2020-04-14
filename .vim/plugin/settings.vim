@@ -1,7 +1,10 @@
 scriptencoding utf-8
 
 set autoindent                        " maintain indent of current line
+set autoread                          " Rewrite file if modified outside of Vim
 set backspace=indent,start,eol        " allow unrestricted backspacing in insert mode
+
+set history=1000
 
 "change timeout thats vim wait if in keycode sequence is happening
 set timeoutlen=500
@@ -84,6 +87,8 @@ if has('linebreak')
     set linebreak                       " wrap long lines at characters in 'breakat'
 endif
 
+set tabpagemax=50                     " set maximum number of tab pages
+
 set list                              " show whitespace
 set listchars=nbsp:⦸                  " CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
 set listchars+=tab:▷┅                 " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7)
@@ -124,7 +129,7 @@ if has('showcmd')
 endif
 
 set sidescroll=0                      " sidescroll in jumps because terminals are slow
-set sidescrolloff=10                   " same as scrolloff, but for columns
+set sidescrolloff=5                   " same as scrolloff, but for columns
 set smarttab                          " <tab>/<BS> indent/dedent in leading whitespace
 
 if v:progname !=# 'vi'
@@ -212,7 +217,8 @@ endif
 
 if has('mksession')
     set viewdir=~/.vim/tmp/view         " override ~/.vim/view default
-    set viewoptions=cursor,folds        " save/restore just these (with `:{mk,load}view`)
+    set viewoptions-=options
+    set sessionoptions-=options
 endif
 
 if has('virtualedit')
