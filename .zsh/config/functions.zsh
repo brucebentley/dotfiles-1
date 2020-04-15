@@ -123,7 +123,7 @@ function tmux() {
         if [ -x .tmux ]; then
                 # Prompt the first time we see a given .tmux file before running it.
                 local DIGEST="$(openssl sha -sha512 .tmux)"
-                if ! ag --silent "$DIGEST" ~/..tmux.digests 2> /dev/null; then
+                if ! command ag --silent "$DIGEST" ~/..tmux.digests 2> /dev/null; then
                         cat .tmux
                         read -k 1 -r 'REPLY?Trust (and run) this .tmux file? (t = trust, otherwise = skip) '
                         echo
@@ -187,7 +187,7 @@ function jump() {
                 fd
         else
                 local DIR="${*%%/}"
-                if [ $(hash -d|cut -d= -f1 | ag -c "^${DIR}\$") = 0 ]; then
+                if [ $(hash -d|cut -d= -f1 | command ag -c "^${DIR}\$") = 0 ]; then
                         # Not in `hash -d`: use as initial argument to fd.
                         fd "$*"
                 else
