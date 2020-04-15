@@ -79,7 +79,7 @@ if s:ccl_lsp != []
     endfo
 endif
 
-" let g:LanguageClient_diagnosticsList='Location'
+let g:LanguageClient_diagnosticsList='Location'
 
 if filereadable('/usr/bin/python2')
     " Avoid search, speeding up start-up.
