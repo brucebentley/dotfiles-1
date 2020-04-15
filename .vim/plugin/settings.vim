@@ -71,6 +71,10 @@ if !has('nvim')
     set highlight+=c:LineNr             " blend vertical separators with line numbers
 endif
 
+if exists('&completeopt')
+    set completeopt=
+endif
+
 if exists('&inccommand')
     set inccommand=split                " live preview of :s results
 endif
