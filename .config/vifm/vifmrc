@@ -86,7 +86,7 @@ fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
             \ vifmimg clear
 
 " Fonts
-fileviewer *.tff,*.otf,*.woff
+fileviewer *.ttf,*.otf,*.woff
             \ vifmimg font %px %py %pw %ph %c
             \ %pc
             \ vifmimg clear
