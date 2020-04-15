@@ -50,7 +50,9 @@ if has('folding')
         set fillchars+=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
     endif
 
-    set fillchars+=eob:\              " suppress ~ at EndOfBuffer
+    if has('nvim')
+        set fillchars+=eob:\              " suppress ~ at EndOfBuffer
+    endif
 
     set foldmethod=indent               " not as cool as syntax, but faster
     set foldlevelstart=99               " start unfolded
