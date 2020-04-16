@@ -26,7 +26,6 @@ let g:UltiSnipsSnippetDirectories = [
             \ ]
 
 if has('nvim')
-    packadd! float-preview.nvim
     packadd! deoplete.nvim
     " Don't forget to run :UpdateRemotePlugins to populate
     " `~/.local/share/nvim/rplugin.vim`.

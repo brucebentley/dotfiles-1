@@ -126,6 +126,10 @@ if &loadplugins
         packadd! vim-textobj-comment
         packadd! vim-textobj-user
         packadd! vim-zsh
+
+        if has('nvim')
+            packadd! float-preview.nvim
+        endif
     else
         source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
         call pathogen#infect('pack/bundle/opt/{}')
