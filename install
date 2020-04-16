@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 zshFile=(zlogin zsh zshenv zshrc)
-homeDirFile=(asoundrc fonts gitconfig lynxrc mpd ncmpcpp tmux.conf xinitrc)
+homeDirFile=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf)
 configDirFile=(compton fontconfig vifm)
 REPOPATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
