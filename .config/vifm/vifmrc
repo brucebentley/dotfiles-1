@@ -7,6 +7,8 @@ set trashdir=/tmp/trash/vifm
 
 view                    " Open with preview window
 set relativenumber
+set dotfiles
+
 set history=10000
 
 set nofollowlinks       " Automatically resolve symbolic links on l or Enter.
