@@ -99,7 +99,6 @@ nmap <leader>s <Plug>(FerretAcks)
 "load plugin
 if &loadplugins
     if has('packages')
-        packadd! LanguageClient-neovim
         packadd! base16-vim
         packadd! command-t
         packadd! ferret
@@ -128,6 +127,7 @@ if &loadplugins
         packadd! vim-zsh
 
         if has('nvim')
+            packadd! LanguageClient-neovim
             packadd! float-preview.nvim
         endif
     else
