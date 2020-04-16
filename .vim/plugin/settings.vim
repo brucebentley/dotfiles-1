@@ -7,8 +7,8 @@ set backspace=indent,start,eol        " allow unrestricted backspacing in insert
 set history=10000
 
 "change timeout thats vim wait if in keycode sequence is happening
-set timeoutlen=500
-set ttimeoutlen=0
+set timeoutlen=1000
+set ttimeoutlen=100
 
 if exists('$SUDO_USER')
     set nobackup                        " don't create root-owned files
