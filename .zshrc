@@ -145,7 +145,7 @@ SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %
 # History
 #
 
-HISTSIZE=10000
+HISTSIZE=1000000
 HISTFILE="$HOME/.history"
 SAVEHIST=$HISTSIZE
 
