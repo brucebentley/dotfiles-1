@@ -115,6 +115,7 @@ If there are background processes, a yellow asterisk is shown:
   - [epub-thumbnailer](https://github.com/marianosimone/epub-thumbnailer)(optional) - for displaying cover of epub file
   - [ffmpegthumbnailer](https://github.com/dirkvdb/ffmpegthumbnailer)(optional) - for video thumbnail preview
   - [fontpreview](https://github.com/sdushantha/fontpreview)(optional) - for font preview
+- [the silver searcher](https://github.com/ggreer/the_silver_searcher)
 - [zsh](https://github.com/zsh-users/zsh) => 5.6
 
 # Installation
