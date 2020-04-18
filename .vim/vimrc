@@ -53,7 +53,7 @@ endif
 
 if executable('ccls')
     if exists('$DEBUG_LC_LOGFILE')
-        let s:debug_arg[
+        let s:debug_arg=[
                     \ '-v 2',
                     \ '--log-file=',
                     \ $DEBUG_LC_LOGFILE
