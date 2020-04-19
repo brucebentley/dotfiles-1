@@ -1,5 +1,3 @@
-call emanon#defer#defer('call emanon#plugins#abolish()')
-
 call emanon#plugin#lazy({
             \   'pack': 'undotree',
             \   'plugin': 'undotree.vim',
