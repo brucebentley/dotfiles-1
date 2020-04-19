@@ -12,14 +12,12 @@ nnoremap <Leader>o :only<CR>
 "   you have a lot of splits and the status line gets truncated).
 nnoremap <Leader>p :echo expand('%') <CR>
 
+nnoremap <Leader>w :write<CR>
 nnoremap <Leader>q :quit<CR>
 
 "   <Leader>r -- Cycle through relativenumber + number, number (only), and no
 "   numbering (mnemonic: relative).
 nnoremap <silent> <Leader>r :call emanon#mappings#leader#cycle_numbering()<CR>
-
-nnoremap <Leader>w :write<CR>
-nnoremap <Leader>x :xit<CR>
 
 "   <Leader>zz -- Zap trailing whitespace in the current buffer.
 "
@@ -41,21 +39,3 @@ nnoremap <silent> <LocalLeader>dl :diffget //3<CR>
 
 "   <LocalLeader>e -- Edit file, starting in same directory as current file.
 nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-
-" <LocalLeader>v -- Turn references to the word under the cursor to references
-" to the WORD under the cursor:
-"
-" eg. if the cursor is on the first "e":
-"
-"     [@emanon](https://github.com/emanon)
-"
-" Can be used to turn all references to "emanon" into links to "@emanon".
-"
-" (mnemonic: e[X]tract handle)
-nnoremap <LocalLeader>v :%s#\v<C-r><c-w>#<C-r><C-a>#gc<CR>
-
-" Stop annoying paren match highlighting from flashing all over the screen,
-" or start it.
-"
-" (mnemonic: [m]atch paren)
-nnoremap <silent> <Leader>m :call emanon#mappings#leader#matchparen()<CR>

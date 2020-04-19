@@ -30,6 +30,6 @@ nnoremap <silent> <S-Down> :lnext<CR>
 nnoremap <silent> <S-Left> :lpfile<CR>
 nnoremap <silent> <S-Right> :lnfile<CR>
 
-" Store relative line number jumps in the jumplist if they evceed a threshold.
+" Store relative line number jumps in the jumplist if they exceed a threshold.
 nnoremap <evpr> k (v:count > 5 ? "m'" . v:count : '') . 'k'
 nnoremap <evpr> j (v:count > 5 ? "m'" . v:count : '') . 'j'

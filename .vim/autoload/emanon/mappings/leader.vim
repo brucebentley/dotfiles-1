@@ -11,19 +11,3 @@ function! emanon#mappings#leader#cycle_numbering() abort
         set number!
     endif
 endfunction
-
-function! emanon#mappings#leader#matchparen() abort
-    " Preserve current window because {Do,No}MatchParen cycle with :windo.
-    let l:currwin=winnr()
-    if exists('g:loaded_matchparen')
-        NoMatchParen
-    else
-        DoMatchParen
-    endif
-    execute l:currwin . 'wincmd w'
-endfunction
-
-" Zap trailing whitespace.
-function! emanon#mappings#leader#zap() abort
-    call emanon#functions#substitute('\s\+$', '', '')
-endfunction
