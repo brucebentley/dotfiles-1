@@ -60,13 +60,6 @@ function headers() {
         curl -sSL -D - "$REMOTE" -o /dev/null
 }
 
-function history() {
-        emulate -L zsh
-
-        # This is a function because Zsh aliases can't take arguments.
-        fc -l 1
-}
-
 function scratch() {
         local SCRATCH=$(mktemp -d)
         echo 'Spawing subshell in scratch directory:'
