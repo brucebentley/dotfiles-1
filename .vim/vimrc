@@ -110,7 +110,6 @@ if &loadplugins
         packadd! scalpel
         packadd! terminus
         packadd! ultisnips
-        packadd! vcs-jump
         packadd! vim-commentary
         packadd! vim-dispatch
         packadd! vim-easydir
