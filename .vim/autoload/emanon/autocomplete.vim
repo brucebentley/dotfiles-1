@@ -25,7 +25,8 @@ function! emanon#autocomplete#teardown_mappings() abort
     let s:expansion_active = 0
 endfunction
 
-"Get rid of annoying edge case fpr <BS>
+" Note that we also set up a "Smart Backspace", to complement the "Smart
+" Tab" that wincent#autocomplete#expand_or_jump() ends up using.
 inoremap <expr> <BS> emanon#autocomplete#smart_bs()
 
 let g:ulti_jump_backwards_res = 0

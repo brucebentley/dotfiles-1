@@ -1,9 +1,5 @@
-if !exists("g:UltiSnipsJumpForwardTrigger")
-    let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-endif
-if !exists("g:UltiSnipsJumpBackwardTrigger")
-    let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
-endif
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 " Prevent UltiSnips from removing our carefully-crafted mappings.
 let g:UltiSnipsMappingsToIgnore = ['autocomplete']
@@ -31,5 +27,7 @@ if has('nvim')
     call emanon#defer#defer('call emanon#autocomplete#deoplete_init()')
 
     inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+    inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
     inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-j>"
+    inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
 endif
