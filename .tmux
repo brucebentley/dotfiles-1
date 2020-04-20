@@ -11,7 +11,7 @@ tmux new-session -d -s dots -n vim -x $(tput cols) -y $(tput lines)
 
 tmux split-window -t dots:vim -h
 
-tmux send-keys -t dots:vim.right "git st" Enter
 tmux send-keys -t dots:vim.left "vim -c CommandTBoot" Enter
+tmux send-keys -t dots:vim.right "git st" Enter
 
-tmux attach -t dots:vim.right
+tmux attach -t dots:vim.left
