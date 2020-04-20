@@ -22,9 +22,6 @@ let g:NERDTreeAutoDeleteBuffer=1
 "Aethestic addition
 let g:NERDTreeDirArrows=1
 
-" Let <Leader><Leader> (^#) return from NERDTree window.
-let g:NERDTreeCreatePrefix='silent keepalt keepjumps'
-
 " Single-click to toggle directory nodes, double-click to open non-directory
 " nodes.
 let g:NERDTreeMouseMode=2
