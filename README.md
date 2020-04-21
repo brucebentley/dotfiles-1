@@ -31,7 +31,6 @@ Heavily inspired by https://github.com/wincent/wincent
 - `color`: change terminal and Vim color scheme.
 - `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
 - `fh`: "find [in] history"; selecting a history item inserts it into the command line but does not execute it.
-- `history`: overrides the (tiny) default history count.
 - `jump` (aliased to `j`): to jump to hashed directories.
 - `regmv`: bulk-rename files (eg. `regmv '/\.tif$/.tiff/' *`).
 - `scratch`: create a random temporary scratch directory and `cd` into it.
