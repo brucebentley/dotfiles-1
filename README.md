@@ -132,7 +132,7 @@ install clean   # remove all created symlink files
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
-> use `check-conflicted-directory` script in the `example` directory to see conflicted directories
+> use `check-conflicted-directory` script in the `bin` directory to see conflicted directories
 
 **Note:** When `./install clean` is executed, it will remove the existing symlink that has identical name as one of file in this repository.
 
@@ -142,7 +142,7 @@ install clean   # remove all created symlink files
 git config --file ~/.gitconfig.local user.name  "John Doe"
 git config --file ~/.gitconfig.local user.email "johndoe@example.com"
 ```
-**Note:** You can also run the script `setup-git-user` in the `example` directory to quickly do the above.
+**Note:** You can also run the script `setup-git-user` in the `bin` directory to quickly do the above.
 
 # Troubleshooting
 
