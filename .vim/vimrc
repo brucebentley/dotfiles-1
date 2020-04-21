@@ -69,7 +69,6 @@ let s:ccl_filetypes=[
             \ 'cpp',
             \ ]
 
-
 if exists('s:ccl_lsp')
     for s:ccl_filetype in s:ccl_filetypes
         let g:LanguageClient_rootMarkers[s:ccl_filetype]=['Makefile']
