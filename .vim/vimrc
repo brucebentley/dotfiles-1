@@ -48,15 +48,16 @@ let g:LanguageClient_serverCommands={}
 
 if exists('$DEBUG_LC_LOGFILE')
     let g:LanguageClient_loggingFile=$DEBUG_LC_LOGFILE
+    let g:LanguageClient_serverStderr=$DEBUG_LC_LOGFILE
     let g:LanguageClient_loggingLevel='DEBUG'
 endif
 
 if executable('ccls')
     if exists('$DEBUG_LC_LOGFILE')
         let s:debug_arg=[
-                    \ '-v 2',
-                    \ '--log-file=',
-                    \ $DEBUG_LC_LOGFILE,
+                    \ '-v=2',
+                    \ '-log-file-append',
+                    \ '--log-file='. $DEBUG_LC_LOGFILE,
                     \ ]
     else
         let s:debug_arg=[]
