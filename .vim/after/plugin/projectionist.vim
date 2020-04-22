@@ -3,7 +3,7 @@ let g:projectionist_heuristics = {
             \     '*.c': {
             \       'alternate': '{}.h',
             \       'type': 'source',
-            \       'dispatch': 'gcc -g3 -Wall -Wextra {file}'
+            \       'dispatch': 'gcc -g3 -Wall -Wextra -pipe {file}'
             \     },
             \     '*.h': {
             \       'alternate': '{}.c',
@@ -12,7 +12,7 @@ let g:projectionist_heuristics = {
             \     '*.cpp': {
             \       'alternate': '{}.hpp',
             \       'type': 'source',
-            \       'dispatch': 'g++ -g3 -Wall -Wextra {file}'
+            \       'dispatch': 'g++ -g3 -Wall -Wextra -pipe {file}'
             \     },
             \     '*.hpp': {
             \       'alternate': '{}.cpp',
