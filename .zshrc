@@ -372,8 +372,6 @@ source $HOME/.zsh/config/vars.zsh
 #
 
 # Skim
-test -e "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh" && source "$HOME/.zsh/vendor/skim/shell/key-bindings.zsh"
-test -e "$HOME/.zsh/vendor/skim/shell/completion.zsh" && source "$HOME/.zsh/vendor/skim/shell/completion.zsh"
 export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
 
 #
