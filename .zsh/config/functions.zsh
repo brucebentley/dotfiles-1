@@ -39,27 +39,6 @@ function fh() {
         print -z $(fc -l 1 | sk --color=16 --no-multi --tac -q "$*" | sed 's/ *[0-9]*\*\{0,1\} *//')
 }
 
-
-# TODO: decide whether this is a reasonable idea
-function files() {
-        find "$@" | parallel -o $EDITOR
-}
-
-# Print headers, following redirects.
-# Based on: https://stackoverflow.com/a/10060342/2103996
-function headers() {
-        emulate -L zsh
-
-        if [ $# -ne 1 ]; then
-                echo "error: a host argument is required"
-                return 1
-        fi
-
-        local REMOTE=$1
-
-        curl -sSL -D - "$REMOTE" -o /dev/null
-}
-
 function scratch() {
         local SCRATCH=$(mktemp -d)
         echo 'Spawing subshell in scratch directory:'
@@ -79,21 +58,6 @@ function ssh() {
                 local LOCAL_TERM=$(echo -n "$TERM" | sed -e s/tmux/screen/)
                 command env TERM=$LOCAL_TERM ssh "$@"
         fi
-}
-
-# Print information about a remote SSL certificate.
-# Based on: https://serverfault.com/a/661982/219567
-function ssl() {
-        emulate -L zsh
-
-        if [ $# -ne 1 ]; then
-                echo "error: a host argument is required"
-                return 1
-        fi
-
-        local REMOTE=$1
-
-        echo | openssl s_client -showcerts -servername "$REMOTE" -connect "$REMOTE:443" 2>/dev/null | openssl x509 -inform pem -noout -text
 }
 
 function tmux() {
@@ -134,15 +98,6 @@ function tmux() {
         # Attach to existing session, or create one, based on current directory.
         local SESSION_NAME=$(basename "${$(pwd)//[.:]/_}")
         env SSH_AUTH_SOCK=$SOCK_SYMLINK tmux new -A -s "$SESSION_NAME"
-}
-
-# Bounce the Dock icon, if iTerm does not have focus.
-function bounce() {
-        if [ -n "$TMUX" ]; then
-                print -Pn "\ePtmux;\e\e]1337;RequestAttention=1\a\e\\"
-        else
-                print -Pn "\e]1337;RequestAttention=1\a"
-        fi
 }
 
 # regmv = regex + mv (mv with regex parameter specification)
