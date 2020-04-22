@@ -56,7 +56,7 @@ if executable('ccls')
         let s:debug_arg=[
                     \ '-v 2',
                     \ '--log-file=',
-                    \ $DEBUG_LC_LOGFILE
+                    \ $DEBUG_LC_LOGFILE,
                     \ ]
     else
         let s:debug_arg=[]
