@@ -375,6 +375,7 @@ export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
 #
 # Plug-ins
 #
+
 source $HOME/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
