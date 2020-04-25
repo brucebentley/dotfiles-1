@@ -6,8 +6,10 @@ export PAGER=less
 
 if [[ -x $(which nvim) ]]; then
         export EDITOR=nvim
+        export MANPAGER='nvim +Man!'
 else
         export EDITOR=vim
+        export MANPAGER='vim +Man!'
 fi
 
 # usually this means running on a machine with a statically-linked, hand-built
