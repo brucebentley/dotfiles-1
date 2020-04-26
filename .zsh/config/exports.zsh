@@ -12,12 +12,6 @@ else
         export MANPAGER='vim +Man!'
 fi
 
-# usually this means running on a machine with a statically-linked, hand-built
-# tmux (and ncurses)
-if [ -d "$HOME/share/terminfo" ]; then
-        export TERMINFO=$HOME/.terminfo
-fi
-
 # filename (if known), line number if known, falling back to percent if known,
 # falling back to byte offset, falling back to dash
 export LESSPROMPT='?f%f .?ltLine %lt:?pt%pt\%:?btByte %bt:-...'
