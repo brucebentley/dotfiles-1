@@ -118,7 +118,6 @@ if &loadplugins
         packadd! vim-markdown
         packadd! vim-projectionist
         packadd! vim-repeat
-        packadd! vim-speeddating
         packadd! vim-surround
     else
         source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
