@@ -15,9 +15,10 @@
 
 # Keyboard Mappings
 
-**[xcape](https://github.com/alols/xcape)** and **[setxkbmap](https://github.com/freedesktop/xorg-setxkbmap)** are used for the following mappings:
+**[xcape](https://github.com/alols/xcape)**, **[setxkbmap](https://github.com/freedesktop/xorg-setxkbmap)**, and **[spacectrl](https://github.com/Z5483/spacectrl)** are used for the following mappings:
 
 - Make Caps Lock generate Escape (when tapped and released on its own) and Super (when chorded with another key).
+- Make Space generate Ctrl when chorded with another key.
 - Toggle Caps Lock by pressing both shift keys together.
   - While Caps Lock is on, press either shift key to turn Caps Locks off.
 
@@ -101,9 +102,8 @@ If there are background processes, a yellow asterisk is shown:
 
 ### Third-Party Script
 
-- `colortest`: quickly show all terminal colors (https://github.com/pablopunk/colortest)
-- `diff-so-fancy`: improve quality of diff (https://github.com/so-fancy/diff-so-fancy)
-- `pfetch`: simple system information displayer (https://github.com/dylanaraps/pfetch).
+- `[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)`: improve quality of diff.
+- `[pfetch](https://github.com/dylanaraps/pfetch)`: simple system information displayer.
 
 # Dependencies
 - [git](https://github.com/git/git) => 1.8.2
