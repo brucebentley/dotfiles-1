@@ -1,6 +1,6 @@
 defaults.pcm.rate_converter "samplerate_best"
 defaults.pcm.format S32_LE
-defaults.pcm.rate 44100
+defaults.pcm.rate 48000
 
 pcm.!default {
         type plug
