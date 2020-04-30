@@ -23,6 +23,7 @@ function vifm() {
                 command vifm "$@"
                 rm "$FIFO_UEBERZUG" 2> /dev/null
                 pkill -P $$ 2> /dev/null
+                unset FIFO_UEBERZUG
         fi
 }
 
