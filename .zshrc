@@ -5,8 +5,8 @@
 # scope with a bunch of identifiers.
 typeset -A __EMANON
 
-__EMANON[ITALIC_ON]=$'\e[3m'
-__EMANON[ITALIC_OFF]=$'\e[23m'
+local __EMANON[ITALIC_ON]=$'\e[3m'
+local __EMANON[ITALIC_OFF]=$'\e[23m'
 
 #
 # Completion
