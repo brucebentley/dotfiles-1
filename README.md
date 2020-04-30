@@ -26,7 +26,7 @@
 
 Heavily inspired by https://github.com/wincent/wincent
 
-### Shell Functions
+## Shell Functions
 
 - `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
@@ -40,7 +40,7 @@ Heavily inspired by https://github.com/wincent/wincent
 - `tw` ("time warp"): overrides `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` (eg. `tw -1d`).
 - `vifm`: wrapper that utilizes [ueberzug](https://github.com/seebye/ueberzug) to display media previews
 
-### VI Mode
+## VI Mode
 
 Depends on the mode, the cursor will change its shape.
 
@@ -52,7 +52,7 @@ Depends on the mode, the cursor will change its shape.
 
 > **Note:** the cursor shapeshifting function only works on terminal emulators and not on the console.
 
-### Prompt
+## Prompt
 
 Zsh is configured with the following prompt:
 
@@ -100,7 +100,7 @@ If there are background processes, a yellow asterisk is shown:
 
 ![](https://raw.githubusercontent.com/wincent/wincent/media/prompt-bg.png)
 
-### Third-Party Script
+## Third-Party Script
 
 - `[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)`: improve quality of diff.
 - `[pfetch](https://github.com/dylanaraps/pfetch)`: simple system information displayer.
@@ -146,7 +146,7 @@ git config --file ~/.gitconfig.local user.email "johndoe@example.com"
 
 # Troubleshooting
 
-### Installation Script
+## Installation Script
 If `install` script doesn't work, try again using the following command: `bash
 install [options]`.  
 If the above doesn't solve your problem, then please create an issue.
