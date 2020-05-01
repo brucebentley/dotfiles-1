@@ -154,7 +154,7 @@ when 'link'
 
 when 'open'
   pull = ARGV.shift
-  run "surf #{link(pull)} &> /dev/null"
+  run "xdg-open #{link(pull)} &> /dev/null"
 
 when 'ls'
   url = Shellwords.shellescape("https://api.github.com/repos/#{project}/pulls")
