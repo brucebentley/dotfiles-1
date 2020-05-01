@@ -5,6 +5,7 @@ nnoremap <Leader><Leader> <C-^>
 
 nnoremap <Leader>w :write<CR>
 nnoremap <Leader>q :quit<CR>
+nnoremap <Leader>x :quitall<CR>
 
 "   <Leader>r -- Cycle through relativenumber + number, number (only), and no
 "   numbering (mnemonic: relative).
