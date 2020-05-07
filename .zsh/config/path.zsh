@@ -5,6 +5,8 @@ unset PATH
 PATH=$PATH:$HOME/.zsh/bin
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.local/bin
+
+PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
 PATH=$PATH:/usr/bin
