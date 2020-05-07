@@ -9,14 +9,14 @@ fi
 function previewclear() {
         declare -p -A cmd=([action]=remove [identifier]="$ID_PREVIEW") \
                 > "$FIFO_UEBERZUG"
-        }
+}
 
 function preview() {
         declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
                 [path]="$PWD/$6") \
                 > "$FIFO_UEBERZUG"
-        }
+}
 
 function previewepub() {
     if [[ ! -f "/tmp$PWD/$6.png" ]]; then
@@ -36,7 +36,7 @@ function previewvideo() {
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
                 [path]="/tmp$PWD/$6.png") \
                 > "$FIFO_UEBERZUG"
-        }
+}
 
 function previewaudio() {
         if [[ ! -f "/tmp$PWD/$6.png" ]]; then
@@ -46,7 +46,7 @@ function previewaudio() {
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
                 [path]="/tmp$PWD/$6.png") \
                 > "$FIFO_UEBERZUG"
-        }
+}
 
 function previewfont() {
         if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
@@ -56,7 +56,7 @@ function previewfont() {
         [x]="$2" [y]="$3" [width]="$4" [height]="$5" \
                 [path]="/tmp$PWD/$6.png") \
                 > "$FIFO_UEBERZUG"
-        }
+}
 
 function main() {
         case "$1" in
