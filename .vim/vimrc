@@ -77,6 +77,7 @@ if exists('s:ccl_lsp')
     endfo
 endif
 
+let g:LanguageClient_settingsPath = '/home/khue/.config/nvim/settings.json'
 let g:LanguageClient_diagnosticsList='Location'
 
 if filereadable('/usr/bin/python3')
