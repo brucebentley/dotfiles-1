@@ -7,6 +7,8 @@ typeset -A __EMANON
 
 local __EMANON[ITALIC_ON]=$'\e[3m'
 local __EMANON[ITALIC_OFF]=$'\e[23m'
+local __EMANON[LINE_CURSOR]=$'\e[6 q'
+local __EMANON[BLOCK_CURSOR]=$'\e[2 q'
 
 #
 # Completion
@@ -196,9 +198,9 @@ function zle-keymap-select zle-line-init
 {
         if [[ $TERM != linux ]]; then
                 if [[ $KEYMAP == main ]]; then
-                        printf '\033[6 q' # line cursor
+                        printf $__EMANON[LINE_CURSOR]
                 else
-                        printf '\033[2 q' # block cursor
+                        printf $__EMANON[BLOCK_CURSOR]
                 fi
         fi
 }
