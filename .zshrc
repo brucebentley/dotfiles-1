@@ -5,10 +5,10 @@
 # scope with a bunch of identifiers.
 typeset -A __EMANON
 
-local __EMANON[ITALIC_ON]=$'\e[3m'
-local __EMANON[ITALIC_OFF]=$'\e[23m'
-local __EMANON[LINE_CURSOR]=$'\e[6 q'
-local __EMANON[BLOCK_CURSOR]=$'\e[2 q'
+__EMANON[ITALIC_ON]=$'\e[3m'
+__EMANON[ITALIC_OFF]=$'\e[23m'
+__EMANON[LINE_CURSOR]=$'\e[6 q'
+__EMANON[BLOCK_CURSOR]=$'\e[2 q'
 
 #
 # Completion
@@ -274,6 +274,7 @@ function -report-start-time() {
                 unset ZSH_START_TIME
         else
                 RPROMPT="$RPROMPT_BASE"
+                unset RPROMPT_BASE
         fi
 }
 add-zsh-hook precmd -report-start-time
