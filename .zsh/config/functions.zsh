@@ -1,5 +1,3 @@
-# Until .agrc exists...
-# (https://github.com/ggreer/the_silver_searcher/pull/709)
 function ag() {
         emulate -L zsh
 
