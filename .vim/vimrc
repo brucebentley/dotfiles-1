@@ -82,7 +82,7 @@ let g:LanguageClient_diagnosticsList='Location'
 
 if filereadable('/usr/bin/python3')
     " Avoid search, speeding up start-up.
-    let g:python3_host_prog='/usr/bin/python3.8'
+    let g:python3_host_prog='/usr/bin/python3'
 endif
 
 " Normally <leader>s (mnemonic: "[s]earch");
