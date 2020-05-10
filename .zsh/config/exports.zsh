@@ -1,6 +1,5 @@
-if [[ -x $(command -v less) ]]; then
-        export PAGER=less
-fi
+export PAGER=less
+export LESS='-iFMRSX'
 
 if [[ -x $(command -v nvim) ]]; then
         export EDITOR=nvim
@@ -9,3 +8,4 @@ else
         export EDITOR=vim
         export MANPAGER='vim +Man!'
 fi
+
