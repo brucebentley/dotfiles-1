@@ -1,3 +1,7 @@
+# Stop (eg.) `killall vim`` from triggering:
+# zsh: correct 'vim' to '.vim' [yes, no, edit, abort]?
+export CORRECT_IGNORE_FILE='.*'
+
 export PAGER=less
 export LESS='-iFMRSX'
 
