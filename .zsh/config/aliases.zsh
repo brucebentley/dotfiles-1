@@ -6,6 +6,7 @@ alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
 alias a=ag
+alias bt=btcli
 alias cp='cp -rfv'
 alias d='hash -d'
 alias e=exit
