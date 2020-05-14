@@ -159,14 +159,13 @@ setopt SHARE_HISTORY           # share history across shells
 
 bindkey -v # set to -e for emacs bindings, set to -v for vi bindings
 
+# Make vi-mode transition faster
+KEYTIMEOUT=1
+
 # Use "cbt" capability ("back_tab", as per `man terminfo`), if we have it:
 if tput cbt &> /dev/null; then
         bindkey "$(tput cbt)" reverse-menu-complete # make Shift-tab go to previous completion
 fi
-
-# Make vi-mode transition faster
-# easier to type out a single quote if desired
-KEYTIMEOUT=1
 
 # Cursor shape changes in different modes
 function zle-keymap-select zle-line-init
