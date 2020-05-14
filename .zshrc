@@ -313,7 +313,7 @@ function -maybe-show-vcs-info() {
         # In case user just hit enter, overwrite LAST_COMMAND, because preexec
         # won't run and it will otherwise linger.
         __EMANON[LAST_COMMAND]="<unset>"
-        if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git" || $LAST[1,2] == ./ ]]; then
+        if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git" ]]; then
                 vcs_info
         fi
 }
