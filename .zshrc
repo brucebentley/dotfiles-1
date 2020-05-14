@@ -274,7 +274,6 @@ function -report-start-time() {
                 unset ZSH_START_TIME
         else
                 RPROMPT="$RPROMPT_BASE"
-                unset RPROMPT_BASE
         fi
 }
 add-zsh-hook precmd -report-start-time
