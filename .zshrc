@@ -182,6 +182,20 @@ function zle-keymap-select zle-line-init
 zle -N zle-line-init
 zle -N zle-keymap-select
 
+
+# Make CTRL-Z background things and unbackground them.
+function fg-bg() {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line -w
+  else
+    zle push-input -w
+    zle clear-screen -w
+  fi
+}
+zle -N fg-bg
+bindkey '^Z' fg-bg
+
 #
 # Hooks
 #
