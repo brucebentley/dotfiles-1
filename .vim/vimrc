@@ -135,5 +135,4 @@ syntax on
 " Launch Vim with `vim --startuptime vim.log` for profiling info.
 "
 " To see all leader mappings, including those from plugins:
-"
-"   vim -c 'set t_te=' -c 'set t_ti=' -c 'map <space>' -c q | sort
+" vim -c 'set t_te=' -c 'set t_ti=' -c 'map <space>' -c q | sort
