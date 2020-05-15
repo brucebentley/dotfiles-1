@@ -129,4 +129,4 @@ set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*
 
 set grepprg='ag --line-numbers %i %a %s'    " Use ag (the silver searcher) instead of grep
 
-# vim:ft=vim:
+" vim:ft=vim:
