@@ -10,7 +10,7 @@
 * `shell`: zsh
 * `browser`: surf
 * `editor`: neovim
-* `music player`: ncmpcpp/spotify
+* `music player`: mpd/ncmpcpp, spotify
 * `font`: DejaVu Sans Mono
 
 # Keyboard Mappings
@@ -42,15 +42,13 @@ Heavily inspired by https://github.com/wincent/wincent
 
 ## VI Mode
 
-Depends on the mode, the cursor will change its shape.
-
 | State         | Cursor Shape       |
 | ------------- | ------------------ |
 | `Normal`      | `block (█)`        |
 | `Insert`      | `vertial bar (\|)` |
 | `Visual`      | `block (█)`        |
 
-> **Note:** the cursor shapeshifting function only works on terminal emulators and not on the console.
+**Note:** the cursor shapeshifting function does not work on the console.
 
 ## Prompt
 
@@ -103,7 +101,6 @@ If there are background processes, a yellow asterisk is shown:
 ## Third-Party Script
 
 - `[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)`: improve quality of diff.
-- `[pfetch](https://github.com/dylanaraps/pfetch)`: simple system information displayer.
 
 # Dependencies
 - [git](https://github.com/git/git) => 1.8.2
@@ -123,16 +120,17 @@ If there are background processes, a yellow asterisk is shown:
 2. ./install [options]
 
 ```sh
-install help    # display all options
-install zsh     # install zsh config only
-install vim     # install vim config only
-install all     # install everything
-install fonts   # install font files only
-install clean   # remove all created symlink files
+install help      # display all options
+install git       # install git config only
+install zsh       # install zsh config only
+install vim       # install vim config only
+install all       # install everything
+install fonts     # install font files only
+install clean     # remove all created symlink files
+install conflict  # list conflicted directories
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
-> use `check-conflicted-directory` script in the `bin` directory to see conflicted directories
 
 **Note:** When `./install clean` is executed, it will remove the existing symlink that has identical name as one of file in this repository.
 
@@ -142,11 +140,3 @@ install clean   # remove all created symlink files
 git config --file ~/.gitconfig.local user.name  "John Doe"
 git config --file ~/.gitconfig.local user.email "johndoe@example.com"
 ```
-**Note:** You can also run the script `setup-git-user` in the `bin` directory to quickly do the above.
-
-# Troubleshooting
-
-## Installation Script
-If `install` script doesn't work, try again using the following command: `bash
-install [options]`.  
-If the above doesn't solve your problem, then please create an issue.
