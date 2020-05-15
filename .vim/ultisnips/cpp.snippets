@@ -4,9 +4,6 @@ extends c
 
 # We want to overwrite everything in parent ft.
 priority -49
-###########################################################################
-#			    Global functions 						  #
-###########################################################################
 
 global !p
 
@@ -42,17 +39,17 @@ snippet binc "#include <boost/shared_ptr.hpp>"
 #include <boost/${1:shared_ptr}.hpp>
 endsnippet
 
-snippet beginend "$1.begin(), $1.end() (beginend)"
+snippet beginend "$1.begin(), $1.end()"
 ${1:v}${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}begin(), $1${1/^.*?(-)?(>)?$/(?2::(?1:>:.))/}end()
 endsnippet
 
-snippet ns "namespace .. (namespace)"
+snippet ns "namespace"
 namespace${1/.+/ /m}${1:`!p snip.rv = snip.basename or "name"`} {
 	${0}
 }${1/.+/ \/* /m}$1${1/.+/ *\/ /m}
 endsnippet
 
-snippet readfile "read file (readF)"
+snippet readfile "read file"
 std::vector<char> v;
 if (FILE *fp = fopen(${1:"filename"}, "r")) {
 	char buf[1024];
@@ -66,7 +63,7 @@ snippet array "std::array"
 std::array<${1:T}, ${2:N}> ${3};
 endsnippet
 
-snippet map "std::map (map)"
+snippet map "std::map"
 std::map<${1:key}, ${2:value}> map$0;
 endsnippet
 
@@ -130,7 +127,7 @@ snippet pqueue "std::priority_queue"
 std::priority_queue<${1:T}> ${2};
 endsnippet
 
-snippet tp "template <typename ..> (template)"
+snippet tp "template <typename ..>"
 template <typename ${1:_InputIter}>
 endsnippet
 
@@ -174,7 +171,7 @@ public:
 #endif /* $2 */
 endsnippet
 
-snippet cl "class ... (class)"
+snippet cl "class"
 class ${1:`vim_snippets#Filename('$1', 'name')`} {
 	public:
 		$1(${2});
@@ -217,7 +214,7 @@ ${2:`vim_snippets#Filename('$1', 'ClassName')`}::${3:memberFunction}(${4:Type} $
 }
 endsnippet
 
-snippet fore "foreach"
+snippet fore "foreach loop"
 for (${1:auto} ${2:i} : ${3:container}) {
 	${4}
 }

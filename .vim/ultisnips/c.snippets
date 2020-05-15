@@ -1,7 +1,3 @@
-###########################################################################
-#                            TextMate Snippets                            #
-###########################################################################
-
 priority -50
 
 snippet def "#define ..."
@@ -40,7 +36,7 @@ ${0}
 #endif
 endsnippet
 
-snippet mark "#pragma mark (mark)"
+snippet mark "#pragma mark"
 #if 0
 ${1:#pragma mark -
 }#pragma mark $2
@@ -91,13 +87,13 @@ case ${1:/* variable case */}:
 	${3:break;}
 endsnippet
 
-snippet for "for loop (for)"
+snippet for "for loop"
 for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${4}
 }
 endsnippet
 
-snippet fori "for int loop (fori)"
+snippet fori "for int loop"
 for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${5}
 }
@@ -124,19 +120,19 @@ ${2}
 #endif /* end of include guard: $1 */
 endsnippet
 
-snippet if "if .. (if)"
+snippet if "if"
 if (${1:/*condition */}) {
 	${2}
 }
 endsnippet
 
-snippet elif "else if .. (else if)"
+snippet elif "else if"
 else if (${1:/*condition*/}) {
 	${2}
 }
 endsnippet
 
-snippet ife "if / else / .. (eli)"
+snippet ife "if / else"
 if (${1:/* condition */}) {
 	${2}
 } else {
@@ -144,7 +140,7 @@ if (${1:/* condition */}) {
 }
 endsnippet
 
-snippet ifee "if / elif / else / .. (elie)"
+snippet ifee "if / elif / else"
 if (${1:/* condition */}) {
 	${2}
 } else if (${3:/* condition */}) {
@@ -154,11 +150,11 @@ if (${1:/* condition */}) {
 }
 endsnippet
 
-snippet fpr "fprintf ..."
+snippet fpr "fprintf"
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
-snippet pr "printf .. (printf)"
+snippet pr "printf"
 printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
