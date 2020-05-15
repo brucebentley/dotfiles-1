@@ -1,72 +1,74 @@
 #!/usr/bin/env bash
 
-zshFile=(zlogin zsh zshenv zshrc)
-homeDirFile=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf)
-configDirFile=(compton fontconfig vifm)
-REPOPATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
+zsh=(zlogin zsh zshenv zshrc)
+home=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf)
+config=(compton fontconfig vifm)
+REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 usage() {
         echo "Usage:"
         echo -e "       \e[36minstall \e[39m[ \e[32moptions \e[39m]"
         echo -e "\e[39mOptions:"
+        echo -e "       \e[39m[  \e[36mgit  \e[39m] - \e[32minstall git config files only"
         echo -e "       \e[39m[  \e[36mzsh  \e[39m] - \e[32minstall zsh config files only"
         echo -e "       \e[39m[  \e[36mvim  \e[39m] - \e[32minstall vim config files only"
         echo -e "       \e[39m[  \e[36mall  \e[39m] - \e[32minstall all config files"
         echo -e "       \e[39m[ \e[36mfonts \e[39m] - \e[32minstall font files only"
         echo -e "       \e[39m[ \e[36mclean \e[39m] - \e[32mremove all created symlinks"
+        echo -e "       \e[39m[ \e[36mconflict \e[39m] - \e[32mlist conflicted directory"
 }
 
 setup-fonts() {
-        ln -sf $REPOPATH/.fonts $HOME
+        ln -sf $REPO/.fonts $HOME
 }
 
 setup-zsh() {
-        for z in ${zshFile[@]}; do
+        for z in ${zsh[@]}; do
                 if [[ ! -f $HOME/.$z ]]; then
-                        ln -sf $REPOPATH/.$z $HOME
+                        ln -sf $REPO/.$z $HOME
                 fi
         done
 
         if [[ -d $HOME/.zsh/vendor/skim/ ]]; then
                 cd $HOME/.zsh/vendor/skim
                 ./install
-                cd $REPOPATH
+                cd $REPO
         fi
 }
 
 setup-vim() {
         if [[ ! -d $HOME/.config/nvim ]]; then
-                ln -sf $REPOPATH/.vim $HOME/.config/nvim
+                ln -sf $REPO/.vim $HOME/.config/nvim
         fi
 
         if [[ ! -d $HOME/.vim ]]; then
-                ln -sf $REPOPATH/.vim $HOME
+                ln -sf $REPO/.vim $HOME
         fi
 
         if [[ -d $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
                cd "$HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
                ruby extconf.rb
                make
-               cd $REPOPATH
+               cd $REPO
         fi
 
         if [[ -d $HOME/.vim/pack/bundle/opt/LanguageClient-neovim ]]; then
                cd "$HOME/.vim/pack/bundle/opt/LanguageClient-neovim"
                bash install.sh
-               cd $REPOPATH
+               cd $REPO
         fi
 }
 
 setup-misc() {
-        for h in ${homeDirFile[@]}; do
+        for h in ${home[@]}; do
                 if [[ ! -f $HOME/.$h ]]; then
-                        ln -sf $REPOPATH/.$h $HOME
+                        ln -sf $REPO/.$h $HOME
                 fi
         done
 
-        for c in ${configDirFile[@]}; do
+        for c in ${config[@]}; do
                 if [[ ! -f $HOME/.config/$c ]]; then
-                        ln -sf $REPOPATH/.config/$c $HOME/.config
+                        ln -sf $REPO/.config/$c $HOME/.config
                 fi
         done
 }
@@ -79,13 +81,13 @@ setup-all() {
 }
 
 clean-symlink() {
-        for h in ${homeDirFile[@]}; do
+        for h in ${home[@]}; do
                 if [[ -L $HOME/.$h ]]; then
                         rm -f $HOME/.$h
                 fi
         done
 
-        for c in ${configDirFile[@]}; do
+        for c in ${config[@]}; do
                 if [[ -L $HOME/.config/$c ]]; then
                         rm -f $HOME/.config/$c
                 fi
@@ -99,13 +101,39 @@ clean-symlink() {
                 rm $HOME/.config/nvim
         fi
 
-        for z in ${zshFile[@]}; do
+        for z in ${zsh[@]}; do
                 if [[ -L $HOME/.$z ]]; then
                         rm -f $HOME/.$z
                 fi
         done
 
         rm -f $HOME/.*.zwc*
+}
+
+setup-git() {
+        ln -sf $REPO/.gitconfig $HOME
+        printf "Username for 'https://github.com': "
+        read name
+        printf "Email for 'https://$name@github.com': "
+        read email
+
+        git config --file "$HOME/.gitconfig.local" user.name "$name"
+        git config --file "$HOME/.gitconfig.local" user.email "$email"
+}
+
+check-conflict() {
+        echo -e "\e[31mconflicted directories:"
+        for h in ${home[@]}; do
+                if [[ -d $HOME/.$h && -L $HOME/.$h ]]; then
+                        echo -e "\e[33m$HOME/.$h"
+                fi
+        done
+
+        for c in ${config[@]}; do
+                if [[ -d $HOME/.config/$c && -L $HOME/.config/$c ]]; then
+                        echo -e "\e[33m$HOME/.config/$c"
+                fi
+        done
 }
 
 main() {
@@ -116,6 +144,9 @@ main() {
         case "$1" in
         help)
                 usage
+                ;;
+        git)
+                setup-git
                 ;;
         zsh)
                 setup-zsh
@@ -132,6 +163,9 @@ main() {
         clean)
                 clean-symlink
                 ;;
+        conflict)
+                check-conflict
+                ;;
         "")
                 usage
                 ;;
@@ -141,5 +175,6 @@ main() {
                 ;;
         esac
 }
+
 
 main "$@"

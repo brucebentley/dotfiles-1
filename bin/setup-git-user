@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-printf "Username for 'https://github.com': "
-read name
-printf "Email for 'https://$name@github.com': "
-read email
-
-git config --file "$HOME/.gitconfig.local" user.name "$name"
-git config --file "$HOME/.gitconfig.local" user.email "$email"
