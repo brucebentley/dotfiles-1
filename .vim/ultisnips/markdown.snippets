@@ -2,21 +2,9 @@ priority -50
 
 snippet header
 ---
-tags: $1
+$1
 ---
-$0
 endsnippet
-
-snippet table
-| ${1:First Header}  | ${2:Second Header} |
-| ------------- | ------------- |
-| ${3:Content Cell}  | ${5:Content Cell}  |
-| ${4:Content Cell}  | ${6:Content Cell}  |
-endsnippet
-
-###################
-# Text formatting #
-###################
 
 snippet * "italics"
 *${1}*
@@ -30,9 +18,6 @@ snippet *** "bold italics"
 ***${1}***$0
 endsnippet
 
-################
-# Common stuff #
-################
 snippet link "Link to something"
 [${1::Text}](${3:http://${2:www.url.com}})$0
 endsnippet
