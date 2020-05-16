@@ -1,7 +1,7 @@
 let g:emanonColorColumnBufferNameBlacklist = ['__LanguageClient__']
-let g:emanonColorColumnFileTypeBlacklist = ['command-t', 'diff', 'fugitiveblame', 'undotree', 'nerdtree', 'qf']
+let g:emanonColorColumnFileTypeBlacklist = ['command-t', 'diff', 'fugitiveblame', 'undotree', 'nerdtree']
 let g:emanonCursorlineBlacklist = ['command-t']
-let g:emanonMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
+let g:emanonMkviewFiletypeBlacklist = ['diff', 'gitcommit']
 
 function! emanon#autocmds#attempt_select_last_file() abort
     let l:previous=expand('#:t')
@@ -21,18 +21,16 @@ function! emanon#autocmds#should_cursorline() abort
     return index(g:emanonCursorlineBlacklist, &filetype) == -1
 endfunction
 
-" Loosely based on: http://vim.wikia.com/wiki/Make_views_automatic
 function! emanon#autocmds#should_mkview() abort
     return
                 \ &buftype ==# '' &&
                 \ index(g:emanonMkviewFiletypeBlacklist, &filetype) == -1 &&
-                \ !exists('$SUDO_USER') " Don't create root-owned files.
+                \ !exists('$SUDO_USER')
 endfunction
 
 function! emanon#autocmds#mkview() abort
     try
         if exists('*haslocaldir') && haslocaldir()
-            " We never want to save an :lcd command, so hack around it...
             cd -
             mkview
             lcd -
@@ -40,9 +38,7 @@ function! emanon#autocmds#mkview() abort
             mkview
         endif
     catch /\<E186\>/
-        " No previous directory: probably a `git` operation.
     catch /\<E190\>/
-        " Could be name or path length exceeding NAME_MAX or PATH_MAX.
     endtry
 endfunction
 
@@ -90,35 +86,26 @@ function! emanon#autocmds#focus_window() abort
 endfunction
 
 function! emanon#autocmds#blur_statusline() abort
-    " Default blurred statusline (buffer number: filename).
     let l:blurred='%{emanon#statusline#gutterpadding()}'
-    let l:blurred.='\ ' " space
-    let l:blurred.='\ ' " space
-    let l:blurred.='\ ' " space
-    let l:blurred.='\ ' " space
-    let l:blurred.='%<' " truncation point
-    let l:blurred.='%f' " filename
-    let l:blurred.='%=' " split left/right halves (makes background cover whole)
+    let l:blurred.='\ '
+    let l:blurred.='\ '
+    let l:blurred.='\ '
+    let l:blurred.='\ '
+    let l:blurred.='%<'
+    let l:blurred.='%f'
+    let l:blurred.='%='
     call s:update_statusline(l:blurred, 'blur')
 endfunction
 
 function! emanon#autocmds#focus_statusline() abort
-    " `setlocal statusline=` will revert to global 'statusline' setting.
     call s:update_statusline('', 'focus')
 endfunction
 
 function! s:update_statusline(default, action) abort
     let l:statusline = s:get_custom_statusline(a:action)
     if type(l:statusline) == type('')
-        " Apply custom statusline.
         execute 'setlocal statusline=' . l:statusline
     elseif l:statusline == 0
-        " Do nothing.
-        "
-        " Note that order matters here because of Vimscript's insane coercion rules:
-        " when comparing a string to a number, the string gets coerced to 0, which
-        " means that all strings `== 0`. So, we must check for string-ness first,
-        " above.
         return
     else
         execute 'setlocal statusline=' . a:default
@@ -127,42 +114,23 @@ endfunction
 
 function! s:get_custom_statusline(action) abort
     if &ft ==# 'command-t'
-        " Will use Command-T-provided buffer name, but need to escape spaces.
         return '\ \ ' . substitute(bufname('%'), ' ', '\\ ', 'g')
     elseif &ft ==# 'diff' && exists('t:diffpanel') && t:diffpanel.bufname ==# bufname('%')
-        return 'Undotree\ preview' " Less ugly, and nothing really useful to show.
+        return 'Undotree\ preview'
     elseif &ft ==# 'undotree'
-        return 0 " Don't override; undotree does its own thing.
+        return 0
     elseif &ft ==# 'nerdtree'
-        return 0 " Don't override; NERDTree does its own thing.
-    elseif &ft ==# 'qf'
-        if a:action ==# 'blur'
-            return
-                        \ '%{emanon#statusline#gutterpadding()}'
-                        \ . '\ '
-                        \ . '\ '
-                        \ . '\ '
-                        \ . '\ '
-                        \ . '%<'
-                        \ . '%q'
-                        \ . '\ '
-                        \ . '%{get(w:,\"quickfix_title\",\"\")}'
-                        \ . '%='
-        else
-            return g:emanonQuickfixStatusline
-        endif
+        return 0
     endif
 
-    return 1 " Use default.
+    return 1
 endfunction
 
 function! emanon#autocmds#idleboot() abort
-    " Make sure we automatically call emanon#autocmds#idleboot() only once.
     augroup emanonIdleboot
         autocmd!
     augroup END
 
-    " Make sure we run deferred tasks exactly once.
     doautocmd User emanonDefer
     autocmd! User emanonDefer
 endfunction

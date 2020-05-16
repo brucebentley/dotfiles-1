@@ -1,4 +1,3 @@
-" Map of .git directories to GitHub user-or-org/project identifiers.
 let s:directories={}
 
 function! s:open_on_github(file, range) abort
@@ -14,11 +13,6 @@ function! s:open_on_github(file, range) abort
 
         try
             let l:remotes=system('git --git-dir=' . shellescape(l:git_dir) . ' remote -v')
-            " Look for lines like these:
-            "
-            "   remote-a git@github.com:user-or-org/repo.git (...)
-            "   remote-b https://github.com/user-or-org/repo.git (...)
-            "
             for l:remote in ['github', 'upstream', 'upstream-rw', 'origin']
                 let l:match=matchlist(
                             \   l:remotes,
@@ -32,7 +26,6 @@ function! s:open_on_github(file, range) abort
                 endif
             endfor
         catch
-            " Cool, cool...
         endtry
     endif
 
@@ -50,8 +43,6 @@ function! emanon#commands#open_on_github(...) abort range
     let l:range=''
     if a:0 == 0
         let l:files=[expand('%')]
-        " Note: line numbers may not be accurate because we always open the HEAD of
-        " the master branch.
         if visualmode() != ''
             if a:firstline == a:lastline
                 let l:range='#L' . a:firstline

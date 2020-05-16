@@ -1,34 +1,20 @@
-"
-" Settings.
-"
-
 if &term =~# 'screen' || &term =~# 'tmux' || &term =~# 'xterm'
-    let g:CommandTCancelMap=['<ESC>', '<C-c>']
-    let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>', '<ESC>OB']
-    let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>', '<ESC>OA']
+    let g:CommandTCancelMap=['<ESC>']
+    let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>']
+    let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>']
 endif
 
 let g:CommandTEncoding='UTF-8'
 let g:CommandTFileScanner='watchman'
+let g:CommandTMaxHeight=30
 let g:CommandTInputDebounce=50
-let g:CommandTMaxCachedDirectories=10
-let g:CommandTMaxFiles=3000000
+let g:CommandTMaxCachedDirectories=20
+let g:CommandTMaxFiles=5000000
+let g:CommandTRecursiveMatch=0
 let g:CommandTScanDotDirectories=1
 let g:CommandTTraverseSCM='pwd'
 let g:CommandTWildIgnore=&wildignore
 let g:CommandTWildIgnore.=',*/.git/*'
-let g:CommandTWildIgnore.=',*/.hg/*'
-let g:CommandTWildIgnore.=',*/bower_components/*'
-let g:CommandTWildIgnore.=',*/tmp/*'
-let g:CommandTWildIgnore.=',*.class'
-let g:CommandTWildIgnore.=',*/classes/*'
-let g:CommandTWildIgnore.=',*/build/*'
-
-" Allow Command-T to open selections in netrw windows.
-let g:CommandTWindowFilter='!&buflisted && &buftype == "nofile" && !exists("w:netrw_liststyle")'
-
-" Convenience for starting Command-T at launch without causing freak-out inside
-" tmux.
 
 function s:CommandTPreBoot()
     augroup CommandTBoot

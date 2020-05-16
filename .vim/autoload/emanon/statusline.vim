@@ -31,10 +31,8 @@ function! emanon#statusline#fileprefix() abort
     if l:basename ==# '' || l:basename ==# '.'
         return ''
     elseif has('modify_fname')
-        " Make sure we show $HOME as ~.
         return substitute(fnamemodify(l:basename, ':~:.'), '/$', '', '') . '/'
     else
-        " Make sure we show $HOME as ~.
         return substitute(l:basename . '/', '\C^' . $HOME, '~', '')
     endif
 endfunction
@@ -57,7 +55,6 @@ endfunction
 
 function! emanon#statusline#lhs() abort
     let l:line=emanon#statusline#gutterpadding()
-    " HEAVY BALLOT X - Unicode: U+2718, UTF-8: E2 9C 98
     let l:line.=&modified ? '✘ ' : '  '
     return l:line
 endfunction
@@ -70,7 +67,6 @@ function! emanon#statusline#rhs() abort
         let l:line=line('.')
         let l:height=line('$')
 
-        " Add padding to stop rhs from changing too much as we move the cursor.
         let l:padding=len(l:height) - len(l:line)
         if (l:padding)
             let l:rhs.=repeat(' ', l:padding)
@@ -86,7 +82,6 @@ function! emanon#statusline#rhs() abort
         let l:rhs.=l:width
         let l:rhs.=' '
 
-        " Add padding to stop rhs from changing too much as we move the cursor.
         if len(l:column) < 2
             let l:rhs.=' '
         endif
@@ -133,24 +128,19 @@ function! emanon#statusline#update_highlight() abort
         return
     endif
 
-    " Update StatusLine to use italics (used for filetype).
     let l:highlight=pinnacle#italicize('StatusLine')
     execute 'highlight User1 ' . l:highlight
 
-    " Update MatchParen to use italics (used for blurred statuslines).
     let l:highlight=pinnacle#italicize('MatchParen')
     execute 'highlight User2 ' . l:highlight
 
-    " StatusLine + bold (used for file names).
     let l:highlight=pinnacle#embolden('StatusLine')
     execute 'highlight User3 ' . l:highlight
 
-    " Inverted Error styling, for left-hand side "Powerline" triangle.
     let l:fg=pinnacle#extract_fg(s:emanon_statusline_status_highlight)
     let l:bg=pinnacle#extract_bg('StatusLine')
     execute 'highlight User4 ' . pinnacle#highlight({'bg': l:bg, 'fg': l:fg})
 
-    " And opposite for the buffer number area.
     execute 'highlight User7 ' .
                 \ pinnacle#highlight({
                 \   'bg': l:fg,
@@ -158,7 +148,6 @@ function! emanon#statusline#update_highlight() abort
                 \   'term': 'bold'
                 \ })
 
-    " Right-hand side section.
     let l:bg=pinnacle#extract_fg('Cursor')
     let l:fg=pinnacle#extract_fg('User3')
     execute 'highlight User5 ' .
@@ -168,7 +157,6 @@ function! emanon#statusline#update_highlight() abort
                 \   'term': 'bold'
                 \ })
 
-    " Right-hand side section + italic (used for %).
     execute 'highlight User6 ' .
                 \ pinnacle#highlight({
                 \   'bg': l:fg,

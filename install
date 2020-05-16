@@ -30,8 +30,10 @@ setup-zsh() {
         done
 
         if [[ -d $HOME/.zsh/vendor/skim/ ]]; then
+                echo 'entering: ~/.zsh/vendor/skim'
                 cd $HOME/.zsh/vendor/skim
                 ./install
+                echo -e 'leaving: ~/.zsh/vendor/skim\n'
                 cd $REPO
         fi
 }
@@ -46,15 +48,19 @@ setup-vim() {
         fi
 
         if [[ -d $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
+               echo "entering: ~/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
                cd "$HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
                ruby extconf.rb
                make
+               echo -e "leaving: ~/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t\n"
                cd $REPO
         fi
 
         if [[ -d $HOME/.vim/pack/bundle/opt/LanguageClient-neovim ]]; then
+               echo "entering: ~/.vim/pack/bundle/opt/LanguageClient-neovim"
                cd "$HOME/.vim/pack/bundle/opt/LanguageClient-neovim"
                bash install.sh
+               echo -e "leaving: ~/.vim/pack/bundle/opt/LanguageClient-neovim\n"
                cd $REPO
         fi
 }
@@ -175,6 +181,5 @@ main() {
                 ;;
         esac
 }
-
 
 main "$@"

@@ -19,7 +19,6 @@ augroup EmanonLanguageClientAutocmds
     autocmd FileType * call s:Config()
 
     if has('nvim') && exists('*nvim_open_win')
-        " Can use floating window.
         autocmd BufEnter __LanguageClient__ call s:Bind()
     endif
 augroup END

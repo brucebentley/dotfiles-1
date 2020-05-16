@@ -1,7 +1,6 @@
 let s:expansion_active = 0
 
 function! emanon#autocomplete#setup_mappings() abort
-    " Overwrite the mappings that UltiSnips sets up during expansion.
     execute 'inoremap <buffer> <silent> ' . g:UltiSnipsJumpForwardTrigger .
                 \ ' <C-R>=emanon#autocomplete#expand_or_jump("N")<CR>'
     execute 'snoremap <buffer> <silent> ' . g:UltiSnipsJumpForwardTrigger .
@@ -11,7 +10,6 @@ function! emanon#autocomplete#setup_mappings() abort
     execute 'snoremap <buffer> <silent> ' . g:UltiSnipsJumpBackwardTrigger .
                 \ ' <Esc>:call emanon#autocomplete#expand_or_jump("P")<CR>'
 
-    " One additional mapping of our own: accept completion with <CR>.
     imap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
     smap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
@@ -25,8 +23,6 @@ function! emanon#autocomplete#teardown_mappings() abort
     let s:expansion_active = 0
 endfunction
 
-" Note that we also set up a "Smart Backspace", to complement the "Smart
-" Tab" that wincent#autocomplete#expand_or_jump() ends up using.
 inoremap <expr> <BS> emanon#autocomplete#smart_bs()
 
 let g:ulti_jump_backwards_res = 0
@@ -36,9 +32,7 @@ let g:ulti_expand_res = 0
 function! emanon#autocomplete#expand_or_jump(direction) abort
     call UltiSnips#ExpandSnippet()
     if g:ulti_expand_res == 0
-        " No expansion occurred.
         if pumvisible()
-            " Pop-up is visible, let's select the next (or previous) completion.
             if a:direction ==# 'N'
                 return "\<C-N>"
             else
@@ -49,7 +43,6 @@ function! emanon#autocomplete#expand_or_jump(direction) abort
                 if a:direction ==# 'N'
                     call UltiSnips#JumpForwards()
                     if g:ulti_jump_forwards_res == 0
-                        " We did not jump forwards.
                         return "\<Tab>"
                     endif
                 else
@@ -63,8 +56,6 @@ function! emanon#autocomplete#expand_or_jump(direction) abort
         endif
     endif
 
-    " No popup is visible, a snippet was expanded, or we jumped, or we failed to
-    " jump backwards, so nothing to do.
     return ''
 endfunction
 
@@ -90,8 +81,6 @@ else
     endfunction
 endif
 
-" Use <Tab> for leading indent (when 'noexpandtab'), spaces for everything else
-" (even when 'noexpandtab').
 function! emanon#autocomplete#smart_tab() abort
     if &l:expandtab
         return "\<Tab>"
@@ -100,9 +89,6 @@ function! emanon#autocomplete#smart_tab() abort
         if l:prefix =~# '^\s*$'
             return "\<Tab>"
         else
-            " virtcol() returns last column occupied, so if cursor is on a tab it will
-            " report `actual column + tabstop` instead of `actual column`. So, get
-            " last column of previous character instead, and add 1 to it.
             let l:sw=s:ShiftWidth()
             let l:previous_char=matchstr(l:prefix, '.$')
             let l:previous_column=strlen(l:prefix) - strlen(l:previous_char) + 1
@@ -114,7 +100,6 @@ function! emanon#autocomplete#smart_tab() abort
     endif
 endfunction
 
-" Mirror of emanon#autocomplete#smart_tab().
 function! emanon#autocomplete#smart_bs() abort
     if &l:expandtab
         return "\<BS>"
@@ -128,16 +113,6 @@ function! emanon#autocomplete#smart_bs() abort
         if l:previous_char !=# ' '
             return "\<BS>"
         else
-            " Delete enough spaces to take us back to the previous tabstop.
-            "
-            " Originally I was calculating the number of <BS> to send, but Vim
-            " has some special casing that causes one <BS> to delete multiple
-            " characters even when 'expandtab' is off (eg. if you hit <BS> after
-            " pressing <CR> on a line with trailing whitespace and Vim inserts
-            " whitespace to match.
-            "
-            " So, turn 'expandtab' on temporarily and let Vim figure out what
-            " a single <BS> should do.
             return "\<C-\>\<C-o>:set expandtab\<CR>" .
                         \ "\<C-\>\<C-o>:set noexpandtab\<CR>\<BS>"
         endif

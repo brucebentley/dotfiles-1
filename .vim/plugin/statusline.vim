@@ -1,31 +1,30 @@
 scriptencoding utf-8
 
-" cf the default statusline: %<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 if has('statusline')
-    set statusline=%7*                                 " Switch to User7 highlight group
+    set statusline=%7*
     set statusline+=%{emanon#statusline#lhs()}
-    set statusline+=%*                                 " Reset highlight group.
-    set statusline+=%4*                                " Switch to User4 highlight group (Powerline arrow).
-    set statusline+=                                  " Powerline arrow.
-    set statusline+=%*                                 " Reset highlight group.
-    set statusline+=\                                  " Space.
-    set statusline+=%<                                 " Truncation point, if not enough width available.
-    set statusline+=%{emanon#statusline#fileprefix()}  " Relative path to file's directory.
-    set statusline+=%3*                                " Switch to User3 highlight group (bold).
-    set statusline+=%t                                 " Filename.
-    set statusline+=%*                                 " Reset highlight group.
-    set statusline+=\                                  " Space.
-    set statusline+=%1*                                " Switch to User1 highlight group (italics).
+    set statusline+=%*
+    set statusline+=%4*
+    set statusline+=
+    set statusline+=%*
+    set statusline+=\ 
+    set statusline+=%<
+    set statusline+=%{emanon#statusline#fileprefix()}
+    set statusline+=%3*
+    set statusline+=%t
+    set statusline+=%*
+    set statusline+=\ 
+    set statusline+=%1*
     set statusline+=%([%R%{emanon#statusline#ft()}%{emanon#statusline#fenc()}]%)
 
-    set statusline+=%*                                 " Reset highlight group.
-    set statusline+=%=                                 " Split point for left and right groups.
+    set statusline+=%*
+    set statusline+=%=
 
-    set statusline+=\                                  " Space.
-    set statusline+=                                  " Powerline arrow.
-    set statusline+=%5*                                " Switch to User5 highlight group.
+    set statusline+=\ 
+    set statusline+=
+    set statusline+=%5*
     set statusline+=%{emanon#statusline#rhs()}
-    set statusline+=%*                                 " Reset highlight group.
+    set statusline+=%*
 
     if has('autocmd')
         augroup emanonStatusline

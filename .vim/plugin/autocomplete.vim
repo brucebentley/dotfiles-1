@@ -1,7 +1,6 @@
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
-" Prevent UltiSnips from removing our carefully-crafted mappings.
 let g:UltiSnipsMappingsToIgnore = ['autocomplete']
 
 if has('autocmd')
@@ -14,7 +13,6 @@ if has('autocmd')
     augroup END
 endif
 
-" Additional UltiSnips config.
 let g:UltiSnipsSnippetsDir = $HOME . '/.vim/ultisnips'
 let g:UltiSnipsSnippetDirectories = [
             \ $HOME . '/.vim/ultisnips'
@@ -22,8 +20,6 @@ let g:UltiSnipsSnippetDirectories = [
 
 if has('nvim')
     packadd! deoplete.nvim
-    " Don't forget to run :UpdateRemotePlugins to populate
-    " `~/.local/share/nvim/rplugin.vim`.
     call emanon#defer#defer('call emanon#autocomplete#deoplete_init()')
 
     inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"

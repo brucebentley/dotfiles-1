@@ -5,67 +5,60 @@ set syscalls
 set trash
 set trashdir=/tmp/trash/vifm
 
-view                    " Open with preview window
+view
 set relativenumber
 set dotfiles
 
 set history=10000
 
-set nofollowlinks       " Automatically resolve symbolic links on l or Enter.
+set nofollowlinks
 
-set sortnumbers         " Natural sort of (version) numbers within text.
+set sortnumbers
 
-set undolevels=100      " Maximum number of changes that can be undone.
+set undolevels=100
 
 colorscheme minimal
 
-set wildmenu            " Show list of matches on tab completion in command-line mode
-set wildstyle=popup     " Display completions in a form of popup with descriptions of the matches
+set wildmenu
+set wildstyle=popup
 
 
-set suggestoptions=normal,visual,view,otherpane,keys,marks,registers " Display suggestions
+set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 
-set ignorecase          " Ignore case in search patterns unless it contains at least one uppercase letter
+set ignorecase
 set smartcase
 
-set nohlsearch          " Don't highlight search results automatically
+set nohlsearch
 
-set incsearch           " Use increment searching (search while typing)
+set incsearch
 
 set scrolloff=1
 
-" Things that should be stored in vifminfo
 set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
-set confirm-=delete     " Dont show delete confirmation
+set confirm-=delete
 
-set rulerformat=\       " clear content of ruler
+set rulerformat=\
 
-" Dont show preview on ../ as this confuses me at times
-fileview ../ echo >/dev/null 
+fileview ../ echo >/dev/null
 
-" Text based files
 filetype <text/*> nvim
 fileviewer <text/*> less
 
-" HTMLs
-fileviewer *.html lynx -dump %c
-filextype *.html,*.htm firefox %f 2>/dev/null &
+fileviewer *.html links -dump %c
+filextype *.html,*.htm xdg-open %f 2>/dev/null &
 
-" PDFs
 filextype *.pdf less
 fileviewer *.pdf
             \ less %px %py %pw %ph %c
             \ %pc
 
-" EPUBs
 filextype *.epub vifmimg clear && epr
 fileviewer *.epub
-        \ vifmimg epub %px %py %pw %ph %c
-        \ %pc
-        \ vifmimg clear
+            \ vifmimg epub %px %py %pw %ph %c
+            \ %pc
+            \ vifmimg clear
 
-" Videos
 filetype <video/*> mpv %c %i &
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
             \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
@@ -73,52 +66,34 @@ fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
             \ %pc
             \ vifmimg clear
 
-" Audios
 filetype <audio/*> mpv %c %i &
 fileviewer <audio/*>
             \ vifmimg audio %px %py %pw %ph %c
             \ %pc
             \ vifmimg clear
 
-" Images
 filextype <image/*> feh %c %i &
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
             \ vifmimg draw %px %py %pw %ph %c
             \ %pc
             \ vifmimg clear
 
-" Fonts
 fileviewer *.ttf,*.otf,*.woff
             \ vifmimg font %px %py %pw %ph %c
             \ %pc
             \ vifmimg clear
 
-" Show ls in the preview window
 fileviewer */ ls --color --group-directories-first
 fileviewer .*/ ls --color --group-directories-first
 
-" Other files
 filetype * xdg-open %c
 fileviewer * file -b %c
 
 
-" Easily quit vifm by hitting q
 nmap q ZQ
-
-" Go to the file that is right before "../" for going to the top most file
 nnoremap gg ggj
-
-" Start shell in current directory
 nnoremap s :shell<cr>
 
-" Display sorting dialog
-nnoremap S :sort<cr>
-
-" Toggle visibility of preview window
-nnoremap w :view<cr>
-vnoremap w :view<cr>gv
-
-" File Icons
 set classify='  :dir:/,  :exe:,  :reg:,  :link:'
 set classify+='  ::../::,  ::*.sh::,  ::*.[hc]pp::,  ::*.[hc]::,  ::/^copying|license$/::,  ::.git/,,*.git/::,  ::*.epub,,*.fb2,,*.djvu::,  ::*.pdf::,  ::*.htm,,*.html,,**.[sx]html,,*.xml::'
 set classify+='  ::*.7z,,*.ace,,*.arj,,*.bz2,,*.cpio,,*.deb,,*.dz,,*.gz,,*.jar,,*.lzh,,*.lzma,,*.rar,,*.rpm,,*.rz,,*.tar,,*.taz,,*.tb2,,*.tbz,,*.tbz2,,*.tgz,,*.tlz,,*.trz,,*.txz,,*.tz,,*.tz2,,*.xz,,*.z,,*.zip,,*.zoo::'
@@ -127,6 +102,6 @@ set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.
 set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
 
-set grepprg='ag --line-numbers %i %a %s'    " Use ag (the silver searcher) instead of grep
+set grepprg='ag --line-numbers %i %a %s'
 
-" vim:ft=vim:
+" vim:set et sw=4 ts=4 tw=80 ft=vim:

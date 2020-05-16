@@ -8,10 +8,7 @@ function ag() {
 function vifm() {
         emulate -L zsh
 
-        if [[ ! -x $(command -v ueberzug) ]]; then
-                command vifm
-                exit
-        else
+        if command -v ueberzug > /dev/null; then
                 export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
                 rm "$FIFO_UEBERZUG" 2> /dev/null
                 mkfifo "$FIFO_UEBERZUG"
@@ -22,6 +19,8 @@ function vifm() {
                 rm "$FIFO_UEBERZUG" 2> /dev/null
                 pkill -P $$ 2> /dev/null
                 unset FIFO_UEBERZUG
+        else
+                command vifm
         fi
 }
 

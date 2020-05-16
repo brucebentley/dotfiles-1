@@ -1,72 +1,69 @@
 scriptencoding utf-8
 
-set autoindent                        " maintain indent of current line
-set autoread                          " Rewrite file if modified outside of Vim
-set backspace=indent,start,eol        " allow unrestricted backspacing in insert mode
+set autoindent
+set autoread
+set backspace=indent,start,eol
 
 set history=10000
 
-"change timeout thats vim wait if in keycode sequence is happening
 set timeoutlen=1000
 set ttimeoutlen=100
 
 if exists('$SUDO_USER')
-    set nobackup                        " don't create root-owned files
-    set nowritebackup                   " don't create root-owned files
+    set nobackup
+    set nowritebackup
 else
-    set backupdir=~/.vim/tmp/backup     " keep backup files out of the way
+    set backupdir=~/.vim/tmp/backup
     set backupdir+=.
 endif
 
 if exists('&belloff')
-    set belloff=all                     " never ring the bell for any reason
+    set belloff=all
 endif
 
 if exists('+colorcolumn')
-    " Highlight up to 255 columns (this is the current Vim max) beyond 'textwidth'
     let &l:colorcolumn='+' . join(range(0, 254), ',+')
 endif
 
-set cursorline                        " highlight current line
-set diffopt+=foldcolumn:0             " don't show fold column in diff view
+set cursorline
+set diffopt+=foldcolumn:0
 
 if exists('$SUDO_USER')
-    set noswapfile                      " don't create root-owned files
+    set noswapfile
 else
-    set directory=~/.vim/tmp/swap//     " keep swap files out of the way
+    set directory=~/.vim/tmp/swap
     set directory+=.
 endif
 
-set expandtab                         " always use spaces instead of tabs
+set noexpandtab
 
 if has('folding')
     if has('windows')
-        set fillchars=diff:∙               " BULLET OPERATOR (U+2219, UTF-8: E2 88 99)
-        set fillchars+=fold:·              " MIDDLE DOT (U+00B7, UTF-8: C2 B7)
-        set fillchars+=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+        set fillchars=diff:∙
+        set fillchars+=fold:·
+        set fillchars+=vert:┃
     endif
 
     if has('nvim')
-        set fillchars+=eob:\              " suppress ~ at EndOfBuffer
+        set fillchars+=eob:\ 
     endif
 
-    set foldmethod=indent               " not as cool as syntax, but faster
-    set foldlevelstart=99               " start unfolded
+    set foldmethod=indent
+    set foldlevelstart=99
     set foldtext=emanon#settings#foldtext()
 endif
 
-set formatoptions+=j                " remove comment leader when joining comment lines
-set formatoptions+=n                  " smart auto-indenting inside numbered lists
+set formatoptions+=j
+set formatoptions+=n
 set guifont=DejaVuSansMono\ NF:h18
-set guioptions-=T                     " don't show toolbar
-set hidden                            " allows you to hide buffers with unsaved changes without being prompted
+set guioptions-=T
+set hidden
 
 if !has('nvim')
-    " Sync with corresponding nvim :highlight commands in ~/.vim/plugin/autocmds.vim:
-    set highlight+=@:Conceal            " ~/@ at end of window, 'showbreak'
-    set highlight+=D:Conceal            " override DiffDelete
-    set highlight+=N:FoldColumn         " make current line number stand out a little
-    set highlight+=c:LineNr             " blend vertical separators with line numbers
+    set highlight+=@:Conceal
+    set highlight+=D:Conceal
+    set highlight+=N:FoldColumn
+    set highlight+=c:LineNr
 endif
 
 if exists('&completeopt')
@@ -74,135 +71,116 @@ if exists('&completeopt')
 endif
 
 if exists('&inccommand')
-    set inccommand=split                " live preview of :s results
+    set inccommand=split
 endif
 
-set laststatus=2                      " always show status line
-set lazyredraw                        " don't bother updating screen during macro playback
+set laststatus=2
+set lazyredraw
 
 if has('linebreak')
-    set linebreak                       " wrap long lines at characters in 'breakat'
+    set linebreak
 endif
 
-set tabpagemax=50                     " set maximum number of tab pages
+set tabpagemax=50
 
-set list                              " show whitespace
-set listchars=nbsp:⦸                  " CIRCLED REVERSE SOLIDUS (U+29B8, UTF-8: E2 A6 B8)
-set listchars+=tab:▷┅                 " WHITE RIGHT-POINTING TRIANGLE (U+25B7, UTF-8: E2 96 B7) + BOX DRAWINGS HEAVY TRIPLE DASH HORIZONTAL (U+2505, UTF-8: E2 94 85)
-set listchars+=extends:»              " RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00BB, UTF-8: C2 BB)
-set listchars+=precedes:«             " LEFT-POINTING DOUBLE ANGLE QUOTATION MARK (U+00AB, UTF-8: C2 AB)
-set listchars+=trail:•                " BULLET (U+2022, UTF-8: E2 80 A2)
+set list
+set listchars=nbsp:⦸
+set listchars+=tab:▷┅
+set listchars+=extends:»
+set listchars+=precedes:«
+set listchars+=trail:•
 set modeline
-set modelines=5                       " scan this many lines looking for modeline
-set nojoinspaces                      " don't autoinsert two spaces after '.', '?', '!' for join command
-set number                            " show line numbers in gutter
+set modelines=5
+set nojoinspaces
+set number
 
 if exists('+relativenumber')
-    set relativenumber                  " show relative numbers in gutter
+    set relativenumber
 endif
 
-set scrolloff=1                       " start scrolling 1 lines before edge of viewport
+set scrolloff=1
 
-set shell=zsh                         " shell to use for `!`, `:!`, `system()` etc.
-set shiftround                        " always indent by multiple of shiftwidth
-set shiftwidth=8                      " spaces per tab (when shifting)
-set shortmess+=A                      " ignore annoying swapfile messages
-set shortmess+=I                      " no splash screen
-set shortmess+=O                      " file-read message overwrites previous
-set shortmess+=T                      " truncate non-file messages in middle
-set shortmess+=W                      " don't echo "[w]"/"[written]" when writing
-set shortmess+=a                      " use abbreviations in messages eg. `[RO]` instead of `[readonly]`
-set shortmess+=c                    " completion messages
-set shortmess+=o                      " overwrite file-written messages
-set shortmess+=t                      " truncate file messages at start
+set shell=zsh
+set shiftround
+set shiftwidth=8
+set shortmess+=A
+set shortmess+=I
+set shortmess+=O
+set shortmess+=T
+set shortmess+=W
+set shortmess+=a
+set shortmess+=c
+set shortmess+=o
+set shortmess+=t
 
 if has('linebreak')
-    let &showbreak='↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+    let &showbreak='↳ '
 endif
 
 if has('showcmd')
-    set noshowcmd                       " don't show extra info at end of command line
+    set noshowcmd
 endif
 
-set display+=lastline                 " display as much as possible of the last line when wrapped
+set display+=lastline
 
-set sidescroll=0                      " sidescroll in jumps because terminals are slow
-set sidescrolloff=5                   " same as scrolloff, but for columns
-set smarttab                          " <tab>/<BS> indent/dedent in leading whitespace
+set sidescroll=0
+set sidescrolloff=5
+set smarttab
 
-if v:progname !=# 'vi'
-    set softtabstop=-1                  " use 'shiftwidth' for tab/bs at end of line
-endif
+set softtabstop=-1
 
 if has('syntax')
-    set spellcapcheck=                  " don't check for capital letters at start of sentence
+    set spellcapcheck=
 endif
 
 if has('windows')
-    set splitbelow                      " open horizontal splits below current window
+    set splitbelow
 endif
 
 if has('vertsplit')
-    set splitright                      " open vertical splits to the right of the current window
+    set splitright
 endif
 
 if exists('&swapsync')
-    set swapsync=                       " let OS sync swapfiles lazily
+    set swapsync=
 endif
-set switchbuf=usetab                  " try to reuse windows/tabs when switching buffers
+set switchbuf=usetab
 
 if has('syntax')
-    set synmaxcol=200                   " don't bother syntax highlighting long lines
+    set synmaxcol=200
 endif
 
-set tabstop=8                         " spaces per tab
+set tabstop=8
 
 if has('termguicolors')
-    set termguicolors                   " use guifg/guibg instead of ctermfg/ctermbg in terminal
+    set termguicolors
 endif
 
-set textwidth=80                      " automatically hard wrap at 80 columns
+set textwidth=80
 
 if has('persistent_undo')
     if exists('$SUDO_USER')
-        set noundofile                    " don't create root-owned files
+        set noundofile
     else
-        set undodir=~/.vim/tmp/undo       " keep undo files out of the way
+        set undodir=~/.vim/tmp/undo
         set undodir+=.
-        set undofile                      " actually use undo files
+        set undofile
     endif
 endif
 
-set updatecount=80                    " update swapfiles every 80 typed chars
-set updatetime=200                    " CursorHold interval
+set updatecount=80
+set updatetime=200
 
-if has('viminfo') " ie. Vim.
+if has('viminfo')
     let s:viminfo='viminfo'
-elseif has('shada') " ie. Neovim.
+elseif has('shada')
     let s:viminfo='shada'
 endif
 
 if exists('s:viminfo')
     if exists('$SUDO_USER')
-        " Don't create root-owned files.
         execute 'set ' . s:viminfo . '='
     else
-        " Defaults:
-        "   Neovim: !,'100,<50,s10,h
-        "   Vim:    '100,<50,s10,h
-        "
-        " - ! save/restore global variables (only all-uppercase variables)
-        " - '100 save/restore marks from last 100 files
-        " - <50 save/restore 50 lines from each register
-        " - s10 max item size 10KB
-        " - h do not save/restore 'hlsearch' setting
-        "
-        " Our overrides:
-        " - '0 store marks for 0 files
-        " - <0 don't save registers
-        " - f0 don't store file marks
-        " - n: store in ~/.vim/tmp
-        "
         execute 'set ' . s:viminfo . "='0,<0,f0,n~/.vim/tmp/" . s:viminfo
 
         if !empty(glob('~/.vim/tmp/' . s:viminfo))
@@ -214,21 +192,21 @@ if exists('s:viminfo')
 endif
 
 if has('mksession')
-    set viewdir=~/.vim/tmp/view         " override ~/.vim/view default
+    set viewdir=~/.vim/tmp/view
     set viewoptions-=options
     set sessionoptions-=options
 endif
 
 if has('virtualedit')
-    set virtualedit=block               " allow cursor to move where there is no text in visual block mode
+    set virtualedit=block
 endif
-set visualbell t_vb=                  " stop annoying beeping for non-error errors
-set whichwrap=b,h,l,s,<,>,[,],~       " allow <BS>/h/l/<Left>/<Right>/<Space>, ~ to cross line boundaries
-set wildcharm=<C-z>                   " substitute for 'wildchar' (<Tab>) in macros
+set visualbell t_vb=
+set whichwrap=b,h,l,s,<,>,[,],~
+set wildcharm=<C-z>
 if has('wildignore')
-    set wildignore+=*.o,*.rej           " patterns to ignore during file-navigation
+    set wildignore+=*.o,*.rej
 endif
 if has('wildmenu')
-    set wildmenu                        " show options as list when switching buffers etc
+    set wildmenu
 endif
-set wildmode=longest:full,full        " shell-like autocomplete to unambiguous portion
+set wildmode=longest:full,full

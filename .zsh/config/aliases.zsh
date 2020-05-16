@@ -1,7 +1,3 @@
-#
-# Command aliases
-#
-
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
@@ -26,17 +22,14 @@ alias rm='rm -rfv'
 alias s=ssh
 alias t=tmux
 alias v=vim
-alias x='xinit && exit'
 
-# IP related
 alias publicip="curl -fSs https://1.1.1.1/cdn-cgi/trace | awk -F= '/ip/ { print $2 }'"
 alias privateip="ip addr | ag 'inet ' | awk -F'[: ]+' '{ if (\$4 ~ /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/) { print \$4 } else { print \$3 }}'"
 
-# Type vim to use neovim
-if [[ -x $(command -v nvim) ]]; then
-        alias vim=nvim # Use `\vim` or `command vim` to get the real vim.
+if command -v nvim > /dev/null; then
+        alias vim=nvim
 fi
 
-if [[ -x $(command -v htop) ]]; then
+if command -v htop > /dev/null; then
         alias top=htop
 fi

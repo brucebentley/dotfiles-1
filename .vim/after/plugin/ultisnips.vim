@@ -1,10 +1,6 @@
-" If UltiSnips' own "after" hook runs after us (and `:scriptnames` shows that it
-" does), don't let it overwrite us.
 let b:did_after_plugin_ultisnips_after=1
 
 if exists(':UltiSnipsEdit')
-    " Note: assuming here that `g:UltiSnipsExpandTrigger` and
-    " `g:UltiSnipsJumpForwardTrigger` are the same.
     execute 'inoremap <silent> ' . g:UltiSnipsExpandTrigger .
                 \ ' <C-R>=emanon#autocomplete#expand_or_jump("N")<CR>'
     execute 'snoremap <silent> ' . g:UltiSnipsExpandTrigger .

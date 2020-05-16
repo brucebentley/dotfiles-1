@@ -21,7 +21,6 @@ let g:projectionist_heuristics = {
             \   }
             \ }
 
-" Helper function for batch-updating the g:projectionist_heuristics variable.
 function! s:project(...)
     for [l:pattern, l:projection] in a:000
         let g:projectionist_heuristics['*'][l:pattern] = l:projection

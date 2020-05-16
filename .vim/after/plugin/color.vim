@@ -29,7 +29,7 @@ function s:CheckColorScheme()
         else
             echoerr 'Bad scheme ' . s:config[0] . ' in ' . s:config_file
         endif
-    else " default
+    else
         set background=dark
         colorscheme base16-default-dark
     endif
@@ -38,11 +38,8 @@ function s:CheckColorScheme()
         execute 'highlight Comment ' . pinnacle#italicize('Comment')
     endif
 
-    " Hide (or at least make less obvious) the EndOfBuffer region
     highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
-    " Sync with corresponding non-nvim 'highlight' settings in
-    " ~/.vim/plugin/settings.vim:
     highlight clear NonText
     highlight link NonText Conceal
 
@@ -56,17 +53,13 @@ function s:CheckColorScheme()
     highlight clear VertSplit
     highlight link VertSplit LineNr
 
-    " Resolve clashes with ColorColumn.
-    " Instead of linking to Normal (which has a higher priority, link to nothing).
     highlight link vimUserFunc NONE
     highlight link NERDTreeFile NONE
 
-    " For Git commits, suppress the background of these groups:
     for l:group in ['DiffAdded', 'DiffFile', 'DiffNewFile', 'DiffLine', 'DiffRemoved']
         call s:RemoveBg(l:group)
     endfor
 
-    " More subtle highlighting during merge conflict resolution.
     highlight clear DiffAdd
     highlight clear DiffChange
     highlight clear DiffText
@@ -76,19 +69,14 @@ function s:CheckColorScheme()
         execute 'highlight User8 ' . l:highlight
     endif
 
-    " Allow for overrides:
-    " - `statusline.vim` will re-set User1, User2 etc.
-    " - `after/plugin/loupe.vim` will override Search.
     doautocmd ColorScheme
 endfunction
 
-if v:progname !=# 'vi'
-    if has('autocmd')
-        augroup emanonAutocolor
-            autocmd!
-            autocmd FocusGained * call s:CheckColorScheme()
-        augroup END
-    endif
-
-    call s:CheckColorScheme()
+if has('autocmd')
+    augroup emanonAutocolor
+        autocmd!
+        autocmd FocusGained * call s:CheckColorScheme()
+    augroup END
 endif
+
+call s:CheckColorScheme()
