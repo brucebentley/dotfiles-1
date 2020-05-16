@@ -72,6 +72,8 @@
 	untracked = blue
 
 [core]
+	compression = 9
+	looseCompression = 9
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
 
