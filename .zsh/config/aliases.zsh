@@ -8,15 +8,11 @@ alias d='hash -d'
 alias e=exit
 alias f='find . -name'
 alias g=git
-alias graph="git log --graph --color -p"
-alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias j=jump
 alias l='ls --color=auto'
 alias ll='ls -alF --color=auto'
 alias mkdir='mkdir -pv'
 alias n=ncmpcpp
-alias o='git log --oneline'
-alias oo='git log --oneline -n 20'
 alias r=vifm
 alias rm='rm -rfv'
 alias s=ssh
