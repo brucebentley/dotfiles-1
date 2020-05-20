@@ -5,20 +5,23 @@ snippet def "#define ..."
 endsnippet
 
 snippet incc "#include <...>"
-#include <${1:stdio}.h>
+#include <${1}>
 endsnippet
 
 snippet inc "#include '...'"
-#include "${1:`vim_snippets#Filename("$1.h")`}"
+#include "${1}"
 endsnippet
 
-snippet #ifndef "#ifndef ... #define ... #endif"
-#ifndef ${1/([A-Za-z0-9_]+).*/$1/}
-#define ${1:SYMBOL} ${2:value}
-#endif /* ifndef $1 */
+snippet once "#ifndef ... #define ... #endif"
+#ifndef $1
+#define ${1:name} ${2:value}
+
+${3}
+
+#endif
 endsnippet
 
-snippet #if "#if #endif"
+snippet #if "#if ... #endif"
 #if ${1:0}
 ${2}
 #endif
@@ -29,23 +32,14 @@ snippet nocxx "#ifdef _cplusplus ... extern C .. #endif"
 extern "C" {
 #endif
 
-${0}
+${1}
 
 #ifdef __cplusplus
-} /* extern "C" */
+}
 #endif
 endsnippet
 
-snippet mark "#pragma mark"
-#if 0
-${1:#pragma mark -
-}#pragma mark $2
-#endif
-
-$3
-endsnippet
-
-snippet main "main() (main)"
+snippet main "main(int argc, char *argv[])"
 int
 main(int argc, char *argv[])
 {
@@ -54,11 +48,11 @@ main(int argc, char *argv[])
 }
 endsnippet
 
-snippet mainn "main() (void)"
+snippet mainn "main(void)"
 int
 main(void)
 {
-	${0}
+	${1}
 	return 0;
 }
 endsnippet
@@ -73,14 +67,6 @@ default:
 }
 endsnippet
 
-snippet switchndef "switch (var) ... case:"
-switch (${1:/* variable */}) {
-case ${2:/* variable case */}:
-	${3}
-	${4:break;}${5}
-}
-endsnippet
-
 snippet case
 case ${1:/* variable case */}:
 	${2}
@@ -88,12 +74,6 @@ case ${1:/* variable case */}:
 endsnippet
 
 snippet for "for loop"
-for (${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${4}
-}
-endsnippet
-
-snippet fori "for int loop"
 for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
 	${5}
 }
@@ -109,15 +89,6 @@ snippet do "do ... while"
 do {
 	${2}
 } while (${1:/* condition */});
-endsnippet
-
-snippet once "Include header once only guard"
-#ifndef ${1:name}
-#define $1
-
-${2}
-
-#endif /* end of include guard: $1 */
 endsnippet
 
 snippet if "if"
@@ -228,98 +199,6 @@ snippet tde "typedef enum"
 typedef enum {
 	${1:Data}
 } ${2:name};
-endsnippet
-
-snippet getopt "getopt"
-int choice;
-while (1) {
-	static struct option long_options[] = {
-		{"version", no_argument,	0,	'v'},
-		{"help",	no_argument,	0,	'h'},
-		${1}
-		{0,0,0,0}
-	};
-
-	int option_index = 0;
-
-	choice = getopt_long( argc, argv, "vh", long_options, &option_index);
-
-	if (choice == -1)
-		break;
-
-	switch (choice) {
-	case 'v':
-		${2}
-		break;
-
-	case 'h':
-		${3}
-		break;
-
-	case '?':
-		break;
-
-	default:
-		return EXIT_FAILURE;
-	}
-}
-
-if ( optind < argc ) {
-	while ( optind < argc ) {
-		${0}
-	}
-}
-endsnippet
-
-global !p
-def split_line(text):
-	import textwrap
-	lines = textwrap.wrap(text, 78 - 19)
-	output = list()
-	for line in lines:
-		output.append('*' + ' '*19 + line)
-	snip_line = snip.tabstops[4].end[0]
-	snip.buffer.append(output, snip_line + 1)
-	del snip.buffer[snip_line]
-
-def get_args(arglist):
-	args = [arg.strip() for arg in arglist.split(',') if arg]
-	return args
-endglobal
-
-post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
-snippet head "File Header"
-/******************************************************************************
-* File:             `!p snip.rv = fn`
-*
-* Author:           ${2}
-* Created:          `date +%m/%d/%y`
-* Description:      ${4}
-*****************************************************************************/
-${0}
-endsnippet
-
-post_jump "if snip.tabstop == 0 : split_line(snip.tabstops[4].current_text)"
-snippet func "Function Header"
-/******************************************************************************
-* Function:         $1
-* Description:      ${4}
-* Where:`!p
-snip.rv = ""
-snip >> 2
-
-args = get_args(t[2])
-if args:
-	for arg in args:
-		snip.rv += '\n' + '*' + ' '*19 + arg + ' - TODO'
-snip << 2
-`
-* Return:           $5
-* Error:            $6
-*****************************************************************************/
-${1}($2){
-	${0}
-}
 endsnippet
 
 # vim:ft=snippets:
