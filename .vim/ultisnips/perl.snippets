@@ -26,25 +26,25 @@ endsnippet
 
 snippet begin "begin block"
 BEGIN {
-	${0}
+	${2}
 }
 endsnippet
 
 snippet asub "anonynomous subroutine"
 sub {
-	${0}
+	${2}
 }
 endsnippet
 
 snippet sub "function"
 sub ${1:function_name} {
-	${0}
+	${2}
 }
 endsnippet
 
 snippet if "if .. (if)"
 if (${1}) {
-	${0}
+	${2}
 }
 endsnippet
 
@@ -53,7 +53,7 @@ if (${1}) {
 	${2}
 }
 else {
-	${0}
+	${3}
 }
 endsnippet
 
@@ -65,13 +65,13 @@ elsif (${3}) {
 	${4}
 }
 else {
-	${0}
+	${5}
 }
 endsnippet
 
 snippet elif "else if .. (else if)"
 elsif (${1}) {
-	${0}
+	${2}
 }
 endsnippet
 
@@ -81,7 +81,7 @@ endsnippet
 
 snippet unless "unless conditional"
 unless (${1}) {
-	${0}
+	${2}
 }
 endsnippet
 
@@ -92,16 +92,16 @@ endsnippet
 snippet eval "try/except"
 local $@;
 eval {
-	${1:# do something risky...}
+	${1}
 };
 if (my $e = $@) {
-	${0:# handle failure...}
+	${2}
 }
 endsnippet
 
 snippet wh "while"
 while (${1}) {
-	${0}
+	${2}
 }
 endsnippet
 
@@ -111,7 +111,7 @@ endsnippet
 
 snippet for "for loop"
 	for (my $${2:var} = 0; $$2 < ${1:count}; $$2${3:++}) {
-		${0}
+		${4}
 	}
 endsnippet
 
@@ -121,7 +121,7 @@ endsnippet
 
 snippet fore "foreach loop"
 foreach my $${1:x} (@${2:array}) {
-	${0}
+	${3}
 }
 endsnippet
 
@@ -131,12 +131,12 @@ endsnippet
 
 snippet qrx "complex regex"
 qr/
-	${0:regex}
+	${1}
 /xms
 endsnippet
 
 snippet qr/ "simpler regex"
-qr/${0:regex}/x
+qr/${1}/x
 endsnippet
 
 snippet given "given"
@@ -147,16 +147,16 @@ endsnippet
 
 snippet when "switch-like case"
 when (${1:case}) {
-	${0}
+	${2}
 }
 endsnippet
 
 snippet hslice "hash slice"
-@{ ${1:hash}  }{ ${0:array} }
+@{ ${1:hash}  }{ ${2:array} }
 endsnippet
 
 snippet map "map"
-map {  ${0: body }    }  ${1: @array } ;
+map {  ${1: body }    }  ${2: @array } ;
 endsnippet
 
 # vim:ft=snippets:
