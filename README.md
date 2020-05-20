@@ -100,7 +100,7 @@ If there are background processes, a yellow asterisk is shown:
 
 ## Third-Party Script
 
-- `[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)`: improve quality of diff.
+- [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy): improve quality of diff.
 
 # Dependencies
 - [git](https://github.com/git/git) => 1.8.2
