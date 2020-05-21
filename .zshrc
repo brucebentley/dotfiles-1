@@ -347,8 +347,8 @@ source $HOME/.zsh/config/vars.zsh
 # Third-party
 #
 
-# Skim
-export PATH="$PATH:$HOME/.zsh/vendor/skim/bin"
+# FZF
+export PATH="$PATH:$HOME/.zsh/vendor/fzf/bin"
 
 #
 # Plug-ins

@@ -29,11 +29,11 @@ setup-zsh() {
                 fi
         done
 
-        if [[ -d $HOME/.zsh/vendor/skim/ ]]; then
-                echo 'entering: ~/.zsh/vendor/skim'
-                cd $HOME/.zsh/vendor/skim
-                ./install
-                echo -e 'leaving: ~/.zsh/vendor/skim\n'
+        if [[ -d $HOME/.zsh/vendor/fzf ]]; then
+                echo 'entering: ~/.zsh/vendor/fzf'
+                cd $HOME/.zsh/vendor/fzf
+                ./install --bin --no-key-bindings --no-completion --no-update-rc --no-bash --no-zsh --no-fish --64
+                echo -e 'leaving: ~/.zsh/vendor/fzf\n'
                 cd $REPO
         fi
 }

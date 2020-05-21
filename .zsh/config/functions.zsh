@@ -28,13 +28,13 @@ function vifm() {
 # Inspired by: https://github.com/junegunn/fzf/wiki/examples#changing-directory
 function fd() {
         local DIR
-        DIR=$(find -type d 2> /dev/null | sk --color=16 --no-multi --preview='test -n "{}" && ls {}' -q "$*") && cd "$DIR"
+        DIR=$(find -type d 2> /dev/null | fzf --color=16 --no-multi --preview='test -n "{}" && ls {}' -q "$*") && cd "$DIR"
 }
 
 # fh - "find [in] history"
 # Inspired by: https://github.com/junegunn/fzf/wiki/examples#command-history
 function fh() {
-        print -z $(fc -l 1 | sk --color=16 --no-multi --tac -q "$*" | sed 's/ *[0-9]*\*\{0,1\} *//')
+        print -z $(fc -l 1 | fzf --color=16 --no-multi --tac -q "$*" | sed 's/ *[0-9]*\*\{0,1\} *//')
 }
 
 function scratch() {
