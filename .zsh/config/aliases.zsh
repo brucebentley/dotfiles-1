@@ -19,9 +19,6 @@ alias s=ssh
 alias t=tmux
 alias v=vim
 
-alias publicip="curl -fSs https://1.1.1.1/cdn-cgi/trace | awk -F= '/ip/ { print $2 }'"
-alias privateip="ip addr | ag 'inet ' | awk -F'[: ]+' '{ if (\$4 ~ /[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+/) { print \$4 } else { print \$3 }}'"
-
 if command -v nvim > /dev/null; then
         alias vim=nvim
 fi
