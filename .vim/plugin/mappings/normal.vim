@@ -1,9 +1,4 @@
-nnoremap j gj
-nnoremap k gk
-
 nnoremap <Tab> za
-
-nnoremap Q <nop>
 
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j

@@ -1,9 +1,3 @@
-nnoremap <Leader><Leader> <C-^>
-
-nnoremap <Leader>w :write<CR>
-nnoremap <Leader>q :quit<CR>
-nnoremap <Leader>x :quitall<CR>
-
 nnoremap <silent> <Leader>r :call emanon#mappings#leader#cycle_numbering()<CR>
 
 nnoremap <silent> <Leader>zz :call emanon#mappings#leader#zap_trailing_whitespaces()<CR>
