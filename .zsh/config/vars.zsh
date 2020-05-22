@@ -1,1 +1,1 @@
-CDPATH=.:~:~/code
+CDPATH=.:~:~/Code
