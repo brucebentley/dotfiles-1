@@ -1,13 +1,5 @@
-#
-# Colors
-#
-
 __EMANON[BASE16_CONFIG]=~/.vim/.base16
 
-# Takes a hex color in the form of "RRGGBB" and outputs its luma (0-255, where
-# 0 is black and 255 is white).
-#
-# Based on: https://github.com/lencioni/dotfiles/blob/b1632a04/.shells/colors
 function luma() {
         emulate -L zsh
 
@@ -18,19 +10,14 @@ function luma() {
                 return 1
         fi
 
-        # Extract hex channels from background color (RRGGBB).
         local COLOR_HEX_RED=$(echo "$COLOR_HEX" | cut -c 1-2)
         local COLOR_HEX_GREEN=$(echo "$COLOR_HEX" | cut -c 3-4)
         local COLOR_HEX_BLUE=$(echo "$COLOR_HEX" | cut -c 5-6)
 
-        # Convert hex colors to decimal.
         local COLOR_DEC_RED=$((16#$COLOR_HEX_RED))
         local COLOR_DEC_GREEN=$((16#$COLOR_HEX_GREEN))
         local COLOR_DEC_BLUE=$((16#$COLOR_HEX_BLUE))
 
-        # Calculate perceived brightness of background per ITU-R BT.709
-        # https://en.wikipedia.org/wiki/Rec._709#Luma_coefficients
-        # http://stackoverflow.com/a/12043228/18986
         local COLOR_LUMA_RED=$((0.2126 * $COLOR_DEC_RED))
         local COLOR_LUMA_GREEN=$((0.7152 * $COLOR_DEC_GREEN))
         local COLOR_LUMA_BLUE=$((0.0722 * $COLOR_DEC_BLUE))
@@ -137,7 +124,6 @@ function () {
                 fi
                 color "$SCHEME"
         else
-                # Default
                 color default-dark
         fi
 }

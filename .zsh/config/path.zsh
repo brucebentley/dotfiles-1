@@ -1,7 +1,6 @@
 SYSTEM_PATH=$PATH
 unset PATH
 
-# keep these on separate lines to make changing their order easier
 PATH=$PATH:$HOME/bin
 PATH=$PATH:$HOME/.zsh/bin
 PATH=$PATH:$HOME/.local/bin
