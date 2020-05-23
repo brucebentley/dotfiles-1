@@ -81,7 +81,6 @@ nmap <leader>s <Plug>(FerretAcks)
 if &loadplugins
 	if has('packages')
 		packadd! LanguageClient-neovim
-		packadd! base16-vim
 		packadd! command-t
 		packadd! ferret
 		packadd! loupe
