@@ -76,10 +76,6 @@ function! emanon#autocmds#focus_window() abort
             let l:settings=s:get_spell_settings()
             ownsyntax on
             set list
-            let l:conceal_exclusions=get(g:, 'indentLine_fileTypeExclude', [])
-            if has('conceal') && index(l:conceal_exclusions, &ft) == -1
-                set conceallevel=1
-            endif
             call s:set_spell_settings(l:settings)
         endif
     endif

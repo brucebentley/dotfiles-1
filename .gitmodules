@@ -17,9 +17,6 @@
 [submodule ".vim/pack/bundle/opt/ferret"]
 	path = .vim/pack/bundle/opt/ferret
 	url = https://github.com/wincent/ferret
-[submodule ".vim/pack/bundle/opt/indentLine"]
-	path = .vim/pack/bundle/opt/indentLine
-	url = https://github.com/Yggdroot/indentLine
 [submodule ".vim/pack/bundle/opt/loupe"]
 	path = .vim/pack/bundle/opt/loupe
 	url = https://github.com/wincent/loupe

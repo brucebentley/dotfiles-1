@@ -84,7 +84,6 @@ if &loadplugins
         packadd! base16-vim
         packadd! command-t
         packadd! ferret
-        packadd! indentLine
         packadd! loupe
         packadd! pinnacle
         packadd! scalpel
