@@ -64,6 +64,10 @@ function s:CheckColorScheme()
     highlight clear DiffChange
     highlight clear DiffText
 
+    highlight clear Conceal
+    execute "highlight Conceal cterm=NONE ctermfg=grey ctermbg=NONE"
+    execute "highlight Conceal gui=NONE guifg=grey guibg=NONE"
+
     if emanon#pinnacle#active()
         let l:highlight=pinnacle#italicize('ModeMsg')
         execute 'highlight User8 ' . l:highlight
