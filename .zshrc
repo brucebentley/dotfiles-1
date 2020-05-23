@@ -11,7 +11,7 @@ autoload -Uz compinit
 if [[ -n $HOME/.zcompdump(#qN.md-1) ]]; then
         compinit -C
 else
-        compinit -u
+        compinit -i -u
 fi
 
 zstyle ':completion:*' matcher-list '' '+m:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}' '+m:{_-}={-_}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
