@@ -37,7 +37,6 @@ Heavily inspired by https://github.com/wincent/wincent
 - `scratch`: create a random temporary scratch directory and `cd` into it.
 - `tick`: moves an existing time warp (eg. `tick +1h`); see `tw` below for a description of time warp.
 - `tmux`: wrapper that reattches to pre-existing sessions, or creates new ones based on the current directory name; additionally, looks for a `.tmux` file to set up windows and panes (note that the first time a given `.tmux` file is encountered the wrapper asks the user whether to trust or skip it).
-- `tw` ("time warp"): overrides `GIT_AUTHOR_DATE` and `GIT_COMMITTER_DATE` (eg. `tw -1d`).
 - `vifm`: wrapper that utilizes [ueberzug](https://github.com/seebye/ueberzug) to display media previews
 
 ## VI Mode
