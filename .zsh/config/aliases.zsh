@@ -20,9 +20,9 @@ alias t=tmux
 alias v=vim
 
 if command -v nvim > /dev/null; then
-        alias vim=nvim
+	alias vim=nvim
 fi
 
 if command -v htop > /dev/null; then
-        alias top=htop
+	alias top=htop
 fi

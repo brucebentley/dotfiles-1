@@ -4,9 +4,9 @@ export PAGER=less
 export LESS='-iFMRSX'
 
 if command -v nvim > /dev/null; then
-        export EDITOR=nvim
-        export MANPAGER='nvim +Man!'
+	export EDITOR=nvim
+	export MANPAGER='nvim +Man!'
 else
-        export EDITOR=vim
+	export EDITOR=vim
 fi
 

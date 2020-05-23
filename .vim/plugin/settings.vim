@@ -10,47 +10,47 @@ set timeoutlen=1000
 set ttimeoutlen=100
 
 if exists('$SUDO_USER')
-    set nobackup
-    set nowritebackup
+	set nobackup
+	set nowritebackup
 else
-    set backupdir=~/.vim/tmp/backup
-    set backupdir+=.
+	set backupdir=~/.vim/tmp/backup
+	set backupdir+=.
 endif
 
 if exists('&belloff')
-    set belloff=all
+	set belloff=all
 endif
 
 if exists('+colorcolumn')
-    let &l:colorcolumn='+' . join(range(0, 254), ',+')
+	let &l:colorcolumn='+' . join(range(0, 254), ',+')
 endif
 
 set cursorline
 set diffopt+=foldcolumn:0
 
 if exists('$SUDO_USER')
-    set noswapfile
+	set noswapfile
 else
-    set directory=~/.vim/tmp/swap
-    set directory+=.
+	set directory=~/.vim/tmp/swap
+	set directory+=.
 endif
 
 set noexpandtab
 
 if has('folding')
-    if has('windows')
-        set fillchars=diff:∙
-        set fillchars+=fold:·
-        set fillchars+=vert:┃
-    endif
+	if has('windows')
+		set fillchars=diff:∙
+		set fillchars+=fold:·
+		set fillchars+=vert:┃
+	endif
 
-    if has('nvim')
-        set fillchars+=eob:\ 
-    endif
+	if has('nvim')
+		set fillchars+=eob:\ 
+	endif
 
-    set foldmethod=indent
-    set foldlevelstart=99
-    set foldtext=emanon#settings#foldtext()
+	set foldmethod=indent
+	set foldlevelstart=99
+	set foldtext=emanon#settings#foldtext()
 endif
 
 set formatoptions+=j
@@ -60,25 +60,25 @@ set guioptions-=T
 set hidden
 
 if !has('nvim')
-    set highlight+=@:Conceal
-    set highlight+=D:Conceal
-    set highlight+=N:FoldColumn
-    set highlight+=c:LineNr
+	set highlight+=@:Conceal
+	set highlight+=D:Conceal
+	set highlight+=N:FoldColumn
+	set highlight+=c:LineNr
 endif
 
 if exists('&completeopt')
-    set completeopt=
+	set completeopt=
 endif
 
 if exists('&inccommand')
-    set inccommand=split
+	set inccommand=split
 endif
 
 set laststatus=2
 set lazyredraw
 
 if has('linebreak')
-    set linebreak
+	set linebreak
 endif
 
 set tabpagemax=50
@@ -95,7 +95,7 @@ set nojoinspaces
 set number
 
 if exists('+relativenumber')
-    set relativenumber
+	set relativenumber
 endif
 
 set scrolloff=1
@@ -114,11 +114,11 @@ set shortmess+=o
 set shortmess+=t
 
 if has('linebreak')
-    let &showbreak='↳ '
+	let &showbreak='↳ '
 endif
 
 if has('showcmd')
-    set noshowcmd
+	set noshowcmd
 endif
 
 set display+=lastline
@@ -130,83 +130,83 @@ set smarttab
 set softtabstop=-1
 
 if has('syntax')
-    set spellcapcheck=
+	set spellcapcheck=
 endif
 
 if has('windows')
-    set splitbelow
+	set splitbelow
 endif
 
 if has('vertsplit')
-    set splitright
+	set splitright
 endif
 
 if exists('&swapsync')
-    set swapsync=
+	set swapsync=
 endif
 set switchbuf=usetab
 
 if has('syntax')
-    set synmaxcol=200
+	set synmaxcol=200
 endif
 
 set tabstop=8
 
 if has('termguicolors')
-    set termguicolors
+	set termguicolors
 endif
 
 set textwidth=80
 
 if has('persistent_undo')
-    if exists('$SUDO_USER')
-        set noundofile
-    else
-        set undodir=~/.vim/tmp/undo
-        set undodir+=.
-        set undofile
-    endif
+	if exists('$SUDO_USER')
+		set noundofile
+	else
+		set undodir=~/.vim/tmp/undo
+		set undodir+=.
+		set undofile
+	endif
 endif
 
 set updatecount=80
 set updatetime=200
 
 if has('viminfo')
-    let s:viminfo='viminfo'
+	let s:viminfo='viminfo'
 elseif has('shada')
-    let s:viminfo='shada'
+	let s:viminfo='shada'
 endif
 
 if exists('s:viminfo')
-    if exists('$SUDO_USER')
-        execute 'set ' . s:viminfo . '='
-    else
-        execute 'set ' . s:viminfo . "='0,<0,f0,n~/.vim/tmp/" . s:viminfo
+	if exists('$SUDO_USER')
+		execute 'set ' . s:viminfo . '='
+	else
+		execute 'set ' . s:viminfo . "='0,<0,f0,n~/.vim/tmp/" . s:viminfo
 
-        if !empty(glob('~/.vim/tmp/' . s:viminfo))
-            if !filereadable(expand('~/.vim/tmp/' . s:viminfo))
-                echoerr 'warning: ~/.vim/tmp/' . s:viminfo . ' exists but is not readable'
-            endif
-        endif
-    endif
+		if !empty(glob('~/.vim/tmp/' . s:viminfo))
+			if !filereadable(expand('~/.vim/tmp/' . s:viminfo))
+				echoerr 'warning: ~/.vim/tmp/' . s:viminfo . ' exists but is not readable'
+			endif
+		endif
+	endif
 endif
 
 if has('mksession')
-    set viewdir=~/.vim/tmp/view
-    set viewoptions-=options
-    set sessionoptions-=options
+	set viewdir=~/.vim/tmp/view
+	set viewoptions-=options
+	set sessionoptions-=options
 endif
 
 if has('virtualedit')
-    set virtualedit=block
+	set virtualedit=block
 endif
 set visualbell t_vb=
 set whichwrap=b,h,l,s,<,>,[,],~
 set wildcharm=<C-z>
 if has('wildignore')
-    set wildignore+=*.o,*.rej
+	set wildignore+=*.o,*.rej
 endif
 if has('wildmenu')
-    set wildmenu
+	set wildmenu
 endif
 set wildmode=longest:full,full

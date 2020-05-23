@@ -1,7 +1,7 @@
 if &term =~# 'screen' || &term =~# 'tmux' || &term =~# 'xterm'
-    let g:CommandTCancelMap=['<ESC>']
-    let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>']
-    let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>']
+	let g:CommandTCancelMap=['<ESC>']
+	let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<Down>']
+	let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<Up>']
 endif
 
 let g:CommandTEncoding='UTF-8'
@@ -17,17 +17,17 @@ let g:CommandTWildIgnore=&wildignore
 let g:CommandTWildIgnore.=',*/.git/*'
 
 function s:CommandTPreBoot()
-    augroup CommandTBoot
-        autocmd!
-        autocmd VimEnter * call s:CommandTPostBoot()
-    augroup END
+	augroup CommandTBoot
+		autocmd!
+		autocmd VimEnter * call s:CommandTPostBoot()
+	augroup END
 endfunction
 
 function s:CommandTPostBoot()
-    augroup CommandTBoot
-        autocmd!
-    augroup END
-    CommandT
+	augroup CommandTBoot
+		autocmd!
+	augroup END
+	CommandT
 endfunction
 
 command CommandTBoot call s:CommandTPreBoot()

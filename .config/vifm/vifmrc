@@ -50,38 +50,38 @@ filextype *.html,*.htm xdg-open %f 2>/dev/null &
 
 filextype *.pdf less
 fileviewer *.pdf
-            \ less %px %py %pw %ph %c
-            \ %pc
+			\ less %px %py %pw %ph %c
+			\ %pc
 
 filextype *.epub vifmimg clear && epr
 fileviewer *.epub
-            \ vifmimg epub %px %py %pw %ph %c
-            \ %pc
-            \ vifmimg clear
+			\ vifmimg epub %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 filetype <video/*> mpv %c %i &
 fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-            \*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-            \ vifmimg video %px %py %pw %ph %c
-            \ %pc
-            \ vifmimg clear
+			\*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
+			\ vifmimg video %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 filetype <audio/*> mpv %c %i &
 fileviewer <audio/*>
-            \ vifmimg audio %px %py %pw %ph %c
-            \ %pc
-            \ vifmimg clear
+			\ vifmimg audio %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 filextype <image/*> feh %c %i &
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
-            \ vifmimg draw %px %py %pw %ph %c
-            \ %pc
-            \ vifmimg clear
+			\ vifmimg draw %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 fileviewer *.ttf,*.otf,*.woff
-            \ vifmimg font %px %py %pw %ph %c
-            \ %pc
-            \ vifmimg clear
+			\ vifmimg font %px %py %pw %ph %c
+			\ %pc
+			\ vifmimg clear
 
 fileviewer */ ls --color --group-directories-first
 fileviewer .*/ ls --color --group-directories-first
@@ -104,4 +104,4 @@ set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*
 
 set grepprg='ag --line-numbers %i %a %s'
 
-" vim:set et sw=4 ts=4 tw=80 ft=vim:
+" vim:set noet sts=-1 sw=4 ts=4 tw=80 ft=vim:

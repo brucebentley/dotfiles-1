@@ -9,7 +9,7 @@ PATH=$PATH:$HOME/.gem/ruby/2.7.0/bin
 PATH=$PATH:$HOME/.cargo/bin
 
 if [[ -d /usr/lib/llvm/10/bin ]]; then
-        PATH=$PATH:/usr/lib/llvm/10/bin
+	PATH=$PATH:/usr/lib/llvm/10/bin
 fi
 
 PATH=$PATH:/bin
