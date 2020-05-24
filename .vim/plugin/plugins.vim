@@ -5,6 +5,9 @@ call emanon#plugin#lazy({
 			\     '<silent> <Leader>u': ':UndotreeToggle<CR>'
 			\   },
 			\   'beforeload': [
-			\     'call emanon#undotree#init()',
+			\     'let g:undotree_HighlightChangedText=0',
+			\     'let g:undotree_SetFocusWhenToggle=1',
+			\     'let g:undotree_WindowLayout=2',
+			\     "let g:undotree_DiffCommand='diff -u'",
 			\   ]
 			\ })
