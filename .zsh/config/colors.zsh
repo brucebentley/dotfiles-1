@@ -70,18 +70,18 @@ function color() {
 		fi
 	}
 
-if [ $# -eq 0 ]; then
-	if [ -s "$__EMANON[BASE16_CONFIG]" ]; then
-		cat "$__EMANON[BASE16_CONFIG]"
-		local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
-		__color "$SCHEME"
-		return
-	else
-		SCHEME=help
+	if [ $# -eq 0 ]; then
+		if [ -s "$__EMANON[BASE16_CONFIG]" ]; then
+			cat "$__EMANON[BASE16_CONFIG]"
+			local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
+			__color "$SCHEME"
+			return
+		else
+			SCHEME=help
+		fi
 	fi
-fi
 
-case "$SCHEME" in
+	case "$SCHEME" in
 	help)
 		echo 'color [tomorrow-night|ocean|grayscale-light|...]'
 		echo
@@ -91,39 +91,39 @@ case "$SCHEME" in
 		;;
 	ls)
 		find "$BASE16_DIR" -name 'base16-*.sh' | \
-			sed -E 's|.+/base16-||' | \
-			sed -E 's/\.sh//' | \
-			column
-					;;
-				-)
-					if [[ -s "$BASE16_CONFIG_PREVIOUS" ]]; then
-						local PREVIOUS_SCHEME=$(head -1 "$BASE16_CONFIG_PREVIOUS")
-						__color "$PREVIOUS_SCHEME"
-					else
-						echo "warning: no previous config found at $BASE16_CONFIG_PREVIOUS"
-						STATUS=1
-					fi
-					;;
-				*)
-					__color "$SCHEME"
-					;;
-			esac
-
-			unfunction __color
-			return $STATUS
-		}
-
-	function () {
-		emulate -L zsh
-
-		if [[ -s "$__EMANON[BASE16_CONFIG]" ]]; then
-			local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
-			local BACKGROUND=$(sed -n -e '2 p' "$__EMANON[BASE16_CONFIG]")
-			if [ "$BACKGROUND" != 'dark' -a "$BACKGROUND" != 'light' ]; then
-				echo "warning: unknown background type in $__EMANON[BASE16_CONFIG]"
-			fi
-			color "$SCHEME"
+		sed -E 's|.+/base16-||' | \
+		sed -E 's/\.sh//' | \
+		column
+		;;
+	-)
+		if [[ -s "$BASE16_CONFIG_PREVIOUS" ]]; then
+			local PREVIOUS_SCHEME=$(head -1 "$BASE16_CONFIG_PREVIOUS")
+			__color "$PREVIOUS_SCHEME"
 		else
-			color default-dark
+			echo "warning: no previous config found at $BASE16_CONFIG_PREVIOUS"
+			STATUS=1
 		fi
-	}
+		;;
+	*)
+		__color "$SCHEME"
+		;;
+	esac
+
+	unfunction __color
+	return $STATUS
+}
+
+function () {
+	emulate -L zsh
+
+	if [[ -s "$__EMANON[BASE16_CONFIG]" ]]; then
+		local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
+		local BACKGROUND=$(sed -n -e '2 p' "$__EMANON[BASE16_CONFIG]")
+		if [ "$BACKGROUND" != 'dark' -a "$BACKGROUND" != 'light' ]; then
+			echo "warning: unknown background type in $__EMANON[BASE16_CONFIG]"
+		fi
+		color "$SCHEME"
+	else
+		color default-dark
+	fi
+}
