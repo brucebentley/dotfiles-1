@@ -76,25 +76,10 @@ function color() {
 			local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
 			__color "$SCHEME"
 			return
-		else
-			SCHEME=help
 		fi
 	fi
 
 	case "$SCHEME" in
-	help)
-		echo 'color [tomorrow-night|ocean|grayscale-light|...]'
-		echo
-		echo 'Available schemes:'
-		color ls
-		return
-		;;
-	ls)
-		find "$BASE16_DIR" -name 'base16-*.sh' | \
-		sed -E 's|.+/base16-||' | \
-		sed -E 's/\.sh//' | \
-		column
-		;;
 	-)
 		if [[ -s "$BASE16_CONFIG_PREVIOUS" ]]; then
 			local PREVIOUS_SCHEME=$(head -1 "$BASE16_CONFIG_PREVIOUS")

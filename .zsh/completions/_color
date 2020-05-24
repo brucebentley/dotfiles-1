@@ -1,3 +1,6 @@
 #compdef color
 
-_values 'colors' $(color ls) help ls
+_values 'colors' $(find "$HOME/.zsh/vendor/base16-shell/scripts" -name 'base16-*.sh' | \
+		   sed -E 's|.+/base16-||' | \
+		   sed -E 's/\.sh//' | \
+		   column)
