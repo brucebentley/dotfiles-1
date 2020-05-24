@@ -32,10 +32,8 @@ Heavily inspired by https://github.com/wincent/wincent
 - `color`: change terminal and Vim color scheme.
 - `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
 - `fh`: "find [in] history"; selecting a history item inserts it into the command line but does not execute it.
-- `jump` (aliased to `j`): to jump to hashed directories.
 - `regmv`: bulk-rename files (eg. `regmv '/\.tif$/.tiff/' *`).
 - `scratch`: create a random temporary scratch directory and `cd` into it.
-- `tick`: moves an existing time warp (eg. `tick +1h`); see `tw` below for a description of time warp.
 - `tmux`: wrapper that reattches to pre-existing sessions, or creates new ones based on the current directory name; additionally, looks for a `.tmux` file to set up windows and panes (note that the first time a given `.tmux` file is encountered the wrapper asks the user whether to trust or skip it).
 - `vifm`: wrapper that utilizes [ueberzug](https://github.com/seebye/ueberzug) to display media previews
 

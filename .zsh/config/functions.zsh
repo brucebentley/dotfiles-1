@@ -107,31 +107,3 @@ function regmv() {
 		shift
 	done
 }
-
-function jump() {
-	emulate -L zsh
-	if [ $# -eq 0 ]; then
-		fd
-	else
-		local DIR="${*%%/}"
-		if [ $(hash -d|cut -d= -f1 | command ag -c "^${DIR}\$") = 0 ]; then
-			fd "$*"
-		else
-			cd ~"$DIR"
-		fi
-	fi
-}
-
-function _jump_complete() {
-	emulate -L zsh
-
-	local COMPLETIONS
-	COMPLETIONS="$(hash -d|cut -d= -f1)"
-	reply=( "${(ps:\n:)COMPLETIONS}" )
-}
-
-compctl -f -K _jump_complete jump
-
-function subtree() {
-	tree -a --prune -P "$@"
-}
