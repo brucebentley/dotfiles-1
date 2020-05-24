@@ -29,9 +29,6 @@
 [submodule ".vim/pack/bundle/opt/scalpel"]
 	path = .vim/pack/bundle/opt/scalpel
 	url = https://github.com/wincent/scalpel.git
-[submodule ".vim/pack/bundle/opt/terminus"]
-	path = .vim/pack/bundle/opt/terminus
-	url = https://github.com/wincent/terminus
 [submodule ".vim/pack/bundle/opt/ultisnips"]
 	path = .vim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips

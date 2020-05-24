@@ -86,7 +86,6 @@ if &loadplugins
 		packadd! loupe
 		packadd! pinnacle
 		packadd! scalpel
-		packadd! terminus
 		packadd! ultisnips
 		packadd! vim-commentary
 		packadd! vim-dispatch
