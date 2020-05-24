@@ -1,9 +1,9 @@
 typeset -A __EMANON
 
-__EMANON[ITALIC_ON]=$'\e[3m'
-__EMANON[ITALIC_OFF]=$'\e[23m'
-__EMANON[LINE_CURSOR]=$'\e[6 q'
-__EMANON[BLOCK_CURSOR]=$'\e[2 q'
+__EMANON[ITALIC_ON]=$'\033[3m'
+__EMANON[ITALIC_OFF]=$'\033[23m'
+__EMANON[LINE_CURSOR]=$'\033[6 q'
+__EMANON[BLOCK_CURSOR]=$'\033[2 q'
 
 fpath=($HOME/.zsh/completions $fpath)
 
@@ -143,7 +143,7 @@ autoload -U add-zsh-hook
 function -set-tab-and-window-title() {
 	emulate -L zsh
 	local CMD="${1:gs/$/\\$}"
-	print -Pn "\e]0;$CMD:q\a"
+	print -Pn "\033]0;$CMD:q\a"
 }
 
 HISTCMD_LOCAL=0
