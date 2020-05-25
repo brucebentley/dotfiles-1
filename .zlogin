@@ -10,7 +10,7 @@ zcompare $HOME/.zcompdump
 zcompare $HOME/.zshrc
 zcompare $HOME/.zshenv
 
-for file in $HOME/.zsh/config/**/*.*zsh; do
+for file in $HOME/.zsh/**/*.*sh; do
 	zcompare ${file}
 done
 ) &!
