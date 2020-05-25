@@ -6,6 +6,8 @@ view
 set relativenumber
 set dotfiles
 
+set notrash
+
 set history=10000
 
 set nofollowlinks
@@ -33,7 +35,7 @@ set scrolloff=1
 
 set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
-set confirm-=delete
+set confirm-=delete,permdelete
 
 set rulerformat=\
 
