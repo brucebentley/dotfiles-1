@@ -6,9 +6,7 @@ alias bt=btcli
 alias cp='cp -rfv'
 alias d='hash -d'
 alias e=exit
-alias f='find . -name'
 alias g=git
-alias j=jump
 alias l='ls --color=auto'
 alias ll='ls -alF --color=auto'
 alias mkdir='mkdir -pv'
