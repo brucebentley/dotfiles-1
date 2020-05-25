@@ -76,6 +76,9 @@ function! emanon#autocmds#focus_window() abort
 			let l:settings=s:get_spell_settings()
 			ownsyntax on
 			set list
+			if has('conceal')
+				set conceallevel=1
+			endif
 			call s:set_spell_settings(l:settings)
 		endif
 	endif
