@@ -16,13 +16,6 @@ let g:loaded_netrwPlugin=1
 
 let g:dispatch_no_maps=1
 
-let g:vim_markdown_override_foldtext=0
-let g:vim_markdown_no_default_key_mappings=1
-let g:vim_markdown_emphasis_multiline=0
-let g:vim_markdown_conceal=0
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_new_list_item_indent=0
-
 let g:LanguageClient_useFloatingHover=1
 let g:LanguageClient_hoverPreview='Always'
 let g:LanguageClient_diagnosticsDisplay={
@@ -92,7 +85,6 @@ if &loadplugins
 		packadd! vim-easydir
 		packadd! vim-eunuch
 		packadd! vim-fugitive
-		packadd! vim-markdown
 		packadd! vim-projectionist
 		packadd! vim-repeat
 		packadd! vim-surround

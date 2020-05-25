@@ -50,9 +50,6 @@
 [submodule ".vim/pack/bundle/opt/vim-fugitive"]
 	path = .vim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/pack/bundle/opt/vim-markdown"]
-	path = .vim/pack/bundle/opt/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown
 [submodule ".vim/pack/bundle/opt/vim-pathogen"]
 	path = .vim/pack/bundle/opt/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
