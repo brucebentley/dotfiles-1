@@ -40,6 +40,18 @@ function s:CheckColorScheme()
 
 	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
+	if &background ==# 'light'
+		let s:conceal_term_fg=249
+		let s:conceal_gui_fg='Grey70'
+	else
+		let s:conceal_term_fg=239
+		let s:conceal_gui_fg='Grey30'
+	endif
+	highlight clear Conceal
+	execute 'highlight Conceal ' .
+				\ 'ctermfg=' . s:conceal_term_fg
+				\ 'guifg=' . s:conceal_gui_fg
+
 	highlight clear NonText
 	highlight link NonText Conceal
 
@@ -63,10 +75,6 @@ function s:CheckColorScheme()
 	highlight clear DiffAdd
 	highlight clear DiffChange
 	highlight clear DiffText
-
-	highlight clear Conceal
-	execute "highlight Conceal cterm=NONE ctermfg=grey ctermbg=NONE"
-	execute "highlight Conceal gui=NONE guifg=grey guibg=NONE"
 
 	if emanon#pinnacle#active()
 		let l:highlight=pinnacle#italicize('ModeMsg')
