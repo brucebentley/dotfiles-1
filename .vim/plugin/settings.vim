@@ -1,6 +1,7 @@
 scriptencoding utf-8
 
-set autoindent
+set cindent
+set cinoptions=:0,l1,t0,g0,(0
 set autoread
 set backspace=indent,start,eol
 
@@ -127,7 +128,8 @@ set sidescroll=0
 set sidescrolloff=5
 set smarttab
 
-set softtabstop=-1
+set tabstop=8
+set softtabstop=8
 
 if has('syntax')
 	set spellcapcheck=
@@ -149,8 +151,6 @@ set switchbuf=usetab
 if has('syntax')
 	set synmaxcol=200
 endif
-
-set tabstop=8
 
 if has('termguicolors')
 	set termguicolors
