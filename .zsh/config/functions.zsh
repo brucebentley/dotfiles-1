@@ -41,17 +41,6 @@ function scratch() {
 	rm -r "$SCRATCH"
 }
 
-function ssh() {
-	emulate -L zsh
-
-	if [[ -z "$@" ]]; then
-		command ssh dev
-	else
-		local LOCAL_TERM=$(echo -n "$TERM" | sed -e s/tmux/screen/)
-		command env TERM=$LOCAL_TERM ssh "$@"
-	fi
-}
-
 function tmux() {
 	emulate -L zsh
 
@@ -84,26 +73,4 @@ function tmux() {
 
 	local SESSION_NAME=$(basename "${$(pwd)//[.:]/_}")
 	env SSH_AUTH_SOCK=$SOCK_SYMLINK tmux new -A -s "$SESSION_NAME"
-}
-
-function regmv() {
-	emulate -L zsh
-
-	if [ $# -lt 2 ]; then
-		echo "  Usage: regmv 'regex' file(s)"
-		echo "  Where:       'regex' should be of the format '/find/replace/'"
-		echo "Example: regmv '/\.tif\$/.tiff/' *"
-		echo "   Note: Must quote/escape the regex otherwise \"\.\" becomes \".\""
-		return 1
-	fi
-	local REGEX="$1"
-	shift
-	while [ -n "$1" ]
-	do
-		local NEWNAME=$(echo "$1" | sed "s${REGEX}g")
-		if [ "${NEWNAME}" != "$1" ]; then
-			mv -i -v "$1" "$NEWNAME"
-		fi
-		shift
-	done
 }
