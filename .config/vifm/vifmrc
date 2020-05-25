@@ -2,9 +2,6 @@ set vicmd=nvim
 
 set syscalls
 
-set trash
-set trashdir=/tmp/trash/vifm
-
 view
 set relativenumber
 set dotfiles
@@ -104,4 +101,4 @@ set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*
 
 set grepprg='ag --line-numbers %i %a %s'
 
-" vim:set noet sts=-1 sw=4 ts=4 tw=80 ft=vim:
+" vim:set noet sts=-1 sw=4 ts=4 tw=80r
