@@ -4,7 +4,9 @@ zsh=(zlogin zsh zshenv zshrc)
 home=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf)
 config=(compton fontconfig vifm)
 REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
-HELP="\
+
+usage() {
+	cat << EOF
 Usage: install [commands]
 
 Commands:
@@ -15,10 +17,8 @@ all      - install all config files
 fonts    - install font files only
 clean    - remove all created symlinks
 conflict - list conflicted directory
-help     - show information about the commands"
-
-usage() {
-	echo "$HELP"
+help     - show information about the commands
+EOF
 }
 
 setup-fonts() {
