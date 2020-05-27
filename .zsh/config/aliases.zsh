@@ -8,6 +8,7 @@ alias g=git
 alias l='ls --color=auto'
 alias ll='ls -alF --color=auto'
 alias mkdir='mkdir -pv'
+alias mv='mv -fuv'
 alias n=ncmpcpp
 alias r=vifm
 alias rm='rm -rfv'
