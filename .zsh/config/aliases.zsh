@@ -1,8 +1,6 @@
 alias ..='cd ..'
 alias ....='cd ../..'
 alias ......='cd ../../..'
-alias a=ag
-alias bt=btcli
 alias cp='cp -rfv'
 alias d='hash -d'
 alias e=exit
@@ -19,8 +17,4 @@ alias v=vim
 
 if command -v nvim > /dev/null; then
 	alias vim=nvim
-fi
-
-if command -v htop > /dev/null; then
-	alias top=htop
 fi
