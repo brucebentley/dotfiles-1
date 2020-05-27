@@ -28,7 +28,6 @@ Heavily inspired by https://github.com/wincent/wincent
 
 ## Shell Functions
 
-- `ag`: Transparently wraps the `ag` executable so as to provide a centralized place to set defaults for that command (seeing as it has no "rc" file).
 - `color`: change terminal and Vim color scheme.
 - `fd`: "find directory" using fast `bfs` and `sk`; automatically `cd`s into the selected directory.
 - `fh`: "find [in] history"; selecting a history item inserts it into the command line but does not execute it.

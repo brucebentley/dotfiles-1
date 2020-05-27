@@ -1,9 +1,3 @@
-function ag() {
-	emulate -L zsh
-
-	command ag --pager="less -iFMRSX" --color-path=34\;3 --color-line-number=35 --color-match=35\;1\;4 "$@"
-}
-
 function vifm() {
 	emulate -L zsh
 
@@ -56,7 +50,7 @@ function tmux() {
 
 	if [ -x .tmux ]; then
 		local DIGEST="$(openssl sha -sha512 .tmux)"
-		if ! command ag --silent "$DIGEST" ~/..tmux.digests 2> /dev/null; then
+		if ! grep --silent "$DIGEST" ~/..tmux.digests 2> /dev/null; then
 			cat .tmux
 			read -k 1 -r 'REPLY?Trust (and run) this .tmux file? (t = trust, otherwise = skip) '
 			echo
