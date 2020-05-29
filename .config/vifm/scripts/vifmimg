@@ -18,36 +18,6 @@ function preview() {
 		> "$FIFO_UEBERZUG"
 	}
 
-function previewepub() {
-	if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-		epub-thumbnailer "$6" "/tmp$PWD/$6.png" 1024
-	fi
-	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
-	[x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-		[path]="/tmp$PWD/$6.png") \
-		> "$FIFO_UEBERZUG"
-	}
-
-function previewvideo() {
-	if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-		ffmpegthumbnailer -i "$6" -o "/tmp$PWD/$6.png" -s 0 -q 10
-	fi
-	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
-	[x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-		[path]="/tmp$PWD/$6.png") \
-		> "$FIFO_UEBERZUG"
-	}
-
-function previewaudio() {
-	if [[ ! -f "/tmp$PWD/$6.png" ]]; then
-		ffmpeg -i "$6" "/tmp$PWD/$6.png" -y &> /dev/null
-	fi
-	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
-	[x]="$2" [y]="$3" [width]="$4" [height]="$5" \
-		[path]="/tmp$PWD/$6.png") \
-		> "$FIFO_UEBERZUG"
-	}
-
 function previewfont() {
 	if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
 		fontpreview -i "$6" -o "/tmp$PWD/$6.png" &> /dev/null
@@ -62,11 +32,7 @@ function main() {
 	case "$1" in
 		"clear") previewclear "$@" ;;
 		"draw") preview "$@" ;;
-		"epub") previewepub "$@" ;;
-		"video") previewvideo "$@" ;;
-		"audio") previewaudio "$@" ;;
 		"font") previewfont "$@" ;;
-		"*") echo "Unknown command: '$@'" ;;
 	esac
 }
 main "$@"

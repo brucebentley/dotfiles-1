@@ -103,8 +103,6 @@ If there are background processes, a yellow asterisk is shown:
 - [tmux](https://github.com/tmux/tmux) => 2.8
 - [vifm](https://github.com/vifm/vifm) => 0.8
   - [ueberzug](https://github.com/seebye/ueberzug)(optional) - for image preview
-  - [epub-thumbnailer](https://github.com/marianosimone/epub-thumbnailer)(optional) - for displaying cover of epub file
-  - [ffmpegthumbnailer](https://github.com/dirkvdb/ffmpegthumbnailer)(optional) - for video thumbnail preview
   - [fontpreview](https://github.com/sdushantha/fontpreview)(optional) - for font preview
 - [the silver searcher](https://github.com/ggreer/the_silver_searcher)
 - [zsh](https://github.com/zsh-users/zsh) => 5.6

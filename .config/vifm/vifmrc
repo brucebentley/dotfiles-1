@@ -43,35 +43,21 @@ fileview ../ echo >/dev/null
 
 filetype <text/*> nvim
 fileviewer <text/*> less
+filetype <video/*> mpv %c %i &
+filextype <image/*> feh %c %i &
 
 fileviewer *.html links -dump %c
 filextype *.html,*.htm xdg-open %f 2>/dev/null &
-
 filextype *.pdf less
+
+filetype * xdg-open %c
+fileviewer * file -b %c
+
 fileviewer *.pdf
 			\ less %px %py %pw %ph %c
 			\ %pc
 
-filextype *.epub vifmimg clear && epr
-fileviewer *.epub
-			\ vifmimg epub %px %py %pw %ph %c
-			\ %pc
-			\ vifmimg clear
 
-filetype <video/*> mpv %c %i &
-fileviewer *.avi,*.mp4,*.wmv,*.dat,*.3gp,*.ogv,*.mkv,*.mpg,*.mpeg,*.vob,
-			\*.fl[icv],*.m2v,*.mov,*.webm,*.ts,*.mts,*.m4v,*.r[am],*.qt,*.divx,
-			\ vifmimg video %px %py %pw %ph %c
-			\ %pc
-			\ vifmimg clear
-
-filetype <audio/*> mpv %c %i &
-fileviewer <audio/*>
-			\ vifmimg audio %px %py %pw %ph %c
-			\ %pc
-			\ vifmimg clear
-
-filextype <image/*> feh %c %i &
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
 			\ vifmimg draw %px %py %pw %ph %c
 			\ %pc
@@ -85,10 +71,6 @@ fileviewer *.ttf,*.otf,*.woff
 fileviewer */ ls --color --group-directories-first
 fileviewer .*/ ls --color --group-directories-first
 
-filetype * xdg-open %c
-fileviewer * file -b %c
-
-
 nmap q ZQ
 nnoremap gg ggj
 nnoremap s :shell<cr>
@@ -100,7 +82,5 @@ set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
-
-set grepprg='ag --line-numbers %i %a %s'
 
 " vim:set noet sts=-1 sw=4 ts=4 tw=80r
