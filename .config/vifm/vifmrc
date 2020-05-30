@@ -1,9 +1,9 @@
-set vicmd=nvim
-
 set syscalls
 
 view
+
 set relativenumber
+
 set dotfiles
 
 set notrash
@@ -21,42 +21,26 @@ colorscheme minimal
 set wildmenu
 set wildstyle=popup
 
-
 set suggestoptions=normal,visual,view,otherpane,keys,marks,registers
 
 set ignorecase
 set smartcase
 
 set nohlsearch
-
 set incsearch
 
 set scrolloff=1
-
-set vifminfo=dhistory,chistory,state,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 set confirm-=delete,permdelete
 
 set rulerformat=\
 
 fileview ../ echo >/dev/null
+fileviewer */ ls --color --group-directories-first
+fileviewer .*/ ls --color --group-directories-first
 
 filetype <text/*> nvim
 fileviewer <text/*> less
-filetype <video/*> mpv %c %i &
-filextype <image/*> feh %c %i &
-
-fileviewer *.html links -dump %c
-filextype *.html,*.htm xdg-open %f 2>/dev/null &
-filextype *.pdf less
-
-filetype * xdg-open %c
-fileviewer * file -b %c
-
-fileviewer *.pdf
-			\ less %px %py %pw %ph %c
-			\ %pc
-
 
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
 			\ vifmimg draw %px %py %pw %ph %c
@@ -67,9 +51,6 @@ fileviewer *.ttf,*.otf,*.woff
 			\ vifmimg font %px %py %pw %ph %c
 			\ %pc
 			\ vifmimg clear
-
-fileviewer */ ls --color --group-directories-first
-fileviewer .*/ ls --color --group-directories-first
 
 nmap q ZQ
 nnoremap gg ggj
