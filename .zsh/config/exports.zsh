@@ -8,5 +8,5 @@ if command -v nvim > /dev/null; then
 	export MANPAGER='nvim +Man!'
 else
 	export EDITOR=vim
+	export MANPAGER='less'
 fi
-
