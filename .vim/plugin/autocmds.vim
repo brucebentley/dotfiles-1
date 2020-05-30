@@ -37,6 +37,10 @@ if has('autocmd')
 			endif
 
 			autocmd BufWritePost */spell/*.add silent! :mkspell! %
+
+			if exists('##TextYankPost')
+				autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('Substitute', 200)
+			endif
 		augroup END
 	endfunction
 
