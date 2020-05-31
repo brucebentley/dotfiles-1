@@ -22,7 +22,7 @@ function! s:commandt()
 endfunction
 
 function! health#emanon#check() abort
-    call health#report_start('Emanon')
+    call health#report_start('Command-T')
     call s:require(has('ruby'), 'Has Ruby support')
     call s:require(s:commandt(), 'Has working Command-T')
 endfunction
