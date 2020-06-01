@@ -134,7 +134,7 @@ function! emanon#statusline#update_highlight() abort
 	let l:highlight=pinnacle#italicize('MatchParen')
 	execute 'highlight User2 ' . l:highlight
 
-	let l:highlight=pinnacle#embolden('StatusLine')
+	let l:highlight=pinnacle#extract_highlight('StatusLine')
 	execute 'highlight User3 ' . l:highlight
 
 	let l:fg=pinnacle#extract_fg(s:emanon_statusline_status_highlight)
@@ -145,7 +145,6 @@ function! emanon#statusline#update_highlight() abort
 				\ pinnacle#highlight({
 				\   'bg': l:fg,
 				\   'fg': pinnacle#extract_fg('Normal'),
-				\   'term': 'bold'
 				\ })
 
 	let l:bg=pinnacle#extract_fg('Cursor')
@@ -154,14 +153,13 @@ function! emanon#statusline#update_highlight() abort
 				\ pinnacle#highlight({
 				\   'bg': l:fg,
 				\   'fg': l:bg,
-				\   'term': 'bold'
 				\ })
 
 	execute 'highlight User6 ' .
 				\ pinnacle#highlight({
 				\   'bg': l:fg,
 				\   'fg': l:bg,
-				\   'term': 'bold,italic'
+				\   'term': 'italic'
 				\ })
 
 	highlight clear StatusLineNC
