@@ -46,28 +46,24 @@ setup-vim() {
 		ln -sf $REPO/.vim $HOME/.config/nvim
 	fi
 	
-	if [[ ! -d $HOME/.vim ]]; then
-		ln -sf $REPO/.vim $HOME
-	fi
-	
 	if [[ -d $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
-		echo "entering: ~/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
-		cd "$HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
+		echo "entering: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
+		cd "$HOME/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
 		ruby extconf.rb
 		make
-		echo -e "leaving: ~/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t\n"
+		echo -e "leaving: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t\n"
 		cd $REPO
 	fi
 	
-	if [[ -d $HOME/.vim/pack/bundle/opt/LanguageClient-neovim ]]; then
-		echo "entering: ~/.vim/pack/bundle/opt/LanguageClient-neovim"
-		cd "$HOME/.vim/pack/bundle/opt/LanguageClient-neovim"
+	if [[ -d $HOME/.config/nvim/pack/bundle/opt/LanguageClient-neovim ]]; then
+		echo "entering: ~/.config/nvim/pack/bundle/opt/LanguageClient-neovim"
+		cd "$HOME/.config/nvim/pack/bundle/opt/LanguageClient-neovim"
 		bash install.sh
-		echo -e "leaving: ~/.vim/pack/bundle/opt/LanguageClient-neovim\n"
+		echo -e "leaving: ~/.config/nvim/pack/bundle/opt/LanguageClient-neovim\n"
 		cd $REPO
 	fi
-	}
-	
+}
+
 setup-misc() {
 	for h in ${home[@]}; do
 		if [[ ! -f $HOME/.$h ]]; then
