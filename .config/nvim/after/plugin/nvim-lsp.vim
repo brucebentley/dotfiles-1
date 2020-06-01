@@ -18,7 +18,7 @@ function s:SetUpLspHighlights()
 
 	execute 'highlight LspDiagnosticsHintSign ' . pinnacle#highlight({
 				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('TODO')
+				\   'fg': pinnacle#extract_fg('Todo')
 				\ })
 
 	execute 'highlight LspDiagnosticsInformationSign ' . pinnacle#highlight({
