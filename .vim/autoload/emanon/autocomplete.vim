@@ -121,7 +121,7 @@ endfunction
 
 let s:deoplete_init_done=0
 function! emanon#autocomplete#deoplete_init() abort
-	if s:deoplete_init_done || !has('nvim')
+	if s:deoplete_init_done
 		return
 	endif
 	let s:deoplete_init_done=1

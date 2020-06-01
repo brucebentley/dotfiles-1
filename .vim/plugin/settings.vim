@@ -45,9 +45,7 @@ if has('folding')
 		set fillchars+=vert:┃
 	endif
 
-	if has('nvim')
-		set fillchars+=eob:\ 
-	endif
+	set fillchars+=eob:\ 
 
 	set foldmethod=indent
 	set foldlevelstart=99
@@ -59,13 +57,6 @@ set formatoptions+=n
 set guifont=DejaVuSansMono\ NF:h18
 set guioptions-=T
 set hidden
-
-if !has('nvim')
-	set highlight+=@:Conceal
-	set highlight+=D:Conceal
-	set highlight+=N:FoldColumn
-	set highlight+=c:LineNr
-endif
 
 if exists('&completeopt')
 	set completeopt=
