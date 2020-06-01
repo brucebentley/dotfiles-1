@@ -60,7 +60,7 @@ if exists('s:ccl_lsp')
 	endfo
 endif
 
-let g:LanguageClient_settingsPath = '~/.vim/settings.json'
+let g:LanguageClient_settingsPath = '~/.config/nvim/settings.json'
 let g:LanguageClient_diagnosticsList='Location'
 
 if filereadable('/usr/bin/python3')
