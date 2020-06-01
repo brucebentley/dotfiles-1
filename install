@@ -43,7 +43,7 @@ setup-zsh() {
 
 setup-vim() {
 	if [[ ! -d $HOME/.config/nvim ]]; then
-		ln -sf $REPO/.vim $HOME/.config/nvim
+		ln -sf $REPO/.config/nvim $HOME/.config/nvim
 	fi
 	
 	if [[ -d $HOME/.vim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then

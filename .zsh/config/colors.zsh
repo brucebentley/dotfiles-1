@@ -1,4 +1,4 @@
-__EMANON[BASE16_CONFIG]=~/.vim/.base16
+__EMANON[BASE16_CONFIG]=~/.config/nvim/.base16
 
 function luma() {
 	emulate -L zsh

@@ -1,66 +1,66 @@
-[submodule ".vim/pack/bundle/opt/LanguageClient-neovim"]
+[submodule ".config/nvim/pack/bundle/opt/LanguageClient-neovim"]
 	ignore = dirty
 	branch = next
-	path = .vim/pack/bundle/opt/LanguageClient-neovim
+	path = .config/nvim/pack/bundle/opt/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
-[submodule ".vim/pack/bundle/opt/base16-vim"]
-	path = .vim/pack/bundle/opt/base16-vim
+[submodule ".config/nvim/pack/bundle/opt/base16-vim"]
+	path = .config/nvim/pack/bundle/opt/base16-vim
 	url = https://github.com/chriskempson/base16-vim/
-[submodule ".vim/pack/bundle/opt/command-t"]
+[submodule ".config/nvim/pack/bundle/opt/command-t"]
 	ignore = dirty
 	branch = next
-	path = .vim/pack/bundle/opt/command-t
+	path = .config/nvim/pack/bundle/opt/command-t
 	url = https://github.com/wincent/command-t
-[submodule ".vim/pack/bundle/opt/deoplete.nvim"]
-	path = .vim/pack/bundle/opt/deoplete.nvim
+[submodule ".config/nvim/pack/bundle/opt/deoplete.nvim"]
+	path = .config/nvim/pack/bundle/opt/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule ".vim/pack/bundle/opt/ferret"]
-	path = .vim/pack/bundle/opt/ferret
+[submodule ".config/nvim/pack/bundle/opt/ferret"]
+	path = .config/nvim/pack/bundle/opt/ferret
 	url = https://github.com/wincent/ferret
-[submodule ".vim/pack/bundle/opt/loupe"]
-	path = .vim/pack/bundle/opt/loupe
+[submodule ".config/nvim/pack/bundle/opt/loupe"]
+	path = .config/nvim/pack/bundle/opt/loupe
 	url = https://github.com/wincent/loupe
-[submodule ".vim/pack/bundle/opt/nerdtree"]
-	path = .vim/pack/bundle/opt/nerdtree
+[submodule ".config/nvim/pack/bundle/opt/nerdtree"]
+	path = .config/nvim/pack/bundle/opt/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule ".vim/pack/bundle/opt/pinnacle"]
-	path = .vim/pack/bundle/opt/pinnacle
+[submodule ".config/nvim/pack/bundle/opt/pinnacle"]
+	path = .config/nvim/pack/bundle/opt/pinnacle
 	url = https://github.com/wincent/pinnacle
-[submodule ".vim/pack/bundle/opt/scalpel"]
-	path = .vim/pack/bundle/opt/scalpel
+[submodule ".config/nvim/pack/bundle/opt/scalpel"]
+	path = .config/nvim/pack/bundle/opt/scalpel
 	url = https://github.com/wincent/scalpel.git
-[submodule ".vim/pack/bundle/opt/ultisnips"]
-	path = .vim/pack/bundle/opt/ultisnips
+[submodule ".config/nvim/pack/bundle/opt/ultisnips"]
+	path = .config/nvim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule ".vim/pack/bundle/opt/undotree"]
-	path = .vim/pack/bundle/opt/undotree
+[submodule ".config/nvim/pack/bundle/opt/undotree"]
+	path = .config/nvim/pack/bundle/opt/undotree
 	url = https://github.com/mbbill/undotree
-[submodule ".vim/pack/bundle/opt/vim-commentary"]
-	path = .vim/pack/bundle/opt/vim-commentary
+[submodule ".config/nvim/pack/bundle/opt/vim-commentary"]
+	path = .config/nvim/pack/bundle/opt/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule ".vim/pack/bundle/opt/vim-dispatch"]
-	path = .vim/pack/bundle/opt/vim-dispatch
+[submodule ".config/nvim/pack/bundle/opt/vim-dispatch"]
+	path = .config/nvim/pack/bundle/opt/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule ".vim/pack/bundle/opt/vim-easydir"]
-	path = .vim/pack/bundle/opt/vim-easydir
+[submodule ".config/nvim/pack/bundle/opt/vim-easydir"]
+	path = .config/nvim/pack/bundle/opt/vim-easydir
 	url = https://github.com/duggiefresh/vim-easydir
-[submodule ".vim/pack/bundle/opt/vim-eunuch"]
-	path = .vim/pack/bundle/opt/vim-eunuch
+[submodule ".config/nvim/pack/bundle/opt/vim-eunuch"]
+	path = .config/nvim/pack/bundle/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
-[submodule ".vim/pack/bundle/opt/vim-fugitive"]
-	path = .vim/pack/bundle/opt/vim-fugitive
+[submodule ".config/nvim/pack/bundle/opt/vim-fugitive"]
+	path = .config/nvim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/pack/bundle/opt/vim-pathogen"]
-	path = .vim/pack/bundle/opt/vim-pathogen
+[submodule ".config/nvim/pack/bundle/opt/vim-pathogen"]
+	path = .config/nvim/pack/bundle/opt/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen
-[submodule ".vim/pack/bundle/opt/vim-projectionist"]
-	path = .vim/pack/bundle/opt/vim-projectionist
+[submodule ".config/nvim/pack/bundle/opt/vim-projectionist"]
+	path = .config/nvim/pack/bundle/opt/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist
-[submodule ".vim/pack/bundle/opt/vim-repeat"]
-	path = .vim/pack/bundle/opt/vim-repeat
+[submodule ".config/nvim/pack/bundle/opt/vim-repeat"]
+	path = .config/nvim/pack/bundle/opt/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule ".vim/pack/bundle/opt/vim-surround"]
-	path = .vim/pack/bundle/opt/vim-surround
+[submodule ".config/nvim/pack/bundle/opt/vim-surround"]
+	path = .config/nvim/pack/bundle/opt/vim-surround
 	url = https://github.com/tpope/vim-surround
 [submodule ".zsh/vendor/base16-shell"]
 	path = .zsh/vendor/base16-shell
