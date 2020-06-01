@@ -98,10 +98,6 @@ clean-symlink() {
 		fi
 	done
 	
-	if [[ -L $HOME/.vim ]]; then
-		rm $HOME/.vim
-	fi
-	
 	if [[ -L $HOME/.config/nvim ]]; then
 		rm $HOME/.config/nvim
 	fi
