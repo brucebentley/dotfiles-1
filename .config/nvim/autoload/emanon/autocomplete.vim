@@ -127,7 +127,6 @@ function! emanon#autocomplete#deoplete_init() abort
 	let s:deoplete_init_done=1
 	call deoplete#enable()
 	call deoplete#custom#source('file', 'rank', 3000)
-	call deoplete#custom#source('LanguageClient', 'rank', 1000)
 	call deoplete#custom#source('ultisnips', 'rank', 2000)
 	call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 endfunction
