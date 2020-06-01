@@ -13,10 +13,7 @@ if has('autocmd')
 	augroup END
 endif
 
-let g:UltiSnipsSnippetsDir = $HOME . '/.vim/ultisnips'
-let g:UltiSnipsSnippetDirectories = [
-			\ $HOME . '/.vim/ultisnips'
-			\ ]
+let g:UltiSnipsSnippetDirectories = [ 'ultisnips' ]
 
 packadd! deoplete.nvim
 call emanon#defer#defer('call emanon#autocomplete#deoplete_init()')
