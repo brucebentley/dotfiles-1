@@ -38,6 +38,7 @@ if &loadplugins
 		packadd! pinnacle
 		packadd! scalpel
 		packadd! ultisnips
+		packadd! vim-clang-format
 		packadd! vim-commentary
 		packadd! vim-dispatch
 		packadd! vim-easydir
