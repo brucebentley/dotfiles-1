@@ -32,6 +32,7 @@ if &loadplugins
 	if has('packages')
 		packadd! command-t
 		packadd! deoplete-lsp
+		packadd! deoplete.nvim
 		packadd! ferret
 		packadd! loupe
 		packadd! nvim-lsp
