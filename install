@@ -3,10 +3,10 @@
 zsh=(zlogin zsh zshenv zshrc)
 home=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf)
 config=(compton fontconfig vifm)
-REPO=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
+REPO_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 usage() {
-	cat << EOF
+cat << EOF
 Usage: install [commands]
 
 Commands:
@@ -22,13 +22,13 @@ EOF
 }
 
 setup-fonts() {
-	ln -sf $REPO/.fonts $HOME
+	ln -sf $REPO_PATH/.fonts $HOME
 }
 
 setup-zsh() {
 	for z in ${zsh[@]}; do
 		if [[ ! -f $HOME/.$z ]]; then
-			ln -sf $REPO/.$z $HOME
+			ln -sf $REPO_PATH/.$z $HOME
 		fi
 	done
 	
@@ -37,13 +37,13 @@ setup-zsh() {
 		cd $HOME/.zsh/vendor/fzf
 		./install --bin --no-key-bindings --no-completion --no-update-rc --no-bash --no-zsh --no-fish --64
 		echo -e 'leaving: ~/.zsh/vendor/fzf\n'
-		cd $REPO
+		cd $REPO_PATH
 	fi
 }
 
 setup-vim() {
 	if [[ ! -d $HOME/.config/nvim ]]; then
-		ln -sf $REPO/.config/nvim $HOME/.config/nvim
+		ln -sf $REPO_PATH/.config/nvim $HOME/.config/nvim
 	fi
 	
 	if [[ -d $HOME/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
@@ -52,20 +52,20 @@ setup-vim() {
 		ruby extconf.rb
 		make
 		echo -e "leaving: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t\n"
-		cd $REPO
+		cd $REPO_PATH
 	fi
 }
 
 setup-misc() {
 	for h in ${home[@]}; do
 		if [[ ! -f $HOME/.$h ]]; then
-			ln -sf $REPO/.$h $HOME
+			ln -sf $REPO_PATH/.$h $HOME
 		fi
 	done
 	
 	for c in ${config[@]}; do
 		if [[ ! -f $HOME/.config/$c ]]; then
-			ln -sf $REPO/.config/$c $HOME/.config
+			ln -sf $REPO_PATH/.config/$c $HOME/.config
 		fi
 	done
 }
@@ -104,7 +104,7 @@ clean-symlink() {
 }
 
 setup-git() {
-	ln -sf $REPO/.gitconfig $HOME
+	ln -sf $REPO_PATH/.gitconfig $HOME
 	printf "Username for 'https://github.com': "
 	read name
 	printf "Email for 'https://$name@github.com': "
