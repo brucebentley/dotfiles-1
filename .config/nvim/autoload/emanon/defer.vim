@@ -5,7 +5,3 @@ function! emanon#defer#defer(evalable) abort
 		execute a:evalable
 	endif
 endfunction
-
-function! emanon#defer#packadd(pack, plugin) abort
-	execute "call emanon#defer#defer('call emanon#plugin#packadd(\"' . a:pack . '\", \"' . a:plugin . '\")')"
-endfunction
