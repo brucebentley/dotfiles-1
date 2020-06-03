@@ -6,8 +6,8 @@
 
 	ff = "!git merge --ff-only"
 
-	ca = "!git add -A && git commit -av"
-	ci = "!git commit -v"
+	ca = "!git add -A && git commit -a"
+	ci = "!git commit"
 
 	amend = "!git add -A && git commit --amend --no-edit"
 
@@ -70,6 +70,9 @@
 
 [color "status"]
 	untracked = blue
+
+[commit]
+	verbose = true
 
 [core]
 	compression = 9
