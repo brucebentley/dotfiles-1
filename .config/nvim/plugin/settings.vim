@@ -158,11 +158,7 @@ endif
 set updatecount=80
 set updatetime=200
 
-if has('viminfo')
-	let s:viminfo='viminfo'
-elseif has('shada')
-	let s:viminfo='shada'
-endif
+let s:viminfo='shada'
 
 if exists('s:viminfo')
 	if exists('$SUDO_USER')
