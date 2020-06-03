@@ -76,11 +76,6 @@ function s:CheckColorScheme()
 	highlight clear DiffChange
 	highlight clear DiffText
 
-	if emanon#pinnacle#active()
-		let l:highlight=pinnacle#italicize('ModeMsg')
-		execute 'highlight User8 ' . l:highlight
-	endif
-
 	doautocmd ColorScheme
 endfunction
 

@@ -7,9 +7,10 @@ function s:SetUpLspHighlights()
 		return
 	endif
 
-	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'ModeMsg')
-
-	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'Type')
+	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'ErrorMsg')
+	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'Todo')
+	execute 'highlight LspDiagnosticsInformation ' . pinnacle#decorate('italic', 'Conditional')
+	execute 'highlight LspDiagnosticsWarning ' . pinnacle#decorate('italic', 'Todo')
 
 	execute 'highlight LspDiagnosticsErrorSign ' . pinnacle#highlight({
 				\   'bg': pinnacle#extract_bg('ColorColumn'),
