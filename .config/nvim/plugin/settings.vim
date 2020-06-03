@@ -52,10 +52,6 @@ if has('folding')
 	set foldtext=emanon#settings#foldtext()
 endif
 
-set formatoptions+=j
-set formatoptions+=n
-set guifont=DejaVuSansMono\ NF:h18
-set guioptions-=T
 set hidden
 
 if exists('&completeopt')
@@ -76,7 +72,7 @@ endif
 set tabpagemax=50
 
 set list
-set listchars=nbsp:⦸
+set listchars=nbsp:ø
 set listchars+=tab:▷┅
 set listchars+=extends:»
 set listchars+=precedes:«
