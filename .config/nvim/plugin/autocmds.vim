@@ -36,8 +36,6 @@ if has('autocmd')
 				autocmd BufWinEnter * if line("'\"") > 1 && line("'\"") <= line('$') | execute "normal! g`\"" | endif
 			endif
 
-			autocmd BufWritePost */spell/*.add silent! :mkspell! %
-
 			autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
 			autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
 
