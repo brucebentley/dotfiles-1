@@ -48,9 +48,6 @@ if &loadplugins
 		packadd! vim-projectionist
 		packadd! vim-repeat
 		packadd! vim-surround
-	else
-		source $HOME/.vim/pack/bundle/opt/vim-pathogen/autoload/pathogen.vim
-		call pathogen#infect('pack/bundle/opt/{}')
 	endif
 endif
 

@@ -54,9 +54,6 @@
 [submodule ".config/nvim/pack/bundle/opt/vim-fugitive"]
 	path = .config/nvim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".config/nvim/pack/bundle/opt/vim-pathogen"]
-	path = .config/nvim/pack/bundle/opt/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen
 [submodule ".config/nvim/pack/bundle/opt/vim-projectionist"]
 	path = .config/nvim/pack/bundle/opt/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist
