@@ -84,47 +84,6 @@ function! emanon#autocmds#focus_window() abort
 	endif
 endfunction
 
-function! emanon#autocmds#blur_statusline() abort
-	let l:blurred='%{emanon#statusline#gutterpadding()}'
-	let l:blurred.='\ '
-	let l:blurred.='\ '
-	let l:blurred.='\ '
-	let l:blurred.='\ '
-	let l:blurred.='%<'
-	let l:blurred.='%f'
-	let l:blurred.='%='
-	call s:update_statusline(l:blurred, 'blur')
-endfunction
-
-function! emanon#autocmds#focus_statusline() abort
-	call s:update_statusline('', 'focus')
-endfunction
-
-function! s:update_statusline(default, action) abort
-	let l:statusline = s:get_custom_statusline(a:action)
-	if type(l:statusline) == type('')
-		execute 'setlocal statusline=' . l:statusline
-	elseif l:statusline == 0
-		return
-	else
-		execute 'setlocal statusline=' . a:default
-	endif
-endfunction
-
-function! s:get_custom_statusline(action) abort
-	if &ft ==# 'command-t'
-		return '\ \ ' . substitute(bufname('%'), ' ', '\\ ', 'g')
-	elseif &ft ==# 'diff' && exists('t:diffpanel') && t:diffpanel.bufname ==# bufname('%')
-		return 'Undotree\ preview'
-	elseif &ft ==# 'undotree'
-		return 0
-	elseif &ft ==# 'nerdtree'
-		return 0
-	endif
-
-	return 1
-endfunction
-
 function! emanon#autocmds#idleboot() abort
 	augroup emanonIdleboot
 		autocmd!

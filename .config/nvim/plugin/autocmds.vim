@@ -38,6 +38,9 @@ if has('autocmd')
 
 			autocmd BufWritePost */spell/*.add silent! :mkspell! %
 
+			autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
+			autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
+
 			if exists('##TextYankPost')
 				autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('Substitute', 200)
 			endif
