@@ -7,19 +7,19 @@ function s:SetUpLspHighlights()
 		return
 	endif
 
-	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'ErrorMsg')
-	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'Todo')
+	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'WarningMsg')
+	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'ModeMsg')
 	execute 'highlight LspDiagnosticsInformation ' . pinnacle#decorate('italic', 'Conditional')
-	execute 'highlight LspDiagnosticsWarning ' . pinnacle#decorate('italic', 'Todo')
+	execute 'highlight LspDiagnosticsWarning ' . pinnacle#decorate('italic', 'Type')
 
 	execute 'highlight LspDiagnosticsErrorSign ' . pinnacle#highlight({
 				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('ErrorMsg')
+				\   'fg': pinnacle#extract_fg('WarningMsg')
 				\ })
 
 	execute 'highlight LspDiagnosticsHintSign ' . pinnacle#highlight({
 				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('Todo')
+				\   'fg': pinnacle#extract_fg('ModeMsg')
 				\ })
 
 	execute 'highlight LspDiagnosticsInformationSign ' . pinnacle#highlight({
@@ -29,7 +29,7 @@ function s:SetUpLspHighlights()
 
 	execute 'highlight LspDiagnosticsWarningSign ' . pinnacle#highlight({
 				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('Todo')
+				\   'fg': pinnacle#extract_fg('Type')
 				\ })
 endfunction
 
