@@ -62,6 +62,7 @@ if exists('&inccommand')
 	set inccommand=split
 endif
 
+set ruler
 set laststatus=2
 set lazyredraw
 
