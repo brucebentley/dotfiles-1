@@ -25,7 +25,6 @@ if &loadplugins
 		packadd! deoplete-lsp
 		packadd! deoplete.nvim
 		packadd! ferret
-		packadd! loupe
 		packadd! nvim-lsp
 		packadd! pinnacle
 		packadd! ultisnips
