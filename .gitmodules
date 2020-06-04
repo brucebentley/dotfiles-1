@@ -30,9 +30,6 @@
 [submodule ".config/nvim/pack/bundle/opt/ultisnips"]
 	path = .config/nvim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule ".config/nvim/pack/bundle/opt/undotree"]
-	path = .config/nvim/pack/bundle/opt/undotree
-	url = https://github.com/mbbill/undotree
 [submodule ".config/nvim/pack/bundle/opt/vim-clang-format"]
 	path = .config/nvim/pack/bundle/opt/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format
