@@ -118,15 +118,3 @@ function! emanon#autocomplete#smart_bs() abort
 		endif
 	endif
 endfunction
-
-let s:deoplete_init_done=0
-function! emanon#autocomplete#deoplete_init() abort
-	if s:deoplete_init_done
-		return
-	endif
-	let s:deoplete_init_done=1
-	call deoplete#enable()
-	call deoplete#custom#source('file', 'rank', 3000)
-	call deoplete#custom#source('ultisnips', 'rank', 2000)
-	call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-endfunction

@@ -1,6 +1,8 @@
 let mapleader="\<Space>"
 let maplocalleader="\\"
 
+let g:deoplete#enable_at_startup = 1
+
 let g:LoupeCenterResults=0
 
 map <Nop> <Plug>(LoupeN)
