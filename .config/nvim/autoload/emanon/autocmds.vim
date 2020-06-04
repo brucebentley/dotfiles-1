@@ -3,13 +3,6 @@ let g:emanonColorColumnFileTypeBlacklist = ['command-t', 'diff', 'fugitiveblame'
 let g:emanonCursorlineBlacklist = ['command-t']
 let g:emanonMkviewFiletypeBlacklist = ['diff', 'gitcommit']
 
-function! emanon#autocmds#attempt_select_last_file() abort
-	let l:previous=expand('#:t')
-	if l:previous !=# ''
-		call search('\v<' . l:previous . '>')
-	endif
-endfunction
-
 function! emanon#autocmds#should_colorcolumn() abort
 	if index(g:emanonColorColumnBufferNameBlacklist, bufname(bufnr('%'))) != -1
 		return 0
