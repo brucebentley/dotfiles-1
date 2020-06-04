@@ -3,10 +3,6 @@ require'nvim_lsp'.clangd.setup{}
 END
 
 function s:SetUpLspHighlights()
-	if !emanon#pinnacle#active()
-		return
-	endif
-
 	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'WarningMsg')
 	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'ModeMsg')
 	execute 'highlight LspDiagnosticsInformation ' . pinnacle#decorate('italic', 'Conditional')

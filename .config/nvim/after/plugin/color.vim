@@ -1,8 +1,4 @@
 function s:RemoveBg(group)
-	if !emanon#pinnacle#active()
-		return
-	endif
-
 	let l:highlight=filter(pinnacle#dump(a:group), 'v:key != "bg"')
 	execute 'highlight! clear ' . a:group
 	execute 'highlight! ' . a:group . ' ' . pinnacle#highlight(l:highlight)
@@ -34,9 +30,7 @@ function s:CheckColorScheme()
 		colorscheme base16-default-dark
 	endif
 
-	if emanon#pinnacle#active()
-		execute 'highlight Comment ' . pinnacle#italicize('Comment')
-	endif
+	execute 'highlight Comment ' . pinnacle#italicize('Comment')
 
 	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
@@ -47,6 +41,7 @@ function s:CheckColorScheme()
 		let s:conceal_term_fg=239
 		let s:conceal_gui_fg='Grey30'
 	endif
+
 	highlight clear Conceal
 	execute 'highlight Conceal ' .
 				\ 'ctermfg=' . s:conceal_term_fg
@@ -55,10 +50,8 @@ function s:CheckColorScheme()
 	highlight clear NonText
 	highlight link NonText Conceal
 
-	if emanon#pinnacle#active()
-		highlight clear CursorLineNr
-		execute 'highlight CursorLineNr ' . pinnacle#extract_highlight('DiffText')
-	endif
+	highlight clear CursorLineNr
+	execute 'highlight CursorLineNr ' . pinnacle#extract_highlight('DiffText')
 
 	highlight clear DiffDelete
 	highlight link DiffDelete Conceal

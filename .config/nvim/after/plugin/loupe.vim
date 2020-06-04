@@ -1,8 +1,4 @@
-function! s:SetUpLoupeHighlight()
-	if !emanon#pinnacle#active()
-		return
-	endif
-
+function s:SetUpLoupeHighlight()
 	execute 'highlight! QuickFixLine ' . pinnacle#extract_highlight('PmenuSel')
 
 	highlight! clear Search
@@ -15,3 +11,5 @@ if has('autocmd')
 		autocmd ColorScheme * call s:SetUpLoupeHighlight()
 	augroup END
 endif
+
+call s:SetUpLoupeHighlight()
