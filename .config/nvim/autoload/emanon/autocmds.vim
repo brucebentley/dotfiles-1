@@ -41,34 +41,3 @@ function! emanon#autocmds#mkview() abort
 	catch /\<E190\>/
 	endtry
 endfunction
-
-function! emanon#autocmds#blur_window() abort
-	if emanon#autocmds#should_colorcolumn()
-		ownsyntax off
-		set nolist
-		if has('conceal')
-			set conceallevel=0
-		endif
-	endif
-endfunction
-
-function! emanon#autocmds#focus_window() abort
-	if emanon#autocmds#should_colorcolumn()
-		if !empty(&ft)
-			ownsyntax on
-			set list
-			if has('conceal')
-				set conceallevel=1
-			endif
-		endif
-	endif
-endfunction
-
-function! emanon#autocmds#idleboot() abort
-	augroup emanonIdleboot
-		autocmd!
-	augroup END
-
-	doautocmd User emanonDefer
-	autocmd! User emanonDefer
-endfunction
