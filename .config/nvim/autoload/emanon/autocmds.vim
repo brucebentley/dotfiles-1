@@ -1,5 +1,5 @@
 let g:emanonColorColumnBufferNameBlacklist = []
-let g:emanonColorColumnFileTypeBlacklist = ['command-t', 'diff', 'fugitiveblame']
+let g:emanonColorColumnFileTypeBlacklist = ['command-t', 'diff', 'fugitiveblame', 'netrw']
 let g:emanonCursorlineBlacklist = ['command-t']
 let g:emanonMkviewFiletypeBlacklist = ['diff', 'gitcommit']
 
