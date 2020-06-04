@@ -36,9 +36,6 @@
 [submodule ".config/nvim/pack/bundle/opt/vim-dispatch"]
 	path = .config/nvim/pack/bundle/opt/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule ".config/nvim/pack/bundle/opt/vim-eunuch"]
-	path = .config/nvim/pack/bundle/opt/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch
 [submodule ".config/nvim/pack/bundle/opt/vim-fugitive"]
 	path = .config/nvim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive

@@ -24,7 +24,6 @@ if &loadplugins
 		packadd! vim-clang-format
 		packadd! vim-commentary
 		packadd! vim-dispatch
-		packadd! vim-eunuch
 		packadd! vim-fugitive
 		packadd! vim-projectionist
 		packadd! vim-repeat
