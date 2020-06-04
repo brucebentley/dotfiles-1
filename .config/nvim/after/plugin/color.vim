@@ -66,7 +66,6 @@ function s:CheckColorScheme()
 	highlight link VertSplit LineNr
 
 	highlight link vimUserFunc NONE
-	highlight link NERDTreeFile NONE
 
 	for l:group in ['DiffAdded', 'DiffFile', 'DiffNewFile', 'DiffLine', 'DiffRemoved']
 		call s:RemoveBg(l:group)

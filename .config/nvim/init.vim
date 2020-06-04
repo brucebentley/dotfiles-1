@@ -6,11 +6,6 @@ let g:LoupeCenterResults=0
 map <Nop> <Plug>(LoupeN)
 nmap <Nop> <Plug>(Loupen)
 
-let g:NERDTreeMapJumpPrevSibling='<Nop>'
-let g:NERDTreeMapJumpNextSibling='<Nop>'
-
-let g:NERDTreeCaseSensitiveSort=1
-
 let g:loaded_netrw=1
 let g:loaded_netrwPlugin=1
 

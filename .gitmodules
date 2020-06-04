@@ -18,9 +18,6 @@
 [submodule ".config/nvim/pack/bundle/opt/loupe"]
 	path = .config/nvim/pack/bundle/opt/loupe
 	url = https://github.com/wincent/loupe
-[submodule ".config/nvim/pack/bundle/opt/nerdtree"]
-	path = .config/nvim/pack/bundle/opt/nerdtree
-	url = https://github.com/scrooloose/nerdtree
 [submodule ".config/nvim/pack/bundle/opt/nvim-lsp"]
 	path = .config/nvim/pack/bundle/opt/nvim-lsp
 	url = https://github.com/neovim/nvim-lsp
