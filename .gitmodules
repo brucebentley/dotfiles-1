@@ -24,9 +24,6 @@
 [submodule ".config/nvim/pack/bundle/opt/pinnacle"]
 	path = .config/nvim/pack/bundle/opt/pinnacle
 	url = https://github.com/wincent/pinnacle
-[submodule ".config/nvim/pack/bundle/opt/scalpel"]
-	path = .config/nvim/pack/bundle/opt/scalpel
-	url = https://github.com/wincent/scalpel.git
 [submodule ".config/nvim/pack/bundle/opt/ultisnips"]
 	path = .config/nvim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips

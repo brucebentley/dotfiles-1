@@ -28,7 +28,6 @@ if &loadplugins
 		packadd! loupe
 		packadd! nvim-lsp
 		packadd! pinnacle
-		packadd! scalpel
 		packadd! ultisnips
 		packadd! vim-clang-format
 		packadd! vim-commentary
