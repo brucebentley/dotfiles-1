@@ -6,11 +6,6 @@ let g:LoupeCenterResults=0
 map <Nop> <Plug>(LoupeN)
 nmap <Nop> <Plug>(Loupen)
 
-let g:loaded_netrw=1
-let g:loaded_netrwPlugin=1
-
-let g:dispatch_no_maps=1
-
 if filereadable('/usr/bin/python3')
 	let g:python3_host_prog='/usr/bin/python3'
 endif
