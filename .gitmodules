@@ -60,6 +60,9 @@
 [submodule ".config/nvim/pack/bundle/opt/vim-surround"]
 	path = .config/nvim/pack/bundle/opt/vim-surround
 	url = https://github.com/tpope/vim-surround
+[submodule ".config/nvim/pack/bundle/opt/vim-vinegar"]
+	path = .config/nvim/pack/bundle/opt/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
 [submodule ".zsh/vendor/base16-shell"]
 	path = .zsh/vendor/base16-shell
 	url = https://github.com/chriskempson/base16-shell

@@ -38,6 +38,7 @@ if &loadplugins
 		packadd! vim-projectionist
 		packadd! vim-repeat
 		packadd! vim-surround
+		packadd! vim-vinegar
 	endif
 endif
 
