@@ -15,7 +15,6 @@ if filereadable('/usr/local/lib64/ruby/gems/2.7.0/bin/neovim-ruby-host')
 endif
 
 nmap <leader>f <Plug>(FerretAckWord)
-
 nmap <leader>s <Plug>(FerretAcks)
 
 if &loadplugins
