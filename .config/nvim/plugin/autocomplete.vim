@@ -13,7 +13,7 @@ if has('autocmd')
 	augroup END
 endif
 
-let g:UltiSnipsSnippetDirectories = [ 'ultisnips' ]
+let g:UltiSnipsSnippetDirectories = ['ultisnips']
 
 call deoplete#enable()
 call deoplete#custom#source('file', 'rank', 2000)
