@@ -1,6 +1,6 @@
 nnoremap <silent> <Leader>r :call emanon#mappings#leader#cycle_numbering()<CR>
 
-nnoremap <silent> <Leader>zz :call emanon#mappings#leader#zap_trailing_whitespaces()<CR>
+nnoremap <silent> <Leader>zz :%s/\s\+$//e<CR>
 
 nnoremap <silent> <LocalLeader>dd :Gvdiff<CR>
 nnoremap <silent> <LocalLeader>dh :diffget //2<CR>

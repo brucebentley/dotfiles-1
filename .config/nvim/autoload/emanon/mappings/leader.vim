@@ -9,7 +9,3 @@ function! emanon#mappings#leader#cycle_numbering() abort
 		set number!
 	endif
 endfunction
-
-function! emanon#mappings#leader#zap_trailing_whitespaces() abort
-	call emanon#functions#substitute('\s\+$', '', '')
-endfunction
