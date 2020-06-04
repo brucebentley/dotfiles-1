@@ -15,19 +15,3 @@ let g:CommandTScanDotDirectories=1
 let g:CommandTTraverseSCM='pwd'
 let g:CommandTWildIgnore=&wildignore
 let g:CommandTWildIgnore.=',*/.git/*'
-
-function s:CommandTPreBoot()
-	augroup CommandTBoot
-		autocmd!
-		autocmd VimEnter * call s:CommandTPostBoot()
-	augroup END
-endfunction
-
-function s:CommandTPostBoot()
-	augroup CommandTBoot
-		autocmd!
-	augroup END
-	CommandT
-endfunction
-
-command CommandTBoot call s:CommandTPreBoot()
