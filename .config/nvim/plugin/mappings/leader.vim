@@ -1,3 +1,5 @@
+nnoremap <silent> <leader>n :noh<CR>
+
 nnoremap <silent> <Leader>r :call emanon#mappings#leader#cycle_numbering()<CR>
 
 nnoremap <silent> <Leader>zz :%s/\s\+$//e<CR>
