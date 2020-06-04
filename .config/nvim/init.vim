@@ -1,13 +1,6 @@
 let mapleader="\<Space>"
 let maplocalleader="\\"
 
-let g:deoplete#enable_at_startup = 1
-
-let g:LoupeCenterResults=0
-
-map <Nop> <Plug>(LoupeN)
-nmap <Nop> <Plug>(Loupen)
-
 if filereadable('/usr/bin/python3')
 	let g:python3_host_prog='/usr/bin/python3'
 endif
