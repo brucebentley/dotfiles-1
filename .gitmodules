@@ -39,9 +39,6 @@
 [submodule ".config/nvim/pack/bundle/opt/vim-dispatch"]
 	path = .config/nvim/pack/bundle/opt/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule ".config/nvim/pack/bundle/opt/vim-easydir"]
-	path = .config/nvim/pack/bundle/opt/vim-easydir
-	url = https://github.com/duggiefresh/vim-easydir
 [submodule ".config/nvim/pack/bundle/opt/vim-eunuch"]
 	path = .config/nvim/pack/bundle/opt/vim-eunuch
 	url = https://github.com/tpope/vim-eunuch
