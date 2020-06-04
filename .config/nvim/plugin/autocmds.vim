@@ -35,6 +35,10 @@ if has('autocmd')
 			else
 				autocmd BufWinEnter * if line("'\"") > 1 && line("'\"") <= line('$') | execute "normal! g`\"" | endif
 			endif
+
+			autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
+			autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
+
 		augroup END
 	endfunction
 
