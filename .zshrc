@@ -20,8 +20,6 @@ zstyle ':completion:*' list-colors ''
 
 zstyle -e ':completion:*' special-dirs '[[ $PREFIX = (../)#(..) ]] && reply=(..)'
 
-zstyle ':completion:*:complete:(cd|pushd):*' tag-order 'local-directories named-directories'
-
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format %F{default}%B%{$__EMANON[ITALIC_ON]%}--- %d ---%{$__EMANON[ITALIC_OFF]%}%b%f
 
@@ -30,7 +28,12 @@ zstyle ':completion:*' menu select
 autoload -U colors
 colors
 
-DISABLE_UPDATE_PROMPT=true
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+
+zstyle ':completion:*:*:cdr:*:*' menu selection
+
+zstyle ':chpwd:*' recent-dirs-default true
 
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
@@ -48,6 +51,8 @@ function +vi-git-untracked() {
 		hook_com[unstaged]+="%F{blue}●%f"
 	fi
 }
+
+DISABLE_UPDATE_PROMPT=true
 
 RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
 setopt PROMPT_SUBST
@@ -78,26 +83,13 @@ HISTFILE="$HOME/.history"
 SAVEHIST=$HISTSIZE
 
 setopt AUTO_CD
-setopt AUTO_PARAM_SLASH
-setopt AUTO_PUSHD
-setopt AUTO_RESUME
-setopt CLOBBER
 setopt CORRECT
 setopt CORRECT_ALL
-setopt NO_FLOW_CONTROL
-setopt NO_HIST_IGNORE_ALL_DUPS
-setopt NO_HIST_IGNORE_DUPS
 setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_IGNORE_SPACE
-setopt HIST_VERIFY
-setopt IGNORE_EOF
-setopt INTERACTIVE_COMMENTS
 setopt LIST_PACKED
 setopt MENU_COMPLETE
-setopt NO_NOMATCH
-setopt PRINT_EXIT_VALUE
-setopt PUSHD_IGNORE_DUPS
-setopt PUSHD_SILENT
 setopt SHARE_HISTORY
 
 bindkey -v
@@ -231,22 +223,11 @@ function -maybe-show-vcs-info() {
 }
 add-zsh-hook precmd -maybe-show-vcs-info
 
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-
-zstyle ':completion:*:*:cdr:*:*' menu selection
-
-zstyle ':chpwd:*' recent-dirs-default true
-
 source $HOME/.zsh/config/aliases.zsh
-source $HOME/.zsh/config/common.zsh
 source $HOME/.zsh/config/colors.zsh
 source $HOME/.zsh/config/exports.zsh
 source $HOME/.zsh/config/functions.zsh
-source $HOME/.zsh/config/hash.zsh
 source $HOME/.zsh/config/path.zsh
-source $HOME/.zsh/config/vars.zsh
-
 
 export PATH="$PATH:$HOME/.zsh/vendor/fzf/bin"
 
@@ -254,9 +235,3 @@ source $HOME/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
 source $HOME/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-if [ -e /etc/motd ]; then
-	if ! cmp -s $HOME/.hushlogin /etc/motd; then
-		tee $HOME/.hushlogin < /etc/motd
-	fi
-fi
