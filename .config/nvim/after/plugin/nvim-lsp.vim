@@ -37,7 +37,7 @@ sign define LspDiagnosticsHintSign text=➤
 if has('autocmd')
 	augroup EmanonLanguageClientAutocmds
 		autocmd!
-		autocmd ColorScheme * call s:SetUpLspHighlights()
+		autocmd FocusGained * call s:SetUpLspHighlights()
 	augroup END
 endif
 

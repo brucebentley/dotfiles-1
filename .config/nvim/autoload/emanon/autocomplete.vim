@@ -59,27 +59,17 @@ function! emanon#autocomplete#expand_or_jump(direction) abort
 	return ''
 endfunction
 
-if exists('*shiftwidth')
-	function! s:ShiftWidth()
-		if &softtabstop <= 0
-			return shiftwidth()
+function! s:ShiftWidth()
+	if &softtabstop <= 0
+		if &shiftwidth == 0
+			return &tabstop
 		else
-			return &softtabstop
+			return &shiftwidth
 		endif
-	endfunction
-else
-	function! s:ShiftWidth()
-		if &softtabstop <= 0
-			if &shiftwidth == 0
-				return &tabstop
-			else
-				return &shiftwidth
-			endif
-		else
-			return &softtabstop
-		endif
-	endfunction
-endif
+	else
+		return &softtabstop
+	endif
+endfunction
 
 function! emanon#autocomplete#smart_tab() abort
 	if &l:expandtab

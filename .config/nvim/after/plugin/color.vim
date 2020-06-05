@@ -1,9 +1,3 @@
-function s:RemoveBg(group)
-	let l:highlight=filter(pinnacle#dump(a:group), 'v:key != "bg"')
-	execute 'highlight! clear ' . a:group
-	execute 'highlight! ' . a:group . ' ' . pinnacle#highlight(l:highlight)
-endfunction
-
 function s:CheckColorScheme()
 	if !has('termguicolors')
 		let g:base16colorspace=256
@@ -52,21 +46,6 @@ function s:CheckColorScheme()
 
 	highlight clear CursorLineNr
 	execute 'highlight CursorLineNr ' . pinnacle#extract_highlight('DiffText')
-
-	highlight clear DiffDelete
-	highlight link DiffDelete Conceal
-	highlight clear VertSplit
-	highlight link VertSplit LineNr
-
-	highlight link vimUserFunc NONE
-
-	for l:group in ['DiffAdded', 'DiffFile', 'DiffNewFile', 'DiffLine', 'DiffRemoved']
-		call s:RemoveBg(l:group)
-	endfor
-
-	highlight clear DiffAdd
-	highlight clear DiffChange
-	highlight clear DiffText
 
 	doautocmd ColorScheme
 endfunction

@@ -18,9 +18,3 @@ let g:projectionist_heuristics = {
 			\     }
 			\   }
 			\ }
-
-function! s:project(...)
-	for [l:pattern, l:projection] in a:000
-		let g:projectionist_heuristics['*'][l:pattern] = l:projection
-	endfor
-endfunction
