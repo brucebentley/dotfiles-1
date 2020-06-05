@@ -27,10 +27,6 @@ zstyle ':completion:*:descriptions' format %F{default}%B%{$__EMANON[ITALIC_ON]%}
 
 zstyle ':completion:*' menu select
 
-alias man='nocorrect man'
-alias mkdir='nocorrect mkdir'
-alias mv='nocorrect mv'
-
 autoload -U colors
 colors
 
