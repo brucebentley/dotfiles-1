@@ -9,9 +9,6 @@ if filereadable('/usr/local/lib64/ruby/gems/2.7.0/bin/neovim-ruby-host')
 	let g:ruby_host_prog='/usr/local/lib64/ruby/gems/2.7.0/bin/neovim-ruby-host'
 endif
 
-nmap <leader>f <Plug>(FerretAckWord)
-nmap <leader>s <Plug>(FerretAcks)
-
 if &loadplugins
 	if has('packages')
 		packadd! command-t
