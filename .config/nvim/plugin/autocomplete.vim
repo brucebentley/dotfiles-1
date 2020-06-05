@@ -2,6 +2,7 @@ let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 let g:UltiSnipsMappingsToIgnore = ['autocomplete']
+let g:UltiSnipsSnippetDirectories = ['ultisnips']
 
 if has('autocmd')
 	augroup emanonAutocomplete
@@ -13,12 +14,10 @@ if has('autocmd')
 	augroup END
 endif
 
-let g:UltiSnipsSnippetDirectories = ['ultisnips']
-
 call deoplete#enable()
 call deoplete#custom#source('file', 'rank', 2000)
 call deoplete#custom#source('ultisnips', 'rank', 1000)
 call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
 
-inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr><C-j> pumvisible() ? "\<C-n>" : ''
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : ''
