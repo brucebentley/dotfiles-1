@@ -1,7 +1,6 @@
 scriptencoding utf-8
 
-set cindent
-set cinoptions=:0,l1,t0,g0,(0
+set autoindent
 set backspace=indent,start,eol
 
 set noexpandtab
@@ -39,11 +38,9 @@ endif
 
 set scrolloff=1
 
-set shortmess+=A
 set shortmess+=I
 set shortmess+=O
 set shortmess+=T
-set shortmess+=W
 set shortmess+=a
 set shortmess+=c
 set shortmess+=o
