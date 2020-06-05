@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-zsh=(zlogin zsh zshenv zshrc)
-home=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf)
+home=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf zlogin zsh zshenv zshrc)
 config=(compton fontconfig nvim vifm)
 REPO_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
@@ -10,28 +9,21 @@ cat << EOF
 Usage: install [commands]
 
 Commands:
-git      - install git config files only
-zsh      - install zsh config files only
-vim      - install vim config files only
-all      - install all config files
-fonts    - install font files only
 clean    - remove all created symlinks
 conflict - list conflicted directory
+dotfiles - install all config files
+git      - install git config files only
 help     - show information about the commands
 EOF
 }
 
-setup-fonts() {
-	ln -sf $REPO_PATH/.fonts $HOME
-}
-
-setup-zsh() {
-	for z in ${zsh[@]}; do
-		if [[ ! -f $HOME/.$z ]]; then
-			ln -sf $REPO_PATH/.$z $HOME
+setup-dotfiles() {
+	for h in ${home[@]}; do
+		if [[ ! -f $HOME/.$h ]]; then
+			ln -sf $REPO_PATH/.$h $HOME
 		fi
 	done
-	
+
 	if [[ -d $HOME/.zsh/vendor/fzf ]]; then
 		echo 'entering: ~/.zsh/vendor/fzf'
 		cd $HOME/.zsh/vendor/fzf
@@ -39,13 +31,13 @@ setup-zsh() {
 		echo -e 'leaving: ~/.zsh/vendor/fzf\n'
 		cd $REPO_PATH
 	fi
-}
-
-setup-vim() {
-	if [[ ! -d $HOME/.config/nvim ]]; then
-		ln -sf $REPO_PATH/.config/nvim $HOME/.config/nvim
-	fi
 	
+	for c in ${config[@]}; do
+		if [[ ! -f $HOME/.config/$c ]]; then
+			ln -sf $REPO_PATH/.config/$c $HOME/.config
+		fi
+	done
+
 	if [[ -d $HOME/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
 		echo "entering: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
 		cd "$HOME/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
@@ -54,27 +46,6 @@ setup-vim() {
 		echo -e "leaving: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t\n"
 		cd $REPO_PATH
 	fi
-}
-
-setup-misc() {
-	for h in ${home[@]}; do
-		if [[ ! -f $HOME/.$h ]]; then
-			ln -sf $REPO_PATH/.$h $HOME
-		fi
-	done
-	
-	for c in ${config[@]}; do
-		if [[ ! -f $HOME/.config/$c ]]; then
-			ln -sf $REPO_PATH/.config/$c $HOME/.config
-		fi
-	done
-}
-
-
-setup-all() {
-	setup-zsh
-	setup-vim
-	setup-misc
 }
 
 clean-symlink() {
@@ -141,17 +112,8 @@ main() {
 		git)
 			setup-git
 			;;
-		zsh)
-			setup-zsh
-			;;
-		vim)
-			setup-vim
-			;;
-		all)
-			setup-all
-			;;
-		fonts)
-			setup-fonts
+		dotfiles)
+			setup-dotfiles
 			;;
 		clean)
 			clean-symlink

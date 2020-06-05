@@ -14,14 +14,11 @@
 2. ./install [options]
 
 ```sh
-install help      # display all options
-install git       # install git config only
-install zsh       # install zsh config only
-install vim       # install vim config only
-install all       # install everything
-install fonts     # install font files only
 install clean     # remove all created symlink files
 install conflict  # list conflicted directories
+install dotfiles  # install everything
+install git       # install git config only
+install help      # display all options
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
