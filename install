@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-home=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf zlogin zsh zshenv zshrc)
-config=(compton fontconfig nvim vifm)
+CONFIG_HOME=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf zlogin zsh zshenv zshrc)
+XDG_CONFIG_HOME=(compton fontconfig nvim vifm)
 REPO_PATH=$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)
 
 usage() {
@@ -18,7 +18,7 @@ EOF
 }
 
 setup-dotfiles() {
-	for h in ${home[@]}; do
+	for h in ${CONFIG_HOME[@]}; do
 		if [[ ! -f $HOME/.$h ]]; then
 			ln -sf $REPO_PATH/.$h $HOME
 		fi
@@ -32,7 +32,7 @@ setup-dotfiles() {
 		cd $REPO_PATH
 	fi
 	
-	for c in ${config[@]}; do
+	for c in ${XDG_CONFIG_HOME[@]}; do
 		if [[ ! -f $HOME/.config/$c ]]; then
 			ln -sf $REPO_PATH/.config/$c $HOME/.config
 		fi
@@ -49,25 +49,15 @@ setup-dotfiles() {
 }
 
 clean-symlink() {
-	for h in ${home[@]}; do
+	for h in ${CONFIG_HOME[@]}; do
 		if [[ -L $HOME/.$h ]]; then
 			rm -f $HOME/.$h
 		fi
 	done
 	
-	for c in ${config[@]}; do
+	for c in ${XDG_CONFIG_HOME[@]}; do
 		if [[ -L $HOME/.config/$c ]]; then
 			rm -f $HOME/.config/$c
-		fi
-	done
-	
-	if [[ -L $HOME/.config/nvim ]]; then
-		rm $HOME/.config/nvim
-	fi
-	
-	for z in ${zsh[@]}; do
-		if [[ -L $HOME/.$z ]]; then
-			rm -f $HOME/.$z
 		fi
 	done
 	
@@ -87,13 +77,13 @@ setup-git() {
 
 check-conflict() {
 echo "Conflicted Directories:"
-	for h in ${home[@]}; do
+	for h in ${CONFIG_HOME[@]}; do
 		if [[ -d $HOME/.$h && -L $HOME/.$h ]]; then
 			echo "$HOME/.$h"
 		fi
 	done
 	
-	for c in ${config[@]}; do
+	for c in ${XDG_CONFIG_HOME[@]}; do
 		if [[ -d $HOME/.config/$c && -L $HOME/.config/$c ]]; then
 			echo "$HOME/.config/$c"
 		fi
