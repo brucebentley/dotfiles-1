@@ -13,5 +13,8 @@ if has('autocmd')
 		autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
 		autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
 
+		if exists('##TextYankPost')
+			autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank('Substitute', 200)
+		endif
 	augroup END
 endif
