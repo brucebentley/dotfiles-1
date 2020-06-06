@@ -1,8 +1,4 @@
 function s:CheckColorScheme()
-	if !has('termguicolors')
-		let g:base16colorspace=256
-	endif
-
 	let s:config_file = expand('~/.config/nvim/.base16')
 
 	if filereadable(s:config_file)
