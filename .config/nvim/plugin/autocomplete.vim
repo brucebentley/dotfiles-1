@@ -5,7 +5,7 @@ let g:UltiSnipsMappingsToIgnore = ['autocomplete']
 let g:UltiSnipsSnippetDirectories = ['ultisnips']
 
 if has('autocmd')
-	augroup emanonAutocomplete
+	augroup EmanonAutocomplete
 		autocmd!
 		autocmd! User UltiSnipsEnterFirstSnippet
 		autocmd User UltiSnipsEnterFirstSnippet call emanon#autocomplete#setup_mappings()
@@ -14,10 +14,6 @@ if has('autocmd')
 	augroup END
 endif
 
-call deoplete#enable()
-call deoplete#custom#source('file', 'rank', 2000)
-call deoplete#custom#source('ultisnips', 'rank', 1000)
-call deoplete#custom#source('_', 'matchers', ['matcher_full_fuzzy'])
-
+autocmd User EmanonDefer call emanon#autocomplete#deoplete_init()
 inoremap <expr><C-j> pumvisible() ? "\<C-n>" : ''
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : ''

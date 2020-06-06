@@ -1,5 +1,5 @@
 if has('autocmd')
-	augroup emanonAutocmds
+	augroup EmanonAutocmds
 		autocmd!
 
 		if exists('+winhighlight')
@@ -15,6 +15,13 @@ if has('autocmd')
 
 		if exists('##TextYankPost')
 			autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank('Substitute', 200)
+		endif
+	augroup END
+
+	augroup EmanonIdleboot
+		autocmd!
+		if has('vim_starting')
+			autocmd CursorHold,CursorHoldI * call emanon#autocmds#idleboot()
 		endif
 	augroup END
 endif

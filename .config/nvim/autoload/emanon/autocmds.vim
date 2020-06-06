@@ -15,3 +15,12 @@ function! emanon#autocmds#focus_window() abort
 		endif
 	endif
 endfunction
+
+function! emanon#autocmds#idleboot() abort
+	augroup EmanonIdleboot
+		autocmd!
+	augroup END
+
+	doautocmd User EmanonDefer
+	autocmd! User EmanonDefer
+endfunction
