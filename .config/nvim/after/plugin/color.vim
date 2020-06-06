@@ -47,6 +47,12 @@ function s:CheckColorScheme()
 	highlight clear CursorLineNr
 	execute 'highlight CursorLineNr ' . pinnacle#extract_highlight('DiffText')
 
+	highlight clear Pmenu
+	highlight link Pmenu Visual
+
+	highlight clear VertSplit
+	highlight link Vertsplit LineNr
+
 	doautocmd ColorScheme
 endfunction
 

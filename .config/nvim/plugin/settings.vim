@@ -22,12 +22,18 @@ if has('linebreak')
 endif
 
 set list
-set fillchars+=eob:\ 
+
 set listchars+=extends:»
 set listchars+=nbsp:ø
 set listchars+=precedes:«
 set listchars+=tab:▷┅
 set listchars+=trail:•
+
+set fillchars=diff:∙
+set fillchars+=eob:\ 
+set fillchars+=fold:·
+set fillchars+=vert:┃
+
 set nojoinspaces
 
 set number
