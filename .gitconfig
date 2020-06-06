@@ -50,19 +50,19 @@
 	ui = auto
 
 [color "diff-highlight"]
-	oldNormal = "red"
-	oldHighlight = "red reverse"
-	oldReset = "noreverse"
-	newNormal = "green"
 	newHighlight = "green reverse"
+	newNormal = "green"
 	newReset = "noreverse"
+	oldHighlight = "red reverse"
+	oldNormal = "red"
+	oldReset = "noreverse"
 
 [color "diff"]
-	meta = 11
-	frag = "magenta"
 	commit = "yellow"
-	old = "red"
+	frag = "magenta"
+	meta = 11
 	new = "green"
+	old = "red"
 	whitespace = "red reverse"
 
 [color "interactive"]
@@ -75,15 +75,16 @@
 	verbose = true
 
 [core]
-	compression = 9
-	looseCompression = 9
-	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	compression = 9
+	excludesfile = ~/.gitignore
+	looseCompression = 9
+	pager = "diff-so-fancy | less -iFMRSX"
 
 [diff-so-fancy]
 	changeHunkIndicators = false
-	stripLeadingSymbols = false
 	markEmptyLines = false
+	stripLeadingSymbols = false
 
 [diff]
 	algorithm = histogram
@@ -107,12 +108,8 @@
 	log = 1000
 
 [pager]
-	diff = "diff-so-fancy | less -iFMRSX"
-	log = "diff-so-fancy | less -iFMRSX"
-	show = "diff-so-fancy | less -iFMRSX"
 	show-branch = true
 	status = true
-	whatchanged = "diff-so-fancy | less -iFMRSX"
 
 [protocol]
 	version = 2
