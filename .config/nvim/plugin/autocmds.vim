@@ -1,5 +1,5 @@
 if has('autocmd')
-	augroup EmanonAutocmds
+	augroup Autocmds
 		autocmd!
 
 		if exists('+winhighlight')
@@ -10,18 +10,18 @@ if has('autocmd')
 		autocmd BufEnter,InsertLeave,VimEnter * setlocal cursorline
 		autocmd BufLeave,InsertEnter * setlocal nocursorline
 
-		autocmd BufEnter,FocusGained,VimEnter,WinEnter * call emanon#autocmds#focus_window()
-		autocmd BufLeave,FocusLost,WinLeave * call emanon#autocmds#blur_window()
+		autocmd BufEnter,FocusGained,VimEnter,WinEnter * call autocmds#focus_window()
+		autocmd BufLeave,FocusLost,WinLeave * call autocmds#blur_window()
 
 		if exists('##TextYankPost')
 			autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank('Substitute', 200)
 		endif
 	augroup END
 
-	augroup EmanonIdleboot
+	augroup Idleboot
 		autocmd!
 		if has('vim_starting')
-			autocmd CursorHold,CursorHoldI * call emanon#autocmds#idleboot()
+			autocmd CursorHold,CursorHoldI * call autocmds#idleboot()
 		endif
 	augroup END
 endif

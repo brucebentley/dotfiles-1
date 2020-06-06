@@ -1,4 +1,4 @@
-function! emanon#autocmds#blur_window() abort
+function! autocmds#blur_window() abort
 	ownsyntax off
 	set nolist
 	if has('conceal')
@@ -6,7 +6,7 @@ function! emanon#autocmds#blur_window() abort
 	endif
 endfunction
 
-function! emanon#autocmds#focus_window() abort
+function! autocmds#focus_window() abort
 	if !empty(&ft)
 		execute "ownsyntax ".(&ft)
 		set list
@@ -16,11 +16,11 @@ function! emanon#autocmds#focus_window() abort
 	endif
 endfunction
 
-function! emanon#autocmds#idleboot() abort
-	augroup EmanonIdleboot
+function! autocmds#idleboot() abort
+	augroup Idleboot
 		autocmd!
 	augroup END
 
-	doautocmd User EmanonDefer
-	autocmd! User EmanonDefer
+	doautocmd User Defer
+	autocmd! User Defer
 endfunction

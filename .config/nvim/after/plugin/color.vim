@@ -80,7 +80,7 @@ endfunction
 
 
 if has('autocmd')
-	augroup EmanonAutoColor
+	augroup AutoColor
 		autocmd!
 		autocmd ColorScheme * call s:SetupHighlights()
 		autocmd ColorScheme * call s:SetupLspHighlights()

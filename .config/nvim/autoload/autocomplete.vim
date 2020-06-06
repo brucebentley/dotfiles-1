@@ -1,14 +1,14 @@
 let s:expansion_active = 0
 
-function! emanon#autocomplete#setup_mappings() abort
+function! autocomplete#setup_mappings() abort
 	execute 'inoremap <buffer> <silent> ' . g:UltiSnipsJumpForwardTrigger .
-				\ ' <C-R>=emanon#autocomplete#expand_or_jump("N")<CR>'
+				\ ' <C-R>=autocomplete#expand_or_jump("N")<CR>'
 	execute 'snoremap <buffer> <silent> ' . g:UltiSnipsJumpForwardTrigger .
-				\ ' <Esc>:call emanon#autocomplete#expand_or_jump("N")<CR>'
+				\ ' <Esc>:call autocomplete#expand_or_jump("N")<CR>'
 	execute 'inoremap <buffer> <silent> ' . g:UltiSnipsJumpBackwardTrigger .
-				\ ' <C-R>=emanon#autocomplete#expand_or_jump("P")<CR>'
+				\ ' <C-R>=autocomplete#expand_or_jump("P")<CR>'
 	execute 'snoremap <buffer> <silent> ' . g:UltiSnipsJumpBackwardTrigger .
-				\ ' <Esc>:call emanon#autocomplete#expand_or_jump("P")<CR>'
+				\ ' <Esc>:call autocomplete#expand_or_jump("P")<CR>'
 
 	imap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 	smap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
@@ -16,7 +16,7 @@ function! emanon#autocomplete#setup_mappings() abort
 	let s:expansion_active = 1
 endfunction
 
-function! emanon#autocomplete#teardown_mappings() abort
+function! autocomplete#teardown_mappings() abort
 	silent! iunmap <expr> <buffer> <CR>
 	silent! sunmap <expr> <buffer> <CR>
 
@@ -27,7 +27,7 @@ let g:ulti_jump_backwards_res = 0
 let g:ulti_jump_forwards_res = 0
 let g:ulti_expand_res = 0
 
-function! emanon#autocomplete#expand_or_jump(direction) abort
+function! autocomplete#expand_or_jump(direction) abort
 	call UltiSnips#ExpandSnippet()
 	if g:ulti_expand_res == 0
 		if pumvisible()
@@ -57,7 +57,7 @@ function! emanon#autocomplete#expand_or_jump(direction) abort
 	return ''
 endfunction
 
-function! emanon#autocomplete#deoplete_init() abort
+function! autocomplete#deoplete_init() abort
 	call deoplete#enable()
 	call deoplete#custom#source('file', 'rank', 2000)
 	call deoplete#custom#source('ultisnips', 'rank', 1000)
