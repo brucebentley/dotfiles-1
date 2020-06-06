@@ -1,4 +1,4 @@
-function s:CheckColorScheme()
+function s:CheckColorScheme() abort
 	let s:config_file = expand('~/.config/nvim/.base16')
 
 	if filereadable(s:config_file)
@@ -20,6 +20,10 @@ function s:CheckColorScheme()
 		colorscheme base16-default-dark
 	endif
 
+	doautocmd ColorScheme
+endfunction
+
+function s:SetupHighlights() abort
 	execute 'highlight Comment ' . pinnacle#italicize('Comment')
 
 	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
@@ -48,13 +52,38 @@ function s:CheckColorScheme()
 
 	highlight clear VertSplit
 	highlight link Vertsplit LineNr
-
-	doautocmd ColorScheme
 endfunction
 
+function s:SetupLspHighlights() abort
+	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'WarningMsg')
+	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'ModeMsg')
+	execute 'highlight LspDiagnosticsInformation ' . pinnacle#decorate('italic', 'Conditional')
+	execute 'highlight LspDiagnosticsWarning ' . pinnacle#decorate('italic', 'Type')
+
+	execute 'highlight LspDiagnosticsErrorSign ' . pinnacle#highlight({
+				\   'bg': pinnacle#extract_bg('ColorColumn'),
+				\   'fg': pinnacle#extract_fg('WarningMsg')
+				\ })
+	execute 'highlight LspDiagnosticsHintSign ' . pinnacle#highlight({
+				\   'bg': pinnacle#extract_bg('ColorColumn'),
+				\   'fg': pinnacle#extract_fg('ModeMsg')
+				\ })
+	execute 'highlight LspDiagnosticsInformationSign ' . pinnacle#highlight({
+				\   'bg': pinnacle#extract_bg('ColorColumn'),
+				\   'fg': pinnacle#extract_fg('Conditional'),
+				\ })
+	execute 'highlight LspDiagnosticsWarningSign ' . pinnacle#highlight({
+				\   'bg': pinnacle#extract_bg('ColorColumn'),
+				\   'fg': pinnacle#extract_fg('Type')
+				\ })
+endfunction
+
+
 if has('autocmd')
-	augroup emanonAutocolor
+	augroup EmanonAutoColor
 		autocmd!
+		autocmd ColorScheme * call s:SetupHighlights()
+		autocmd ColorScheme * call s:SetupLspHighlights()
 		autocmd FocusGained * call s:CheckColorScheme()
 	augroup END
 endif
