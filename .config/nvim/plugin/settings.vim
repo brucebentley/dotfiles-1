@@ -40,7 +40,6 @@ set scrolloff=1
 set sidescrolloff=5
 
 set tabstop=8
-set softtabstop=8
 
 set splitbelow
 set splitright
