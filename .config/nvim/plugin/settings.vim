@@ -15,6 +15,10 @@ if has('folding')
 	set foldtext=settings#foldtext()
 endif
 
+if has('showcmd')
+	set noshowcmd
+endif
+
 if has('linebreak')
 	let &showbreak='↳ '
 endif
@@ -39,9 +43,8 @@ set display+=lastline
 set splitbelow
 set splitright
 
-if has('termguicolors')
-	set termguicolors
-endif
 
 set wildmenu
 set wildcharm=<C-z>
+
+set termguicolors
