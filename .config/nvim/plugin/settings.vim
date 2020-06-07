@@ -22,6 +22,8 @@ set fillchars+=eob:\
 set fillchars+=fold:·
 set fillchars+=vert:┃
 
+set shortmess=I
+
 set number
 
 if exists('+relativenumber')
