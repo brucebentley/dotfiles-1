@@ -12,7 +12,7 @@ set relativenumber
 if has('folding')
 	set foldmethod=indent
 	set foldlevelstart=99
-	set foldtext=emanon#settings#foldtext()
+	set foldtext=settings#foldtext()
 endif
 
 if has('linebreak')
