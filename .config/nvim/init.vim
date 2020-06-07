@@ -9,7 +9,6 @@ if &loadplugins
 	if has('packages')
 		packadd! deoplete-lsp
 		packadd! deoplete.nvim
-		packadd! ferret
 		packadd! nvim-lsp
 		packadd! pinnacle
 		packadd! ultisnips

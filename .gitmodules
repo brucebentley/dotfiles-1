@@ -7,9 +7,6 @@
 [submodule ".config/nvim/pack/bundle/opt/deoplete.nvim"]
 	path = .config/nvim/pack/bundle/opt/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule ".config/nvim/pack/bundle/opt/ferret"]
-	path = .config/nvim/pack/bundle/opt/ferret
-	url = https://github.com/wincent/ferret
 [submodule ".config/nvim/pack/bundle/opt/loupe"]
 	path = .config/nvim/pack/bundle/opt/loupe
 	url = https://github.com/wincent/loupe
