@@ -1,5 +1,3 @@
-let b:did_after_plugin_ultisnips_after=1
-
 if exists(':UltiSnipsEdit')
 	execute 'inoremap <silent> ' . g:UltiSnipsExpandTrigger .
 				\ ' <C-R>=autocomplete#expand_or_jump("N")<CR>'

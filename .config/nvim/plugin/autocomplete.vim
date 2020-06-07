@@ -15,5 +15,5 @@ if has('autocmd')
 endif
 
 autocmd User Defer call autocomplete#deoplete_init()
-inoremap <expr><C-j> pumvisible() ? "\<C-n>" : ''
-inoremap <expr><C-k> pumvisible() ? "\<C-p>" : ''
+inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
