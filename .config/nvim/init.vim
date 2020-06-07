@@ -11,7 +11,6 @@ endif
 
 if &loadplugins
 	if has('packages')
-		packadd! command-t
 		packadd! deoplete-lsp
 		packadd! deoplete.nvim
 		packadd! ferret
@@ -19,12 +18,7 @@ if &loadplugins
 		packadd! pinnacle
 		packadd! ultisnips
 		packadd! vim-clang-format
-		packadd! vim-commentary
-		packadd! vim-dispatch
 		packadd! vim-fugitive
-		packadd! vim-projectionist
-		packadd! vim-repeat
-		packadd! vim-surround
 		packadd! vim-vinegar
 	endif
 endif

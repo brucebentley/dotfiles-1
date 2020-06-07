@@ -37,15 +37,6 @@ setup-dotfiles() {
 			ln -sf $REPO_PATH/.config/$c $HOME/.config
 		fi
 	done
-
-	if [[ -d $HOME/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t/ ]]; then
-		echo "entering: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
-		cd "$HOME/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t"
-		ruby extconf.rb
-		make
-		echo -e "leaving: ~/.config/nvim/pack/bundle/opt/command-t/ruby/command-t/ext/command-t\n"
-		cd $REPO_PATH
-	fi
 }
 
 clean-symlink() {

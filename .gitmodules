@@ -1,11 +1,6 @@
 [submodule ".config/nvim/pack/bundle/opt/base16-vim"]
 	path = .config/nvim/pack/bundle/opt/base16-vim
 	url = https://github.com/chriskempson/base16-vim/
-[submodule ".config/nvim/pack/bundle/opt/command-t"]
-	ignore = dirty
-	branch = next
-	path = .config/nvim/pack/bundle/opt/command-t
-	url = https://github.com/wincent/command-t
 [submodule ".config/nvim/pack/bundle/opt/deoplete-lsp"]
 	path = .config/nvim/pack/bundle/opt/deoplete-lsp
 	url = https://github.com/Shougo/deoplete-lsp
@@ -30,24 +25,9 @@
 [submodule ".config/nvim/pack/bundle/opt/vim-clang-format"]
 	path = .config/nvim/pack/bundle/opt/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format
-[submodule ".config/nvim/pack/bundle/opt/vim-commentary"]
-	path = .config/nvim/pack/bundle/opt/vim-commentary
-	url = https://github.com/tpope/vim-commentary
-[submodule ".config/nvim/pack/bundle/opt/vim-dispatch"]
-	path = .config/nvim/pack/bundle/opt/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
 [submodule ".config/nvim/pack/bundle/opt/vim-fugitive"]
 	path = .config/nvim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".config/nvim/pack/bundle/opt/vim-projectionist"]
-	path = .config/nvim/pack/bundle/opt/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist
-[submodule ".config/nvim/pack/bundle/opt/vim-repeat"]
-	path = .config/nvim/pack/bundle/opt/vim-repeat
-	url = https://github.com/tpope/vim-repeat
-[submodule ".config/nvim/pack/bundle/opt/vim-surround"]
-	path = .config/nvim/pack/bundle/opt/vim-surround
-	url = https://github.com/tpope/vim-surround
 [submodule ".config/nvim/pack/bundle/opt/vim-vinegar"]
 	path = .config/nvim/pack/bundle/opt/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
