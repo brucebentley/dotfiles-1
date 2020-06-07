@@ -3,10 +3,20 @@ scriptencoding utf-8
 set autoindent
 set backspace=indent,start,eol
 
+set scrolloff=1
+set sidescrolloff=5
+
+set number
+set relativenumber
+
 if has('folding')
 	set foldmethod=indent
 	set foldlevelstart=99
 	set foldtext=emanon#settings#foldtext()
+endif
+
+if has('linebreak')
+	let &showbreak='↳ '
 endif
 
 set list
@@ -24,22 +34,7 @@ set fillchars+=vert:┃
 
 set shortmess=I
 
-set number
-
-if exists('+relativenumber')
-	set relativenumber
-endif
-
-
-if has('linebreak')
-	let &showbreak='↳ '
-endif
-
 set display+=lastline
-
-set scrolloff=1
-
-set sidescrolloff=5
 
 set splitbelow
 set splitright
