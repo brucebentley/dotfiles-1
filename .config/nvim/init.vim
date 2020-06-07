@@ -5,10 +5,6 @@ if filereadable('/usr/bin/python3')
 	let g:python3_host_prog='/usr/bin/python3'
 endif
 
-if filereadable('/usr/local/lib64/ruby/gems/2.7.0/bin/neovim-ruby-host')
-	let g:ruby_host_prog='/usr/local/lib64/ruby/gems/2.7.0/bin/neovim-ruby-host'
-endif
-
 if &loadplugins
 	if has('packages')
 		packadd! deoplete-lsp
