@@ -10,7 +10,7 @@ vnoremap <C-l> <C-w>l
 
 nnoremap <Tab> za
 
-nnoremap <silent> <leader>n :noh<CR>
+nnoremap <silent> <leader>n :nohlsearch<CR>
 
 nnoremap <silent> <Leader>zz :%s/\s\+$//e<CR>
 
