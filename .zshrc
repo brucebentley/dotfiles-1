@@ -1,6 +1,6 @@
 typeset -A __EMANON
 
-autoload -Uz add-zsh-hook
+autoload -Uz add-zsh-hook compinit vcs_info
 
 HISTSIZE=1000000
 HISTFILE="$HOME/.history"

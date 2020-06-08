@@ -8,8 +8,6 @@ SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %
 
 setopt PROMPT_SUBST
 
-autoload -U add-zsh-hook
-
 function -set-tab-and-window-title() {
 	emulate -L zsh
 

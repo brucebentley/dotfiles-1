@@ -1,6 +1,5 @@
 fpath=($HOME/.zsh/completions $fpath)
 
-autoload -Uz compinit
 if [[ -n $HOME/.zcompdump(#qN.md-1) ]]; then
 	compinit -C
 else
