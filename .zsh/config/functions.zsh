@@ -19,11 +19,11 @@ function vifm() {
 
 function fd() {
 	local DIR
-	DIR=$(find -type d 2> /dev/null | fzf --color=16 --no-multi --preview='test -n "{}" && ls {}' -q "$*") && cd "$DIR"
+	DIR=$(find -type d 2> /dev/null | fzf --no-multi --preview='test -n "{}" && ls {}' -q "$*") && cd "$DIR"
 }
 
 function fh() {
-	print -z $(fc -l 1 | fzf --color=16 --no-multi --tac -q "$*" | sed 's/ *[0-9]*\*\{0,1\} *//')
+	print -z $(fc -l 1 | fzf --no-multi --tac -q "$*" | sed 's/ *[0-9]*\*\{0,1\} *//')
 }
 
 function scratch() {

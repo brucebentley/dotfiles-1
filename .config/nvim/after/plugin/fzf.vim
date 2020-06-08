@@ -1,9 +1,6 @@
 let g:fzf_layout = { 'down': '~60%' }
 
-let g:fzf_preview_window = 'right:60%'
-
-command! -bang -nargs=? -complete=dir Files
-			\ call fzf#vim#files(<q-args>, {'options': ['--preview', 'cat {}']}, <bang>0)
+let g:fzf_preview_window = ''
 
 let g:fzf_action = {
 			\ 'ctrl-t': 'tab split',
@@ -12,25 +9,26 @@ let g:fzf_action = {
 			\ }
 
 let g:fzf_colors = {
-			\ 'fg':      ['fg', 'Normal'],
 			\ 'bg':      ['bg', 'Normal'],
-			\ 'hl':      ['fg', 'ModeMsg'],
-			\ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-			\ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-			\ 'hl+':     ['fg', 'Type'],
-			\ 'info':    ['fg', 'PreProc'],
+			\ 'bg+':     ['bg', 'Ignore'],
 			\ 'border':  ['fg', 'Ignore'],
-			\ 'prompt':  ['fg', 'Conditional'],
-			\ 'pointer': ['fg', 'Exception'],
+			\ 'fg':      ['fg', 'Normal'],
+			\ 'fg+':     ['fg', 'Type'],
+			\ 'gutter':  ['bg', 'Ignore'],
+			\ 'header':  ['fg', 'Comment'],
+			\ 'hl':      ['fg', 'ModeMsg'],
+			\ 'hl+':     ['fg', 'ModeMsg'],
+			\ 'info':    ['fg', 'PreProc'],
 			\ 'marker':  ['fg', 'Keyword'],
-			\ 'spinner': ['fg', 'Label'],
-			\ 'header':  ['fg', 'Comment']
+			\ 'pointer': ['fg', 'Exception'],
+			\ 'prompt':  ['fg', 'Directory'],
+			\ 'spinner': ['fg', 'Label']
 			\ }
 
 if has('autocmd')
 	augroup Fzf
 		autocmd! FileType fzf
-		autocmd FileType fzf set laststatus=0 noshowmode noruler
-					\| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+		autocmd FileType fzf set laststatus=0 noshowmode noruler norelativenumber
+					\| autocmd BufLeave <buffer> set laststatus=2 showmode ruler relativenumber
 	augroup END
 endif
