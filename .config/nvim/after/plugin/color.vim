@@ -84,8 +84,6 @@ if has('autocmd')
 		autocmd!
 		autocmd ColorScheme * call s:SetupHighlights()
 		autocmd ColorScheme * call s:SetupLspHighlights()
-		autocmd FocusGained * call s:CheckColorScheme()
+		autocmd VimEnter,FocusGained * call s:CheckColorScheme()
 	augroup END
 endif
-
-call s:CheckColorScheme()

@@ -9,6 +9,7 @@ endif
 
 if &loadplugins
 	if has('packages')
+		packadd! base16-vim
 		packadd! deoplete-lsp
 		packadd! deoplete.nvim
 		packadd! fzf.vim
