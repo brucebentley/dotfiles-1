@@ -44,10 +44,10 @@ source $HOME/.zsh/config/git.zsh
 source $HOME/.zsh/config/path.zsh
 source $HOME/.zsh/config/prompt.zsh
 
-source $HOME/.zsh/vendor/fzf/shell/completion.zsh
-source $HOME/.zsh/vendor/fzf/shell/key-bindings.zsh
+source $HOME/.zsh/plugin/fzf/shell/completion.zsh
+source $HOME/.zsh/plugin/fzf/shell/key-bindings.zsh
 
-source $HOME/.zsh/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
 
-source $HOME/.zsh/vendor/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

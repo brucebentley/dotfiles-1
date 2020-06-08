@@ -31,7 +31,7 @@ function color() {
 	emulate -L zsh
 
 	local SCHEME="$1"
-	local BASE16_DIR=~/.zsh/vendor/base16-shell/scripts
+	local BASE16_DIR=~/.zsh/plugin/base16-shell/scripts
 	local BASE16_CONFIG_PREVIOUS="${__EMANON[BASE16_CONFIG]}.previous"
 	local STATUS=0
 
