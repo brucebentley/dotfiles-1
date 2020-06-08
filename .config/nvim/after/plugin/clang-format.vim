@@ -101,7 +101,7 @@ let g:clang_format#style_options = {
 
 if has('autocmd')
 	augroup ClangFormat
-		autocmd!
+		autocmd! Filetype c,cpp
 		autocmd Filetype c,cpp ClangFormatAutoEnable
 	augroup END
 endif
