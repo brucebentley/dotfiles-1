@@ -1,8 +1,5 @@
 __EMANON[BASE16_CONFIG]=~/.config/nvim/.base16
 
-autoload -U colors
-colors
-
 function luma() {
 	emulate -L zsh
 
