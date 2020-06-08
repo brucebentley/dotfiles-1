@@ -29,17 +29,17 @@
 	path = .config/nvim/pack/bundle/opt/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
 [submodule ".zsh/vendor/base16-shell"]
-	path = .zsh/vendor/base16-shell
+	path = .zsh/plugin/base16-shell
 	url = https://github.com/chriskempson/base16-shell
 	ignore = dirty
 [submodule ".zsh/vendor/zsh-autosuggestions"]
-	path = .zsh/vendor/zsh-autosuggestions
+	path = .zsh/plugin/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	ignore = dirty
 [submodule ".zsh/vendor/zsh-syntax-highlighting"]
-	path = .zsh/vendor/zsh-syntax-highlighting
+	path = .zsh/plugin/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 	ignore = dirty
 [submodule ".zsh/vendor/fzf"]
-	path = .zsh/vendor/fzf
+	path = .zsh/plugin/fzf
 	url = https://github.com/junegunn/fzf
