@@ -1,46 +1,46 @@
-[submodule ".config/nvim/pack/bundle/opt/base16-vim"]
+[submodule "base16-vim"]
 	path = .config/nvim/pack/bundle/opt/base16-vim
 	url = https://github.com/chriskempson/base16-vim/
-[submodule ".config/nvim/pack/bundle/opt/deoplete-lsp"]
+[submodule "deoplete-lsp"]
 	path = .config/nvim/pack/bundle/opt/deoplete-lsp
 	url = https://github.com/Shougo/deoplete-lsp
-[submodule ".config/nvim/pack/bundle/opt/deoplete.nvim"]
+[submodule "deoplete.nvim"]
 	path = .config/nvim/pack/bundle/opt/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule ".config/nvim/pack/bundle/opt/fzf.vim"]
+[submodule "fzf.vim"]
 	path = .config/nvim/pack/bundle/opt/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
-[submodule ".config/nvim/pack/bundle/opt/nvim-lsp"]
+[submodule "nvim-lsp"]
 	path = .config/nvim/pack/bundle/opt/nvim-lsp
 	url = https://github.com/neovim/nvim-lsp
-[submodule ".config/nvim/pack/bundle/opt/pinnacle"]
+[submodule "pinnacle"]
 	path = .config/nvim/pack/bundle/opt/pinnacle
 	url = https://github.com/wincent/pinnacle
-[submodule ".config/nvim/pack/bundle/opt/ultisnips"]
+[submodule "ultisnips"]
 	path = .config/nvim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule ".config/nvim/pack/bundle/opt/vim-clang-format"]
+[submodule "vim-clang-format"]
 	path = .config/nvim/pack/bundle/opt/vim-clang-format
 	url = https://github.com/rhysd/vim-clang-format
-[submodule ".config/nvim/pack/bundle/opt/vim-fugitive"]
+[submodule "vim-fugitive"]
 	path = .config/nvim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".config/nvim/pack/bundle/opt/vim-vinegar"]
+[submodule "vim-vinegar"]
 	path = .config/nvim/pack/bundle/opt/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar
-[submodule ".zsh/vendor/base16-shell"]
+[submodule "base16-shell"]
 	path = .zsh/plugin/base16-shell
 	url = https://github.com/chriskempson/base16-shell
 	ignore = dirty
-[submodule ".zsh/vendor/zsh-autosuggestions"]
+[submodule "zsh-autosuggestions"]
 	path = .zsh/plugin/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	ignore = dirty
-[submodule ".zsh/vendor/zsh-syntax-highlighting"]
+[submodule "zsh-syntax-highlighting"]
 	path = .zsh/plugin/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
 	ignore = dirty
-[submodule ".zsh/vendor/fzf"]
+[submodule "fzf"]
 	path = .zsh/plugin/fzf
 	url = https://github.com/junegunn/fzf
 	ignore = dirty
