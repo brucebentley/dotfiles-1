@@ -37,6 +37,8 @@ setup-dotfiles() {
 			ln -sf $REPO_PATH/.config/$c $HOME/.config
 		fi
 	done
+
+	echo 'success!'
 }
 
 clean-symlink() {
