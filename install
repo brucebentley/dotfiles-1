@@ -24,11 +24,11 @@ setup-dotfiles() {
 		fi
 	done
 
-	if [[ -d $HOME/.zsh/vendor/fzf ]]; then
-		echo 'entering: ~/.zsh/vendor/fzf'
-		cd $HOME/.zsh/vendor/fzf
+	if [[ -d $HOME/.zsh/plugin/fzf ]]; then
+		echo 'entering: ~/.zsh/plugin/fzf'
+		cd $HOME/.zsh/plugin/fzf
 		./install --bin --no-key-bindings --no-completion --no-update-rc --no-bash --no-zsh --no-fish --64
-		echo -e 'leaving: ~/.zsh/vendor/fzf\n'
+		echo -e 'leaving: ~/.zsh/plugin/fzf\n'
 		cd $REPO_PATH
 	fi
 	
