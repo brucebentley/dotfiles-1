@@ -20,6 +20,8 @@ if has('autocmd')
 
 	augroup Idleboot
 		autocmd!
-		autocmd InsertEnter * call autocmds#idleboot()
+		if has('vim_starting')
+			autocmd InsertEnter * call autocmds#idleboot()
+		endif
 	augroup END
 endif
