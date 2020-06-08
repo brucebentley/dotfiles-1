@@ -1,4 +1,4 @@
-function s:CheckColorScheme() abort
+function! s:CheckColorScheme() abort
 	let s:config_file = expand('~/.config/nvim/.base16')
 
 	if filereadable(s:config_file)
@@ -23,7 +23,7 @@ function s:CheckColorScheme() abort
 	doautocmd ColorScheme
 endfunction
 
-function s:SetupHighlights() abort
+function! s:SetupHighlights() abort
 	execute 'highlight Comment ' . pinnacle#italicize('Comment')
 
 	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
@@ -54,7 +54,7 @@ function s:SetupHighlights() abort
 	highlight link Vertsplit LineNr
 endfunction
 
-function s:SetupLspHighlights() abort
+function! s:SetupLspHighlights() abort
 	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'WarningMsg')
 	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'ModeMsg')
 	execute 'highlight LspDiagnosticsInformation ' . pinnacle#decorate('italic', 'Conditional')
