@@ -78,7 +78,6 @@ function! s:SetupLspHighlights() abort
 				\ })
 endfunction
 
-
 if has('autocmd')
 	augroup Color
 		autocmd!

@@ -43,7 +43,6 @@ set display+=lastline
 set splitbelow
 set splitright
 
-
 set wildmenu
 set wildcharm=<C-z>
 
