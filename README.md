@@ -1,6 +1,6 @@
 # Dependencies
 - [git](https://github.com/git/git) => 1.8.2
-- [neovim](https://github.com/neovim/neovim) => 0.4.3 or [vim](https://github.com/vim/vim) => 8.0 with Ruby and Python support
+- [neovim](https://github.com/neovim/neovim) => 0.5.0
 - [tmux](https://github.com/tmux/tmux) => 2.8
 - [vifm](https://github.com/vifm/vifm) => 0.8
   - [ueberzug](https://github.com/seebye/ueberzug)(optional) - for image preview
