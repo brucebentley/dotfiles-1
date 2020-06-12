@@ -19,9 +19,6 @@
 [submodule "ultisnips"]
 	path = .config/nvim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "vim-clang-format"]
-	path = .config/nvim/pack/bundle/opt/vim-clang-format
-	url = https://github.com/rhysd/vim-clang-format
 [submodule "vim-fugitive"]
 	path = .config/nvim/pack/bundle/opt/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive

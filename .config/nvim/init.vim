@@ -16,7 +16,6 @@ if &loadplugins
 		packadd! nvim-lsp
 		packadd! pinnacle
 		packadd! ultisnips
-		packadd! vim-clang-format
 		packadd! vim-fugitive
 		packadd! vim-vinegar
 	endif
