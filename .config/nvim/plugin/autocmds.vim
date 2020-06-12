@@ -18,6 +18,11 @@ if has('autocmd')
 		endif
 	augroup END
 
+	augroup Defer
+		autocmd! User Defer
+		autocmd User Defer call autocomplete#deoplete_init()
+	augroup END
+
 	augroup Idleboot
 		autocmd!
 		if has('vim_starting')
