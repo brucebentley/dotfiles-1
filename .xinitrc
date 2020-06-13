@@ -18,4 +18,6 @@ if command -v picom > /dev/null; then
 	picom -b --config ~/.config/picom/picom.conf
 fi
 
-exec dwm
+if command -v dwm > /dev/null; then
+	exec dwm
+fi
