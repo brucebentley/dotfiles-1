@@ -10,8 +10,8 @@ endif
 if &loadplugins
 	if has('packages')
 		packadd! base16-vim
-		packadd! deoplete-lsp
 		packadd! deoplete
+		packadd! deoplete-lsp
 		packadd! fzf-vim
 		packadd! nvim-lsp
 		packadd! ultisnips
