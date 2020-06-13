@@ -1,5 +1,5 @@
 (
-zcompare() {
+function zcompare() {
 	if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
 		zcompile -M ${1}
 	fi
@@ -13,4 +13,6 @@ zcompare $HOME/.zshenv
 for file in $HOME/.zsh/**/*.{sh,zsh}; do
 	zcompare ${file}
 done
+
+unfunction zcompare
 ) &!
