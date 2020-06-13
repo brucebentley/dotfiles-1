@@ -22,10 +22,6 @@ function fd() {
 	DIR=$(find -type d 2> /dev/null | fzf --no-multi --preview='test -n "{}" && ls {}' -q "$*") && cd "$DIR"
 }
 
-function fh() {
-	print -z $(fc -l 1 | fzf --no-multi --tac -q "$*" | sed 's/ *[0-9]*\*\{0,1\} *//')
-}
-
 function scratch() {
 	local SCRATCH=$(mktemp -d)
 	echo 'Spawing subshell in scratch directory:'
