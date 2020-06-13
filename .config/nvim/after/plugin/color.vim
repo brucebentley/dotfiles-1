@@ -45,7 +45,7 @@ function! s:SetupHighlights() abort
 	highlight link NonText Conceal
 
 	highlight clear CursorLineNr
-	execute 'highlight CursorLineNr ' . pinnacle#extract_highlight('DiffText')
+	highlight link CursorLineNr DiffText
 
 	highlight clear Pmenu
 	highlight link Pmenu Visual
