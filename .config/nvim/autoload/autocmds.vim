@@ -5,7 +5,7 @@ endfunction
 
 function! autocmds#focus_window() abort
 	if !empty(&ft)
-		execute "ownsyntax ".(&ft)
+		execute "ownsyntax " . (&ft)
 		set list
 	endif
 endfunction
