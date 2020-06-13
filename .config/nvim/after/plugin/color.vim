@@ -26,8 +26,6 @@ endfunction
 function! s:SetupHighlights() abort
 	execute 'highlight Comment ' . pinnacle#italicize('Comment')
 
-	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
-
 	if &background ==# 'light'
 		let s:conceal_term_fg=249
 		let s:conceal_gui_fg='Grey70'
@@ -41,11 +39,13 @@ function! s:SetupHighlights() abort
 				\ 'ctermfg=' . s:conceal_term_fg
 				\ 'guifg=' . s:conceal_gui_fg
 
-	highlight clear NonText
-	highlight link NonText Conceal
-
 	highlight clear CursorLineNr
 	highlight link CursorLineNr DiffText
+
+	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+
+	highlight clear NonText
+	highlight link NonText Conceal
 
 	highlight clear Pmenu
 	highlight link Pmenu Visual
