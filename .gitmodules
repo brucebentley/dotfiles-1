@@ -1,12 +1,12 @@
 [submodule "base16-vim"]
 	path = .config/nvim/pack/bundle/opt/base16-vim
 	url = https://github.com/chriskempson/base16-vim/
-[submodule "deoplete-lsp"]
-	path = .config/nvim/pack/bundle/opt/deoplete-lsp
-	url = https://github.com/Shougo/deoplete-lsp
 [submodule "deoplete"]
 	path = .config/nvim/pack/bundle/opt/deoplete
 	url = https://github.com/Shougo/deoplete.nvim
+[submodule "deoplete-lsp"]
+	path = .config/nvim/pack/bundle/opt/deoplete-lsp
+	url = https://github.com/Shougo/deoplete-lsp
 [submodule "fzf-vim"]
 	path = .config/nvim/pack/bundle/opt/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
