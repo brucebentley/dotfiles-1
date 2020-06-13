@@ -1,4 +1,4 @@
-fpath=($HOME/.zsh/completions $fpath)
+fpath+=$HOME/.zsh/completions
 
 if [[ -n $HOME/.zcompdump(#qN.md-1) ]]; then
 	compinit -C
