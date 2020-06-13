@@ -4,8 +4,8 @@
 [submodule "deoplete-lsp"]
 	path = .config/nvim/pack/bundle/opt/deoplete-lsp
 	url = https://github.com/Shougo/deoplete-lsp
-[submodule "deoplete.nvim"]
-	path = .config/nvim/pack/bundle/opt/deoplete.nvim
+[submodule "deoplete"]
+	path = .config/nvim/pack/bundle/opt/deoplete
 	url = https://github.com/Shougo/deoplete.nvim
 [submodule "fzf.vim"]
 	path = .config/nvim/pack/bundle/opt/fzf.vim
