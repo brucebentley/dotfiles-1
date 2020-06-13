@@ -9,8 +9,4 @@ alias n=ncmpcpp
 alias r=vifm
 alias s=ssh
 alias t=tmux
-alias v=vim
-
-if command -v nvim > /dev/null; then
-	alias vim=nvim
-fi
+alias v=nvim
