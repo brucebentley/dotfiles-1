@@ -5,7 +5,7 @@
 	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	ca = "!git add -A && git commit -a"
-	ci = "!git commit"
+	ci = "commit"
 
 	amend = "!git add -A && git commit --amend --no-edit"
 
