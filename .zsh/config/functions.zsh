@@ -17,11 +17,6 @@ function vifm() {
 	fi
 }
 
-function fd() {
-	local DIR
-	DIR=$(find -type d 2> /dev/null | fzf --no-multi --preview='test -n "{}" && ls {}' -q "$*") && cd "$DIR"
-}
-
 function scratch() {
 	local SCRATCH=$(mktemp -d)
 	echo 'Spawing subshell in scratch directory:'
