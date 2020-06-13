@@ -12,7 +12,7 @@ if &loadplugins
 		packadd! base16-vim
 		packadd! deoplete-lsp
 		packadd! deoplete
-		packadd! fzf.vim
+		packadd! fzf-vim
 		packadd! nvim-lsp
 		packadd! ultisnips
 		packadd! vim-fugitive

@@ -7,8 +7,8 @@
 [submodule "deoplete"]
 	path = .config/nvim/pack/bundle/opt/deoplete
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule "fzf.vim"]
-	path = .config/nvim/pack/bundle/opt/fzf.vim
+[submodule "fzf-vim"]
+	path = .config/nvim/pack/bundle/opt/fzf-vim
 	url = https://github.com/junegunn/fzf.vim
 [submodule "nvim-lsp"]
 	path = .config/nvim/pack/bundle/opt/nvim-lsp
