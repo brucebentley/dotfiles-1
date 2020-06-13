@@ -15,4 +15,5 @@ for file in $HOME/.zsh/**/*.{sh,zsh}; do
 done
 
 unfunction zcompare
+unsetopt EXTENDED_GLOB
 ) &!
