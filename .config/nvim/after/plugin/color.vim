@@ -24,7 +24,8 @@ function! s:CheckColorScheme() abort
 endfunction
 
 function! s:SetupHighlights() abort
-	execute 'highlight Comment ' . pinnacle#italicize('Comment')
+	highlight clear Comment
+	highlight Comment cterm=italic ctermbg=8 gui=italic guifg=#585858
 
 	if &background ==# 'light'
 		let s:conceal_term_fg=249
@@ -42,7 +43,7 @@ function! s:SetupHighlights() abort
 	highlight clear CursorLineNr
 	highlight link CursorLineNr DiffText
 
-	highlight! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+	highlight EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 	highlight clear NonText
 	highlight link NonText Conceal
@@ -55,27 +56,15 @@ function! s:SetupHighlights() abort
 endfunction
 
 function! s:SetupLspHighlights() abort
-	execute 'highlight LspDiagnosticsError ' . pinnacle#decorate('italic', 'WarningMsg')
-	execute 'highlight LspDiagnosticsHint ' . pinnacle#decorate('italic', 'ModeMsg')
-	execute 'highlight LspDiagnosticsInformation ' . pinnacle#decorate('italic', 'Conditional')
-	execute 'highlight LspDiagnosticsWarning ' . pinnacle#decorate('italic', 'Type')
+	highlight LspDiagnosticsError cterm=italic ctermfg=1 gui=italic guifg=#ab4642
+	highlight LspDiagnosticsHint cterm=italic ctermfg=2 gui=italic guifg=#a1b56c
+	highlight LspDiagnosticsInformation cterm=italic ctermfg=5 gui=italic guifg=#ba8baf
+	highlight LspDiagnosticsWarning cterm=italic ctermfg=3 gui=italic guifg=#f7ca88
 
-	execute 'highlight LspDiagnosticsErrorSign ' . pinnacle#highlight({
-				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('WarningMsg')
-				\ })
-	execute 'highlight LspDiagnosticsHintSign ' . pinnacle#highlight({
-				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('ModeMsg')
-				\ })
-	execute 'highlight LspDiagnosticsInformationSign ' . pinnacle#highlight({
-				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('Conditional'),
-				\ })
-	execute 'highlight LspDiagnosticsWarningSign ' . pinnacle#highlight({
-				\   'bg': pinnacle#extract_bg('ColorColumn'),
-				\   'fg': pinnacle#extract_fg('Type')
-				\ })
+	highlight LspDiagnosticsErrorSign guifg=#ab4642 guibg=#282828
+	highlight LspDiagnosticsHintSign guifg=#a1b56c guibg=#282828
+	highlight LspDiagnosticsInformationSign guifg=#ba8baf guibg=#282828
+	highlight LspDiagnosticsWarningSign guifg=#f7ca88 guibg=#282828
 endfunction
 
 if has('autocmd')
