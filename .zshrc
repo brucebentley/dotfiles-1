@@ -39,7 +39,7 @@ source $HOME/.zsh/config/bindings.zsh
 source $HOME/.zsh/config/colors.zsh
 source $HOME/.zsh/config/completion.zsh
 source $HOME/.zsh/config/exports.zsh
-source $HOME/.zsh/config/functions.zsh
+source $HOME/.zsh/config/wrappers.zsh
 source $HOME/.zsh/config/path.zsh
 source $HOME/.zsh/config/prompt.zsh
 
