@@ -25,6 +25,24 @@ SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %
 
 setopt PROMPT_SUBST
 
+function () {
+	local TMUXING=$([[ $TERM =~ tmux ]] && echo tmux)
+	if [ -n "$TMUXING" -a -n "$TMUX" ]; then
+		local LVL=$(($SHLVL-1))
+	else
+		local LVL=$SHLVL
+	fi
+	if [[ $EUID -eq 0 ]]; then
+		local SUFFIX='%F{yellow}%n%f'$(printf '%%F{yellow}\u276f%.0s%%f' {1..$LVL})
+	else
+		local SUFFIX=$(printf '%%F{red}\u276f%.0s%%f' {1..$LVL})
+	fi
+	PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
+	if [[ -n $TMUXING ]]; then
+		ZLE_RPROMPT_INDENT=0
+	fi
+}
+
 function -set-tab-and-window-title() {
 	emulate -L zsh
 
