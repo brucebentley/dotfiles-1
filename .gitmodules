@@ -20,11 +20,3 @@
 	path = .zsh/plugin/base16-shell
 	url = https://github.com/chriskempson/base16-shell
 	ignore = dirty
-[submodule "zsh-autosuggestions"]
-	path = .zsh/plugin/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions
-	ignore = dirty
-[submodule "zsh-syntax-highlighting"]
-	path = .zsh/plugin/zsh-syntax-highlighting
-	url = https://github.com/zsh-users/zsh-syntax-highlighting
-	ignore = dirty
