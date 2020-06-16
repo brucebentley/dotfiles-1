@@ -1,8 +1,6 @@
 let mapleader="\<Space>"
 let maplocalleader="\\"
 
-set runtimepath+=~/.zsh/plugin/fzf
-
 if filereadable('/usr/bin/python3')
 	let g:python3_host_prog='/usr/bin/python3'
 endif
