@@ -7,9 +7,6 @@
 [submodule "deoplete-lsp"]
 	path = .config/nvim/pack/bundle/opt/deoplete-lsp
 	url = https://github.com/Shougo/deoplete-lsp
-[submodule "fzf-vim"]
-	path = .config/nvim/pack/bundle/opt/fzf-vim
-	url = https://github.com/junegunn/fzf.vim
 [submodule "nvim-lsp"]
 	path = .config/nvim/pack/bundle/opt/nvim-lsp
 	url = https://github.com/neovim/nvim-lsp
@@ -33,8 +30,4 @@
 [submodule "zsh-syntax-highlighting"]
 	path = .zsh/plugin/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-	ignore = dirty
-[submodule "fzf"]
-	path = .zsh/plugin/fzf
-	url = https://github.com/junegunn/fzf
 	ignore = dirty

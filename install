@@ -24,14 +24,6 @@ setup-dotfiles() {
 		fi
 	done
 
-	if [[ -d $HOME/.zsh/plugin/fzf ]]; then
-		echo 'entering: ~/.zsh/plugin/fzf'
-		cd $HOME/.zsh/plugin/fzf
-		./install --bin --no-key-bindings --no-completion --no-update-rc --no-bash --no-zsh --no-fish --64
-		echo -e 'leaving: ~/.zsh/plugin/fzf\n'
-		cd $REPO_PATH
-	fi
-	
 	for c in ${XDG_CONFIG_HOME[@]}; do
 		if [[ ! -f $HOME/.config/$c ]]; then
 			ln -sf $REPO_PATH/.config/$c $HOME/.config
