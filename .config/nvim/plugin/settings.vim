@@ -12,7 +12,6 @@ set relativenumber
 if has('folding')
 	set foldmethod=indent
 	set foldlevelstart=99
-	set foldtext=settings#foldtext()
 endif
 
 if has('showcmd')
