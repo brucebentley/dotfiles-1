@@ -31,14 +31,14 @@ function! autocomplete#expand_or_jump(direction) abort
 	call UltiSnips#ExpandSnippet()
 	if g:ulti_expand_res == 0
 		if pumvisible()
-			if a:direction == 'N'
+			if a:direction ==# 'N'
 				return "\<C-N>"
 			else
 				return "\<C-P>"
 			endif
 		else
 			if s:expansion_active
-				if a:direction == 'N'
+				if a:direction ==# 'N'
 					call UltiSnips#JumpForwards()
 					if g:ulti_jump_forwards_res == 0
 						return "\<Tab>"
@@ -47,7 +47,7 @@ function! autocomplete#expand_or_jump(direction) abort
 					call UltiSnips#JumpBackwards()
 				endif
 			else
-				if a:direction == 'N'
+				if a:direction ==# 'N'
 					return "\<Tab>"
 				endif
 			endif
