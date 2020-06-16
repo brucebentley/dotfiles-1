@@ -14,7 +14,6 @@ if &loadplugins
 		packadd! deoplete-lsp
 		packadd! nvim-lsp
 		packadd! ultisnips
-		packadd! vim-fugitive
 		packadd! vim-vinegar
 	endif
 endif
