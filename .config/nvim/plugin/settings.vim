@@ -36,7 +36,12 @@ set fillchars+=eob:\
 set fillchars+=fold:·
 set fillchars+=vert:┃
 
+set completeopt=menuone
+set completeopt+=noinsert
+set completeopt+=noselect
+
 set shortmess=I
+set shortmess+=c
 
 set display+=lastline
 
