@@ -3,11 +3,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-vnoremap <C-h> <C-w>h
-vnoremap <C-j> <C-w>j
-vnoremap <C-k> <C-w>k
-vnoremap <C-l> <C-w>l
-
 nnoremap <Tab> za
 
 nnoremap <silent> <leader>n :nohlsearch<CR>
