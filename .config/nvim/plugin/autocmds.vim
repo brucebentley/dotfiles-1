@@ -9,8 +9,8 @@ if has('autocmd')
 		autocmd BufEnter,InsertLeave,VimEnter * setlocal cursorline
 		autocmd BufLeave,InsertEnter * setlocal nocursorline
 
-		autocmd BufEnter,FocusGained,VimEnter,WinEnter * call autocmds#focus_window()
-		autocmd BufLeave,FocusLost,WinLeave * call autocmds#blur_window()
+		autocmd BufEnter,FocusGained,VimEnter,WinEnter * set list | execute 'ownsyntax ' . (&ft)
+		autocmd BufLeave,FocusLost,WinLeave * set nolist | ownsyntax off
 
 		if exists('##TextYankPost')
 			autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank('Substitute', 200)
