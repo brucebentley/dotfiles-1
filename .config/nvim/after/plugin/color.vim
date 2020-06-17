@@ -10,7 +10,7 @@ function! s:CheckColorScheme() abort
 			echoerr 'Bad background ' . s:config[1] . ' in ' . s:config_file
 		endif
 
-		if filereadable(expand('~/.config/nvim/pack/bundle/opt/base16-vim/colors/base16-' . s:config[0] . '.vim'))
+		if filereadable(expand('~/.config/nvim/colors/base16-' . s:config[0] . '.vim'))
 			execute 'colorscheme base16-' . s:config[0]
 		else
 			echoerr 'Bad scheme ' . s:config[0] . ' in ' . s:config_file

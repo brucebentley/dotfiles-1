@@ -1,5 +1,5 @@
 #compdef color
 
-_values colors $(find "$HOME/.zsh/plugin/base16-shell/scripts" -name 'base16-*.sh' | \
+_values colors $(find "$HOME/.zsh/colors" -name 'base16-*.sh' | \
 		 sed -E 's|.+/base16-||' | \
 		 sed -E 's/\.sh//')
