@@ -75,12 +75,6 @@
 	compression = 9
 	excludesfile = ~/.gitignore
 	looseCompression = 9
-	pager = "diff-so-fancy | less -iFMRSX"
-
-[diff-so-fancy]
-	changeHunkIndicators = false
-	markEmptyLines = false
-	stripLeadingSymbols = false
 
 [diff]
 	algorithm = histogram
@@ -92,9 +86,6 @@
 
 [help]
 	autocorrect = 2
-
-[interactive]
-	diffFilter = diff-so-fancy
 
 [log]
 	decorate = short
