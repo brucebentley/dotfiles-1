@@ -1,9 +1,6 @@
 SYSTEM_PATH=$PATH
 unset PATH
 
-PATH=$PATH:$HOME/.zsh/bin
-PATH=$PATH:$HOME/.zsh/plugin/fzf/bin
-
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$HOME/bin
 
