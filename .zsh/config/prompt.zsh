@@ -123,17 +123,4 @@ function -report-start-time() {
 }
 add-zsh-hook precmd -report-start-time
 
-function -record-command() {
-	__EMANON[LAST_COMMAND]="$2"
-}
-add-zsh-hook preexec -record-command
-
-function -maybe-show-vcs-info() {
-	local LAST="$__EMANON[LAST_COMMAND]"
-
-	__EMANON[LAST_COMMAND]="<unset>"
-	if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git|nvim" ]]; then
-		vcs_info
-	fi
-}
-add-zsh-hook precmd -maybe-show-vcs-info
+add-zsh-hook precmd vcs_info
