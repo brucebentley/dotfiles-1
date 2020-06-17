@@ -3,6 +3,7 @@ __EMANON[ITALIC_OFF]=$'\033[23m'
 
 DISABLE_UPDATE_PROMPT=true
 
+autoload -Uz vcs_info
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%F{green}●%f"
@@ -42,6 +43,8 @@ function () {
 		ZLE_RPROMPT_INDENT=0
 	fi
 }
+
+autoload -U add-zsh-hook
 
 function -set-tab-and-window-title() {
 	emulate -L zsh
