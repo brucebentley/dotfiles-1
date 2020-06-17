@@ -132,7 +132,7 @@ function -maybe-show-vcs-info() {
 	local LAST="$__EMANON[LAST_COMMAND]"
 
 	__EMANON[LAST_COMMAND]="<unset>"
-	if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git" ]]; then
+	if [[ $LAST[(w)1] =~ "cd|cp|rm|mv|touch|git|nvim" ]]; then
 		vcs_info
 	fi
 }
