@@ -3,7 +3,8 @@ __EMANON[ITALIC_OFF]=$'\033[23m'
 
 DISABLE_UPDATE_PROMPT=true
 
-autoload -Uz vcs_info
+autoload -Uz vcs_info add-zsh-hook
+
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' stagedstr "%F{green}●%f"
@@ -20,6 +21,7 @@ function +vi-git-untracked() {
 		hook_com[unstaged]+="%F{blue}●%f"
 	fi
 }
+add-zsh-hook precmd vcs_info
 
 RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
 SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
@@ -43,8 +45,6 @@ function () {
 		ZLE_RPROMPT_INDENT=0
 	fi
 }
-
-autoload -U add-zsh-hook
 
 function -set-tab-and-window-title() {
 	emulate -L zsh
@@ -122,5 +122,3 @@ function -report-start-time() {
 	fi
 }
 add-zsh-hook precmd -report-start-time
-
-add-zsh-hook precmd vcs_info
