@@ -28,3 +28,7 @@
 	path = .zsh/plugin/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 	ignore = dirty
+[submodule "zsh-history-substring-search"]
+	path = .zsh/plugin/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+	ignore = dirty
