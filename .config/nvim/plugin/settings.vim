@@ -31,7 +31,7 @@ set listchars+=tab:▷┅
 set listchars+=trail:•
 
 set fillchars=diff:∙
-set fillchars+=eob:\ 
+set fillchars+=eob:\ |
 set fillchars+=fold:·
 set fillchars+=vert:┃
 
