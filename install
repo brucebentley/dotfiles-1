@@ -12,7 +12,7 @@ Commands:
 clean           -- remove all created symlinks
 conflict        -- list conflicted directory
 dotfiles        -- install all config files
-git             -- install git config files only
+git             -- setup git config files
 help            -- show information about the commands
 EOF
 }

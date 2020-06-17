@@ -16,7 +16,7 @@
 install clean     # remove all created symlink files
 install conflict  # list conflicted directories
 install dotfiles  # install everything
-install git       # install git config only
+install git       # setup git config files
 install help      # display all options
 ```
 
