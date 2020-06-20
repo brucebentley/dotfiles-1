@@ -3,9 +3,9 @@ defaults.pcm.rate 48000
 
 pcm.!default {
 	type plug
-		slave.pcm {
-			type hw
-			card 0
-			device 0
-		}
+	slave.pcm {
+		type hw
+		card 0
+		device 0
+	}
 }
