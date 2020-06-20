@@ -27,6 +27,9 @@ source $HOME/.zsh/config/wrappers.zsh
 source $HOME/.zsh/config/path.zsh
 source $HOME/.zsh/config/prompt.zsh
 
-source $HOME/.zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $HOME/.zsh/plugin/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=59'
+
+source $HOME/.zsh/plugin/zsh-history-substring-search/zsh-history-substring-search.zsh
+
 source $HOME/.zsh/plugin/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
