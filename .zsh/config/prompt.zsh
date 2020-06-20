@@ -1,6 +1,3 @@
-__EMANON[ITALIC_ON]=$'\033[3m'
-__EMANON[ITALIC_OFF]=$'\033[23m'
-
 DISABLE_UPDATE_PROMPT=true
 
 autoload -Uz vcs_info add-zsh-hook
@@ -115,7 +112,7 @@ function -report-start-time() {
 			SECS="$((~~$SECS))s"
 		fi
 		ELAPSED="${ELAPSED}${SECS}"
-		RPROMPT="%F{cyan}%{$__EMANON[ITALIC_ON]%}${ELAPSED}%{$__EMANON[ITALIC_OFF]%}%f $RPROMPT_BASE"
+		RPROMPT="%F{cyan}%{$__USER[ITALIC_ON]%}${ELAPSED}%{$__USER[ITALIC_OFF]%}%f $RPROMPT_BASE"
 		unset ZSH_START_TIME
 	else
 		RPROMPT="$RPROMPT_BASE"

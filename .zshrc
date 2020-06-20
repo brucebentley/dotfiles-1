@@ -1,4 +1,9 @@
-typeset -A __EMANON
+typeset -A __USER
+
+__USER[LINE_CURSOR]=$'\033[6 q'
+__USER[BLOCK_CURSOR]=$'\033[2 q'
+__USER[ITALIC_ON]=$'\033[3m'
+__USER[ITALIC_OFF]=$'\033[23m'
 
 HISTSIZE=1000000
 HISTFILE="$HOME/.history"

@@ -1,6 +1,3 @@
-__EMANON[LINE_CURSOR]=$'\033[6 q'
-__EMANON[BLOCK_CURSOR]=$'\033[2 q'
-
 bindkey -v
 
 KEYTIMEOUT=1
@@ -18,9 +15,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 function zle-keymap-select zle-line-init {
 	if [[ $KEYMAP == main ]]; then
-		printf $__EMANON[LINE_CURSOR]
+		printf $__USER[LINE_CURSOR]
 	else
-		printf $__EMANON[BLOCK_CURSOR]
+		printf $__USER[BLOCK_CURSOR]
 	fi
 }
 zle -N zle-line-init

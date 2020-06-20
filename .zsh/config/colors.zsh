@@ -1,4 +1,4 @@
-__EMANON[BASE16_CONFIG]=~/.config/nvim/.base16
+__USER[BASE16_CONFIG]=~/.config/nvim/.base16
 
 function luma() {
 	emulate -L zsh
@@ -32,7 +32,7 @@ function color() {
 
 	local SCHEME="$1"
 	local BASE16_DIR=~/.zsh/colors
-	local BASE16_CONFIG_PREVIOUS="${__EMANON[BASE16_CONFIG]}.previous"
+	local BASE16_CONFIG_PREVIOUS="${__USER[BASE16_CONFIG]}.previous"
 	local STATUS=0
 
 	function __color() {
@@ -47,12 +47,12 @@ function color() {
 				BACKGROUND=light
 			fi
 
-			if [ -e "$__EMANON[BASE16_CONFIG]" ]; then
-				cp "$__EMANON[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
+			if [ -e "$__USER[BASE16_CONFIG]" ]; then
+				cp "$__USER[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
 			fi
 
-			echo "$SCHEME" >! "$__EMANON[BASE16_CONFIG]"
-			echo "$BACKGROUND" >> "$__EMANON[BASE16_CONFIG]"
+			echo "$SCHEME" >! "$__USER[BASE16_CONFIG]"
+			echo "$BACKGROUND" >> "$__USER[BASE16_CONFIG]"
 			sh "$FILE"
 
 			if [ -n "$TMUX" ]; then
@@ -71,9 +71,9 @@ function color() {
 	}
 
 	if [ $# -eq 0 ]; then
-		if [ -s "$__EMANON[BASE16_CONFIG]" ]; then
-			cat "$__EMANON[BASE16_CONFIG]"
-			local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
+		if [ -s "$__USER[BASE16_CONFIG]" ]; then
+			cat "$__USER[BASE16_CONFIG]"
+			local SCHEME=$(head -1 "$__USER[BASE16_CONFIG]")
 			__color "$SCHEME"
 			return
 		fi
@@ -101,11 +101,11 @@ function color() {
 function () {
 	emulate -L zsh
 
-	if [[ -s "$__EMANON[BASE16_CONFIG]" ]]; then
-		local SCHEME=$(head -1 "$__EMANON[BASE16_CONFIG]")
-		local BACKGROUND=$(sed -n -e '2 p' "$__EMANON[BASE16_CONFIG]")
+	if [[ -s "$__USER[BASE16_CONFIG]" ]]; then
+		local SCHEME=$(head -1 "$__USER[BASE16_CONFIG]")
+		local BACKGROUND=$(sed -n -e '2 p' "$__USER[BASE16_CONFIG]")
 		if [ "$BACKGROUND" != 'dark' -a "$BACKGROUND" != 'light' ]; then
-			echo "warning: unknown background type in $__EMANON[BASE16_CONFIG]"
+			echo "warning: unknown background type in $__USER[BASE16_CONFIG]"
 		fi
 		color "$SCHEME"
 	else
