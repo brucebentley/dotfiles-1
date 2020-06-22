@@ -10,9 +10,6 @@
 [submodule "ultisnips"]
 	path = .config/nvim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips
-[submodule "vim-vinegar"]
-	path = .config/nvim/pack/bundle/opt/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
 [submodule "zsh-syntax-highlighting"]
 	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
