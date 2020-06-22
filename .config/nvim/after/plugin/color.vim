@@ -56,15 +56,27 @@ function! s:SetupHighlights() abort
 endfunction
 
 function! s:SetupLspHighlights() abort
-	highlight LspDiagnosticsError cterm=italic ctermfg=1 gui=italic guifg=#ab4642
-	highlight LspDiagnosticsHint cterm=italic ctermfg=2 gui=italic guifg=#a1b56c
-	highlight LspDiagnosticsInformation cterm=italic ctermfg=5 gui=italic guifg=#ba8baf
-	highlight LspDiagnosticsWarning cterm=italic ctermfg=3 gui=italic guifg=#f7ca88
+	exec 'highlight LspDiagnosticsError cterm=italic gui=italic ' .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('WarningMsg')), 'fg', 'gui')
+	exec 'highlight LspDiagnosticsHint cterm=italic gui=italic ' .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('ModeMsg')), 'fg', 'gui')
+	exec 'highlight LspDiagnosticsInformation cterm=italic gui=italic ' .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('Conditional')), 'fg', 'gui')
+	exec 'highlight LspDiagnosticsWarning cterm=italic gui=italic' .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('Type')), 'fg', 'gui')
 
-	highlight LspDiagnosticsErrorSign guifg=#ab4642 guibg=#282828
-	highlight LspDiagnosticsHintSign guifg=#a1b56c guibg=#282828
-	highlight LspDiagnosticsInformationSign guifg=#ba8baf guibg=#282828
-	highlight LspDiagnosticsWarningSign guifg=#f7ca88 guibg=#282828
+	exec 'highlight LspDiagnosticsErrorSign' .
+				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('WarningMsg')), 'fg', 'gui')
+	exec 'highlight LspDiagnosticsHintSign' .
+				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('ModeMsg')), 'fg', 'gui')
+	exec 'highlight LspDiagnosticsInformationSign' .
+				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('Conditional')), 'fg', 'gui')
+	exec 'highlight LspDiagnosticsWarningSign' .
+				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
+				\ ' guifg=' . synIDattr(synIDtrans(hlID('Type')), 'fg', 'gui')
 endfunction
 
 if has('autocmd')
