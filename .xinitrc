@@ -4,7 +4,7 @@ if command -v setxkbmap xcape > /dev/null; then
 	setxkbmap -layout "us+symbols(xcape-special)" \
 		  -keycodes "evdev+keycodes(xcape-special)" \
 		  -option "caps:super,shift:both_shiftlock" -print | \
-		  xkbcomp -I"$HOME/.config/xkb" - "${DISPLAY%%.*}" > /dev/null 2>&1
+		  xkbcomp -I"$HOME/.config/setxkbmap" - "${DISPLAY%%.*}" > /dev/null 2>&1
 
 	xcape -e "Hyper_R=space;Super_L=Escape"
 fi

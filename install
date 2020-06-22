@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 CONFIG_HOME=(asoundrc fonts gitconfig mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
-XDG_CONFIG_HOME=(picom fontconfig nvim vifm xkb)
+XDG_CONFIG_HOME=(picom fontconfig nvim vifm setxkbmap)
 REPO_PATH=$(cd $(dirname ${BASH_SOURCE[0]}) > /dev/null && pwd -P)
 
 usage() {
