@@ -1,8 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 CONFIG_HOME=(asoundrc gitconfig mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
 XDG_CONFIG_HOME=(picom fontconfig nvim vifm setxkbmap)
-REPO_PATH=$(cd $(dirname ${BASH_SOURCE[0]}) > /dev/null && pwd -P)
 
 usage() {
 cat << EOF
@@ -20,13 +19,13 @@ EOF
 setup-dotfiles() {
 	for h in ${CONFIG_HOME[@]}; do
 		if [[ ! -f $HOME/.$h ]]; then
-			ln -sf $REPO_PATH/.$h $HOME
+			ln -sf $(pwd -P)/.$h $HOME
 		fi
 	done
 
 	for c in ${XDG_CONFIG_HOME[@]}; do
 		if [[ ! -f $HOME/.config/$c ]]; then
-			ln -sf $REPO_PATH/.config/$c $HOME/.config
+			ln -sf $(pwd -P)/.config/$c $HOME/.config
 		fi
 	done
 
@@ -50,7 +49,7 @@ clean-symlink() {
 }
 
 setup-git() {
-	ln -sf $REPO_PATH/.gitconfig $HOME
+	ln -sf $(pwd -P)/.gitconfig $HOME
 	printf "Username for 'https://github.com': "
 	read name
 	printf "Email for 'https://$name@github.com': "
