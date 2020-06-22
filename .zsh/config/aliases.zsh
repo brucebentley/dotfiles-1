@@ -5,6 +5,7 @@ alias ....='cd ../..'
 alias ..='cd ..'
 alias e=exit
 alias g=git
+alias grep='grep -Hn --color=always'
 alias l='ls --color=always'
 alias ll='ls -al --color=always'
 alias n=ncmpcpp
