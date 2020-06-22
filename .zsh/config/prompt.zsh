@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 DISABLE_UPDATE_PROMPT=true
 
 autoload -Uz vcs_info add-zsh-hook

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 __USER[BASE16_CONFIG]=~/.config/nvim/.base16
 
 function luma() {

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 autoload -U compinit
 
 fpath+=$HOME/.zsh/completions

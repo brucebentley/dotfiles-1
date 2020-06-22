@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 function vifm() {
 	emulate -L zsh
 

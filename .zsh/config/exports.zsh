@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 export CORRECT_IGNORE_FILE='.*'
 
 export EDITOR=nvim

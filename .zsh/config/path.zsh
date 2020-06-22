@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 SYSTEM_PATH=$PATH
 unset PATH
 
