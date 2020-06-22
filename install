@@ -1,77 +1,66 @@
 #!/bin/sh
 
-CONFIG_HOME=(asoundrc gitconfig mpd ncmpcpp tmux.conf xinitrc zlogin zsh zshenv zshrc)
+CONFIG_DIR_HOME=(mpd ncmpcpp zsh)
+CONFIG_FILE_HOME=(asoundrc gitconfig tmux.conf xinitrc zlogin zshenv zshrc)
 XDG_CONFIG_HOME=(picom fontconfig nvim vifm setxkbmap)
 
 usage() {
-cat << EOF
+	cat << EOF
 Usage: install [commands]
 
 Commands:
 clean           -- remove all created symlinks
-conflict        -- list conflicted directory
 dotfiles        -- install all config files
-git             -- setup git config files
 help            -- show information about the commands
 EOF
 }
 
-setup-dotfiles() {
-	for h in ${CONFIG_HOME[@]}; do
-		if [[ ! -f $HOME/.$h ]]; then
-			ln -sf $(pwd -P)/.$h $HOME
+setup_dotfiles() {
+	for f in ${CONFIG_FILE_HOME[@]}; do
+		if [[ ! -f $HOME/.$f ]]; then
+			ln -s $(pwd -P)/.$f $HOME
+		else
+			echo "error: failed to install $f: Conflicted with $HOME/.$f"
+		fi
+	done
+
+	for d in ${CONFIG_DIR_HOME[@]}; do
+		if [[ ! -d $HOME/.$d ]]; then
+			ln -s $(pwd -P)/.$d $HOME
+		else
+			echo "error: failed to install $d: Conflicted with $HOME/.$d"
 		fi
 	done
 
 	for c in ${XDG_CONFIG_HOME[@]}; do
-		if [[ ! -f $HOME/.config/$c ]]; then
-			ln -sf $(pwd -P)/.config/$c $HOME/.config
+		if [[ ! -d $HOME/.config/$c ]]; then
+			ln -s $(pwd -P)/.config/$c $HOME/.config
+		else
+			echo "error: unable to install $c: Conflicted with $HOME/.config/$c"
 		fi
 	done
-
-	echo 'success!'
 }
 
-clean-symlink() {
-	for h in ${CONFIG_HOME[@]}; do
-		if [[ -L $HOME/.$h ]]; then
-			rm -f $HOME/.$h
+clean_symlink() {
+	for f in ${CONFIG_FILE_HOME[@]}; do
+		if [[ -L $HOME/.$f ]]; then
+			rm -f $HOME/.$f
 		fi
 	done
-	
+
+	for d in ${CONFIG_DIR_HOME[@]}; do
+		if [[ -L $HOME/.$d ]]; then
+			rm -rf $HOME/.$d
+		fi
+	done
+
 	for c in ${XDG_CONFIG_HOME[@]}; do
 		if [[ -L $HOME/.config/$c ]]; then
-			rm -f $HOME/.config/$c
+			rm -rf $HOME/.config/$c
 		fi
 	done
 	
 	rm -f $HOME/.*.zwc*
-}
-
-setup-git() {
-	ln -sf $(pwd -P)/.gitconfig $HOME
-	printf "Username for 'https://github.com': "
-	read name
-	printf "Email for 'https://$name@github.com': "
-	read email
-	
-	git config --file "$HOME/.gitconfig.local" user.name "$name"
-	git config --file "$HOME/.gitconfig.local" user.email "$email"
-}
-
-check-conflict() {
-echo "Conflicted Directories:"
-	for h in ${CONFIG_HOME[@]}; do
-		if [[ -d $HOME/.$h && -L $HOME/.$h ]]; then
-			echo "$HOME/.$h"
-		fi
-	done
-	
-	for c in ${XDG_CONFIG_HOME[@]}; do
-		if [[ -d $HOME/.config/$c && -L $HOME/.config/$c ]]; then
-			echo "$HOME/.config/$c"
-		fi
-	done
 }
 
 main() {
@@ -80,29 +69,23 @@ main() {
 	fi
 
 	case "$1" in
-		help)
-			usage
-			;;
-		git)
-			setup-git
-			;;
-		dotfiles)
-			setup-dotfiles
-			;;
-		clean)
-			clean-symlink
-			;;
-		conflict)
-			check-conflict
-			;;
-		"")
-			usage
-			;;
-		*)
-			usage
-			echo
-			echo "error: unrecognized options: $1"
-			;;
+	help)
+		usage
+		;;
+	dotfiles)
+		setup_dotfiles
+		;;
+	clean)
+		clean_symlink
+		;;
+	"")
+		usage
+		;;
+	*)
+		usage
+		echo
+		echo "error: unrecognized options: $1"
+		;;
 	esac
 }
 
