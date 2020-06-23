@@ -24,8 +24,7 @@ function! s:CheckColorScheme() abort
 endfunction
 
 function! s:SetupHighlights() abort
-	highlight clear Comment
-	highlight Comment cterm=italic ctermbg=8 gui=italic guifg=#585858
+	highlight Comment cterm=italic gui=italic
 
 	if &background ==# 'light'
 		let s:conceal_term_fg=249
