@@ -13,3 +13,8 @@ alias r=vifm
 alias s=ssh
 alias t=tmux
 alias v=nvim
+
+alias cp='nocorrect cp'
+alias man='nocorrect man'
+alias mkdir='nocorrect mkdir'
+alias mv='nocorrect mv'
