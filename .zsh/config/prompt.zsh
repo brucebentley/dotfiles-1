@@ -2,7 +2,10 @@
 
 DISABLE_UPDATE_PROMPT=true
 
-autoload -Uz vcs_info add-zsh-hook
+autoload -Uz vcs_info add-zsh-hook async
+
+async_start_worker _vcs_info
+async_register_callback _vcs_info _vcs_info_callback
 
 zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
@@ -20,7 +23,11 @@ function +vi-git-untracked() {
 		hook_com[unstaged]+="%F{blue}●%f"
 	fi
 }
-add-zsh-hook precmd vcs_info
+
+function _vcs_info_callback() {
+	vcs_info
+	zle reset-prompt
+}
 
 RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
 SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
@@ -68,7 +75,6 @@ function -update-window-title-precmd() {
 		fi
 	fi
 }
-add-zsh-hook precmd -update-window-title-precmd
 
 function -update-window-title-preexec() {
 	emulate -L zsh
@@ -83,7 +89,6 @@ function -update-window-title-preexec() {
 		-set-tab-and-window-title "$(basename $PWD) > $TRIMMED"
 	fi
 }
-add-zsh-hook preexec -update-window-title-preexec
 
 typeset -F SECONDS
 function -record-start-time() {
@@ -91,7 +96,6 @@ function -record-start-time() {
 
 	ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
 }
-add-zsh-hook preexec -record-start-time
 
 function -report-start-time() {
 	emulate -L zsh
@@ -120,4 +124,14 @@ function -report-start-time() {
 		RPROMPT="$RPROMPT_BASE"
 	fi
 }
-add-zsh-hook precmd -report-start-time
+
+add-zsh-hook preexec () {
+	-record-start-time
+	-update-window-title-preexec
+}
+
+add-zsh-hook precmd () {
+	async_job _vcs_info vcs_info
+	-report-start-time
+	-update-window-title-precmd
+}

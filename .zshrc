@@ -18,6 +18,10 @@ setopt LIST_PACKED
 setopt MENU_COMPLETE
 setopt SHARE_HISTORY
 
+source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+source $HOME/.zsh/config/async.zsh
 source $HOME/.zsh/config/aliases.zsh
 source $HOME/.zsh/config/bindings.zsh
 source $HOME/.zsh/config/colors.zsh
@@ -27,9 +31,5 @@ source $HOME/.zsh/config/wrappers.zsh
 source $HOME/.zsh/config/path.zsh
 source $HOME/.zsh/config/prompt.zsh
 
-source $HOME/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
-
 source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
-
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
