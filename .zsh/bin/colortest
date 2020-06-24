@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 theme=$(head -1 "$HOME/.config/nvim/.base16")
 theme_file=$HOME/.zsh/colors/base16-$theme.sh
 if [[ -f $theme_file ]]; then
