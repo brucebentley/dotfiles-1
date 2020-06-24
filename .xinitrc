@@ -18,6 +18,10 @@ if command -v picom > /dev/null; then
 	picom -b --experimental-backend --config ~/.config/picom/picom.conf
 fi
 
+if command -v unclutter > /dev/null; then
+	unclutter --idle 2
+fi
+
 if command -v dwm > /dev/null; then
 	exec dwm
 fi
