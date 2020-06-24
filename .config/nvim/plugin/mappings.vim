@@ -7,8 +7,6 @@ nnoremap <silent> <leader>n :nohlsearch<CR>
 
 nnoremap <silent> <Leader>zz :%s/\s\+$//e<CR>
 
-nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-
 nnoremap <silent> <Up> :cprevious<CR>
 nnoremap <silent> <Down> :cnext<CR>
 nnoremap <silent> <Left> :cpfile<CR>
