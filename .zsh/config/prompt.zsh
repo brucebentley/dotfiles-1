@@ -2,7 +2,7 @@
 
 DISABLE_UPDATE_PROMPT=true
 
-autoload -Uz vcs_info add-zsh-hook async
+autoload -Uz vcs_info add-zsh-hook
 
 async_start_worker _vcs_info
 async_register_callback _vcs_info _vcs_info_callback
