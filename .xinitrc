@@ -19,7 +19,7 @@ if command -v picom > /dev/null; then
 fi
 
 if command -v unclutter > /dev/null; then
-	unclutter --idle 2 &
+	unclutter --idle 1 &
 fi
 
 if command -v dwm > /dev/null; then
