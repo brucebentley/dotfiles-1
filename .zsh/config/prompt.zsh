@@ -2,32 +2,7 @@
 
 DISABLE_UPDATE_PROMPT=true
 
-autoload -Uz vcs_info add-zsh-hook
-
-async_start_worker _vcs_info
-async_register_callback _vcs_info _vcs_info_callback
-
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr "%F{green}●%f"
-zstyle ':vcs_info:*' unstagedstr "%F{red}●%f"
-zstyle ':vcs_info:*' use-simple true
-zstyle ':vcs_info:git+set-message:*' hooks git-untracked
-zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] '
-zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u] '
-
-function +vi-git-untracked() {
-	emulate -L zsh
-
-	if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
-		hook_com[unstaged]+="%F{blue}●%f"
-	fi
-}
-
-function _vcs_info_callback() {
-	vcs_info
-	zle reset-prompt
-}
+autoload -Uz add-zsh-hook vcs_info
 
 RPROMPT_BASE="\${vcs_info_msg_0_}%F{blue}%~%f"
 SPROMPT="zsh: correct %F{red}'%R'%f to %F{red}'%r'%f [%B%Uy%u%bes, %B%Un%u%bo, %B%Ue%u%bdit, %B%Ua%u%bbort]? "
@@ -52,50 +27,13 @@ function () {
 	fi
 }
 
-function -set-tab-and-window-title() {
-	emulate -L zsh
-
-	local CMD="${1:gs/$/\\$}"
-	print -Pn "\033]0;$CMD:q\a"
-}
-
-HISTCMD_LOCAL=0
-
-function -update-window-title-precmd() {
-	emulate -L zsh
-
-	if [[ HISTCMD_LOCAL -eq 0 ]]; then
-		-set-tab-and-window-title "$(basename $PWD)"
-	else
-		local LAST=$(history | tail -1 | awk '{print $2}')
-		if [[ -n $TMUX ]]; then
-			-set-tab-and-window-title "$LAST"
-		else
-			-set-tab-and-window-title "$(basename $PWD) > $LAST"
-		fi
-	fi
-}
-
-function -update-window-title-preexec() {
-	emulate -L zsh
-
-	setopt EXTENDED_GLOB
-	HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
-
-	local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
-	if [[ -n $TMUX ]]; then
-		-set-tab-and-window-title "$TRIMMED"
-	else
-		-set-tab-and-window-title "$(basename $PWD) > $TRIMMED"
-	fi
-}
-
 typeset -F SECONDS
 function -record-start-time() {
 	emulate -L zsh
 
 	ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
 }
+add-zsh-hook preexec -record-start-time
 
 function -report-start-time() {
 	emulate -L zsh
@@ -124,14 +62,33 @@ function -report-start-time() {
 		RPROMPT="$RPROMPT_BASE"
 	fi
 }
+add-zsh-hook precmd -report-start-time
 
-add-zsh-hook preexec () {
-	-record-start-time
-	-update-window-title-preexec
+async_start_worker _vcs_info
+async_register_callback _vcs_info _vcs_info_callback
+
+zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' check-for-changes true
+zstyle ':vcs_info:*' stagedstr "%F{green}●%f"
+zstyle ':vcs_info:*' unstagedstr "%F{red}●%f"
+zstyle ':vcs_info:*' use-simple true
+zstyle ':vcs_info:git+set-message:*' hooks git-untracked
+zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] '
+zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u] '
+
+function +vi-git-untracked() {
+	emulate -L zsh
+
+	if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
+		hook_com[unstaged]+="%F{blue}●%f"
+	fi
+}
+
+function _vcs_info_callback() {
+	vcs_info
+	zle reset-prompt
 }
 
 add-zsh-hook precmd () {
 	async_job _vcs_info vcs_info
-	-report-start-time
-	-update-window-title-precmd
 }
