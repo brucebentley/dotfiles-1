@@ -15,7 +15,7 @@ if command -v xwallpaper > /dev/null; then
 fi
 
 if command -v picom > /dev/null; then
-	picom -b --experimental-backend --config ~/.config/picom/picom.conf
+	picom -b --config ~/.config/picom/picom.conf
 fi
 
 if command -v unclutter > /dev/null; then
