@@ -5,7 +5,7 @@ alias ....='cd ../..'
 alias ..='cd ..'
 alias e=exit
 alias g=git
-alias grep='grep -Hn --color=always'
+alias grep='grep -HRn --color=always'
 alias j=jump
 alias l='ls --color=always'
 alias ll='ls -al --color=always'
