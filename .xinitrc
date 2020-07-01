@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if command -v slstatus > /dev/null; then
+	slstatus &
+fi
+
 if command -v setxkbmap xcape > /dev/null; then
 	setxkbmap -layout "us+symbols(xcape-special)" \
 		  -keycodes "evdev+keycodes(xcape-special)" \
