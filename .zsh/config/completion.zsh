@@ -5,9 +5,9 @@ autoload -Uz compinit
 fpath=($HOME/.zsh/completions $fpath)
 
 if [[ -n $HOME/.zcompdump(#qN.md-1) ]]; then
-	compinit -C
-else
 	compinit -i -u
+else
+	rm -f $HOME/.zcompdump* && compinit -C
 fi
 
 zstyle ':completion:*' accept-exact '*(N)'
