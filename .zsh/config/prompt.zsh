@@ -87,7 +87,7 @@ prompt_async_callback() {
 	\[async])
 		if (( code == 2 )) || (( code == 3 )) || (( code == 130 )); then
 			typeset -g prompt_async_init=0
-			async_stop_woker prompt_async
+			async_stop_worker prompt_async
 			prompt_async_init
 			prompt_async_tasks
 		fi
