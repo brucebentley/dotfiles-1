@@ -1,13 +1,11 @@
 #!/usr/bin/env zsh
 
-function vifm() {
-	emulate -L zsh
-
+vifm() {
 	if command -v ueberzug > /dev/null; then
 		export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
 		rm "$FIFO_UEBERZUG" 2> /dev/null
 		mkfifo "$FIFO_UEBERZUG"
-		trap "rm "$FIFO_UEBERZUG" 2> /dev/null pkill -P $$ 2> /dev/null" EXIT
+		trap "rm "$FIFO_UEBERZUG" 2> /dev/null && pkill -P $$ 2> /dev/null" EXIT
 		tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
 
 		command vifm "$@"
@@ -19,9 +17,7 @@ function vifm() {
 	fi
 }
 
-function tmux() {
-	emulate -L zsh
-
+tmux() {
 	local SOCK_SYMLINK=~/.ssh/ssh_auth_sock
 	if [ -r "$SSH_AUTH_SOCK" -a ! -L "$SSH_AUTH_SOCK" ]; then
 		ln -sf "$SSH_AUTH_SOCK" $SOCK_SYMLINK

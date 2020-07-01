@@ -1,5 +1,5 @@
 function! s:CheckColorScheme() abort
-	let s:config_file = expand('~/.config/nvim/.base16')
+	let s:config_file = expand('~/.zsh/.base16')
 
 	if filereadable(s:config_file)
 		let s:config = readfile(s:config_file, '', 2)

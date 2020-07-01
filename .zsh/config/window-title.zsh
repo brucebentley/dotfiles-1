@@ -1,42 +1,42 @@
 #!/usr/bin/env zsh
 
-autoload -Uz add-zsh-hook
-
-function -set-tab-and-window-title() {
-	emulate -L zsh
-
+window_title_setup() {
 	local CMD="${1:gs/$/\\$}"
 	print -Pn "\033]0;$CMD:q\a"
 }
 
-function -update-window-title-preexec() {
-	emulate -L zsh
-
+window_title_preexec() {
 	setopt EXTENDED_GLOB
 	HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
 
 	local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
 	if [[ -n $TMUX ]]; then
-		-set-tab-and-window-title "$TRIMMED"
+		window_title_setup "$TRIMMED"
 	else
-		-set-tab-and-window-title "$(basename $PWD) > $TRIMMED"
+		window_title_setup "$(basename $PWD) > $TRIMMED"
 	fi
 }
-add-zsh-hook preexec -update-window-title-preexec
 
-HISTCMD_LOCAL=0
-function -update-window-title-precmd() {
-	emulate -L zsh
-
+window_title_precmd() {
 	if [[ HISTCMD_LOCAL -eq 0 ]]; then
-		-set-tab-and-window-title "$(basename $PWD)"
+		window_title_setup "$(basename $PWD)"
 	else
 		local LAST=$(history | tail -1 | awk '{print $2}')
 		if [[ -n $TMUX ]]; then
-			-set-tab-and-window-title "$LAST"
+			window_title_setup "$LAST"
 		else
-			-set-tab-and-window-title "$(basename $PWD) > $LAST"
+			window_title_setup "$(basename $PWD) > $LAST"
 		fi
 	fi
 }
-add-zsh-hook precmd -update-window-title-precmd
+
+window_title_init() {
+	autoload -Uz add-zsh-hook
+
+	HISTCMD_LOCAL=0
+
+	add-zsh-hook precmd window_title_precmd
+	add-zsh-hook preexec window_title_preexec
+}
+
+window_title_init "$@"

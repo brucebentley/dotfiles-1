@@ -1,13 +1,13 @@
 #!/usr/bin/env zsh
 
-function jump() {
+jump() {
 	emulate -L zsh
 
 	local DIR="${*%%/}"
 	cd ~"$DIR"
 }
 
-function scratch() {
+scratch() {
 	local SCRATCH=$(mktemp -d)
 	echo 'Spawing subshell in scratch directory:'
 	echo "  $SCRATCH"
