@@ -13,7 +13,11 @@ alias n=ncmpcpp
 alias r=vifm
 alias s=ssh
 alias t=tmux
-alias v=nvim
+alias v=vi
+
+if command -v nvim > /dev/null; then
+	alias vi=nvim
+fi
 
 alias cp='nocorrect cp'
 alias man='nocorrect man'
