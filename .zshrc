@@ -6,6 +6,11 @@ USER[LINE_CURSOR]=$'\033[6 q'
 USER[ITALIC_OFF]=$'\033[23m'
 USER[ITALIC_ON]=$'\033[3m'
 
+fpath=(
+	$HOME/.zsh/completions
+	$fpath
+)
+
 HISTSIZE=1000000
 HISTFILE="$HOME/.history"
 SAVEHIST=$HISTSIZE
