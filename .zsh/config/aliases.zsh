@@ -19,6 +19,7 @@ alias r=vifm
 alias s=ssh
 alias t=tmux
 alias v=vi
+alias xinit="xinit -- $(tty | sed 's/\/dev\/tty/vt/')"
 
 if command -v nvim > /dev/null; then
 	alias vi=nvim
