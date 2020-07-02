@@ -14,6 +14,10 @@ if has('folding')
 	set foldlevelstart=99
 endif
 
+if exists('&inccommand')
+	set inccommand=split
+endif
+
 if has('showcmd')
 	set noshowcmd
 endif
