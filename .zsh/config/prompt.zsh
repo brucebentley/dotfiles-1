@@ -1,11 +1,25 @@
 #!/usr/bin/env zsh
 
-typeset -F SECONDS
-prompt_record_start_time() {
-	ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
+prompt_window_title_setup() {
+	local CMD="${1:gs/$/\\$}"
+	print -Pn "\033]0;$CMD:q\a"
 }
 
-prompt_report_start_time() {
+typeset -F SECONDS
+prompt_preexec() {
+	ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
+
+	HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
+
+	local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
+	if [[ -n $TMUX ]]; then
+		prompt_window_title_setup "$TRIMMED"
+	else
+		prompt_window_title_setup "$(basename $PWD) > $TRIMMED"
+	fi
+}
+
+prompt_precmd() {
 	if [ $ZSH_START_TIME ]; then
 		local DELTA=$(($SECONDS - $ZSH_START_TIME))
 		local DAYS=$((~~($DELTA / 86400)))
@@ -28,6 +42,17 @@ prompt_report_start_time() {
 		unset ZSH_START_TIME
 	else
 		RPROMPT="$RPROMPT_BASE"
+	fi
+
+	if [[ HISTCMD_LOCAL -eq 0 ]]; then
+		prompt_window_title_setup "$(basename $PWD)"
+	else
+		local LAST=$(history | tail -1 | awk '{print $2}')
+		if [[ -n $TMUX ]]; then
+			prompt_window_title_setup "$LAST"
+		else
+			prompt_window_title_setup "$(basename $PWD) > $LAST"
+		fi
 	fi
 }
 
@@ -130,8 +155,8 @@ prompt_setup() {
 	fi
 
 	add-zsh-hook precmd prompt_async_tasks
-	add-zsh-hook precmd prompt_report_start_time
-	add-zsh-hook preexec prompt_record_start_time
+	add-zsh-hook precmd prompt_precmd
+	add-zsh-hook preexec prompt_preexec
 }
 
 prompt_setup "$@"

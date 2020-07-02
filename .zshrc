@@ -37,7 +37,6 @@ source $HOME/.zsh/config/exports.zsh
 source $HOME/.zsh/config/functions.zsh
 source $HOME/.zsh/config/hash.zsh
 source $HOME/.zsh/config/path.zsh
-source $HOME/.zsh/config/window-title.zsh
 source $HOME/.zsh/config/prompt.zsh
 source $HOME/.zsh/config/wrappers.zsh
 
