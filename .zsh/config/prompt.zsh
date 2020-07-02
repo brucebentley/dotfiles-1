@@ -102,10 +102,11 @@ prompt_async_tasks() {
 }
 
 prompt_async_callback() {
-	local job=$1 code=$2
+	local job=$1 error=$2
+
 	case $job in
 	\[async])
-		if (( code == 2 )) || (( code == 3 )) || (( code == 130 )); then
+		if (( error == 2 )) || (( error == 3 )) || (( error == 130 )); then
 			typeset -g prompt_async_init=0
 			async_stop_worker prompt_async
 			prompt_async_init
@@ -113,7 +114,7 @@ prompt_async_callback() {
 		fi
 		;;
 	\[async/eval])
-		if (( code )); then
+		if (( error )); then
 			prompt_async_tasks
 		fi
 		;;
