@@ -3,16 +3,17 @@
 alias ......='cd ../../..'
 alias ....='cd ../..'
 alias ..='cd ..'
-alias e=exit
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
+alias e=exit
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias g=git
-alias grep='grep -HRn --color=always'
+alias grep='grep -Hn --color=always'
 alias j=jump
-alias l='ls -lFh --color=always'
-alias ll='ls -lAFh --color=always'
+alias l='ls -lFh'
+alias ll='ls -lAFh'
+alias ls='ls --color=always'
 alias n=ncmpcpp
 alias r=vifm
 alias s=ssh
