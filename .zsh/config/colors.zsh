@@ -70,7 +70,7 @@ color() {
 		if [ -s "$USER[BASE16_CONFIG]" ]; then
 			cat "$USER[BASE16_CONFIG]"
 			local SCHEME=$(head -1 "$USER[BASE16_CONFIG]")
-			__color "$SCHEME"
+			color_setup "$SCHEME"
 			return
 		fi
 	fi
@@ -79,7 +79,7 @@ color() {
 	-)
 		if [[ -s "$BASE16_CONFIG_PREVIOUS" ]]; then
 			local PREVIOUS_SCHEME=$(head -1 "$BASE16_CONFIG_PREVIOUS")
-			__color "$PREVIOUS_SCHEME"
+			color_setup "$PREVIOUS_SCHEME"
 		else
 			echo "warning: no previous config found at $BASE16_CONFIG_PREVIOUS"
 			STATUS=1
