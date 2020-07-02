@@ -9,6 +9,7 @@ vifm() {
 		tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
 
 		command vifm "$@"
+
 		rm "$FIFO_UEBERZUG" 2> /dev/null
 		pkill -P $$ 2> /dev/null
 		unset FIFO_UEBERZUG
@@ -33,7 +34,7 @@ tmux() {
 		if ! grep --silent "$DIGEST" ~/..tmux.digests 2> /dev/null; then
 			cat .tmux
 			read -k 1 -r 'REPLY?Trust (and run) this .tmux file? (t = trust, otherwise = skip) '
-			echo
+
 			if [[ $REPLY =~ ^[Tt]$ ]]; then
 				echo "$DIGEST" >> ~/..tmux.digests
 				./.tmux

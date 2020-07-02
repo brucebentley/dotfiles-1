@@ -40,13 +40,11 @@ prompt_async_vcs_info() {
 	zstyle ':vcs_info:git+set-message:*' hooks git-untracked
 	zstyle ':vcs_info:git*:*' formats '[%b%m%c%u] '
 	zstyle ':vcs_info:git*:*' actionformats '[%b|%a%m%c%u] '
-
 	+vi-git-untracked() {
 		if [[ -n $(git ls-files --exclude-standard --others 2> /dev/null) ]]; then
 			hook_com[unstaged]+="%F{blue}●%f"
 		fi
 	}
-
 	vcs_info
 }
 
@@ -74,15 +72,12 @@ prompt_async_init() {
 
 prompt_async_tasks() {
 	prompt_async_init
-
 	async_worker_eval prompt_async builtin cd -q $PWD
-
 	async_job prompt_async prompt_async_vcs_info
 }
 
 prompt_async_callback() {
 	local job=$1 code=$2
-
 	case $job in
 	\[async])
 		if (( code == 2 )) || (( code == 3 )) || (( code == 130 )); then
