@@ -6,7 +6,6 @@ window_title_setup() {
 }
 
 window_title_preexec() {
-	setopt EXTENDED_GLOB
 	HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
 
 	local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
