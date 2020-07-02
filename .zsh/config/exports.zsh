@@ -20,3 +20,22 @@ export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_se=$'\E[0m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;111m'
+
+SYSTEM_PATH=$PATH
+unset PATH
+
+PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.zsh/bin
+PATH=$PATH:$HOME/bin
+
+if [[ -d /usr/lib/llvm/10/bin ]]; then
+	PATH=$PATH:/usr/lib/llvm/10/bin
+fi
+
+PATH=$PATH:/bin
+PATH=$PATH:/sbin
+PATH=$PATH:/usr/bin
+PATH=$PATH:/usr/local/bin
+PATH=$PATH:/usr/local/sbin
+PATH=$PATH:/usr/sbin
+export PATH
