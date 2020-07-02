@@ -2,7 +2,11 @@
 
 export CORRECT_IGNORE_FILE='.*'
 
-export EDITOR=nvim
+if command -v nvim > /dev/null; then
+	export EDITOR=nvim
+else
+	export EDITOR=vi
+fi
 
 export MANPAGER=less
 
