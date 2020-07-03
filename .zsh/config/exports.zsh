@@ -2,6 +2,9 @@
 
 export CORRECT_IGNORE_FILE='.*'
 
+export LC_ALL=en_US.utf8
+export LANG=en_US.utf8
+
 if command -v nvim > /dev/null; then
 	export EDITOR=nvim
 else
