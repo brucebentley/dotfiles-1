@@ -1,6 +1,6 @@
-lua << END
-require'nvim_lsp'.clangd.setup{}
-END
+if executable('clangd')
+	lua require'nvim_lsp'.clangd.setup{}
+endif
 
 sign define LspDiagnosticsErrorSign text=✖
 sign define LspDiagnosticsWarningSign text=

@@ -1,8 +1,8 @@
 let mapleader="\<Space>"
 let maplocalleader="\\"
 
-if filereadable('/usr/bin/python3')
-	let g:python3_host_prog='/usr/bin/python3'
+if executable('python3')
+	let g:python3_host_prog='python3'
 endif
 
 if &loadplugins
