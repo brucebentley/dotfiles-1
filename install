@@ -9,9 +9,9 @@ usage() {
 Usage: install [commands]
 
 Commands:
-clean           -- remove all created symlinks
-dotfiles        -- install all config files
-help            -- show information about the commands
+clean		-- remove all created symlinks
+dotfiles	-- install all config files
+help		-- show information about the commands
 EOF
 }
 
