@@ -1,7 +1,11 @@
 scriptencoding utf-8
 
-set autoindent
 set backspace=indent,start,eol
+
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
+set noexpandtab
 
 set scrolloff=1
 set sidescrolloff=5
