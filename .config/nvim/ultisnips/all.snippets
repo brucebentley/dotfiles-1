@@ -10,14 +10,6 @@ snippet header "File Header"
 *****************************************************************************/
 endsnippet
 
-snippet time "hh:mm:ss"
-`!v strftime("%H:%M:%S")`
-endsnippet
-
-snippet date "yyyy-mm-dd"
-`!v strftime("%Y-%m-%d")`
-endsnippet
-
 snippet modeline "vim modeline"
 vim`!v ':set '. (&expandtab ? printf('et sw=%i ts=%i', &sw, &ts) : printf('noet sts=%i sw=%i ts=%i', &sts, &sw, &ts)) . (&tw ? ' tw='. &tw : '') . ':'`
 endsnippet

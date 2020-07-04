@@ -1,29 +1,11 @@
 priority -50
 
-snippet def "#define ..."
-#define $1
-endsnippet
-
-snippet incc "#include <...>"
-#include <${1}>
-endsnippet
-
-snippet inc "#include '...'"
-#include "${1}"
-endsnippet
-
 snippet once "#ifndef ... #define ... #endif"
 #ifndef $1
 #define ${1:name} ${2:value}
 
 ${3}
 
-#endif
-endsnippet
-
-snippet #if "#if ... #endif"
-#if ${1:0}
-${2}
 #endif
 endsnippet
 
@@ -39,88 +21,6 @@ ${1}
 #endif
 endsnippet
 
-snippet main "main(int argc, char *argv[])"
-int
-main(int argc, char *argv[])
-{
-	${1}
-	return 0;
-}
-endsnippet
-
-snippet mainn "main(void)"
-int
-main(void)
-{
-	${1}
-	return 0;
-}
-endsnippet
-
-snippet switch "switch (var) ... case: ... default:"
-switch (${1:/* variable */}) {
-case ${2:/* variable case */}:
-	${3}
-	${4:break;}${5}
-default:
-	${6}
-}
-endsnippet
-
-snippet case
-case ${1:/* variable case */}:
-	${2}
-	${3:break;}
-endsnippet
-
-snippet for "for loop"
-for (${4:int} ${2:i} = 0; $2 < ${1:count}; ${3:++$2}) {
-	${5}
-}
-endsnippet
-
-snippet wh "while"
-while (${1:/* condition */}) {
-	${2}
-}
-endsnippet
-
-snippet do "do ... while"
-do {
-	${2}
-} while (${1:/* condition */});
-endsnippet
-
-snippet if "if"
-if (${1:/*condition */}) {
-	${2}
-}
-endsnippet
-
-snippet elif "else if"
-else if (${1:/*condition*/}) {
-	${2}
-}
-endsnippet
-
-snippet ife "if / else"
-if (${1:/* condition */}) {
-	${2}
-} else {
-	${3}
-}
-endsnippet
-
-snippet ifee "if / elif / else"
-if (${1:/* condition */}) {
-	${2}
-} else if (${3:/* condition */}) {
-	${4}
-} else {
-	${5}
-}
-endsnippet
-
 snippet fpr "fprintf"
 fprintf(${1:stderr}, "${2:%s}\n"${2/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$3${2/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
@@ -129,70 +29,10 @@ snippet pr "printf"
 printf("${1:%s}\n"${1/([^%]|%%)*(%.)?.*/(?2:, :\);)/}$2${1/([^%]|%%)*(%.)?.*/(?2:\);)/}
 endsnippet
 
-snippet fun "function"
-${1:void}
-${2:function_name}(${3})
-{
-	${4}
-}
-endsnippet
-
-snippet fun0 "function definition with zero parameters"
-${1:void}
-${2:function_name}()
-{
-	${3}
-}
-endsnippet
-
-snippet fun1 "function definition with one parameter"
-${1:void}
-${2:function_name}(${3:Type} ${4:Parameter})
-{
-	${5}
-}
-endsnippet
-
-snippet fun2 "function definition with two parameters"
-${1:void}
-${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter})
-{
-	${7}
-}
-endsnippet
-
-snippet fun3 "function definition with three parameters"
-${1:void}
-${2:function_name}(${3:Type} ${4:Parameter}, ${5:Type} ${6:Parameter}, ${7:Type} ${8:Parameter})
-{
-	${9}
-}
-endsnippet
-
-snippet fund "function declaration"
-${1:void} ${2:function_name}(${3});
-endsnippet
-
-snippet td "typedef"
-typedef ${1:int} ${2:MyCustomType};
-endsnippet
-
-snippet st "struct"
-struct ${1:name} {
-	${2}
-};
-endsnippet
-
 snippet tds "typedef struct"
 typedef struct ${1:name} {
 	${2}
 } $1;
-endsnippet
-
-snippet enum "enum"
-enum ${1:name} {
-	${2}
-};
 endsnippet
 
 snippet tde "typedef enum"
