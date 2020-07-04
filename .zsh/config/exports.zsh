@@ -5,25 +5,6 @@ export CORRECT_IGNORE_FILE='.*'
 export LC_ALL=en_US.utf8
 export LANG=en_US.utf8
 
-if command -v nvim > /dev/null; then
-	export EDITOR=nvim
-else
-	export EDITOR=vi
-fi
-
-export MANPAGER=less
-
-export PAGER=less
-
-export LESS='-iFMRSX'
-
-export LESS_TERMCAP_mb=$'\E[01;31m'
-export LESS_TERMCAP_md=$'\E[01;38;5;208m'
-export LESS_TERMCAP_me=$'\E[0m'
-export LESS_TERMCAP_se=$'\E[0m'
-export LESS_TERMCAP_ue=$'\E[0m'
-export LESS_TERMCAP_us=$'\E[04;38;5;111m'
-
 SYSTEM_PATH=$PATH
 unset PATH
 
@@ -42,3 +23,22 @@ PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
 export PATH
+
+if command -v nvim > /dev/null; then
+	export EDITOR=nvim
+else
+	export EDITOR=vi
+fi
+
+export MANPAGER=less
+
+export PAGER=less
+
+export LESS='-iFMRSX'
+
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;38;5;208m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[04;38;5;111m'
