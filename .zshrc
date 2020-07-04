@@ -37,7 +37,6 @@ source $HOME/.zsh/config/exports.zsh
 source $HOME/.zsh/config/functions.zsh
 source $HOME/.zsh/config/hash.zsh
 source $HOME/.zsh/config/prompt.zsh
-source $HOME/.zsh/config/wrappers.zsh
 
 source $HOME/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $HOME/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
