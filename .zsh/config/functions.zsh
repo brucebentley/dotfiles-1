@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
 jump() {
-	emulate -L zsh
-
 	local DIR="${*%%/}"
 	cd ~"$DIR"
 }
