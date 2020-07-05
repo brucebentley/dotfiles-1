@@ -5,8 +5,8 @@ prompt_window_title_setup() {
 	print -Pn "\033]0;$CMD:q\a"
 }
 
-typeset -F SECONDS
 prompt_preexec() {
+	typeset -Fg SECONDS
 	ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
 
 	HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
