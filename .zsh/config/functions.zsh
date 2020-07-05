@@ -29,8 +29,7 @@ tmux() {
 		local DIGEST="$(openssl sha -sha512 .tmux)"
 		if ! grep --silent "$DIGEST" ~/..tmux.digests 2> /dev/null; then
 			cat .tmux
-			read -k 1 -r 'REPLY?Trust (and run) this .tmux file? (t = trust, otherwise = skip) '
-
+			read -k 1 -r 'REPLY? Trust (and run) this .tmux file? (t = trust, otherwise = skip) '
 			if [[ $REPLY =~ ^[Tt]$ ]]; then
 				echo "$DIGEST" >> ~/..tmux.digests
 				./.tmux

@@ -74,11 +74,11 @@ prompt_async_vcs_info() {
 }
 
 prompt_async_renice() {
-	if command -v renice >/dev/null; then
+	if command -v renice > /dev/null; then
 		renice +15 -p $$
 	fi
 
-	if command -v ionice >/dev/null; then
+	if command -v ionice > /dev/null; then
 		ionice -c 3 -p $$
 	fi
 }
