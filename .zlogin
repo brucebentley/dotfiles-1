@@ -7,7 +7,6 @@ function zcompare() {
 
 zcompare $HOME/.zcompdump
 zcompare $HOME/.zshrc
-zcompare $HOME/.zshenv
 
 for file in $HOME/.zsh/**/*.{sh,zsh}; do
 	zcompare ${file}
