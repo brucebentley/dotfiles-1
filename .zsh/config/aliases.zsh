@@ -9,11 +9,11 @@ alias e=exit
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias g=git
-alias grep='grep -Hn --color=always'
+alias grep='grep -Hn --color'
 alias j=jump
 alias l='ls -lFh'
 alias ll='ls -lAFh'
-alias ls='ls --color=always'
+alias ls='ls --color'
 alias n=ncmpcpp
 alias r=vifm
 alias s=ssh
