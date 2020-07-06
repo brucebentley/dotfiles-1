@@ -120,7 +120,7 @@ prompt_async_callback() {
 		;;
 	prompt_async_vcs_info)
 		prompt_async_vcs_info
-		zle && zle reset-prompt
+		zle .reset-prompt
 		;;
 	esac
 }
