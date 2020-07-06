@@ -4,7 +4,7 @@ if command -v slstatus > /dev/null; then
 	slstatus &
 fi
 
-if command -v setxkbmap xcape > /dev/null; then
+if [[ -x $(command -v setxkbmap) && $(command -v xcape) ]]; then
 	setxkbmap -layout "us+symbols(xcape-special)" \
 		  -keycodes "evdev+keycodes(xcape-special)" \
 		  -option "caps:super,shift:both_shiftlock" -print | \
