@@ -9,7 +9,6 @@ BAR_CRITICAL_COLOR="31"
 
 BANNER_KERNEL_COLOR="33"
 BANNER_UPTIME_COLOR="94"
-BANNER_TEXT="$(hostname -s)"
 
 PROCESSOR_LOADAVG_HEALTHY_COLOR="32"
 PROCESSOR_LOADAVG_WARNING_THRESHOLD=2
@@ -42,49 +41,49 @@ generate_space() {
 }
 
 generate_bar() {
-    bar_percent=$(( $2 * 100 / $1 ))
-    bar_separator=$(( $2 * 100 * 10 / $1 / 25 ))
+	bar_percent=$(( $2 * 100 / $1 ))
+	bar_separator=$(( $2 * 100 * 10 / $1 / 25 ))
 
-    if [ $bar_percent -ge "$BAR_WARNING_THRESHOLD" ]; then
-        bar_color=$BAR_WARNING_COLOR
-    elif [ $bar_percent -ge "$BAR_CRITICAL_THRESHOLD" ]; then
-        bar_color=$BAR_CRITICAL_COLOR
-    else
-        bar_color=$BAR_HEALTHY_COLOR
-    fi
+	if [ $bar_percent -ge "$BAR_WARNING_THRESHOLD" ]; then
+		bar_color=$BAR_WARNING_COLOR
+	elif [ $bar_percent -ge "$BAR_CRITICAL_THRESHOLD" ]; then
+		bar_color=$BAR_CRITICAL_COLOR
+	else
+		bar_color=$BAR_HEALTHY_COLOR
+	fi
 
-    printf "          \\033[%dm" "$bar_color"
+	printf "          \033[%dm" "$bar_color"
 
-    if [ -z "$3" ] ; then
-        bar_piece=0
-        while [ $bar_piece -le 40 ]; do
-            if [ "$bar_piece" -ne "$bar_separator" ]; then
-                printf "%s" "$BAR_ELEMENT"
-            else
-                printf "%s\\033[1;30m" "$BAR_ELEMENT"
-            fi
+	if [ -z "$3" ] ; then
+		bar_piece=0
+		while [ $bar_piece -le 40 ]; do
+			if [ "$bar_piece" -ne "$bar_separator" ]; then
+				printf "%s" "$BAR_ELEMENT"
+			else
+				printf "%s\033[1;30m" "$BAR_ELEMENT"
+			fi
 
-            bar_piece=$(( bar_piece + 1 ))
-        done
-    else
-        bar_cached_val=$(( $2 + $3 ))
-        bar_cached_separator=$(( bar_cached_val * 100 * 10 / $1 / 25 ))
+			bar_piece=$(( bar_piece + 1 ))
+		done
+	else
+		bar_cached_val=$(( $2 + $3 ))
+		bar_cached_separator=$(( bar_cached_val * 100 * 10 / $1 / 25 ))
 
-        bar_piece=0
-        while [ $bar_piece -le 40 ]; do
-            if [ $bar_piece -eq $bar_separator ]; then
-                printf "%s\\033[1;36m" "$BAR_ELEMENT"
-            elif [ $bar_piece -eq $bar_cached_separator ]; then
-                printf "%s\\033[1;30m" "$BAR_ELEMENT"
-            else
-                printf "%s" "$BAR_ELEMENT"
-            fi
+		bar_piece=0
+		while [ $bar_piece -le 40 ]; do
+			if [ $bar_piece -eq $bar_separator ]; then
+				printf "%s\033[1;36m" "$BAR_ELEMENT"
+			elif [ $bar_piece -eq $bar_cached_separator ]; then
+				printf "%s\033[1;30m" "$BAR_ELEMENT"
+			else
+				printf "%s" "$BAR_ELEMENT"
+			fi
 
-            bar_piece=$(( bar_piece + 1 ))
-        done
-    fi
+			bar_piece=$(( bar_piece + 1 ))
+		done
+	fi
 
-    printf "\\033[0m\\n"
+	printf "\033[0m\n"
 }
 
 generate_bar_memory() {
@@ -92,7 +91,7 @@ generate_bar_memory() {
 	bar_memory_cached=$(generate_unit_byte "$3")
 	bar_memory_available=$(generate_unit_byte  $(( $1 - $2 )) )
 
-	printf "           %s used / %s cached / %s available\\n" "$bar_memory_used" "$bar_memory_cached" "$bar_memory_available"
+	printf "       %s used / %s cached / %s available\n" "$bar_memory_used" "$bar_memory_cached" "$bar_memory_available"
 	generate_bar "$1" "$2" "$3"
 }
 
@@ -102,7 +101,7 @@ generate_bar_swap() {
 	bar_swap_available=$(( $1 - $2 ))
 	bar_swap_available=$(generate_unit_byte "$bar_swap_available")
 
-	printf "           %s used / %s available\\n" "$bar_swap_used" "$bar_swap_available"
+	printf "       %s used / %s available\n" "$bar_swap_used" "$bar_swap_available"
 	generate_bar "$1" "$2" "$3"
 }
 
@@ -115,7 +114,7 @@ generate_bar_disk() {
 	bar_disk_available=$(( $1 - $2 ))
 	bar_disk_available="$(generate_unit_byte "$bar_disk_available") available"
 
-	printf "           %s%s / %s\\n" "$bar_disk_mount" "$bar_disk_used" "$bar_disk_available"
+	printf "       %s%s / %s\n" "$bar_disk_mount" "$bar_disk_used" "$bar_disk_available"
 
 	generate_bar "$1" "$2"
 }
@@ -126,14 +125,13 @@ print_banner() {
 
 		banner_distro_space=$(generate_space "$banner_distro_name" 13)
 
-		printf " \\033[%sm   Linux\\033[0m         %s\\n" "$BANNER_KERNEL_COLOR" "$(cut -d ' ' -f 3 < /proc/version)"
-		printf " \\033[%sm   Uptime\\033[0m        %s\\n" "$BANNER_UPTIME_COLOR" "$(uptime -p | cut -d ' ' -f 2-)"
+		printf "\033[%smLinux:\033[0m     %s\n" "$BANNER_KERNEL_COLOR" "$(cut -d ' ' -f 3 < /proc/version)"
+		printf "\033[%smUptime:\033[0m    %s\n" "$BANNER_UPTIME_COLOR" "$(uptime -p | cut -d ' ' -f 2-)"
 	fi
-	printf "\\n"
 }
 
 print_processor() {
-	printf "    \\033[1;37mProcessor:\\033[0m\\n"
+	printf "\033[1;37mProcessor:\033[0m\n"
 
 	processor_loadavg="$(cut -d " " -f 1,2,3 < /proc/loadavg)"
 	if [ "$(echo "$processor_loadavg" | cut -d "." -f 1)" -ge "$PROCESSOR_LOADAVG_CRITICAL_THRESHOLD" ]; then
@@ -181,13 +179,12 @@ print_processor() {
 		processor_count=""
 	fi
 
-	printf "          \\033[%dm%s\\033[0m\\n" "$processor_loadavg_color" "$processor_loadavg"
-	printf "          %s%s  =  %s Cores%s\\n" "$processor_count" "$processor_model" "$processor_cores" "$processor_threads"
-	printf "\\n"
+	printf "       \033[%dm%s\033[0m\n" "$processor_loadavg_color" "$processor_loadavg"
+	printf "       %s%s  =  %s Cores%s\n" "$processor_count" "$processor_model" "$processor_cores" "$processor_threads"
 }
 
 print_memory() {
-	printf "    \\033[1;37mMemory:\\033[0m\\n"
+	printf "\033[1;37mMemory:\033[0m\n"
 
 	memory_usage=$(free --mega | grep "Mem:")
 	memory_total=$(echo "$memory_usage" | awk '{ print $2 }')
@@ -195,7 +192,6 @@ print_memory() {
 	memory_cached=$(echo "$memory_usage" | awk '{ print $6 }')
 
 	generate_bar_memory "$memory_total" "$memory_used" "$memory_cached"
-	printf "\\n"
 }
 
 print_swap() {
@@ -205,15 +201,14 @@ print_swap() {
 	swap_used=$(echo "$swap_usage" | awk '{ print $3 }')
 
 	if [ "$swap_total" -ne 0 ]; then
-		printf "    \\033[1;37mSwap:\\033[0m\\n"
+		printf "\033[1;37mSwap:\033[0m\n"
 
 		generate_bar_swap "$swap_total" "$swap_used"
 	fi
-	printf "\\n"
 }
 
 print_diskspace() {
-	printf "    \\033[1;37mDiskspace:\\033[0m\\n"
+	printf "\033[1;37mDiskspace:\033[0m\n"
 
 	if command -v jq > /dev/null; then
 		diskspace_devices=$(lsblk -Jlo NAME,MOUNTPOINT | jq -c '.blockdevices | sort_by(.mountpoint) | .[] | select( .mountpoint != null and .mountpoint != "[SWAP]" )')
@@ -236,7 +231,7 @@ print_diskspace() {
 			fi
 
 			if [ "$diskspace_index" -ne 0 ]; then
-				printf "\\n"
+				printf "\n"
 			fi
 
 			diskspace_index=$(( diskspace_index + 1 ))
@@ -248,9 +243,13 @@ print_diskspace() {
 
 motd() {
 	print_banner
+	echo
 	print_processor
+	echo
 	print_memory
+	echo
 	print_swap
+	echo
 	print_diskspace
 }
 
