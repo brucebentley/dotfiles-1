@@ -59,15 +59,3 @@ set wildmenu
 set wildcharm=<C-z>
 
 set termguicolors
-
-if exists('$SUDO_USER')
-	set nobackup
-	set noswapfile
-	set noundofile
-	set nowritebackup
-else
-	set backupdir=/tmp/vim
-	set directory=/tmp/vim
-	set undodir=/tmp/vim
-	set undofile
-endif
