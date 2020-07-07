@@ -10,13 +10,13 @@ fi
 			zcompile -M ${1}
 		fi
 	}
-	
+
 	zcompare $HOME/.zcompdump
 	zcompare $HOME/.zshrc
-	
+
 	for file in $HOME/.zsh/**/*.{sh,zsh}; do
 		zcompare ${file}
 	done
-	
+
 	unfunction zcompare
 ) &!

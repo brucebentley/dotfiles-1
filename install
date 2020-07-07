@@ -59,7 +59,7 @@ clean_symlink() {
 			rm -rf $HOME/.config/$c
 		fi
 	done
-	
+
 	rm -f $HOME/.*.zwc*
 }
 
