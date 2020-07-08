@@ -163,12 +163,13 @@ print_processor() {
 		processor_threads=0
 	fi
 
-	processor_model=$(echo "$processor_model" | sed "s/(R)//g")
-	processor_model=$(echo "$processor_model" | sed "s/(tm)//g")
-	processor_model=$(echo "$processor_model" | sed "s/ @/,/")
-	processor_model=$(echo "$processor_model" | sed "s/ CPU//")
-	processor_model=$(echo "$processor_model" | sed "s/  / /")
-	processor_model=$(echo "$processor_model" | sed "s/^ //g")
+	processor_model=$(echo "$processor_model" | sed "s/(R)//g" | \
+			  sed "s/(tm)//g" | \
+			  sed "s/ @/,/"   | \
+			  sed "s/ CPU//"  | \
+			  sed "s/  / /"   | \
+			  sed "s/^ //g"   \
+			 )
 
 	processor_cores=$((processor_cores * processor_count))
 
@@ -217,7 +218,7 @@ print_diskspace() {
 
 	diskspace_partitions=$(df -B M | sed -e "s/M//g")
 	for partition in "${DISKSPACE_DEVICES[@]}"; do
-		diskspace_disk_mount="$(findmnt $partition -n --output=target)"
+		diskspace_disk_mount="$(findmnt -n --output=target $partition)"
 		diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$partition" | awk '{ print $2 }')"
 		diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$partition" | awk '{ print $3 }')"
 
