@@ -2,8 +2,8 @@
 
 export CORRECT_IGNORE_FILE='.*'
 
-export LC_ALL=en_US.utf8
-export LANG=en_US.utf8
+export LC_ALL=en_US.UTF8
+export LANG=en_US.UTF8
 
 SYSTEM_PATH=$PATH
 unset PATH
