@@ -14,7 +14,7 @@ PROCESSOR_LOADAVG_CRITICAL_THRESHOLD=4
 PROCESSOR_LOADAVG_CRITICAL_COLOR="31"
 
 generate_unit_byte() {
-	if [ "$1" -ge 1024 ]; then
+	if [[ $1 -ge 1024 ]]; then
 		unit_symbol="G"
 		unit_value=$(echo "scale=1; $1/1024" | bc -l)
 	else
@@ -26,24 +26,24 @@ generate_unit_byte() {
 }
 
 generate_space() {
-	space_fill=$(( $2 - ${#1} ))
+	space_fill=$(($2 - ${#1}))
 	space_chars=""
 
-	while [ $space_fill -ge 0 ]; do
+	while [[ $space_fill -ge 0 ]]; do
 		space_chars="$space_chars "
-		space_fill=$(( space_fill - 1 ))
+		space_fill=$((space_fill - 1))
 	done
 
 	echo "$space_chars"
 }
 
 generate_bar() {
-	bar_percent=$(( $2 * 100 / $1 ))
-	bar_separator=$(( $2 * 100 * 10 / $1 / 25 ))
+	bar_percent=$(($2 * 100 / $1))
+	bar_separator=$(($2 * 100 * 10 / $1 / 25))
 
-	if [ $bar_percent -ge "$BAR_WARNING_THRESHOLD" ]; then
+	if [[ $bar_percent -ge $BAR_WARNING_THRESHOLD ]]; then
 		bar_color=$BAR_WARNING_COLOR
-	elif [ $bar_percent -ge "$BAR_CRITICAL_THRESHOLD" ]; then
+	elif [[ $bar_percent -ge $BAR_CRITICAL_THRESHOLD ]]; then
 		bar_color=$BAR_CRITICAL_COLOR
 	else
 		bar_color=$BAR_HEALTHY_COLOR
@@ -51,26 +51,26 @@ generate_bar() {
 
 	printf "          \033[%dm" "$bar_color"
 
-	if [ -z "$3" ] ; then
+	if [[ -z $3 ]]; then
 		bar_piece=0
-		while [ $bar_piece -le 40 ]; do
-			if [ "$bar_piece" -ne "$bar_separator" ]; then
+		while [[ $bar_piece -le 40 ]]; do
+			if [[ $bar_piece -ne $bar_separator ]]; then
 				printf "%s" "$BAR_ELEMENT"
 			else
 				printf "%s\033[1;30m" "$BAR_ELEMENT"
 			fi
 
-			bar_piece=$(( bar_piece + 1 ))
+			bar_piece=$((bar_piece + 1))
 		done
 	else
-		bar_cached_val=$(( $2 + $3 ))
+		bar_cached_val=$(($2 + $3))
 		bar_cached_separator=$(( bar_cached_val * 100 * 10 / $1 / 25 ))
 
 		bar_piece=0
-		while [ $bar_piece -le 40 ]; do
-			if [ $bar_piece -eq $bar_separator ]; then
+		while [[ $bar_piece -le 40 ]]; do
+			if [[ $bar_piece -eq $bar_separator ]]; then
 				printf "%s\033[1;36m" "$BAR_ELEMENT"
-			elif [ $bar_piece -eq $bar_cached_separator ]; then
+			elif [[ $bar_piece -eq $bar_cached_separator ]]; then
 				printf "%s\033[1;30m" "$BAR_ELEMENT"
 			else
 				printf "%s" "$BAR_ELEMENT"
@@ -86,7 +86,7 @@ generate_bar() {
 generate_bar_memory() {
 	bar_memory_used=$(generate_unit_byte "$2")
 	bar_memory_cached=$(generate_unit_byte "$3")
-	bar_memory_available=$(generate_unit_byte  $(( $1 - $2 )) )
+	bar_memory_available=$(generate_unit_byte  $(($1 - $2)))
 
 	printf "       %s used / %s cached / %s available\n" "$bar_memory_used" "$bar_memory_cached" "$bar_memory_available"
 	generate_bar "$1" "$2" "$3"
@@ -95,7 +95,7 @@ generate_bar_memory() {
 generate_bar_swap() {
 	bar_swap_used=$(generate_unit_byte "$2")
 
-	bar_swap_available=$(( $1 - $2 ))
+	bar_swap_available=$(($1 - $2))
 	bar_swap_available=$(generate_unit_byte "$bar_swap_available")
 
 	printf "       %s used / %s available\n" "$bar_swap_used" "$bar_swap_available"
@@ -108,7 +108,7 @@ generate_bar_disk() {
 	bar_disk_used=$(generate_unit_byte "$2")
 	bar_disk_used="$(generate_space "$bar_disk_used" 5)$bar_disk_used used"
 
-	bar_disk_available=$(( $1 - $2 ))
+	bar_disk_available=$(($1 - $2))
 	bar_disk_available="$(generate_unit_byte "$bar_disk_available") available"
 
 	printf "       %s%s / %s\n" "$bar_disk_mount" "$bar_disk_used" "$bar_disk_available"
@@ -117,23 +117,17 @@ generate_bar_disk() {
 }
 
 print_banner() {
-	if [ -f /etc/os-release ]; then
-		. /etc/os-release
-
-		banner_distro_space=$(generate_space "$banner_distro_name" 13)
-
-		printf "Linux:     %s\n" "$(cut -d ' ' -f 3 < /proc/version)"
-		printf "Uptime:    %s\n" "$(uptime -p | cut -d ' ' -f 2-)"
-	fi
+	printf "Linux:     %s\n" "$(cut -d ' ' -f 3 < /proc/version)"
+	printf "Uptime:    %s\n" "$(uptime -p | cut -d ' ' -f 2-)"
 }
 
 print_processor() {
 	printf "Processor:\n"
 
 	processor_loadavg="$(cut -d " " -f 1,2,3 < /proc/loadavg)"
-	if [ "$(echo "$processor_loadavg" | cut -d "." -f 1)" -ge "$PROCESSOR_LOADAVG_CRITICAL_THRESHOLD" ]; then
+	if [[ $(echo "$processor_loadavg" | cut -d "." -f 1) -ge $PROCESSOR_LOADAVG_CRITICAL_THRESHOLD ]]; then
 		processor_loadavg_color=$PROCESSOR_LOADAVG_CRITICAL_COLOR
-	elif [ "$(echo "$processor_loadavg" | cut -d "." -f 1)" -ge "$PROCESSOR_LOADAVG_WARNING_THRESHOLD" ]; then
+	elif [[ $(echo "$processor_loadavg" | cut -d "." -f 1) -ge $PROCESSOR_LOADAVG_WARNING_THRESHOLD ]]; then
 		processor_loadavg_color=$PROCESSOR_LOADAVG_WARNING_COLOR
 	else
 		processor_loadavg_color=$PROCESSOR_LOADAVG_HEALTHY_COLOR
@@ -143,13 +137,13 @@ print_processor() {
 
 	processor_arch=$(uname -m)
 
-	if [ "$processor_arch" = "x86_64" ]; then
+	if [[ $processor_arch = x86_64 ]]; then
 		processor_model="$(echo "$processor_info" | grep "model name" | sort -u | cut -d ':' -f 2)"
 		processor_count=$(echo "$processor_info" | grep "physical id" | sort -u | wc -l)
 		processor_cores=$(echo "$processor_info" | grep "cpu cores" | sort -u | cut -d ':' -f 2)
 		processor_threads=$(( $(echo "$processor_info" | grep "siblings" | tail -n 1 | cut -d ':' -f 2) ))
 
-		if [ ! "$processor_cores" -eq $processor_threads ]; then
+		if [[ ! $processor_cores -eq $processor_threads ]]; then
 			processor_threads=", $processor_threads Threads"
 		else
 			processor_threads=""
@@ -168,16 +162,16 @@ print_processor() {
 	processor_model=$(echo "$processor_model" | sed "s/  / /")
 	processor_model=$(echo "$processor_model" | sed "s/^ //g")
 
-	processor_cores=$(( processor_cores * processor_count ))
+	processor_cores=$((processor_cores * processor_count))
 
-	if [ "$processor_count" -gt 1 ]; then
+	if [[ $processor_count -gt 1 ]]; then
 		processor_count="$processor_count""x "
 	else
 		processor_count=""
 	fi
 
 	printf "       \033[%dm%s\033[0m\n" "$processor_loadavg_color" "$processor_loadavg"
-	printf "       %s%s  =  %s Cores%s\n" "$processor_count" "$processor_model" "$processor_cores" "$processor_threads"
+	printf "       %s%s, %s Cores%s\n" "$processor_count" "$processor_model" "$processor_cores" "$processor_threads"
 }
 
 print_memory() {
@@ -197,7 +191,7 @@ print_swap() {
 	swap_total=$(echo "$swap_usage" | awk '{ print $2 }')
 	swap_used=$(echo "$swap_usage" | awk '{ print $3 }')
 
-	if [ "$swap_total" -ne 0 ]; then
+	if [[ $swap_total -ne 0 ]]; then
 		printf "Swap:\n"
 
 		generate_bar_swap "$swap_total" "$swap_used"
@@ -219,19 +213,19 @@ print_diskspace() {
 			diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$diskspace_disk_name" | awk '{ print $2 }')"
 			diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$diskspace_disk_name" | awk '{ print $3 }')"
 
-			if [ -z "$diskspace_disk_size" ]; then
+			if [[ -z $diskspace_disk_size ]]; then
 				diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$diskspace_disk_mount" | awk '{ print $2 }')"
 			fi
 
-			if [ -z "$diskspace_disk_used" ]; then
+			if [[ -z $diskspace_disk_used ]]; then
 				diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$diskspace_disk_mount" | awk '{ print $3 }')"
 			fi
 
-			if [ "$diskspace_index" -ne 0 ]; then
-				printf "\n"
+			if [[ $diskspace_index -ne 0 ]]; then
+				echo
 			fi
 
-			diskspace_index=$(( diskspace_index + 1 ))
+			diskspace_index=$((diskspace_index + 1))
 
 			generate_bar_disk "$diskspace_disk_size" "$diskspace_disk_used" "$diskspace_disk_mount"
 		done
