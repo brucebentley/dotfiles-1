@@ -12,6 +12,7 @@ fi
 	}
 
 	zcompare $HOME/.zcompdump
+	zcompare $HOME/.zshenv
 	zcompare $HOME/.zshrc
 
 	for file in $HOME/.zsh/**/*.{sh,zsh}; do
