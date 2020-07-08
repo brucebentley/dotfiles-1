@@ -13,11 +13,12 @@ PROCESSOR_LOADAVG_WARNING_COLOR="33"
 PROCESSOR_LOADAVG_CRITICAL_THRESHOLD=4
 PROCESSOR_LOADAVG_CRITICAL_COLOR="31"
 
-DISKSPACE_DEVICES=( \
-	/dev/mapper/gentoo-root \
-	/dev/mapper/gentoo-home \
-	/dev/mapper/gentoo-var  \
-)
+for mountpoint in $(echo "/" "/home" "/usr" "/usr/log" "/var" "/var/log"); do
+	device=$(findmnt -n --output=source $mountpoint)
+	if [[ ! -z $device ]]; then
+		DISKSPACE_DEVICES+=("$device")
+	fi
+done
 
 generate_unit_byte() {
 	if [[ $1 -ge 1024 ]]; then
