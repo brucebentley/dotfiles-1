@@ -208,17 +208,14 @@ print_diskspace() {
 	printf "Diskspace:\n"
 
 	diskspace_partitions=$(df -B M | sed -e "s/M//g")
-
 	for partition in "${DISKSPACE_DEVICES[@]}"; do
 		diskspace_disk_mount="$(findmnt $partition -n --output=target)"
-
 		diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$partition" | awk '{ print $2 }')"
 		diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$partition" | awk '{ print $3 }')"
 
 		if [[ $diskspace_index -ne 0 ]]; then
 			echo
 		fi
-
 		diskspace_index=$((diskspace_index + 1))
 
 		generate_bar_disk "$diskspace_disk_size" "$diskspace_disk_used" "$diskspace_disk_mount"
