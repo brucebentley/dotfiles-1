@@ -1,5 +1,6 @@
 # Dependencies
 - [git](https://github.com/git/git) => 1.8.2
+- [jq](https://github.com/stedolan/jq)
 - [neovim](https://github.com/neovim/neovim) => 0.5.0
 - [tmux](https://github.com/tmux/tmux) => 2.8
 - [vifm](https://github.com/vifm/vifm) => 0.8
