@@ -125,6 +125,7 @@ generate_bar_disk() {
 print_banner() {
 	printf "Linux:     %s\n" "$(cut -d ' ' -f 3 < /proc/version)"
 	printf "Uptime:    %s\n" "$(uptime -p | cut -d ' ' -f 2-)"
+	echo
 }
 
 print_processor() {
@@ -178,6 +179,8 @@ print_processor() {
 
 	printf "       \033[%dm%s\033[0m\n" "$processor_loadavg_color" "$processor_loadavg"
 	printf "       %s%s, %s Cores%s\n" "$processor_count" "$processor_model" "$processor_cores" "$processor_threads"
+
+	echo
 }
 
 print_memory() {
@@ -189,6 +192,8 @@ print_memory() {
 	memory_cached=$(echo "$memory_usage" | awk '{ print $6 }')
 
 	generate_bar_memory "$memory_total" "$memory_used" "$memory_cached"
+
+	echo
 }
 
 print_swap() {
@@ -201,6 +206,8 @@ print_swap() {
 		printf "Swap:\n"
 
 		generate_bar_swap "$swap_total" "$swap_used"
+
+		echo
 	fi
 }
 
@@ -226,11 +233,8 @@ motd() {
 	print_banner
 	echo
 	print_processor
-	echo
 	print_memory
-	echo
 	print_swap
-	echo
 	print_diskspace
 }
 
