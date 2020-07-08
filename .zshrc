@@ -1,10 +1,10 @@
-typeset -A USER
+typeset -A __USER
 
-USER[BASE16_CONFIG]=$HOME/.zsh/.base16
-USER[BLOCK_CURSOR]=$'\033[2 q'
-USER[LINE_CURSOR]=$'\033[6 q'
-USER[ITALIC_OFF]=$'\033[23m'
-USER[ITALIC_ON]=$'\033[3m'
+__USER[BASE16_CONFIG]=$HOME/.zsh/.base16
+__USER[BLOCK_CURSOR]=$'\033[2 q'
+__USER[LINE_CURSOR]=$'\033[6 q'
+__USER[ITALIC_OFF]=$'\033[23m'
+__USER[ITALIC_ON]=$'\033[3m'
 
 fpath=(
 	$HOME/.zsh/completions

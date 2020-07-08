@@ -10,9 +10,9 @@ fi
 
 zle-keymap-select zle-line-init () {
 	if [[ $KEYMAP == main ]]; then
-		printf $USER[LINE_CURSOR]
+		printf $__USER[LINE_CURSOR]
 	else
-		printf $USER[BLOCK_CURSOR]
+		printf $__USER[BLOCK_CURSOR]
 	fi
 }
 zle -N zle-line-init
