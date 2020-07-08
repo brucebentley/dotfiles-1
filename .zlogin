@@ -13,6 +13,7 @@ fi
 
 	zcompare $HOME/.zcompdump
 	zcompare $HOME/.zlogin
+	zcompare $HOME/.zprofile
 	zcompare $HOME/.zshenv
 	zcompare $HOME/.zshrc
 
