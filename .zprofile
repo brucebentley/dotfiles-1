@@ -31,4 +31,3 @@ if command -v nvim > /dev/null; then
 else
 	export EDITOR=vi
 fi
-
