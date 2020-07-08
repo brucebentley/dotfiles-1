@@ -232,7 +232,6 @@ print_diskspace() {
 
 motd() {
 	print_banner
-	echo
 	print_processor
 	print_memory
 	print_swap
