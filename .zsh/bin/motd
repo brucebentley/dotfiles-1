@@ -13,6 +13,12 @@ PROCESSOR_LOADAVG_WARNING_COLOR="33"
 PROCESSOR_LOADAVG_CRITICAL_THRESHOLD=4
 PROCESSOR_LOADAVG_CRITICAL_COLOR="31"
 
+DISKSPACE_DEVICES=( \
+	/dev/mapper/gentoo-root \
+	/dev/mapper/gentoo-home \
+	/dev/mapper/gentoo-var  \
+)
+
 generate_unit_byte() {
 	if [[ $1 -ge 1024 ]]; then
 		unit_symbol="G"
@@ -49,7 +55,7 @@ generate_bar() {
 		bar_color=$BAR_HEALTHY_COLOR
 	fi
 
-	printf "          \033[%dm" "$bar_color"
+	printf "       \033[%dm" "$bar_color"
 
 	if [[ -z $3 ]]; then
 		bar_piece=0
@@ -201,35 +207,30 @@ print_swap() {
 print_diskspace() {
 	printf "Diskspace:\n"
 
-	if command -v jq > /dev/null; then
-		diskspace_devices=$(lsblk -Jlo NAME,MOUNTPOINT | jq -c '.blockdevices | sort_by(.mountpoint) | .[] | select( .mountpoint != null and .mountpoint != "[SWAP]" )')
-		diskspace_partitions=$(df -B M | sed -e "s/M//g")
+	diskspace_partitions=$(df -B M | sed -e "s/M//g")
 
-		diskspace_index=0
-		echo "$diskspace_devices" | while read -r line; do
-			diskspace_disk_name="$(echo "$line" | jq -r '.name')"
-			diskspace_disk_mount="$(echo "$line" | jq -r '.mountpoint')"
+	for partition in "${DISKSPACE_DEVICES[@]}"; do
+		diskspace_disk_mount="$(findmnt $partition -n --output=target)"
 
-			diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$diskspace_disk_name" | awk '{ print $2 }')"
-			diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$diskspace_disk_name" | awk '{ print $3 }')"
+		diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$partition" | awk '{ print $2 }')"
+		diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$partition" | awk '{ print $3 }')"
 
-			if [[ -z $diskspace_disk_size ]]; then
-				diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$diskspace_disk_mount" | awk '{ print $2 }')"
-			fi
+		if [[ -z $diskspace_disk_size ]]; then
+			diskspace_disk_size="$(echo "$diskspace_partitions" | grep "$diskspace_disk_mount" | awk '{ print $2 }')"
+		fi
 
-			if [[ -z $diskspace_disk_used ]]; then
-				diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$diskspace_disk_mount" | awk '{ print $3 }')"
-			fi
+		if [[ -z $diskspace_disk_used ]]; then
+			diskspace_disk_used="$(echo "$diskspace_partitions" | grep "$diskspace_disk_mount" | awk '{ print $3 }')"
+		fi
 
-			if [[ $diskspace_index -ne 0 ]]; then
-				echo
-			fi
+		if [[ $diskspace_index -ne 0 ]]; then
+			echo
+		fi
 
-			diskspace_index=$((diskspace_index + 1))
+		diskspace_index=$((diskspace_index + 1))
 
-			generate_bar_disk "$diskspace_disk_size" "$diskspace_disk_used" "$diskspace_disk_mount"
-		done
-	fi
+		generate_bar_disk "$diskspace_disk_size" "$diskspace_disk_used" "$diskspace_disk_mount"
+	done
 }
 
 motd() {
