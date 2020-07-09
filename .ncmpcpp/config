@@ -1,34 +1,38 @@
-[mpd]
-mpd_music_dir = "~/Music/"
-mpd_host = "127.0.0.1"
-mpd_port = "6600"
-mpd_crossfade_time = "4"
+[MPD]
+mpd_music_dir      = "~/Music/"
+mpd_host           = "127.0.0.1"
+mpd_port           = "6600"
 
-[visualizer]
-visualizer_fifo_path = "/tmp/mpd.fifo"
-visualizer_in_stereo = "yes"
-visualizer_type = "wave"
-visualizer_sync_interval = 60
-visualizer_output_name = "my_fifo"
-visualizer_look = "◆▋"
-visualizer_color = "blue, cyan, green, yellow, magenta, red"
+[Visualizer]
+visualizer_fifo_path     = "/tmp/mpd.fifo"
+visualizer_output_name   = "FIFO Visualizer"
+visualizer_sync_interval = "10"
+visualizer_in_stereo     = "yes"
+visualizer_type          = "wave"
+visualizer_look          = "◆▋"
+visualizer_color         = "blue, cyan, green, yellow, magenta, red"
 
-[header]
-header_visibility = "no"
-header_window_color = "default"
-volume_color = "default"
-state_line_color = "black"
-state_flags_color = "black"
-window_border_color = "black"
-active_window_border = "cyan"
+[UI Visibility]
+enable_window_title  = "yes"
+header_visibility    = "no"
+statusbar_visibility = "yes"
+titles_visibility    = "no"
+
+[Header]
+header_window_color            = "default"
+volume_color                   = "default"
+state_line_color               = "black"
+state_flags_color              = "black"
+window_border_color            = "black"
+active_window_border           = "cyan"
 alternative_ui_separator_color = "black"
 
-[playlist]
-playlist_display_mode = "classic"
+[Playlist]
 playlist_disable_highlight_delay = 1
+playlist_display_mode            = "classic"
+playlist_shorten_total_times     = "yes"
 
-titles_visibility = "no"
-song_list_format = " {%a - %t} $R {%l}"
+song_list_format         = " {%a - %t} $R {%l}"
 song_window_title_format = "{%a - }{%t}|{%f}"
 
 now_playing_prefix = "$4"
@@ -39,21 +43,25 @@ current_item_suffix = "$0"
 
 browser_playlist_prefix = "$1»$1 "
 
-[statusbar]
-progressbar_look = "━━━"
-progressbar_color = "1"
+[Statusbar]
+progressbar_look          = "━━━"
+progressbar_color         = "1"
 progressbar_elapsed_color = "4"
 
-statusbar_visibility = "yes"
-statusbar_color = "default"
-song_status_format = "{%a - %t}"
+statusbar_color      = "default"
+song_status_format   = "{%a - %t}"
 
-message_delay_time = "1"
+[Mouse]
+mouse_support                = "yes"
+mouse_list_scroll_whole_page = "no"
 
 [global]
-colors_enabled = "yes"
-main_window_color = "default"
-autocenter_mode = "no"
-centered_cursor = "no"
-enable_window_title = "no"
-external_editor = "nvim"
+autocenter_mode           = "yes"
+centered_cursor           = "yes"
+colors_enabled            = "yes"
+display_bitrate           = "no"
+follow_now_playing_lyrics = "yes"
+lines_scrolled            = "1"
+main_window_color         = "default"
+message_delay_time        = "1"
+user_interface            = "classic"
