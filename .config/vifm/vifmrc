@@ -2,6 +2,7 @@ set syscalls
 
 view
 
+set number
 set relativenumber
 
 set dotfiles
