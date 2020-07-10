@@ -9,9 +9,9 @@
 " User must set this variable in .vimrc
 "   let g:base16_shell_path=base16-builder/output/shell/
 if !has("gui_running")
-  if exists("g:base16_shell_path")
-    execute "silent !/bin/sh ".g:base16_shell_path."/base16-fruit-soda.sh"
-  endif
+	if exists("g:base16_shell_path")
+		execute "silent !/bin/sh ".g:base16_shell_path."/base16-fruit-soda.sh"
+	endif
 endif
 
 " GUI color definitions
@@ -70,76 +70,76 @@ let g:base16_cterm0D = "04"
 let s:cterm0E        = "05"
 let g:base16_cterm0E = "05"
 if exists("base16colorspace") && base16colorspace == "256"
-  let s:cterm01        = "18"
-  let g:base16_cterm01 = "18"
-  let s:cterm02        = "19"
-  let g:base16_cterm02 = "19"
-  let s:cterm04        = "20"
-  let g:base16_cterm04 = "20"
-  let s:cterm06        = "21"
-  let g:base16_cterm06 = "21"
-  let s:cterm09        = "16"
-  let g:base16_cterm09 = "16"
-  let s:cterm0F        = "17"
-  let g:base16_cterm0F = "17"
+	let s:cterm01        = "18"
+	let g:base16_cterm01 = "18"
+	let s:cterm02        = "19"
+	let g:base16_cterm02 = "19"
+	let s:cterm04        = "20"
+	let g:base16_cterm04 = "20"
+	let s:cterm06        = "21"
+	let g:base16_cterm06 = "21"
+	let s:cterm09        = "16"
+	let g:base16_cterm09 = "16"
+	let s:cterm0F        = "17"
+	let g:base16_cterm0F = "17"
 else
-  let s:cterm01        = "10"
-  let g:base16_cterm01 = "10"
-  let s:cterm02        = "11"
-  let g:base16_cterm02 = "11"
-  let s:cterm04        = "12"
-  let g:base16_cterm04 = "12"
-  let s:cterm06        = "13"
-  let g:base16_cterm06 = "13"
-  let s:cterm09        = "09"
-  let g:base16_cterm09 = "09"
-  let s:cterm0F        = "14"
-  let g:base16_cterm0F = "14"
+	let s:cterm01        = "10"
+	let g:base16_cterm01 = "10"
+	let s:cterm02        = "11"
+	let g:base16_cterm02 = "11"
+	let s:cterm04        = "12"
+	let g:base16_cterm04 = "12"
+	let s:cterm06        = "13"
+	let g:base16_cterm06 = "13"
+	let s:cterm09        = "09"
+	let g:base16_cterm09 = "09"
+	let s:cterm0F        = "14"
+	let g:base16_cterm0F = "14"
 endif
 
 " Neovim terminal colours
 if has("nvim")
-  let g:terminal_color_0 =  "#f1ecf1"
-  let g:terminal_color_1 =  "#fe3e31"
-  let g:terminal_color_2 =  "#47f74c"
-  let g:terminal_color_3 =  "#f7e203"
-  let g:terminal_color_4 =  "#2931df"
-  let g:terminal_color_5 =  "#611fce"
-  let g:terminal_color_6 =  "#0f9cfd"
-  let g:terminal_color_7 =  "#515151"
-  let g:terminal_color_8 =  "#b5b4b6"
-  let g:terminal_color_9 =  "#fe3e31"
-  let g:terminal_color_10 = "#47f74c"
-  let g:terminal_color_11 = "#f7e203"
-  let g:terminal_color_12 = "#2931df"
-  let g:terminal_color_13 = "#611fce"
-  let g:terminal_color_14 = "#0f9cfd"
-  let g:terminal_color_15 = "#2d2c2c"
-  let g:terminal_color_background = g:terminal_color_0
-  let g:terminal_color_foreground = g:terminal_color_5
-  if &background == "light"
-    let g:terminal_color_background = g:terminal_color_7
-    let g:terminal_color_foreground = g:terminal_color_2
-  endif
+	let g:terminal_color_0 =  "#f1ecf1"
+	let g:terminal_color_1 =  "#fe3e31"
+	let g:terminal_color_2 =  "#47f74c"
+	let g:terminal_color_3 =  "#f7e203"
+	let g:terminal_color_4 =  "#2931df"
+	let g:terminal_color_5 =  "#611fce"
+	let g:terminal_color_6 =  "#0f9cfd"
+	let g:terminal_color_7 =  "#515151"
+	let g:terminal_color_8 =  "#b5b4b6"
+	let g:terminal_color_9 =  "#fe3e31"
+	let g:terminal_color_10 = "#47f74c"
+	let g:terminal_color_11 = "#f7e203"
+	let g:terminal_color_12 = "#2931df"
+	let g:terminal_color_13 = "#611fce"
+	let g:terminal_color_14 = "#0f9cfd"
+	let g:terminal_color_15 = "#2d2c2c"
+	let g:terminal_color_background = g:terminal_color_0
+	let g:terminal_color_foreground = g:terminal_color_5
+	if &background == "light"
+		let g:terminal_color_background = g:terminal_color_7
+		let g:terminal_color_foreground = g:terminal_color_2
+	endif
 elseif has("terminal")
-  let g:terminal_ansi_colors = [
-        \ "#f1ecf1",
-        \ "#fe3e31",
-        \ "#47f74c",
-        \ "#f7e203",
-        \ "#2931df",
-        \ "#611fce",
-        \ "#0f9cfd",
-        \ "#515151",
-        \ "#b5b4b6",
-        \ "#fe3e31",
-        \ "#47f74c",
-        \ "#f7e203",
-        \ "#2931df",
-        \ "#611fce",
-        \ "#0f9cfd",
-        \ "#2d2c2c",
-        \ ]
+	let g:terminal_ansi_colors = [
+				\ "#f1ecf1",
+				\ "#fe3e31",
+				\ "#47f74c",
+				\ "#f7e203",
+				\ "#2931df",
+				\ "#611fce",
+				\ "#0f9cfd",
+				\ "#515151",
+				\ "#b5b4b6",
+				\ "#fe3e31",
+				\ "#47f74c",
+				\ "#f7e203",
+				\ "#2931df",
+				\ "#611fce",
+				\ "#0f9cfd",
+				\ "#2d2c2c",
+				\ ]
 endif
 
 " Theme setup
@@ -150,32 +150,32 @@ let g:colors_name = "base16-fruit-soda"
 " Highlighting function
 " Optional variables are attributes and guisp
 function! g:Base16hi(group, guifg, guibg, ctermfg, ctermbg, ...)
-  let l:attr = get(a:, 1, "")
-  let l:guisp = get(a:, 2, "")
+	let l:attr = get(a:, 1, "")
+	let l:guisp = get(a:, 2, "")
 
-  if a:guifg != ""
-    exec "hi " . a:group . " guifg=#" . a:guifg
-  endif
-  if a:guibg != ""
-    exec "hi " . a:group . " guibg=#" . a:guibg
-  endif
-  if a:ctermfg != ""
-    exec "hi " . a:group . " ctermfg=" . a:ctermfg
-  endif
-  if a:ctermbg != ""
-    exec "hi " . a:group . " ctermbg=" . a:ctermbg
-  endif
-  if l:attr != ""
-    exec "hi " . a:group . " gui=" . l:attr . " cterm=" . l:attr
-  endif
-  if l:guisp != ""
-    exec "hi " . a:group . " guisp=#" . l:guisp
-  endif
+	if a:guifg != ""
+		exec "hi " . a:group . " guifg=#" . a:guifg
+	endif
+	if a:guibg != ""
+		exec "hi " . a:group . " guibg=#" . a:guibg
+	endif
+	if a:ctermfg != ""
+		exec "hi " . a:group . " ctermfg=" . a:ctermfg
+	endif
+	if a:ctermbg != ""
+		exec "hi " . a:group . " ctermbg=" . a:ctermbg
+	endif
+	if l:attr != ""
+		exec "hi " . a:group . " gui=" . l:attr . " cterm=" . l:attr
+	endif
+	if l:guisp != ""
+		exec "hi " . a:group . " guisp=#" . l:guisp
+	endif
 endfunction
 
 
 fun <sid>hi(group, guifg, guibg, ctermfg, ctermbg, attr, guisp)
-  call g:Base16hi(a:group, a:guifg, a:guibg, a:ctermfg, a:ctermbg, a:attr, a:guisp)
+	call g:Base16hi(a:group, a:guifg, a:guibg, a:ctermfg, a:ctermbg, a:attr, a:guisp)
 endfun
 
 " Vim editor colors
