@@ -9,13 +9,20 @@
 
 # Installation
 
-1. git clone --recursive https://github.com/Z5483/dotfiles
-2. ./install [options]
+## Clone
 
-```sh
-install clean     # remove all created symlink files
-install dotfiles  # install everything
-install help      # display all options
+``` sh
+git clone --recursive https://github.com/Z5483/dotfiles
+```
+
+## Install
+
+``` sh
+./install [options]
+
+./install clean     # remove all created symlink files
+./install dotfiles  # install everything
+./install help      # display all options
 ```
 
 **Note:** The `ln -sf` command will overwrite existing files, but will fail to overwrite existing directories.
