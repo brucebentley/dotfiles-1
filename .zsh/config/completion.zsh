@@ -5,7 +5,7 @@ autoload -Uz compinit
 if [[ -n $HOME/.zcompdump(#qN.md-1) ]]; then
 	compinit -i -u
 else
-	rm -f $HOME/.zcompdump* && compinit -C
+	compinit -C
 fi
 
 zstyle ':completion:*' accept-exact '*(N)'
