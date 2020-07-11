@@ -4,89 +4,30 @@ CONFIG_DIR_HOME=(mpd ncmpcpp zsh)
 CONFIG_FILE_HOME=(asoundrc gitconfig tmux.conf xinitrc zlogin zprofile zshenv zshrc)
 XDG_CONFIG_HOME=(picom fontconfig nvim vifm setxkbmap)
 
-usage() {
-	cat << EOF
-Usage: install [commands]
-
-Commands:
-clean		-- remove all created symlinks
-dotfiles	-- install all config files
-help		-- show information about the commands
-EOF
-}
-
-setup_dotfiles() {
+main() {
 	for f in ${CONFIG_FILE_HOME[@]}; do
-		if [[ ! -f $HOME/.$f ]]; then
-			ln -s $(pwd -P)/.$f $HOME
+		if [[ ! -e $HOME/.$f ]]; then
+			cp -rv $(pwd -P)/.$f $HOME
 		else
 			echo "error: failed to install $f: Conflicted with $HOME/.$f"
 		fi
 	done
 
 	for d in ${CONFIG_DIR_HOME[@]}; do
-		if [[ ! -d $HOME/.$d ]]; then
-			ln -s $(pwd -P)/.$d $HOME
+		if [[ ! -e $HOME/.$d ]]; then
+			cp -rv $(pwd -P)/.$d $HOME
 		else
 			echo "error: failed to install $d: Conflicted with $HOME/.$d"
 		fi
 	done
 
 	for c in ${XDG_CONFIG_HOME[@]}; do
-		if [[ ! -d $HOME/.config/$c ]]; then
-			ln -s $(pwd -P)/.config/$c $HOME/.config
+		if [[ ! -e $HOME/.config/$c ]]; then
+			cp -rv $(pwd -P)/.config/$c $HOME/.config
 		else
 			echo "error: unable to install $c: Conflicted with $HOME/.config/$c"
 		fi
 	done
-}
-
-clean_symlink() {
-	for f in ${CONFIG_FILE_HOME[@]}; do
-		if [[ -L $HOME/.$f ]]; then
-			rm -f $HOME/.$f
-		fi
-	done
-
-	for d in ${CONFIG_DIR_HOME[@]}; do
-		if [[ -L $HOME/.$d ]]; then
-			rm -rf $HOME/.$d
-		fi
-	done
-
-	for c in ${XDG_CONFIG_HOME[@]}; do
-		if [[ -L $HOME/.config/$c ]]; then
-			rm -rf $HOME/.config/$c
-		fi
-	done
-
-	rm -f $HOME/.*.zwc*
-}
-
-main() {
-	if [[ ! -d $HOME/.config ]]; then
-		mkdir $HOME/.config
-	fi
-
-	case "$1" in
-	help)
-		usage
-		;;
-	dotfiles)
-		setup_dotfiles
-		;;
-	clean)
-		clean_symlink
-		;;
-	"")
-		usage
-		;;
-	*)
-		usage
-		echo
-		echo "error: unrecognized options: $1"
-		;;
-	esac
 }
 
 main "$@"
