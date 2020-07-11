@@ -5,7 +5,7 @@ if [[ $TERM = "linux" ]]; then
 fi
 
 (
-	function zcompare() {
+	zcompare() {
 		if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
 			zcompile -M ${1}
 		fi
