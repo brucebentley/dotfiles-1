@@ -1,7 +1,7 @@
 #!/bin/sh
+
 readonly ID_PREVIEW="preview"
 
-# Create temporary working directory if the directory structure doesn't exist
 if [[ ! -d "/tmp$PWD/" ]]; then
 	mkdir -p "/tmp$PWD/"
 fi
@@ -20,7 +20,7 @@ preview() {
 
 previewfont() {
 	if [[ ! -f "/tmp${PWD}/$6.png" ]]; then
-		fontpreview -i "$6" -o "/tmp$PWD/$6.png" &> /dev/null
+		fontpreview -i "$6" -o "/tmp$PWD/$6.png" > /dev/null
 	fi
 
 	declare -p -A cmd=([action]=add [identifier]="$ID_PREVIEW"
@@ -41,4 +41,5 @@ main() {
 		;;
 	esac
 }
+
 main "$@"
