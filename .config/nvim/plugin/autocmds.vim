@@ -11,10 +11,6 @@ if has('autocmd')
 
 		autocmd BufEnter,FocusGained,VimEnter,WinEnter * set list | execute 'ownsyntax ' . (&ft)
 		autocmd BufLeave,FocusLost,WinLeave * set nolist | ownsyntax off
-
-		if exists('##TextYankPost')
-			autocmd TextYankPost * silent! lua return (not vim.v.event.visual) and require'vim.highlight'.on_yank('Substitute', 200)
-		endif
 	augroup END
 
 	augroup Idleboot
