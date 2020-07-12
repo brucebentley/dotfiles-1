@@ -5,6 +5,10 @@ CONFIG_FILE_HOME=(asoundrc gitconfig tmux.conf xinitrc zlogin zprofile zshenv zs
 XDG_CONFIG_HOME=(picom fontconfig nvim vifm setxkbmap)
 
 main() {
+	git pull --rebase --prune $@
+	git submodule update --init --recursive
+	git submodule update --remote --merge
+
 	for f in ${CONFIG_FILE_HOME[@]}; do
 		if [[ ! -e $HOME/.$f ]]; then
 			cp -rv $(pwd -P)/.$f $HOME
