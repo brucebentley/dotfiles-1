@@ -12,7 +12,7 @@
 ## Clone
 
 ``` sh
-git clone --recursive https://github.com/Z5483/dotfiles
+git clone https://github.com/Z5483/dotfiles
 ```
 
 ## Install
