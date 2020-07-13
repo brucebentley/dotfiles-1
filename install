@@ -10,27 +10,15 @@ main() {
 	git submodule update --remote --merge
 
 	for f in ${CONFIG_FILE_HOME[@]}; do
-		if [[ ! -e $HOME/.$f ]]; then
-			cp -rv $(pwd -P)/.$f $HOME
-		else
-			echo "error: failed to install $f: Conflicted with $HOME/.$f"
-		fi
+		cp -ruv $(pwd -P)/.$f $HOME
 	done
 
 	for d in ${CONFIG_DIR_HOME[@]}; do
-		if [[ ! -e $HOME/.$d ]]; then
-			cp -rv $(pwd -P)/.$d $HOME
-		else
-			echo "error: failed to install $d: Conflicted with $HOME/.$d"
-		fi
+		cp -ruv $(pwd -P)/.$d $HOME
 	done
 
 	for c in ${XDG_CONFIG_HOME[@]}; do
-		if [[ ! -e $HOME/.config/$c ]]; then
-			cp -rv $(pwd -P)/.config/$c $HOME/.config
-		else
-			echo "error: unable to install $c: Conflicted with $HOME/.config/$c"
-		fi
+		cp -ruv $(pwd -P)/.config/$c $HOME/.config/
 	done
 }
 
