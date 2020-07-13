@@ -3,9 +3,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <silent> <leader>w :w!<CR>
-nnoremap <silent> <leader>q :q!<CR>
-nnoremap <silent> <leader>x :qa!<CR>
+nnoremap <silent> <leader>w :write!<CR>
+nnoremap <silent> <leader>q :quit!<CR>
+nnoremap <silent> <leader>x :quitall!<CR>
 nnoremap <silent> <leader>n :nohlsearch<CR>
 nnoremap <silent> <Leader>zz :%s/\s\+$//e<CR>
 
