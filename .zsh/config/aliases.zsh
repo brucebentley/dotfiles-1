@@ -22,6 +22,8 @@ alias v=vi
 
 if command -v nvim > /dev/null; then
 	alias vi=nvim
+elif command -v vim > /dev/null; then
+	alias vi=vim
 fi
 
 alias xinit="xinit -- $(tty | sed 's/\/dev\/tty/vt/')"
