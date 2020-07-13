@@ -40,8 +40,15 @@ fileview ../ echo >/dev/null
 fileviewer */ ls --color --group-directories-first
 fileviewer .*/ ls --color --group-directories-first
 
-filetype <text/*> nvim
-fileviewer <text/*> less
+if executable('nvim')
+	filetype <text/*> nvim
+elseif executable('vim')
+	filetype <text/*> vim
+else
+	filetype <text/*> vi
+endif
+
+fileviewer <text/*> cat
 
 fileviewer *.bmp,*.jpg,*.jpeg,*.png,*.xpm
 			\ vifmimg draw %px %py %pw %ph %c
@@ -64,5 +71,3 @@ set classify+='  ::*.bmp,,*.gif,,*.jpeg,,*.jpg,,*.ico,,*.png,,*.ppm,,*.svg,,*
 set classify+='  ::*.aac,,*.anx,,*.asf,,*.au,,*.axa,,*.flac,,*.m2a,,*.m4a,,*.mid,,*.midi,,*.mp3,,*.mpc,,*.oga,,*.ogg,,*.ogx,,*.ra,,*.ram,,*.rm,,*.spx,,*.wav,,*.wma,,*.ac3::'
 set classify+='  ::*.avi,,*.ts,,*.axv,,*.divx,,*.m2v,,*.m4p,,*.m4v,,.mka,,*.mkv,,*.mov,,*.mp4,,*.flv,,*.mp4v,,*.mpeg,,*.mpg,,*.nuv,,*.ogv,,*.pbm,,*.pgm,,*.qt,,*.vob,,*.wmv,,*.xvid::'
 set classify+='  ::*.doc,,*.docx::,  ::*.xls,,*.xls[mx]::,  ::*.pptx,,*.ppt::'
-
-" vim:set noet sts=-1 sw=4 ts=4 tw=80 ft=vim:
