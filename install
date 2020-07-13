@@ -1,24 +1,37 @@
 #!/bin/sh
 
-CONFIG_DIR_HOME=(mpd ncmpcpp zsh)
-CONFIG_FILE_HOME=(asoundrc gitconfig tmux.conf xinitrc zlogin zprofile zshenv zshrc)
-XDG_CONFIG_HOME=(picom fontconfig nvim vifm setxkbmap)
+HOME_CONFIG=(
+	asoundrc
+	gitconfig
+	mpd
+	ncmpcpp
+	tmux.conf
+	xinitrc
+	zlogin
+	zprofile
+	zsh
+	zshenv
+	zshrc
+)
+XDG_CONFIG=(
+	fontconfig
+	nvim
+	picom
+	setxkbmap
+	vifm
+)
 
 main() {
 	git pull --rebase --prune $@
 	git submodule update --init --recursive
 	git submodule update --remote --merge
 
-	for f in ${CONFIG_FILE_HOME[@]}; do
-		cp -ruv $(pwd -P)/.$f $HOME
+	for home in ${HOME_CONFIG[@]}; do
+		cp -ruv $(pwd -P)/.$home $HOME
 	done
 
-	for d in ${CONFIG_DIR_HOME[@]}; do
-		cp -ruv $(pwd -P)/.$d $HOME
-	done
-
-	for c in ${XDG_CONFIG_HOME[@]}; do
-		cp -ruv $(pwd -P)/.config/$c $HOME/.config/
+	for xdg in ${XDG_CONFIG[@]}; do
+		cp -ruv $(pwd -P)/.config/$xdg $HOME/.config/
 	done
 }
 
