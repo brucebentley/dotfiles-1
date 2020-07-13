@@ -2,38 +2,31 @@
 	s  = "!git status -s"
 	st = "!git status"
 
-	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
-
 	ca = "!git add -A && git commit -a"
-	ci = "commit"
+	ci = "!git add -A && git commit"
 
-	amend = "!git add -A && git commit --amend --no-edit"
-
-	p = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
-
-	undo   = "!git reset HEAD~1 --mixed"
-	hreset = "!git reset HEAD --hard"
+	co = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
 
 	cr = "!git clone --recursive"
 
+	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
+
+	p = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
+
 	ud = "!git pull --rebase --prune $@ && git submodule update --init --recursive && git submodule update --remote --merge"
 
-	tags     = "!git tag -l"
+	reb = "!r() { git rebase -i HEAD~$1; }; r"
+
 	branches = "!git branch -a"
 	remotes  = "!git remote -v"
+	tags     = "!git tag -l"
 
-	d   = "!git diff-index --quiet HEAD -- || git diff --patch-with-stat"
-	di  = "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD --; d"
-
-	ack = "!git grep --break --heading"
-
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
+	d  = "!git diff-index --quiet HEAD -- || git diff --patch-with-stat"
+	di = "!d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD --; d"
 
 	fb = "!f() { git branch -a --contains $1; }; f"
 	fc = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short -S$1; }; f"
 	fm = "!f() { git log --pretty=format:'%C(yellow)%h	%Cblue%ad  %Creset%s%Cgreen  [%cn] %Cred%d' --decorate --date=short --grep=$1; }; f"
-
-	dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 
 [branch]
 	autosetupmerge = always
