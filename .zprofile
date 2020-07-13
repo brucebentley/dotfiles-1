@@ -22,9 +22,14 @@ PATH=$PATH:/usr/local/sbin
 PATH=$PATH:/usr/sbin
 export PATH
 
-export MANPAGER=less
+if command -v less > /dev/null; then
+	export MANPAGER=less
+	export PAGER=less
+elif command -v more > /dev/null; then
+	export MANPAGER=more
+	export PAGER=more
+fi
 
-export PAGER=less
 
 if command -v nvim > /dev/null; then
 	export EDITOR=nvim
