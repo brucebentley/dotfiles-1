@@ -1,6 +1,8 @@
 #!/bin/sh
+
 theme=$(head -1 "$HOME/.zsh/.base16")
 theme_file=$HOME/.zsh/colors/base16-$theme.sh
+
 if [[ -f $theme_file ]]; then
 	# get the color declarations in said theme, assumes there is a block of text that starts with color00= and ends with new line
 	source $theme_file
@@ -8,6 +10,7 @@ if [[ -f $theme_file ]]; then
 else
 	printf "No theme file %s found\n" $theme_file
 fi;
+
 ansi_mappings=(
 	Black
 	Red
@@ -26,6 +29,7 @@ ansi_mappings=(
 	Bright_Cyan
 	Bright_White
 )
+
 colors=(
 	base00
 	base08
@@ -50,6 +54,7 @@ colors=(
 	base04
 	base06
 )
+
 for padded_value in `seq -w 0 21`; do
 	color_variable="color${padded_value}"
 	eval current_color=\$${color_variable}
