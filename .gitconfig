@@ -13,7 +13,7 @@
 
 	p = "!git push -u origin $(git rev-parse --abbrev-ref HEAD)"
 
-	ud = "!git pull --rebase --prune $@ && git submodule update --init --recursive && git submodule update --remote --merge"
+	up = "!git pull --rebase --prune $@ && git submodule update --init --recursive && git submodule update --remote --merge"
 
 	reb = "!r() { git rebase -i HEAD~$1; }; r"
 
