@@ -9,6 +9,7 @@ alias e=exit
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias g=git
+alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias grep='grep -Hn --color'
 alias j=jump
 alias l='ls -lFh'
