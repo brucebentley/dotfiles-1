@@ -11,6 +11,7 @@ alias ff='find . -type f -name'
 alias g=git
 alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null || echo -n ".")'
 alias grep='grep -Hn --color'
+alias h=history
 alias j=jump
 alias l='ls -lFh'
 alias ll='ls -lAFh'
