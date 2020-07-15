@@ -3,7 +3,7 @@ if has('autocmd')
 		autocmd!
 		if exists('+winhighlight')
 			autocmd BufEnter,FocusGained,VimEnter,WinEnter * set winhighlight=
-			autocmd FocusLost,WinLeave * set winhighlight=CursorLineNr:LineNr,EndOfBuffer:ColorColumn,IncSearch:ColorColumn,Normal:ColorColumn,NormalNC:ColorColumn,SignColumn:ColorColumn
+			autocmd FocusLost,WinLeave * set winhighlight=CursorLineNr:LineNr,StatusLine:LineNr,EndOfBuffer:ColorColumn,IncSearch:ColorColumn,Normal:ColorColumn,NormalNC:ColorColumn,SignColumn:ColorColumn
 		endif
 
 		autocmd BufEnter,InsertLeave,VimEnter * setlocal cursorline
