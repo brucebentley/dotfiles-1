@@ -3,10 +3,25 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <silent> <leader>w :write!<CR>
-nnoremap <silent> <leader>q :quit!<CR>
-nnoremap <silent> <leader>x :quitall!<CR>
-nnoremap <silent> <leader>n :nohlsearch<CR>
+nnoremap Y y$
+
+nnoremap <leader>\ :vsplit<CR>
+nnoremap <leader>- :split<CR>
+
+nnoremap <leader>\| <C-w>\|
+nnoremap <leader>_ <C-w>_
+nnoremap <leader>= <C-w>=
+
+nnoremap <leader>w :write!<CR>
+nnoremap <leader>q :quit!<CR>
+nnoremap <leader>x :quitall!<CR>
+
+nnoremap <leader>n :nohlsearch<CR>
+
+nnoremap <LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+
+nnoremap <silent> <LocalLeader>s :syntax sync fromstart<CR>
+
 nnoremap <silent> <Leader>zz :%s/\s\+$//e<CR>
 
 nnoremap <silent> <Up> :cprevious<CR>
