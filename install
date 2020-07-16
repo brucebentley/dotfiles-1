@@ -27,11 +27,11 @@ main() {
 	git submodule update --remote --merge
 
 	for home in ${HOME_CONFIG[@]}; do
-		cp -ruv $(pwd -P)/.$home $HOME
+		cp -rv $(pwd -P)/.$home $HOME
 	done
 
 	for xdg in ${XDG_CONFIG[@]}; do
-		cp -ruv $(pwd -P)/.config/$xdg $HOME/.config/
+		cp -rv $(pwd -P)/.config/$xdg $HOME/.config/
 	done
 }
 
