@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if command -v slstatus > /dev/null; then
-	slstatus &
-fi
-
 if [[ -x $(command -v setxkbmap) && $(command -v xcape) ]]; then
 	setxkbmap -layout "us+symbols(xcape-special)" \
 		  -keycodes "evdev+keycodes(xcape-special)" \
@@ -26,6 +22,17 @@ if command -v unclutter > /dev/null; then
 	unclutter --idle 1 &
 fi
 
-if command -v dwm > /dev/null; then
-	exec dwm
-fi
+case $1 in
+	dwm)
+		if command -v slstatus > /dev/null; then
+			slstatus &
+		fi
+		exec dwm
+		;;
+	kde)
+		exec startkde
+		;;
+	*)
+		exec $1
+		;;
+esac

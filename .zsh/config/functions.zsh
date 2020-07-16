@@ -62,3 +62,7 @@ vifm() {
 		command vifm
 	fi
 }
+
+xinit() {
+	command xinit $1 -- $(tty | sed 's/\/dev\/tty/vt/')
+}
