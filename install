@@ -15,7 +15,6 @@ HOME_CONFIG=(
 )
 
 XDG_CONFIG=(
-	fontconfig
 	nvim
 	picom
 	setxkbmap
