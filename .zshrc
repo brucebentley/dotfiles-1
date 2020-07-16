@@ -11,10 +11,6 @@ fpath=(
 	$fpath
 )
 
-HISTSIZE=1000000
-HISTFILE="$HOME/.history"
-SAVEHIST=$HISTSIZE
-
 setopt AUTO_CD
 setopt CORRECT_ALL
 setopt EXTENDED_GLOB

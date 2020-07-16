@@ -2,6 +2,10 @@
 
 export CORRECT_IGNORE_FILE='.*'
 
+export HISTSIZE=1000000
+export HISTFILE="$HOME/.history"
+export SAVEHIST=$HISTSIZE
+
 export LESS='-iFMRSX'
 
 export LESSHISTFILE=/dev/null
