@@ -32,7 +32,7 @@ color() {
 	local STATUS=0
 
 	color_setup() {
-		SCHEME=$1
+		local SCHEME=$1
 		local FILE="$BASE16_DIR/base16-$SCHEME.sh"
 		if [[ -e "$FILE" ]]; then
 			local BG=$(grep color_background= "$FILE" | cut -d \" -f2 | sed -e 's#/##g')
