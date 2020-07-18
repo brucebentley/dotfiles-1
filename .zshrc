@@ -1,13 +1,6 @@
-typeset -A __USER
-
-__USER[BASE16_CONFIG]=$HOME/.zsh/.base16
-__USER[BLOCK_CURSOR]=$'\033[2 q'
-__USER[LINE_CURSOR]=$'\033[6 q'
-__USER[ITALIC_OFF]=$'\033[23m'
-__USER[ITALIC_ON]=$'\033[3m'
-
 fpath=(
 	$HOME/.zsh/completions
+	$HOME/.zsh/config
 	$fpath
 )
 
@@ -22,7 +15,6 @@ setopt MENU_COMPLETE
 setopt SHARE_HISTORY
 
 source $HOME/.zsh/config/aliases.zsh
-source $HOME/.zsh/config/async.zsh
 source $HOME/.zsh/config/bindings.zsh
 source $HOME/.zsh/config/colors.zsh
 source $HOME/.zsh/config/completion.zsh

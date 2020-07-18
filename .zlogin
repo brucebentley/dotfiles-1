@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 if [[ $TERM = "linux" ]]; then
 	sh $HOME/.zsh/bin/motd
 fi

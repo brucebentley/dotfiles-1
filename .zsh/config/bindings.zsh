@@ -4,15 +4,18 @@ bindkey -v
 
 KEYTIMEOUT=1
 
-if tput cbt &> /dev/null; then
+if tput cbt > /dev/null; then
 	bindkey "$(tput cbt)" reverse-menu-complete
 fi
 
 zle-keymap-select zle-line-init () {
+	local BLOCK_CURSOR=$'\033[6 q'
+	local LINE_CURSOR=$'\033[2 q'
+
 	if [[ $KEYMAP == main ]]; then
-		printf $__USER[LINE_CURSOR]
+		printf $BLOCK_CURSOR
 	else
-		printf $__USER[BLOCK_CURSOR]
+		printf $LINE_CURSOR
 	fi
 }
 zle -N zle-line-init

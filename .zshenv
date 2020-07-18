@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 export CORRECT_IGNORE_FILE='.*'
 
 export HISTSIZE=1000000

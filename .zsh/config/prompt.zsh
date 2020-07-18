@@ -20,6 +20,9 @@ prompt_preexec() {
 }
 
 prompt_precmd() {
+	local ITALIC_OFF=$'\033[23m'
+	local ITALIC_ON=$'\033[3m'
+
 	if [ $ZSH_START_TIME ]; then
 		local DELTA=$(($SECONDS - $ZSH_START_TIME))
 		local DAYS=$((~~($DELTA / 86400)))
@@ -38,7 +41,7 @@ prompt_precmd() {
 			SECS="$((~~$SECS))s"
 		fi
 		ELAPSED="${ELAPSED}${SECS}"
-		RPROMPT="%F{cyan}%{$__USER[ITALIC_ON]%}${ELAPSED}%{$__USER[ITALIC_OFF]%}%f $RPROMPT_BASE"
+		RPROMPT="%F{cyan}%{$ITALIC_ON%}${ELAPSED}%f%{$ITALIC_OFF%} $RPROMPT_BASE"
 		unset ZSH_START_TIME
 	else
 		RPROMPT="$RPROMPT_BASE"
@@ -130,6 +133,7 @@ prompt_setup() {
 
 	DISABLE_UPDATE_PROMPT=true
 
+	autoload -Uz async.zsh && async.zsh
 	autoload -Uz add-zsh-hook
 	autoload -Uz vcs_info
 

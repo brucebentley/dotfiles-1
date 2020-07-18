@@ -28,7 +28,8 @@ luma() {
 color() {
 	local SCHEME="$1"
 	local BASE16_DIR=~/.zsh/colors
-	local BASE16_CONFIG_PREVIOUS="${__USER[BASE16_CONFIG]}.previous"
+	local BASE16_CONFIG="$HOME/.zsh/.base16"
+	local BASE16_CONFIG_PREVIOUS="${BASE16_CONFIG}.previous"
 	local STATUS=0
 
 	color_setup() {
@@ -43,12 +44,12 @@ color() {
 				BACKGROUND=light
 			fi
 
-			if [ -e "$__USER[BASE16_CONFIG]" ]; then
-				cp "$__USER[BASE16_CONFIG]" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
+			if [ -e "$BASE16_CONFIG" ]; then
+				cp "$BASE16_CONFIG" "$BASE16_CONFIG_PREVIOUS" &> /dev/null
 			fi
 
-			echo "$SCHEME" >! "$__USER[BASE16_CONFIG]"
-			echo "$BACKGROUND" >> "$__USER[BASE16_CONFIG]"
+			echo "$SCHEME" >! "$BASE16_CONFIG"
+			echo "$BACKGROUND" >> "$BASE16_CONFIG"
 			sh "$FILE"
 
 			if [ -n "$TMUX" ]; then
@@ -67,9 +68,9 @@ color() {
 	}
 
 	if [ $# -eq 0 ]; then
-		if [ -s "$__USER[BASE16_CONFIG]" ]; then
-			cat "$__USER[BASE16_CONFIG]"
-			local SCHEME=$(head -1 "$__USER[BASE16_CONFIG]")
+		if [ -s "$BASE16_CONFIG" ]; then
+			cat "$BASE16_CONFIG"
+			local SCHEME=$(head -1 "$BASE16_CONFIG")
 			color_setup "$SCHEME"
 			return
 		fi
@@ -95,11 +96,13 @@ color() {
 }
 
 color_refresh () {
-	if [[ -s "$__USER[BASE16_CONFIG]" ]]; then
-		local SCHEME=$(head -1 "$__USER[BASE16_CONFIG]")
-		local BACKGROUND=$(sed -n -e '2 p' "$__USER[BASE16_CONFIG]")
+	local BASE16_CONFIG="$HOME/.zsh/.base16"
+
+	if [[ -s "$BASE16_CONFIG" ]]; then
+		local SCHEME=$(head -1 "$BASE16_CONFIG")
+		local BACKGROUND=$(sed -n -e '2 p' "$BASE16_CONFIG")
 		if [ "$BACKGROUND" != 'dark' -a "$BACKGROUND" != 'light' ]; then
-			echo "warning: unknown background type in $__USER[BASE16_CONFIG]"
+			echo "warning: unknown background type in $BASE16_CONFIG"
 		fi
 		color "$SCHEME"
 	else

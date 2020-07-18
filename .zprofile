@@ -1,5 +1,3 @@
-#!/usr/bin/env zsh
-
 export LC_ALL=en_US.UTF8
 export LANG=en_US.UTF8
 
