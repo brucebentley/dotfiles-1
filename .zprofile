@@ -36,3 +36,24 @@ elif command -v vim > /dev/null; then
 else
 	export EDITOR=vi
 fi
+
+(
+	setopt NOGLOB
+	zcompare() {
+		if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
+			zcompile -M ${1}
+		fi
+	}
+
+	zcompare $HOME/.zcompdump
+	zcompare $HOME/.zprofile
+	zcompare $HOME/.zshenv
+	zcompare $HOME/.zshrc
+
+	for file in $HOME/.zsh/**/*.{sh,zsh}; do
+		zcompare ${file} 2> /dev/null
+	done
+
+	setopt NOGLOB
+	unfunction zcompare
+) &!
