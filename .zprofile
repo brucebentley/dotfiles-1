@@ -5,7 +5,6 @@ SYSTEM_PATH=$PATH
 unset PATH
 
 PATH=$PATH:$HOME/.local/bin
-PATH=$PATH:$HOME/.zsh/bin
 PATH=$PATH:$HOME/bin
 
 if [[ -d /usr/lib/llvm/10/bin ]]; then
