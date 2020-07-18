@@ -22,7 +22,7 @@ XDG_CONFIG=(
 )
 
 main() {
-	git pull --rebase --prune $@
+	git pull --rebase --prune
 	git submodule update --init --recursive
 	git submodule update --remote --merge
 
