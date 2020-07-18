@@ -13,12 +13,9 @@
 [submodule "zsh-syntax-highlighting"]
 	path = .zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-	ignore = dirty
 [submodule "zsh-autosuggestions"]
 	path = .zsh/plugins/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
-	ignore = dirty
 [submodule "zsh-history-substring-search"]
 	path = .zsh/plugins/zsh-history-substring-search
 	url = https://github.com/zsh-users/zsh-history-substring-search
-	ignore = dirty
