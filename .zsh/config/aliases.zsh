@@ -1,21 +1,21 @@
 #!/usr/bin/env zsh
 
-alias ......='cd ../../..'
-alias ....='cd ../..'
-alias ..='cd ..'
-alias dud='du -d 1 -h'
-alias duf='du -sh *'
+alias ......="cd ../../.."
+alias ....="cd ../.."
+alias ..="cd .."
+alias dud="du -d 1 -h"
+alias duf="du -sh *"
 alias e=exit
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fd="find . -type d -name"
+alias ff="find . -type f -name"
 alias g=git
-alias groot='cd $(git rev-parse --show-toplevel 2> /dev/null)'
-alias grep='grep -Hn --color'
+alias groot="cd $(git rev-parse --show-toplevel 2> /dev/null)"
+alias grep="grep -Hn --color"
 alias h=history
 alias j=jump
-alias l='ls -lFh'
-alias ll='ls -lAFh'
-alias ls='ls --color'
+alias l="ls -lFh"
+alias ll="ls -lAFh"
+alias ls="ls --color"
 alias n=ncmpcpp
 alias r=vifm
 alias s=ssh

@@ -1,12 +1,12 @@
 #!/usr/bin/env zsh
 
-local CODE=~/Code
-local CONSOLEFONT=/usr/share/consolefonts
-local FONT=/usr/share/fonts
-local LINUX=/usr/src/linux
-local LOG=/var/log
-local OVERLAY=/var/db/repos
-local PORTAGE=/etc/portage
+local CODE="$HOME/Code"
+local CONSOLEFONT="/usr/share/consolefonts"
+local FONT="/usr/share/fonts"
+local LINUX="/usr/src/linux"
+local LOG="/var/log"
+local OVERLAY="/var/db/repos"
+local PORTAGE="/etc/portage"
 
 test -d "$CODE" && hash -d code="$CODE"
 test -d "$CONSOLEFONT" && hash -d consolefont="$CONSOLEFONT"

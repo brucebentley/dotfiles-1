@@ -3,16 +3,12 @@ export LANG=en_US.UTF8
 
 SYSTEM_PATH=$PATH
 unset PATH
-
 PATH=$PATH:$HOME/.local/bin
 PATH=$PATH:$HOME/bin
 
-if [[ -d /usr/lib/llvm/10/bin ]]; then
-	PATH=$PATH:/usr/lib/llvm/10/bin
-fi
-
 PATH=$PATH:/bin
 PATH=$PATH:/sbin
+
 PATH=$PATH:/usr/bin
 PATH=$PATH:/usr/local/bin
 PATH=$PATH:/usr/local/sbin
@@ -37,22 +33,20 @@ else
 fi
 
 (
-	setopt NOGLOB
 	zcompare() {
-		if [[ -s ${1} && ( ! -s ${1}.zwc || ${1} -nt ${1}.zwc) ]]; then
-			zcompile -M ${1}
+		if [ -s "$1" -a -z "$1.zwc"  ]; then
+			zcompile -M "$1"
 		fi
 	}
 
-	zcompare $HOME/.zcompdump
-	zcompare $HOME/.zprofile
-	zcompare $HOME/.zshenv
-	zcompare $HOME/.zshrc
+	zcompare "$HOME/.zcompdump"
+	zcompare "$HOME/.zprofile"
+	zcompare "$HOME/.zshenv"
+	zcompare "$HOME/.zshrc"
 
-	for file in $HOME/.zsh/**/*.{sh,zsh}; do
-		zcompare ${file} 2> /dev/null
+	for file in "$HOME/.zsh/**/*.{sh,zsh}"; do
+		zcompare "$file" 2> /dev/null
 	done
 
-	setopt NOGLOB
 	unfunction zcompare
 ) &!
