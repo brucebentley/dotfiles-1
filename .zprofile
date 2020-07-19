@@ -34,7 +34,8 @@ fi
 
 (
 	zcompare() {
-		if [ -s "$1" -a -z "$1.zwc"  ]; then
+		if [ -s "$1" ] && [ ! -s "$1".zwc ] || \
+		   [ -n "$( find -L "$1" -prune -newer "$1".zwc)" ]; then
 			zcompile -M "$1"
 		fi
 	}
@@ -44,7 +45,7 @@ fi
 	zcompare "$HOME/.zshenv"
 	zcompare "$HOME/.zshrc"
 
-	for file in "$HOME/.zsh/**/*.{sh,zsh}"; do
+	for file in "$HOME"/.zsh/**/*.{sh,zsh}; do
 		zcompare "$file" 2> /dev/null
 	done
 
