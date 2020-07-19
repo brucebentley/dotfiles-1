@@ -54,4 +54,4 @@ fi
 	done
 
 	unfunction zcompare
-) &!
+) > /dev/null &!
