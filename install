@@ -1,37 +1,16 @@
 #!/bin/sh
 
-HOME_CONFIG=(
-	asoundrc
-	gitconfig
-	mpd
-	ncmpcpp
-	tmux.conf
-	xinitrc
-	zlogin
-	zprofile
-	zsh
-	zshenv
-	zshrc
-)
-
-XDG_CONFIG=(
-	nvim
-	picom
-	setxkbmap
-	vifm
-)
-
 main() {
 	git pull --rebase --prune
 	git submodule update --init --recursive
 	git submodule update --remote --merge
 
-	for home in ${HOME_CONFIG[@]}; do
-		cp -rv $(pwd -P)/.$home $HOME
+	for home in "asounrc" "gitconfig" "mpd" "ncmpcpp" "tmux.conf" "xinitrc" "zlogin" "zprofile" "zsh" "zshenv" "zshrc"; do
+		cp -rv "$(pwd -P)"/."$home" "$HOME"
 	done
 
-	for xdg in ${XDG_CONFIG[@]}; do
-		cp -rv $(pwd -P)/.config/$xdg $HOME/.config/
+	for xdg in "nvim" "picom" "setxkbmap" "vifm"; do
+		cp -rv "$(pwd -P)"/.config/"$xdg" "$HOME"/.config/
 	done
 }
 
