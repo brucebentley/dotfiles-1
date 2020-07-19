@@ -5,7 +5,8 @@ main() {
 	git submodule update --init --recursive
 	git submodule update --remote --merge
 
-	for home in "asounrc" "gitconfig" "mpd" "ncmpcpp" "tmux.conf" "xinitrc" "zlogin" "zprofile" "zsh" "zshenv" "zshrc"; do
+	for home in "asounrc" "gitconfig" "mpd" "ncmpcpp" "tmux.conf" \
+		    "xinitrc" "zlogin" "zprofile" "zsh" "zshenv" "zshrc"; do
 		cp -rv "$(pwd -P)"/."$home" "$HOME"
 	done
 
