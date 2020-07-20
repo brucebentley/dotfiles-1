@@ -8,19 +8,19 @@ luma() {
 		return 1
 	fi
 
-	local COLOR_HEX_RED="$(echo $COLOR_HEX | cut -c 1-2)"
-	local COLOR_HEX_GREEN="$(echo $COLOR_HEX | cut -c 3-4)"
-	local COLOR_HEX_BLUE="$(echo $COLOR_HEX | cut -c 5-6)"
+	local COLOR_HEX_RED=$(echo $COLOR_HEX | cut -c 1-2)
+	local COLOR_HEX_GREEN=$(echo $COLOR_HEX | cut -c 3-4)
+	local COLOR_HEX_BLUE=$(echo $COLOR_HEX | cut -c 5-6)
 
-	local COLOR_DEC_RED="$((16#$COLOR_HEX_RED))"
-	local COLOR_DEC_GREEN="$((16#$COLOR_HEX_GREEN))"
-	local COLOR_DEC_BLUE="$((16#$COLOR_HEX_BLUE))"
+	local COLOR_DEC_RED=$((16#$COLOR_HEX_RED))
+	local COLOR_DEC_GREEN=$((16#$COLOR_HEX_GREEN))
+	local COLOR_DEC_BLUE=$((16#$COLOR_HEX_BLUE))
 
-	local COLOR_LUMA_RED="$((0.2126 * $COLOR_DEC_RED))"
-	local COLOR_LUMA_GREEN="$((0.7152 * $COLOR_DEC_GREEN))"
-	local COLOR_LUMA_BLUE="$((0.0722 * $COLOR_DEC_BLUE))"
+	local COLOR_LUMA_RED=$((0.2126 * $COLOR_DEC_RED))
+	local COLOR_LUMA_GREEN=$((0.7152 * $COLOR_DEC_GREEN))
+	local COLOR_LUMA_BLUE=$((0.0722 * $COLOR_DEC_BLUE))
 
-	local COLOR_LUMA="$(($COLOR_LUMA_RED + $COLOR_LUMA_GREEN + $COLOR_LUMA_BLUE))"
+	local COLOR_LUMA=$(($COLOR_LUMA_RED + $COLOR_LUMA_GREEN + $COLOR_LUMA_BLUE))
 
 	echo "$COLOR_LUMA"
 }
@@ -36,9 +36,9 @@ color() {
 		local SCHEME="$1"
 		local FILE="$BASE16_DIR/base16-$SCHEME.sh"
 		if [ -f "$FILE" ]; then
-			local BG="$(grep color_background= "$FILE" | cut -d \" -f2 | sed -e "s#/##g")"
-			local LUMA="$(luma $BG)"
-			local LIGHT="$((LUMA > 127.5))"
+			local BG=$(grep color_background= "$FILE" | cut -d \" -f2 | sed -e "s#/##g")
+			local LUMA=$(luma $BG)
+			local LIGHT=$((LUMA > 127.5))
 			local BACKGROUND="dark"
 			if [ "$LIGHT" -eq 1 ]; then
 				BACKGROUND="light"
@@ -53,7 +53,7 @@ color() {
 			sh "$FILE"
 
 			if [ -n "$TMUX" ]; then
-				local CC="$(grep color18= $FILE | cut -d \" -f2 | sed -e "s#/##g")"
+				local CC=$(grep color18= $FILE | cut -d \" -f2 | sed -e "s#/##g")
 				if [ -n "$BG" -a -n "$CC" ]; then
 					command tmux set -a window-active-style "bg=#$BG"
 					command tmux set -a window-style "bg=#$CC"
@@ -106,7 +106,7 @@ color_refresh () {
 		fi
 		color "$SCHEME"
 	else
-		color default-dark
+		color "default-dark"
 	fi
 }
 

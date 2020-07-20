@@ -1,12 +1,12 @@
-export CORRECT_IGNORE_FILE='.*'
+export CORRECT_IGNORE_FILE=".*"
 
 export HISTSIZE=1000000
 export HISTFILE="$HOME/.history"
-export SAVEHIST="$HISTSIZE"
+export SAVEHIST=$HISTSIZE
 
 export KEYTIMEOUT=1
 
-export LESS='-iFMRSX'
+export LESS="-iFMRSX"
 
 export LESSHISTFILE=/dev/null
 

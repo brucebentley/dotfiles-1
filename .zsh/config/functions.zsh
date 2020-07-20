@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 colortest() {
-	THEME="$(head -1 "$HOME/.zsh/.base16")"
+	THEME=$(head -1 "$HOME/.zsh/.base16")
 	THEME_FILE="$HOME/.zsh/colors/base16-$THEME.sh"
 
 	if [ -f "$THEME_FILE" ]; then
@@ -110,7 +110,7 @@ tmux() {
 		fi
 	fi
 
-	local SESSION_NAME="$(basename "${$(pwd)//[.:]/_}")"
+	local SESSION_NAME=$(basename "${$(pwd)//[.:]/_}")
 	env SSH_AUTH_SOCK=$SOCK_SYMLINK tmux new -A -s "$SESSION_NAME"
 }
 
@@ -133,5 +133,6 @@ vifm() {
 }
 
 xinit() {
-	command xinit "$1" -- "$(tty | sed "s/\/dev\/tty/vt/")"
+	vt=$(tty | sed "s/\/dev\/tty/vt/")
+	command xinit "$1" -- "$vt"
 }

@@ -7,9 +7,9 @@ prompt_window_title_setup() {
 
 prompt_preexec() {
 	typeset -Fg SECONDS
-	ZSH_START_TIME="${ZSH_START_TIME:-$SECONDS}"
+	ZSH_START_TIME=${ZSH_START_TIME:-$SECONDS}
 
-	HISTCMD_LOCAL="$((++HISTCMD_LOCAL))"
+	HISTCMD_LOCAL=$((++HISTCMD_LOCAL))
 
 	local TRIMMED="${2[(wr)^(*=*|mosh|ssh|sudo)]}"
 	if [ -n "$TMUX" ]; then
@@ -24,15 +24,15 @@ prompt_precmd() {
 	local ITALIC_ON=$'\033[3m'
 
 	if [ "$ZSH_START_TIME" ]; then
-		local DELTA="$(($SECONDS - $ZSH_START_TIME))"
+		local DELTA=$(($SECONDS - $ZSH_START_TIME))
 		local DAYS=$((~~($DELTA / 86400)))
 		local HOURS=$((~~(($DELTA - $DAYS * 86400) / 3600)))
 		local MINUTES=$((~~(($DELTA - $DAYS * 86400 - $HOURS * 3600) / 60)))
 		local SECS=$(($DELTA - $DAYS * 86400 - $HOURS * 3600 - $MINUTES * 60))
 		local ELAPSED=""
-		test "$DAYS" != "0" && ELAPSED="${DAYS}d"
-		test "$HOURS" != "0" && ELAPSED="${ELAPSED}${HOURS}h"
-		test "$MINUTES" != "0" && ELAPSED="${ELAPSED}${MINUTES}m"
+		test "$DAYS" != 0 && ELAPSED="${DAYS}d"
+		test "$HOURS" != 0 && ELAPSED="${ELAPSED}${HOURS}h"
+		test "$MINUTES" != 0 && ELAPSED="${ELAPSED}${MINUTES}m"
 		if [ -z "$ELAPSED" ]; then
 			SECS="$(print -f "%.2f" $SECS)s"
 		elif [ "$DAYS" -ne 0 ]; then
@@ -142,15 +142,15 @@ prompt_setup() {
 
 	local TMUXING="$([ -n $(grep "tmux" $TERM 2> /dev/null) ] && echo "tmux")"
 	if [ -n "$TMUXING" -a -n "$TMUX" ]; then
-		local LVL="$(($SHLVL-1))"
+		local LVL=$(($SHLVL-1))
 	else
-		local LVL="$SHLVL"
+		local LVL=$SHLVL
 	fi
 
 	if [ "$(id -u)" -eq 0 ]; then
 		local SUFFIX="%F{yellow}%n%f$(printf "%%F{yellow}\u276f%.0s%%f" {1..$LVL})"
 	else
-		local SUFFIX="$(printf "%%F{red}\u276f%.0s%%f" {1..$LVL})"
+		local SUFFIX=$(printf "%%F{red}\u276f%.0s%%f" {1..$LVL})
 	fi
 
 	PS1="%F{green}${SSH_TTY:+%n@%m}%f%B${SSH_TTY:+:}%b%F{blue}%B%1~%b%F{yellow}%B%(1j.*.)%(?..!)%b%f %B${SUFFIX}%b "
