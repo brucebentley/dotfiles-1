@@ -120,7 +120,7 @@ vifm() {
 		rm "$FIFO_UEBERZUG" 2> /dev/null
 		mkfifo "$FIFO_UEBERZUG"
 		trap "rm "$FIFO_UEBERZUG" 2> /dev/null && pkill -P $$ 2> /dev/null" EXIT
-		tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &
+		tail -f "$FIFO_UEBERZUG" | ueberzug layer --silent --parser bash &!
 
 		command vifm "$@"
 
