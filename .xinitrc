@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ -x $(command -v setxkbmap) && $(command -v xcape) ]]; then
+if [ -x "$(command -v setxkbmap)" ] && [ -x "$(command -v xcape)" ]; then
 	setxkbmap -layout "us+symbols(xcape-special)" \
 		  -keycodes "evdev+keycodes(xcape-special)" \
 		  -option "caps:super,shift:both_shiftlock" -print | \
@@ -10,8 +10,9 @@ if [[ -x $(command -v setxkbmap) && $(command -v xcape) ]]; then
 fi
 
 if command -v xwallpaper > /dev/null; then
-	picture=(~/Pictures/wallpaper/*)
-	xwallpaper --zoom ${picture[RANDOM % ${#picture[@]}]}
+	picture=$(awk -v min=1 -v max=21 "BEGIN{srand(); print int(min+rand()*(max-min+1))}")
+	path=$(printf "$HOME/Pictures/wallpaper/%04d.jpg\n" "$picture")
+	xwallpaper --zoom "$path"
 fi
 
 if command -v picom > /dev/null; then
@@ -33,6 +34,6 @@ case $1 in
 		exec startkde
 		;;
 	*)
-		exec $1
+		exec "$1"
 		;;
 esac
