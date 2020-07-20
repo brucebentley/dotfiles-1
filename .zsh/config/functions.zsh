@@ -78,7 +78,7 @@ scratch() {
 	local SCRATCH="$(mktemp -d)"
 	echo "Spawing subshell in scratch directory:"
 	echo "$SCRATCH"
-	cd "$SCRATCH" && zsh
+	(cd "$SCRATCH" && zsh)
 	echo "Removing scratch directory"
 	rm -rf "$SCRATCH"
 }
