@@ -131,8 +131,6 @@ prompt_async_callback() {
 prompt_setup() {
 	setopt PROMPT_SUBST
 
-	DISABLE_UPDATE_PROMPT=true
-
 	autoload -Uz async.zsh && async.zsh
 	autoload -Uz add-zsh-hook
 	autoload -Uz vcs_info

@@ -4,6 +4,8 @@ export HISTSIZE=1000000
 export HISTFILE="$HOME/.history"
 export SAVEHIST=$HISTSIZE
 
+export DISABLE_UPDATE_PROMPT=true
+
 export KEYTIMEOUT=1
 
 export LESS="-iFMRSX"
