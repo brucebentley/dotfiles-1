@@ -7,11 +7,11 @@ main() {
 
 	for home in "asounrc" "gitconfig" "mpd" "ncmpcpp" "tmux.conf" \
 		    "xinitrc" "zlogin" "zprofile" "zsh" "zshenv" "zshrc"; do
-		cp -rv "$(pwd -P)/.$home" "$HOME"
+		cp -rv "$(dirname "$0")/.$home" "$HOME"
 	done
 
 	for xdg in "nvim" "picom" "setxkbmap" "vifm"; do
-		cp -rv "$(pwd -P)/.config/$xdg" "$HOME/.config/"
+		cp -rv "$(dirname "$0")/.config/$xdg" "$HOME/.config/"
 	done
 }
 
