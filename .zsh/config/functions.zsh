@@ -63,8 +63,8 @@ colortest() {
 		base16_color_name="${colors[$non_padded_value]}"
 		current_color_label="${current_color:-unknown}"
 		ansi_label="${ansi_mappings[$non_padded_value]}"
-		block="$(printf "\x1b[48;5;${non_padded_value}m___________________________")"
-		foreground="$(printf "\x1b[38;5;${non_padded_value}m$color_variable")"
+		block="$(echo -e "\x1b[48;5;${non_padded_value}m___________________________")"
+		foreground="$(echo -e "\x1b[38;5;${non_padded_value}m$color_variable")"
 		printf "%s %s %s %-30s %s\x1b[0m\n" "$foreground" "$base16_color_name" "$current_color_label" "${ansi_label:-""}" "$block"
 	done;
 }
