@@ -54,35 +54,10 @@ function! s:SetupHighlights() abort
 	highlight link Vertsplit LineNr
 endfunction
 
-function! s:SetupLspHighlights() abort
-	exec 'highlight LspDiagnosticsError cterm=italic gui=italic ' .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('WarningMsg')), 'fg', 'gui')
-	exec 'highlight LspDiagnosticsHint cterm=italic gui=italic ' .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('ModeMsg')), 'fg', 'gui')
-	exec 'highlight LspDiagnosticsInformation cterm=italic gui=italic ' .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('Conditional')), 'fg', 'gui')
-	exec 'highlight LspDiagnosticsWarning cterm=italic gui=italic' .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('Type')), 'fg', 'gui')
-
-	exec 'highlight LspDiagnosticsErrorSign' .
-				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('WarningMsg')), 'fg', 'gui')
-	exec 'highlight LspDiagnosticsHintSign' .
-				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('ModeMsg')), 'fg', 'gui')
-	exec 'highlight LspDiagnosticsInformationSign' .
-				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('Conditional')), 'fg', 'gui')
-	exec 'highlight LspDiagnosticsWarningSign' .
-				\ ' guibg=' . synIDattr(synIDtrans(hlID('ColorColumn')), 'bg', 'gui') .
-				\ ' guifg=' . synIDattr(synIDtrans(hlID('Type')), 'fg', 'gui')
-endfunction
-
 if has('autocmd')
 	augroup Color
 		autocmd!
 		autocmd ColorScheme * call s:SetupHighlights()
-		autocmd ColorScheme * call s:SetupLspHighlights()
 		autocmd VimEnter,FocusGained * call s:CheckColorScheme()
 	augroup END
 endif
